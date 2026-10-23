@@ -1,0 +1,12 @@
+{
+  "name": "profitable-niches",
+  "version": "1.0.0",
+  "description": "Прибыльные ниши — исследователь ниш для Instagram theme pages",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test --no-warnings test/*.test.js"
+  }
+}
