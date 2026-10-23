@@ -1,0 +1,17 @@
+{
+  "name": "carousel-script-maker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Создатель сценариев каруселей для Instagram: тексты слайдов, подпись и экспорт.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "demo": "MOCK_AI=1 node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.2.0"
+  }
+}
