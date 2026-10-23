@@ -185,6 +185,8 @@ async function copyText(text, okMessage = 'Скопировано') {
 /* ───────────────────────── Запросы к серверу ───────────────────────── */
 
 async function api(path, body) {
+  // В версии-артефакте запросы идут не на сервер, а через «Спросить Claude» (см. tools/build-artifact.mjs).
+  if (window.CAROUSEL_API) return window.CAROUSEL_API(path, body);
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 240_000);
   let res;
@@ -392,14 +394,14 @@ function errorNoticeHTML(message) {
 
 async function showHealthNotice() {
   if (!state.health) {
-    try { state.health = await (await fetch('/api/health')).json(); } catch { state.health = { configured: true }; }
+    try { state.health = window.CAROUSEL_HEALTH ? await window.CAROUSEL_HEALTH() : await (await fetch('/api/health')).json(); } catch { state.health = { configured: true }; }
   }
   const box = $('#healthNotice');
   if (!box) return;
   if (state.health.mock) {
     box.innerHTML = `<div class="notice notice--warn">${icon('warn')}<div class="notice__body"><strong>Демо-режим</strong>ИИ не подключён, тексты будут заглушками. Нужен для проверки интерфейса.</div></div>`;
   } else if (!state.health.configured) {
-    box.innerHTML = `<div class="notice notice--warn">${icon('warn')}<div class="notice__body"><strong>ИИ пока не подключён</strong>На сервере не задан ключ ANTHROPIC_API_KEY. Интерфейс работает, но сценарий создать нельзя, пока ключ не добавлен.</div></div>`;
+    box.innerHTML = `<div class="notice notice--warn">${icon('warn')}<div class="notice__body"><strong>ИИ пока не подключён</strong>${esc(state.health.hint || 'На сервере не задан ключ ANTHROPIC_API_KEY. Интерфейс работает, но сценарий создать нельзя, пока ключ не добавлен.')}</div></div>`;
   }
 }
 

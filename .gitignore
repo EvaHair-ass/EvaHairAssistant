@@ -3,3 +3,4 @@ bot.py
 # carousel-app
 carousel-app/node_modules/
 carousel-app/.env
+carousel-app/dist/
