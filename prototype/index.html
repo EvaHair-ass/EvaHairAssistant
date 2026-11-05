@@ -3,38 +3,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@400;500;600;700;800&display=swap">
 <style>
-/* Идея: бохо-мастерская. Льняной песок, шалфей, глина и охра; арки вместо квадратов, живые листья, мягкие «выплывания».
-   Заголовки — Cormorant, рукописные акценты — Caveat, весь интерфейс и ВСЕ цифры — Nunito (лайнинговые цифры, читаются легко). */
+/* Идея: шаманская бохо-мастерская. Тёплая бумага, глина, можжевельник и охра. Фон нарисован линиями:
+   ловец снов, амулет-глаз, фазы луны, перья и знаки по краям, всё очень тихо и без перегруза.
+   Заголовки — Cormorant, рукописные подписи — Caveat, интерфейс и ВСЕ цифры — Nunito. */
 :root{
-  --stage:#E5D7BF; --bg:#F5EDE0; --surface:#FCF8F0; --surface2:#F1E7D6; --line:#E2D3B9;
-  --ink:#3A2E24; --ink2:#6E5E4E; --ink3:#9A8A76;
-  --clay:#B5593A; --clay-ink:#FFF7EC; --clay-soft:#F2D8C9;
-  --accent:#5F7A52; --accent-ink:#FFFFFF; --accent-soft:#DDE5CF;
-  --ochre:#D39A2F; --ochre-soft:#F6E3B6; --rose:#D69A8B;
-  --btn:#4A3B2C; --btn-ink:#FBF3E4;
-  --good:#4F7A3F; --good-soft:#DDE8CC; --warn:#935E12; --warn-soft:#F6E3B6; --bad:#B6382B; --bad-soft:#F4D5CE;
+  --stage:#D9CBB0; --bg:#F1E8D6; --surface:#FAF4E7; --surface2:#EDE1CA; --line:#D9C7A6;
+  --ink:#33291F; --ink2:#645644; --ink3:#9B8A70;
+  --clay:#A64F2E; --clay-ink:#FFF6EA; --clay-soft:#EFD3C0;
+  --accent:#3E6150; --accent-ink:#FFFFFF; --accent-soft:#D3E0D4;
+  --ochre:#C98F27; --ochre-soft:#F2DFB0; --rose:#C9877A;
+  --btn:#3A2E23; --btn-ink:#FAF1DF;
+  --good:#3F6F3C; --good-soft:#D9E5C6; --warn:#8A5A10; --warn-soft:#F2DFB0; --bad:#B0372A; --bad-soft:#F1D0C8;
+  --art:#8B6B45; --grain:.5; --glass:color-mix(in srgb,var(--surface) 84%,transparent);
   --shadow:0 2px 4px rgba(74,59,44,.08),0 18px 44px rgba(74,59,44,.18); --shadow-s:0 1px 2px rgba(74,59,44,.16); --shadow-c:0 1px 0 rgba(255,255,255,.6) inset,0 6px 18px rgba(120,86,50,.10);
   --scrim:rgba(46,32,20,.5);
   --f-display:'Cormorant','Cormorant Garamond',Georgia,serif; --f-hand:'Caveat','Segoe Script',cursive; --f-body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --stage:#120E0A; --bg:#1B1611; --surface:#262019; --surface2:#2F281F; --line:#40362A;
-  --ink:#F3E8D6; --ink2:#C4B49C; --ink3:#968670;
-  --clay:#D9805A; --clay-ink:#2A130A; --clay-soft:#4A281C;
-  --accent:#A5BD8F; --accent-ink:#17210F; --accent-soft:#2C3624;
-  --ochre:#E7B658; --ochre-soft:#443414; --rose:#C98A7B;
+  --stage:#0E0B08; --bg:#17120D; --surface:#221B14; --surface2:#2B231A; --line:#3B3024;
+  --ink:#F1E6D2; --ink2:#C2B297; --ink3:#948568;
+  --clay:#D8805A; --clay-ink:#2A130A; --clay-soft:#4A281C;
+  --accent:#A5BD8F; --accent-ink:#17210F; --accent-soft:#2A3523;
+  --ochre:#E2B25A; --ochre-soft:#443414; --rose:#C98A7B;
   --btn:#EADCC4; --btn-ink:#261F17;
   --good:#9BCB86; --good-soft:#26361E; --warn:#EDB259; --warn-soft:#3F2E12; --bad:#FF9B8A; --bad-soft:#44201E;
+  --art:#C7A877; --grain:.18;
   --shadow:0 2px 4px rgba(0,0,0,.4),0 18px 44px rgba(0,0,0,.55); --shadow-s:0 1px 2px rgba(0,0,0,.5); --shadow-c:0 1px 0 rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.3);
   --scrim:rgba(4,2,0,.64); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --stage:#120E0A; --bg:#1B1611; --surface:#262019; --surface2:#2F281F; --line:#40362A;
-  --ink:#F3E8D6; --ink2:#C4B49C; --ink3:#968670;
-  --clay:#D9805A; --clay-ink:#2A130A; --clay-soft:#4A281C;
-  --accent:#A5BD8F; --accent-ink:#17210F; --accent-soft:#2C3624;
-  --ochre:#E7B658; --ochre-soft:#443414; --rose:#C98A7B;
+  --stage:#0E0B08; --bg:#17120D; --surface:#221B14; --surface2:#2B231A; --line:#3B3024;
+  --ink:#F1E6D2; --ink2:#C2B297; --ink3:#948568;
+  --clay:#D8805A; --clay-ink:#2A130A; --clay-soft:#4A281C;
+  --accent:#A5BD8F; --accent-ink:#17210F; --accent-soft:#2A3523;
+  --ochre:#E2B25A; --ochre-soft:#443414; --rose:#C98A7B;
   --btn:#EADCC4; --btn-ink:#261F17;
   --good:#9BCB86; --good-soft:#26361E; --warn:#EDB259; --warn-soft:#3F2E12; --bad:#FF9B8A; --bad-soft:#44201E;
+  --art:#C7A877; --grain:.18;
   --shadow:0 2px 4px rgba(0,0,0,.4),0 18px 44px rgba(0,0,0,.55); --shadow-s:0 1px 2px rgba(0,0,0,.5); --shadow-c:0 1px 0 rgba(255,255,255,.04) inset,0 6px 18px rgba(0,0,0,.3);
   --scrim:rgba(4,2,0,.64); color-scheme:dark}
 
@@ -61,9 +65,6 @@ a{color:var(--accent);font-weight:600}
 /* сцена и телефон */
 .stage{height:100%;display:grid;grid-template-columns:minmax(0,1fr);place-items:center}
 .app{position:relative;display:flex;flex-direction:column;width:100%;height:100%;background:var(--bg);overflow:hidden;min-width:0}
-.app::before,.app::after{content:"";position:absolute;border-radius:50%;filter:blur(44px);opacity:.6;pointer-events:none;z-index:0}
-.app::before{width:260px;height:260px;background:var(--clay-soft);top:-70px;right:-80px;animation:drift 15s ease-in-out infinite alternate}
-.app::after{width:240px;height:240px;background:var(--accent-soft);bottom:110px;left:-90px;animation:drift 19s ease-in-out infinite alternate-reverse}
 .side{display:none}
 @media (min-width:620px){
   .stage{padding:18px}
@@ -73,6 +74,20 @@ a{color:var(--accent);font-weight:600}
   .stage{grid-template-columns:auto 350px;gap:56px;justify-content:center}
   .side{display:block;max-height:100%;overflow:auto;padding:6px 6px}
 }
+/* фон: линейные шаманские мотивы */
+.bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg::before{content:"";position:absolute;inset:0;background:radial-gradient(circle,var(--art) 1px,transparent 1.6px) 26px 70px/150px 190px,radial-gradient(circle,var(--art) .8px,transparent 1.4px) 98px 150px/120px 150px;opacity:.34;animation:twinkle 7s ease-in-out infinite alternate}
+.bg::after{content:"";position:absolute;inset:0;mix-blend-mode:multiply;opacity:var(--grain);background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .33 0 0 0 0 .2 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.art{fill:none;stroke:var(--art);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.art .lit{fill:var(--art);fill-opacity:.5;stroke:none}
+.bg svg{position:absolute;height:auto}
+.bg .c1{width:184px;top:-4px;right:-14px;opacity:.55;transform-origin:50% 0;animation:hang 7s ease-in-out infinite alternate}
+.bg .eyeamu{width:66px;bottom:92px;right:22px;opacity:.5;transform-origin:50% 0;animation:hang 9s ease-in-out infinite alternate-reverse}
+.bg .gutR,.bg .gutL{width:14px;height:900px;top:0;opacity:.7}
+.bg .gutR{right:1px} .bg .gutL{left:1px}
+.fth{transform-box:fill-box;transform-origin:50% 0;transform:rotate(var(--r,0deg));animation:flutter 4.5s ease-in-out infinite alternate}
+.page>*:not(.bg){position:relative;z-index:1}
+.sideart{float:right;width:92px;margin:-4px 0 6px 12px;transform-origin:50% 0;animation:hang 7s ease-in-out infinite alternate}
 .modebar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:12px;padding-bottom:2px}
 .brand{display:flex;align-items:center;gap:6px;font-family:var(--f-hand);font-weight:700;font-size:23px;color:var(--clay);line-height:1;white-space:nowrap}
 .brand .ic{width:26px;height:26px;color:var(--accent);transform-origin:50% 100%;animation:sway 4.5s ease-in-out infinite}
@@ -145,7 +160,7 @@ button.pill:hover{transform:translateX(2px)}
 
 /* карточки склада: арки */
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:14px}
-.mcard{display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:24px;overflow:hidden;min-width:0;box-shadow:var(--shadow-c);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.mcard{display:flex;flex-direction:column;text-align:left;background:var(--glass);border:1.5px solid var(--line);border-radius:24px;overflow:hidden;min-width:0;box-shadow:var(--shadow-c);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
 .mcard:hover{transform:translateY(-3px) rotate(-.4deg);box-shadow:0 12px 26px rgba(120,86,50,.18)}
 .mcard:active{transform:scale(.97)}
 .mcard .ph{position:relative;margin:8px 8px 0;aspect-ratio:5/6;border-radius:999px 999px 16px 16px;overflow:hidden;background:var(--surface2)}
@@ -161,18 +176,19 @@ button.pill:hover{transform:translateX(2px)}
 .mcard .fr{font-size:11.5px;color:var(--accent);font-weight:700}
 .empty{margin-top:22px;text-align:center;color:var(--ink2);display:flex;flex-direction:column;align-items:center;gap:12px;padding:30px 14px;border:2px dashed var(--line);border-radius:28px}
 .empty b{color:var(--ink);font-family:var(--f-display);font-style:italic;font-size:24px;font-weight:600}
-.empty::before{content:"";width:46px;height:46px;background:var(--accent);opacity:.55;-webkit-mask:var(--sprig) center/contain no-repeat;mask:var(--sprig) center/contain no-repeat;animation:sway 5s ease-in-out infinite}
-:root{--sprig:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22V4'/%3E%3Cpath d='M12 18c-4 0-6-2-6-5 4 0 6 2 6 5zM12 13c4 0 6-2 6-5-4 0-6 2-6 5zM12 9c-3.5 0-5-1.6-5-4.2 3.5 0 5 1.6 5 4.2z'/%3E%3C/svg%3E")}
+.empty::before{content:"";width:46px;height:46px;background:var(--accent);opacity:.55;-webkit-mask:var(--charm) center/contain no-repeat;mask:var(--charm) center/contain no-repeat;animation:sway 5s ease-in-out infinite}
+:root{--orn:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 66 10'%3E%3Cpath d='M0 5h24M42 5h24' stroke='black' stroke-width='1.2'/%3E%3Cpath d='M33 0.5l4.5 4.5-4.5 4.5-4.5-4.5z' fill='black'/%3E%3Ccircle cx='26.5' cy='5' r='1' fill='black'/%3E%3Ccircle cx='39.5' cy='5' r='1' fill='black'/%3E%3C/svg%3E");
+  --charm:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='9' r='6'/%3E%3Ccircle cx='12' cy='9' r='2.6'/%3E%3Cpath d='M12 3v12M6 9h12M7.8 4.8l8.4 8.4M16.2 4.8l-8.4 8.4M9.5 15v5M12 15.5V22M14.5 15v4'/%3E%3C/svg%3E")}
 
 /* карточки-списки */
-.card{background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:15px;box-shadow:var(--shadow-c)}
+.card{background:var(--glass);border:1.5px solid var(--line);border-radius:24px;padding:15px;box-shadow:var(--shadow-c)}
 .card.flat{background:transparent;border-style:dashed;box-shadow:none}
 .sect{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-top:6px}
 .sect h2{font-family:var(--f-display);font-style:italic;font-size:25px;font-weight:600;position:relative}
-.sect h2::after{content:"";display:block;height:5px;width:44px;margin-top:2px;background:radial-gradient(circle,var(--ochre) 1.6px,transparent 2px) 0 0/9px 5px repeat-x}
+.sect h2::after{content:"";display:block;height:10px;width:66px;margin-top:2px;background:var(--ochre);-webkit-mask:var(--orn) left center/contain no-repeat;mask:var(--orn) left center/contain no-repeat}
 .thumb{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--surface2);flex:none;border:2px solid var(--ochre-soft)}
 .thumb.lg{width:66px;height:66px;border-radius:999px 999px 14px 14px}
-.lcard{display:flex;gap:12px;align-items:center;text-align:left;width:100%;background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:13px;box-shadow:var(--shadow-c);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.lcard{display:flex;gap:12px;align-items:center;text-align:left;width:100%;background:var(--glass);border:1.5px solid var(--line);border-radius:24px;padding:13px;box-shadow:var(--shadow-c);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
 button.lcard:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(120,86,50,.16)}
 button.lcard:active{transform:scale(.98)}
 .lcard .t{font-weight:800;font-size:14.5px}
@@ -213,7 +229,7 @@ button.lcard:active{transform:scale(.98)}
 .bigph .btn{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(6px)}
 .bigph .btn:not([disabled]):active{transform:translateX(-50%) scale(.96)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stat{background:var(--surface);border:1.5px solid var(--line);border-radius:20px;padding:11px 12px}
+.stat{background:var(--glass);border:1.5px solid var(--line);border-radius:20px;padding:11px 12px}
 .stat .v{font-weight:800;font-size:17px}
 .stat .k{font-size:11.5px;color:var(--ink2)}
 .hist{display:flex;flex-direction:column}
@@ -221,7 +237,7 @@ button.lcard:active{transform:scale(.98)}
 .pos{color:var(--good)} .neg{color:var(--bad)}
 
 /* работа */
-.part{background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:13px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-c)}
+.part{background:var(--glass);border:1.5px solid var(--line);border-radius:24px;padding:13px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-c)}
 .part.bad{border-color:var(--bad)}
 .part .hd{display:flex;gap:10px;align-items:center}
 .part .nm{font-weight:800;font-size:14px;line-height:1.25}
@@ -331,6 +347,9 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 @keyframes growx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes burst{0%{transform:translate(0,0) rotate(0) scale(.4);opacity:1}100%{transform:translate(var(--dx),var(--dy)) rotate(260deg) scale(1);opacity:0}}
+@keyframes hang{from{transform:rotate(-2.2deg)}to{transform:rotate(2.6deg)}}
+@keyframes flutter{from{transform:rotate(calc(var(--r,0deg) - 5deg))}to{transform:rotate(calc(var(--r,0deg) + 5deg))}}
+@keyframes twinkle{from{opacity:.18}to{opacity:.36}}
 .enter .mcard,.enter .lcard,.enter .card,.enter .stat,.enter .empty{animation:floatin .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*45ms)}
 .enter .top{animation:floatin .5s both}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
@@ -370,11 +389,13 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V5M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol>
 <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12 20 4l-4 16-4-6.5z"/><path d="M12 13.5 20 4"/></symbol>
 <symbol id="i-sprig" viewBox="0 0 24 24"><path d="M12 22V4"/><path d="M12 18c-4 0-6-2-6-5 4 0 6 2 6 5zM12 13c4 0 6-2 6-5-4 0-6 2-6 5zM12 9c-3.5 0-5-1.6-5-4.2 3.5 0 5 1.6 5 4.2z"/></symbol>
+<symbol id="i-catcher" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><circle cx="12" cy="9" r="2.6"/><path d="M12 3v12M6 9h12M9.5 15v5M12 15.5V22M14.5 15v4"/></symbol>
 <symbol id="i-focus" viewBox="0 0 24 24"><path d="M4 9V5h4M20 9V5h-4M4 15v4h4M20 15v4h-4"/><circle cx="12" cy="12" r="2.5"/></symbol>
 </svg>
 
 <div class="stage">
   <div class="app" id="app">
+    <div class="bg" id="bg" aria-hidden="true"></div>
     <div class="modebar px" id="modebar"></div>
     <div class="screen" id="screen"></div>
     <nav class="tabbar" id="tabbar" aria-label="Разделы"></nav>
@@ -472,6 +493,52 @@ function placeholder(name) {
 }
 const photoOf = m => (m && m.photo) || placeholder(m && m.name);
 const KIND_ART = {'Серьги': 'earrings', 'Браслет': 'bracelet', 'Колье': 'necklace', 'Заколка': 'clip', 'Ободок': 'band', 'Съёмная коса': 'hair', 'Сумочка': 'box', 'Другое': 'flower'};
+
+/* ============================================================
+   ФОН: ловец снов, амулет, луна, перья (линиями, генерируется кодом)
+============================================================ */
+const rad = d => d * Math.PI / 180;
+const f1 = v => v.toFixed(1);
+function featherG(x, y, len, rot, delay) {
+  const w = len * .17, a = len * .3; let bars = '';
+  for (let i = 1; i <= 5; i++) { const yy = a + (len - a) * i / 6, k = w * (1 - Math.abs(i - 3) / 4.5); bars += `M0 ${f1(yy)}l${f1(k)} ${f1(-len * .06)}M0 ${f1(yy)}l${f1(-k)} ${f1(-len * .06)}`; }
+  return `<g transform="translate(${f1(x)} ${f1(y)})"><g class="fth" style="--r:${rot}deg;animation-delay:${delay}s"><path d="M0 0V${f1(len)}"/><path d="M0 ${f1(a)}C${f1(w)} ${f1(len * .45)} ${f1(w)} ${f1(len * .8)} 0 ${f1(len)}C${f1(-w)} ${f1(len * .8)} ${f1(-w)} ${f1(len * .45)} 0 ${f1(a)}"/><path d="${bars}" stroke-width=".7"/></g></g>`;
+}
+function catcherInner() {
+  const cx = 60, cy = 58, R = 44, n = 10, P = (r, a) => [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+  let s = `<path d="M${cx} 0V${cy - R}"/><circle cx="${cx}" cy="${cy}" r="${R}"/><circle cx="${cx}" cy="${cy}" r="${R - 4}" stroke-dasharray="1.2 3"/>`;
+  const rs = [R - 4, R - 13, R - 21, R - 28, R - 34];
+  const layers = rs.map((r, j) => Array.from({length: n}, (_, i) => P(r, ((i + (j % 2 ? .5 : 0)) / n) * 2 * Math.PI - Math.PI / 2)));
+  layers.forEach((pts, j) => { if (j) s += `<polygon points="${pts.map(p => f1(p[0]) + ',' + f1(p[1])).join(' ')}"/>`; });
+  for (let j = 0; j < layers.length - 1; j++) layers[j].forEach((p, i) => { const q1 = layers[j + 1][i], q2 = layers[j + 1][(i + n - 1) % n]; s += `<path d="M${f1(p[0])} ${f1(p[1])}L${f1(q1[0])} ${f1(q1[1])}M${f1(p[0])} ${f1(p[1])}L${f1(q2[0])} ${f1(q2[1])}"/>`; });
+  s += `<circle cx="${cx}" cy="${cy}" r="2.4"/>`;
+  [30, 150, 210, 330].forEach(d => { const p = P(R, rad(d)); s += `<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="2"/>`; });
+  [[-26, 62, 1], [0, 92, 2], [26, 70, 3]].forEach(([dx, len, k]) => { const y0 = cy + Math.sqrt(R * R - dx * dx);
+    s += `<path d="M${cx + dx} ${f1(y0)}V${f1(y0 + len * .55)}"/><circle cx="${cx + dx}" cy="${f1(y0 + len * .22)}" r="2"/>` + featherG(cx + dx, y0 + len * .55, len * .5, (k - 2) * 4, k * .6); });
+  return s;
+}
+function moonG(cx, cy, r, ph) {
+  const flip = ph > 4, p = flip ? 8 - ph : ph, base = `<circle cx="${cx}" cy="${cy}" r="${r}"/>`;
+  if (p === 0) return base;
+  if (p === 4) return base + `<circle class="lit" cx="${cx}" cy="${cy}" r="${r}"/>`;
+  const rx = r * Math.abs(Math.cos(p / 8 * Math.PI * 2)), sweep = p < 2 ? 0 : 1;
+  return base + `<path class="lit" d="M${cx} ${cy - r}A${r} ${r} 0 0 1 ${cx} ${cy + r}A${rx.toFixed(2)} ${r} 0 0 ${sweep} ${cx} ${cy - r}Z"${flip ? ` transform="translate(${2 * cx} 0) scale(-1 1)"` : ''}/>`;
+}
+const SYMS = [
+  y => `<circle cx="7" cy="${y}" r="4.6"/><circle cx="7" cy="${y}" r="2.4"/><circle class="lit" cx="7" cy="${y}" r="1"/>`,
+  y => `<circle cx="7" cy="${y}" r="2.2"/>` + Array.from({length: 8}, (_, i) => { const a = i * Math.PI / 4; return `<path d="M${f1(7 + 3.6 * Math.cos(a))} ${f1(y + 3.6 * Math.sin(a))}L${f1(7 + 5.6 * Math.cos(a))} ${f1(y + 5.6 * Math.sin(a))}"/>`; }).join(''),
+  y => `<path d="M2.6 ${y + 3.4}L7 ${y - 4}L11.4 ${y + 3.4}Z"/><circle cx="7" cy="${y + .8}" r=".9"/>`,
+  y => `<path d="M7 ${y - 5}L11 ${y}L7 ${y + 5}L3 ${y}Z"/><circle cx="7" cy="${y}" r=".8"/>`,
+  y => `<path d="M7 ${y - 5.5}C11 ${y - 2} 11 ${y + 2} 7 ${y + 5.5}C3 ${y + 2} 3 ${y - 2} 7 ${y - 5.5}M7 ${y - 5.5}V${y + 7}"/>`
+];
+function buildBg() {
+  let R = '', L = '';
+  for (let k = 0; k < 11; k++) { const y = 150 + k * 78; R += moonG(7, y, 4.2, k % 8); L += SYMS[k % 5](y + 39); }
+  let rays = ''; for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2; rays += `M${f1(35 + 20 * Math.cos(a))} ${f1(58 + 20 * Math.sin(a))}L${f1(35 + 24 * Math.cos(a))} ${f1(58 + 24 * Math.sin(a))}`; }
+  const eye = `<path d="M35 0V26"/><circle cx="35" cy="30" r="3"/><path d="M35 33V41"/><circle cx="35" cy="58" r="17"/><circle cx="35" cy="58" r="11"/><circle cx="35" cy="58" r="5.5"/><circle class="lit" cx="35" cy="58" r="2"/><path d="${rays}" stroke-width=".8"/><path d="M35 75V84M30 84V106M35 84V112M40 84V106"/>`;
+  return `<svg class="art c1" viewBox="0 0 120 206">${catcherInner()}</svg><svg class="art eyeamu" viewBox="0 0 70 118">${eye}</svg><svg class="art gutR" viewBox="0 0 14 900">${R}</svg><svg class="art gutL" viewBox="0 0 14 900">${L}</svg>`;
+}
+const BG = buildBg();
 
 /* ============================================================
    ДВИЖОК: склад, закупки, резервы, себестоимость
@@ -1113,7 +1180,7 @@ const GUIDE = [
   {k: 'backup', t: 'Копия данных', d: 'Как сохранить всё и вернуть обратно.'}];
 function guideHTML() { return `<div class="try">${GUIDE.map((g, i) => `<button data-act="tryIt" data-k="${g.k}"><span class="n">${i + 1}</span><span><b>${g.t}</b><span class="t">${g.d}</span></span></button>`).join('')}</div>`; }
 function sideHTML() {
-  return `<h1>Моя<br><em>мастерская</em></h1><p class="lead">Фото-склад, производство по факту и своя академия. Нажимай всё: считает по-настоящему.</p>${guideHTML()}<p class="fine">Прототип по ТЗ «Фото-склад + производство по факту». Данные остаются в браузере, картинки нарисованы для примера.</p>`;
+  return `<svg class="art sideart" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><h1>Моя<br><em>мастерская</em></h1><p class="lead">Фото-склад, производство по факту и своя академия. Нажимай всё: считает по-настоящему.</p>${guideHTML()}<p class="fine">Прототип по ТЗ «Фото-склад + производство по факту». Данные остаются в браузере, картинки нарисованы для примера.</p>`;
 }
 
 /* ============================================================
@@ -1424,7 +1491,7 @@ const TABS = [['stock', 'Склад', 'grid'], ['buy', 'Закупки', 'bag'],
 const ATABS = [['courses', 'Курсы', 'book'], ['chat', 'Чаты', 'chat'], ['students', 'Ученицы', 'users']];
 const curTab = () => ui.mode === 'shop' ? ui.tab : ui.atab;
 function renderModebar() {
-  $('#modebar').innerHTML = `<span class="brand">${ic('sprig')}Моя мастерская</span><div class="modeseg" role="tablist"><button class="${ui.mode === 'shop' ? 'on' : ''}" data-act="mode" data-v="shop">Мастерская</button><button class="${ui.mode === 'acad' ? 'on' : ''}" data-act="mode" data-v="acad">Академия</button></div>`;
+  $('#modebar').innerHTML = `<span class="brand">${ic('catcher')}Моя мастерская</span><div class="modeseg" role="tablist"><button class="${ui.mode === 'shop' ? 'on' : ''}" data-act="mode" data-v="shop">Мастерская</button><button class="${ui.mode === 'acad' ? 'on' : ''}" data-act="mode" data-v="acad">Академия</button></div>`;
 }
 function renderScreen() {
   const sc = $('#screen'), key = ui.mode + ':' + curTab(), changed = sc.dataset.tab !== key, prev = changed ? 0 : sc.scrollTop;
@@ -1449,7 +1516,9 @@ function renderPages() {
   else if (p.type === 'chat') { const c = courseById(p.id); html = c ? pageChat(c) : ''; }
   const key = p.type + ':' + (p.id || '') + ':' + ui.pages.length, same = renderPages.last === key;
   const old = $('#pageBody'), keep = same && old ? old.scrollTop : 0;
-  host.innerHTML = `<section class="page ${same ? '' : 'anim'}">${html}</section>`;
+  const oldBg = same ? $('.bg', host) : null;
+  host.innerHTML = `<section class="page ${same ? '' : 'anim'}"><div class="bg" aria-hidden="true">${oldBg ? '' : BG}</div>${html}</section>`;
+  if (oldBg) $('.bg', host).replaceWith(oldBg);
   const nb = $('.page-body', host); if (nb) { nb.id = 'pageBody'; nb.scrollTop = p.type === 'chat' ? nb.scrollHeight : keep; }
   renderPages.last = key;
 }
@@ -1750,6 +1819,7 @@ setInterval(() => {
   if (d.runningSince) { const tu = $('#timeUsed'); if (tu) tu.textContent = timeUsedText(d); const tt = $('#totals'); if (tt && !tt.contains(document.activeElement)) tt.innerHTML = totalsHTML(d); }
 }, 1000);
 
+$('#bg').innerHTML = BG;
 $('#side').innerHTML = sideHTML();
 render();
 })();
