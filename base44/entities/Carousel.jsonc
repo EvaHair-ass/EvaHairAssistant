@@ -1,0 +1,250 @@
+{
+  "name": "Carousel",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "style_id": {
+      "type": "string"
+    },
+    "style_name": {
+      "type": "string"
+    },
+    "hero_id": {
+      "type": "string",
+      "description": "Герой этой карусели из библиотеки: меняется без смены стиля"
+    },
+    "hero_name": {
+      "type": "string"
+    },
+    "series": {
+      "type": "string",
+      "description": "Название темы, если карусель создана в серии на неделю"
+    },
+    "series_index": {
+      "type": "number"
+    },
+    "series_total": {
+      "type": "number"
+    },
+    "source_post_id": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "source_handle": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "orig",
+        "ru",
+        "es",
+        "en"
+      ],
+      "default": "ru",
+      "description": "Язык надписей на карточках и подписи. orig — как в оригинале (только в режиме «Зеркало»)"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "mirror",
+        "remix",
+        "adapt",
+        "original"
+      ],
+      "default": "remix"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "plan",
+        "rendering",
+        "ready",
+        "published",
+        "review",
+        "paused",
+        "queued",
+        "scheduled"
+      ],
+      "default": "plan"
+    },
+    "caption": {
+      "type": "string"
+    },
+    "price_note": {
+      "type": "string"
+    },
+    "slides_count": {
+      "type": "number"
+    },
+    "reference_images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reference_profile": {
+      "type": "object"
+    },
+    "active_task_id": {
+      "type": "string"
+    },
+    "enqueue_token": {
+      "type": "string"
+    },
+    "enqueue_until": {
+      "type": "string"
+    },
+    "approved_key": {
+      "type": "string"
+    },
+    "approved_caption": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approved_at": {
+      "type": "string"
+    },
+    "image_requests": {
+      "type": "number"
+    },
+    "ai_requests": {
+      "type": "number"
+    },
+    "image_request_limit": {
+      "type": "number"
+    },
+    "publish_token": {
+      "type": "string"
+    },
+    "publish_state": {
+      "type": "string"
+    },
+    "published_key": {
+      "type": "string"
+    },
+    "buffer_post_id": {
+      "type": "string"
+    },
+    "image_model": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "nano_banana_2_1",
+        "gpt_image_2"
+      ],
+      "description": "Выбранная модель для следующих рисунков; очередь сохраняет собственный снимок выбора."
+    },
+    "is_probe": {
+      "type": "boolean"
+    },
+    "editorial_item_id": {
+      "type": "string"
+    },
+    "policy_revision": {
+      "type": "number"
+    },
+    "repair_key": {
+      "type": "string"
+    },
+    "repair_attempts": {
+      "type": "number"
+    },
+    "repair_token": {
+      "type": "string"
+    },
+    "repair_until": {
+      "type": "string"
+    },
+    "needs_finalization": {
+      "type": "boolean"
+    },
+    "finalization_error": {
+      "type": "string"
+    },
+    "approval_kind": {
+      "type": "string"
+    },
+    "delivery_status": {
+      "type": "string"
+    },
+    "delivery_note": {
+      "type": "string"
+    },
+    "delivery_checked_at": {
+      "type": "string"
+    },
+    "published_url": {
+      "type": "string"
+    },
+    "published_at": {
+      "type": "string"
+    },
+    "scheduled_at": {
+      "type": "string"
+    },
+    "buffer_channel_id": {
+      "type": "string"
+    },
+    "buffer_organization_id": {
+      "type": "string"
+    },
+    "buffer_submitted_at": {
+      "type": "string"
+    },
+    "policy_signature": {
+      "type": "string"
+    },
+    "finalization_token": {
+      "type": "string"
+    },
+    "finalization_until": {
+      "type": "string"
+    },
+    "final_ready": {
+      "type": "boolean"
+    },
+    "buffer_payload": {
+      "type": "object"
+    },
+    "content_format": {
+      "type": "string",
+      "enum": [
+        "illustrated",
+        "text"
+      ],
+      "description": "Text cards have no hero or generated artwork; old records remain illustrated."
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
