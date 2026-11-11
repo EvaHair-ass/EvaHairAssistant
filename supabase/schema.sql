@@ -23,6 +23,11 @@ create table if not exists public.subscriptions (
 alter table public.user_state    enable row level security;
 alter table public.subscriptions enable row level security;
 
+-- 2а. Права ролей (работают при любых настройках проекта): вошедшая пользовательница читает и пишет только через правила ниже, без входа доступа нет.
+revoke all on public.user_state, public.subscriptions from anon;
+grant select, insert, update on public.user_state to authenticated;
+grant select on public.subscriptions to authenticated;
+
 -- 3. Проверка доступа: пробный период или оплаченная подписка и срок не истёк.
 create or replace function public.has_access(uid uuid)
 returns boolean language sql stable security definer set search_path = public as $$
