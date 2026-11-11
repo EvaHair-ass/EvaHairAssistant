@@ -1,7 +1,7 @@
 <title>Моя мастерская</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Forum&family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@400;500;600;700;800&display=swap">
 <style>
 /* Идея: шаманская бохо-мастерская. Тёплая бумага, глина, можжевельник и охра. Фон нарисован линиями:
    ловец снов, амулет-глаз, фазы луны, перья и знаки по краям, всё очень тихо и без перегруза.
@@ -17,7 +17,7 @@
   --art:#8B6B45; --grain:.5; --glass:color-mix(in srgb,var(--surface) 84%,transparent);
   --shadow:0 2px 4px rgba(74,59,44,.08),0 18px 44px rgba(74,59,44,.18); --shadow-s:0 1px 2px rgba(74,59,44,.16); --shadow-c:0 1px 0 rgba(255,255,255,.6) inset,0 6px 18px rgba(120,86,50,.10);
   --scrim:rgba(46,32,20,.5);
-  --f-display:'Cormorant','Cormorant Garamond',Georgia,serif; --f-hand:'Caveat','Segoe Script',cursive; --f-body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-display:'Cormorant','Cormorant Garamond',Georgia,serif; --f-hand:'Caveat','Segoe Script',cursive; --f-brand:'Forum','Cormorant Garamond',Georgia,serif; --f-body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --stage:#0E0B08; --bg:#17120D; --surface:#221B14; --surface2:#2B231A; --line:#3B3024;
@@ -89,8 +89,9 @@ a{color:var(--accent);font-weight:600}
 .page>*:not(.bg){position:relative;z-index:1}
 .sideart{float:right;width:92px;margin:-4px 0 6px 12px;transform-origin:50% 0;animation:hang 7s ease-in-out infinite alternate}
 .modebar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:12px;padding-bottom:2px}
-.brand{display:flex;align-items:center;gap:6px;font-family:var(--f-hand);font-weight:700;font-size:23px;color:var(--clay);line-height:1;white-space:nowrap}
-.brand .ic{width:26px;height:26px;color:var(--accent);transform-origin:50% 100%;animation:sway 4.5s ease-in-out infinite}
+.brand{display:flex;align-items:center;gap:6px;font-family:var(--f-brand);font-weight:400;font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);line-height:1;white-space:nowrap}
+.brand .ic{width:24px;height:24px;color:var(--accent);transform-origin:50% 100%;animation:sway 4.5s ease-in-out infinite}
+@media (max-width:420px){.brand{font-size:12.5px;letter-spacing:.07em;gap:5px}.brand .ic{width:20px;height:20px}.modeseg button{padding:0 9px;font-size:12px}}
 .modeseg{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
 .modeseg button{height:30px;padding:0 11px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--ink2);transition:background .25s,color .25s,transform .15s}
 .modeseg button.on{background:var(--clay);color:var(--clay-ink)}
@@ -319,7 +320,7 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 .ava{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none;font-size:16px}
 
 /* боковая панель */
-.side h1{font-family:var(--f-display);font-style:italic;font-weight:600;font-size:46px;line-height:.95;letter-spacing:-.01em}
+.side h1{font-family:var(--f-brand);font-weight:400;font-size:40px;line-height:1.08;letter-spacing:.08em;text-transform:uppercase}
 .side h1 em{color:var(--clay)}
 .side .lead{margin:12px 0 20px;color:var(--ink2);font-size:14px;max-width:34ch}
 .try{display:flex;flex-direction:column;gap:8px}
