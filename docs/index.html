@@ -178,6 +178,8 @@ button.pill:hover{transform:translateX(2px)}
 #gate:empty{display:none}
 .gate-in{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column;justify-content:center;gap:16px;padding-top:28px;padding-bottom:28px}
 .gate .brand{font-size:16px;justify-content:center}
+.gate .bg .c1,.gate .bg .eyeamu{display:none}
+.gate-catcher{display:block;width:78px;margin:0 auto -6px;transform-origin:50% 0;animation:hang 7s ease-in-out infinite alternate}
 .gate .lead{text-align:center;color:var(--ink2);font-size:13.5px}
 .gate h2{font-family:var(--f-display);font-style:italic;font-weight:600;font-size:26px;line-height:1.1}
 .dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--surface2);color:var(--ink3);flex:none}
@@ -2155,7 +2157,7 @@ function renderCloudBits() { const c = $('#cloudCard'); if (c && CLOUD.user) c.i
 /* экран входа и экран «доступ закончился» */
 const gfld = (label, id, key, type, ac) => `<div class="fld"><label class="lbl" for="${id}">${label}</label><input id="${id}" class="in" type="${type}" data-m="ui.gate.${key}" value="${esc(ui.gate[key] || '')}" autocomplete="${ac}" ${type === 'email' ? 'inputmode="email" autocapitalize="off"' : ''}></div>`;
 function gateHTML() {
-  const g = ui.gate, wrap = inner => `<div class="bg" aria-hidden="true">${BG}</div><div class="gate-in px"><div class="brand">${ic('catcher')}Моя мастерская</div><p class="lead">Склад, закупки и себестоимость для мастериц handmade</p><div class="card stack" style="gap:12px">${inner}</div></div>`;
+  const g = ui.gate, wrap = inner => `<div class="bg" aria-hidden="true">${BG}</div><div class="gate-in px"><svg class="art gate-catcher" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><div class="brand">Моя мастерская</div><p class="lead">Склад, закупки и себестоимость для мастериц handmade</p><div class="card stack" style="gap:12px">${inner}</div></div>`;
   const alerts = `${g.err ? `<div class="alert bad">${ic('alert')}<div>${esc(g.err)}</div></div>` : ''}${g.msg ? `<div class="alert good">${ic('check')}<div>${esc(g.msg)}</div></div>` : ''}`;
   if (CLOUD.recovery) return wrap(`<h2>Новый пароль</h2><p class="hint">Придумай новый пароль, не короче 8 символов.</p>${gfld('Новый пароль', 'g_pw', 'pw', 'password', 'new-password')}${alerts}<button class="btn pri block" data-act="gateGo" ${g.busy ? 'disabled' : ''}>Сохранить пароль</button>`);
   if (!CLOUD.user) {
