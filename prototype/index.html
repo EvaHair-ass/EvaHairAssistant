@@ -142,9 +142,9 @@ select.in{appearance:none;background-image:linear-gradient(45deg,transparent 50%
 .search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:0 6px 0 14px;height:48px;color:var(--ink3);transition:border-color .2s,box-shadow .2s}
 .search:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .search input{flex:1;min-width:0;border:0;background:transparent;outline:none;height:100%;color:var(--ink)}
-.chips{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:2px;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;height:34px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-size:13px;color:var(--ink2);display:inline-flex;align-items:center;gap:6px;font-weight:700;transition:background .25s,color .25s,transform .15s}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding-top:10px;padding-bottom:2px}
+.sublbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);padding-top:12px}
+.chip{flex:none;height:32px;padding:0 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-size:13px;color:var(--ink2);display:inline-flex;align-items:center;gap:6px;font-weight:700;transition:background .25s,color .25s,transform .15s}
 .chip:active{transform:scale(.93)}
 .chip small{opacity:.65;font-size:11.5px}
 .chip.on{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
@@ -427,6 +427,7 @@ const curInfo = c => CURS.find(x => x[0] === c) || [c, c, c];
 const base = () => (typeof S !== 'undefined' && S && S.settings && S.settings.base) || 'TRY';
 const sym = () => curInfo(base())[1];
 const money = n => (isFinite(n) ? r2(n) : 0).toLocaleString('ru-RU', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ' + sym();
+const moneyU = n => { const v = isFinite(n) ? n : 0, d = Math.abs(v * 100 - Math.round(v * 100)) > 1e-6 && Math.abs(v) < 100 ? 3 : 2; return v.toLocaleString('ru-RU', {minimumFractionDigits: 2, maximumFractionDigits: d}) + ' ' + sym(); };
 const num = n => Number(r2(n)).toLocaleString('ru-RU', {maximumFractionDigits: 2});
 const nv = v => (v ? String(v).replace('.', ',') : '');
 const MON = ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
@@ -880,7 +881,7 @@ function mcard(m, act = 'openMat', inDraft = false, i = 0) {
       <div class="tags">${isTool(m) ? '<span class="pill acc">инструмент</span>' : ''}${low ? '<span class="pill warn">мало</span>' : ''}</div>
       ${inDraft ? `<span class="tick">${ic('check', 'sm')}</span>` : ''}</div>
     <div class="mb"><b>${esc(m.name)}</b><span class="meta">${esc(meta) || '&nbsp;'}</span>
-      <div class="pr"><span class="p num">${isTool(m) ? num(m.useCost) + ' ' + sym() + '/прим.' : money(m.avg) + '/' + esc(m.unit)}</span><span class="q num">${num(m.qty)} ${esc(m.unit)}</span></div>
+      <div class="pr"><span class="p num">${isTool(m) ? num(m.useCost) + ' ' + sym() + '/прим.' : moneyU(m.avg) + '/' + esc(m.unit)}</span><span class="q num">${num(m.qty)} ${esc(m.unit)}</span></div>
       ${res > 0 ? `<span class="fr num">свободно ${num(free)}</span>` : ''}</div></button>`;
 }
 function stockListHTML() {
@@ -897,7 +898,7 @@ function stockChipsHTML() {
       <button class="chip ${ui.cat === 'all' ? 'on' : ''}" data-act="setCat" data-v="all">Все <small>${S.materials.length}</small></button>
       ${S.categories.map(c => `<button class="chip ${ui.cat === c ? 'on' : ''}" data-act="setCat" data-v="${esc(c)}">${esc(c)} <small>${cnt(c)}</small></button>`).join('')}
     </div>
-    ${subs.length ? `<div class="chips px" style="padding-top:6px"><button class="chip sub ${ui.sub === 'all' ? 'on' : ''}" data-act="setSub" data-v="all">Все</button>${subs.map(s => `<button class="chip sub ${ui.sub === s ? 'on' : ''}" data-act="setSub" data-v="${esc(s)}">${esc(s)}</button>`).join('')}</div>` : ''}`;
+    ${subs.length ? `<div class="sublbl px">Подгруппы</div><div class="chips px" style="padding-top:6px"><button class="chip sub ${ui.sub === 'all' ? 'on' : ''}" data-act="setSub" data-v="all">Все</button>${subs.map(s => `<button class="chip sub ${ui.sub === s ? 'on' : ''}" data-act="setSub" data-v="${esc(s)}">${esc(s)}</button>`).join('')}</div>` : ''}`;
 }
 function stockScreen() {
   const value = S.materials.reduce((s, m) => s + m.qty * m.avg, 0), low = S.materials.filter(m => m.min > 0 && m.qty <= m.min).length;
@@ -1118,7 +1119,7 @@ function pageRun(r) {
   const scrapN = r.materialLines.filter(l => l.mode !== 'tool').reduce((s, l) => s + l.scrap, 0);
   const rows = r.materialLines.map(l => { const tool = l.mode === 'tool';
     return `<div class="rl"><img class="thumb" src="${l.photo || placeholder(l.name)}" alt=""><div class="a"><b>${esc(l.name)}</b>
-      <span class="num">${tool ? `${num(l.used)} применений × ${num(l.useCost)} ${sym()}` : `исправных ${num(l.used)} ${esc(l.unit)} × ${money(l.unitCost)}`}${l.scrap > 0 ? ` · брак ${num(l.scrap)}${tool ? ' шт' : ' ' + esc(l.unit)}` : ''}</span></div>
+      <span class="num">${tool ? `${num(l.used)} применений × ${num(l.useCost)} ${sym()}` : `исправных ${num(l.used)} ${esc(l.unit)} × ${moneyU(l.unitCost)}`}${l.scrap > 0 ? ` · брак ${num(l.scrap)}${tool ? ' шт' : ' ' + esc(l.unit)}` : ''}</span></div>
       <div class="c">${money(l.cost)}${l.costScrap > 0 ? `<small>из них брак ${money(l.costScrap)}</small>` : ''}</div></div>`; }).join('');
   return `<div class="page-top px"><button class="ibtn" data-act="back" aria-label="Назад">${ic('back')}</button><div class="pt-title"><span class="ttl">${esc(r.name)}</span><span class="sub">${fmtDate(r.date)} · ${esc(r.category || '')}</span></div></div>
     <div class="page-body px"><div class="stack">
@@ -1277,7 +1278,7 @@ const SHEETS = {
     return shell(esc(m.name), `
       <div class="bigph"><img src="${photoOf(m)}" alt=""><button class="btn sm" data-act="matPhoto">${ic('camera', 'sm')} Заменить фото</button></div>
       <div class="stats"><div class="stat"><div class="v num">${num(m.qty)} ${esc(m.unit)}</div><div class="k">на складе</div></div><div class="stat"><div class="v num">${num(res)}</div><div class="k">в резерве</div></div><div class="stat"><div class="v num">${num(m.qty - res)}</div><div class="k">свободно</div></div></div>
-      <div class="row" style="justify-content:space-between"><span class="mute">Средняя цена</span><b class="num">${money(m.avg)} / ${esc(m.unit)}</b></div>
+      <div class="row" style="justify-content:space-between"><span class="mute">Средняя цена</span><b class="num">${moneyU(m.avg)} / ${esc(m.unit)}</b></div>
       ${by.length ? `<div class="alert warn">${ic('clock')}<div>Зарезервировано в работах: ${by.map(x => `${esc(x.d.name)} (${num(x.n)})`).join(', ')}</div></div>` : ''}
       <div class="sect" style="padding-top:0"><h2>Карточка</h2></div>
       ${fld('Название', 'me_n', 'ui.me.name', me.name)}
@@ -1285,10 +1286,18 @@ const SHEETS = {
       <div class="two">${fld('Бренд', 'me_b', 'ui.me.brand', me.brand)}${fld('Артикул', 'me_k', 'ui.me.sku', me.sku)}</div>
       <div class="two">${fld('Размер', 'me_z', 'ui.me.size', me.size)}${fld('Цвет', 'me_l', 'ui.me.color', me.color)}</div>
       <div class="two"><div class="fld"><label class="lbl" for="me_u">Единица учёта</label><select id="me_u" class="in" data-m="ui.me.unit">${opts(UNITS, me.unit)}</select></div>${fld('Минимум на складе', 'me_mn', 'ui.me.min', me.min, {num: 1})}</div>
+      <p class="hint">Здесь единица меняется без пересчёта. Чтобы пересчитать количество и цену, используй блок «Цена и единицы» ниже.</p>
       <div class="fld"><span class="lbl">Тип материала</span><div class="seg"><button class="${me.mode === 'cons' ? 'on' : ''}" data-act="meMode" data-v="cons">Расходник</button><button class="${me.mode === 'tool' ? 'on' : ''}" data-act="meMode" data-v="tool">Многоразовый инструмент</button></div></div>
       ${me.mode === 'tool' ? `<div class="two">${fld('Хватит на, применений', 'me_life', 'ui.me.life', me.life, {num: 1, ph: 'например, 15'})}${fld('Одно применение, ' + sym(), 'me_uc', 'ui.me.useCost', me.useCost, {num: 1})}</div>${toolHint}` : ''}
       ${fld('Где лежит', 'me_loc', 'ui.me.location', me.location)}
       <div class="fld"><label class="lbl" for="me_nt">Заметки</label><textarea id="me_nt" class="in ta" data-m="ui.me.notes">${esc(me.notes)}</textarea></div>
+      <div class="sect" style="padding-top:0"><h2>Цена и единицы</h2></div>
+      <div class="two">${fld('Цена за ' + esc(me.unit) + ', ' + sym(), 'me_avg', 'ui.me.avg', me.avg, {num: 1})}${fld('Заплачено за весь остаток, ' + sym(), 'me_tot', 'ui.me.total', me.total, {num: 1})}</div>
+      ${lastPurchasePaid(m.id) ? `<button class="btn sm" data-act="meFromPurchase">Взять сумму из закупки: ${money(lastPurchasePaid(m.id).paid)}</button>` : ''}
+      <p class="hint">Цена за единицу = сколько заплатила ÷ количество. Исправь любое из двух полей, второе пересчитается. Завершённые работы не меняются.</p>
+      ${m.mode === 'cons' ? `<div class="two"><div class="fld"><label class="lbl" for="me_nu">Перевести в</label><select id="me_nu" class="in" data-m="ui.me.newUnit">${opts(UNITS, me.newUnit)}</select></div>${fld('В одной ' + esc(m.unit) + ' сколько', 'me_kk', 'ui.me.k', me.k, {num: 1, ph: 'например, 90'})}</div>
+      <button class="btn" data-act="matConvert">Пересчитать количество и цену</button>
+      <p class="hint">Например, было 2 шт, а в каждой по 90 г: выбери «г» и впиши 90. Станет 180 г, цена за грамм посчитается сама.</p>` : ''}
       <div class="sect" style="padding-top:0"><h2>Корректировка количества</h2></div>
       <div class="two"><div class="fld"><label class="lbl" for="ad_q">Реально на складе</label><input id="ad_q" class="in" inputmode="decimal" data-num data-m="ui.adj.qty" value="${nv(adj.qty)}"></div>
         <div class="fld"><label class="lbl" for="ad_r">Причина</label><select id="ad_r" class="in" data-m="ui.adj.reason">${opts(REASONS, adj.reason)}</select></div></div>
@@ -1329,7 +1338,7 @@ const SHEETS = {
     const p = S.purchases.find(x => x.id === s.id);
     return shell(esc(p.supplier || 'Без поставщика'), `<p class="hint">${fmtDate(p.date)}${p.currency !== base() ? ` · ${p.currency}, курс ${num(p.fx)}` : ''}</p>
       <div class="card">${p.lines.map(l => { const m = mat(S, l.materialId);
-        return `<div class="rl"><img class="thumb" src="${photoOf(m)}" alt=""><div class="a"><b>${esc(m ? m.name : 'Материал удалён')}</b><span class="num">${num(l.packs)} уп. × ${num(l.upp)} = ${num(l.count)} ${m ? esc(m.unit) : ''}</span><span class="num">доставка в цене: ${money(l.share)}</span></div><div class="c">${money(l.unitCost)}<small style="color:var(--ink2)">за ${m ? esc(m.unit) : 'ед.'}</small></div></div>`; }).join('')}</div>
+        return `<div class="rl"><img class="thumb" src="${photoOf(m)}" alt=""><div class="a"><b>${esc(m ? m.name : 'Материал удалён')}</b><span class="num">${num(l.packs)} уп. × ${num(l.upp)} = ${num(l.count)} ${m ? esc(m.unit) : ''}</span><span class="num">доставка в цене: ${money(l.share)}</span></div><div class="c">${moneyU(l.unitCost)}<small style="color:var(--ink2)">за ${m ? esc(m.unit) : 'ед.'}</small></div></div>`; }).join('')}</div>
       <div class="card"><div class="kv"><span>Товары</span><b>${money(p.lines.reduce((a, l) => a + l.totalTry, 0))}</b></div><div class="kv"><span>Доставка</span><b>${money(p.delivery)}</b></div><div class="kv total"><span>Итого</span><b>${money(purchaseTotal(p))}</b></div></div>
       <p class="hint">Цена за единицу уже включает свою долю доставки и считается по фактическим единицам, а не по упаковкам.</p>`);
   },
@@ -1432,13 +1441,13 @@ function lineBody() {
           <div class="fld"><span class="lbl">Тип</span><div class="seg"><button class="${lf.mode2 === 'cons' ? 'on' : ''}" data-act="lfType" data-v="cons">Расходник</button><button class="${lf.mode2 === 'tool' ? 'on' : ''}" data-act="lfType" data-v="tool">Инструмент</button></div></div></div>
         ${lf.mode2 === 'tool' ? `<div class="two">${fld('Хватит на, применений', 'lf_life', 'ui.lf.life', lf.life, {num: 1, ph: 'например, 15'})}${fld('Одно применение, ' + sym(), 'lf_uc', 'ui.lf.useCost', lf.useCost, {num: 1})}</div>${toolHint}` : ''}`}
     <div class="sect" style="padding-top:2px"><h2>Количество и цена</h2></div>
-    <div class="three">${fld('Упаковок', 'lf_p', 'ui.lf.packs', lf.packs, {num: 1})}${fld('Ед. в упаковке', 'lf_x', 'ui.lf.upp', lf.upp, {num: 1})}${fld('Цена упаковки, ' + cur, 'lf_pp', 'ui.lf.pricePack', lf.pricePack, {num: 1})}</div>
+    <div class="three">${fld('Упаковок', 'lf_p', 'ui.lf.packs', lf.packs, {num: 1})}${fld('В упаковке, ' + esc(unit), 'lf_x', 'ui.lf.upp', lf.upp, {num: 1})}${fld('Цена упаковки, ' + cur, 'lf_pp', 'ui.lf.pricePack', lf.pricePack, {num: 1})}</div>
     <div class="alert good" id="lfPrev">${linePrevHTML(unit)}</div>
-    <p class="hint">Пример: 1 упаковка × 1440 камней. Цена делится на фактические единицы, а не на упаковки.</p>${subsList()}`;
+    <p class="hint">Пример: 1 упаковка × 90 г или 1 × 1440 камней. Цена делится на граммы или штуки внутри упаковки, а не на упаковки.</p>${subsList()}`;
 }
 function linePrevHTML(unit) {
   const lf = ui.lf, pf = ui.pf, fx = pf.currency === base() ? 1 : pf.fx, units = lf.packs * lf.upp, sum = lf.packs * lf.pricePack * fx;
-  return `${ic('check')}<div class="num">Приход: ${num(units)} ${esc(unit)}<br>${units > 0 ? money(sum / units) + ' за ' + esc(unit) + ' без доставки' : 'укажи упаковки и количество в них'} · строка ${money(sum)}</div>`;
+  return `${ic('check')}<div class="num">Приход: ${num(units)} ${esc(unit)}<br>${units > 0 ? moneyU(sum / units) + ' за ' + esc(unit) + ' без доставки' : 'укажи упаковки и количество в них'} · строка ${money(sum)}</div>`;
 }
 function renderSheets() {
   const host = $('#sheetHost'), s = ui.sheets[ui.sheets.length - 1];
@@ -1478,7 +1487,7 @@ function pfLinesHTML() {
   if (!pf.lines.length) return `<div class="empty"><b>Строк пока нет</b><span>Добавь фото, название и количество. Можно выбрать уже знакомый SKU.</span></div>`;
   return c.rows.map((r, i) => { const inf = lineInfo(r.l);
     return `<div class="lcard"><img class="thumb" src="${inf.photo}" alt=""><div class="grow"><div class="t">${esc(inf.name)} ${inf.isNew ? '<span class="pill acc">новая</span>' : ''}</div>
-      <div class="s num">${num(r.l.packs)} уп. × ${num(r.l.upp)} = ${num(r.units)} ${esc(inf.unit)}</div><div class="s num">${r.units > 0 ? money(r.unit) + '/' + esc(inf.unit) + ' с доставкой' : 'укажи количество'}</div></div>
+      <div class="s num">${num(r.l.packs)} уп. × ${num(r.l.upp)} = ${num(r.units)} ${esc(inf.unit)}</div><div class="s num">${r.units > 0 ? moneyU(r.unit) + '/' + esc(inf.unit) + ' с доставкой' : 'укажи количество'}</div></div>
       <div class="row" style="gap:6px"><button class="ibtn sm" data-act="editLine" data-i="${i}" aria-label="Изменить">${ic('edit', 'sm')}</button><button class="ibtn sm" data-act="delLine" data-i="${i}" aria-label="Убрать">${ic('trash', 'sm')}</button></div></div>`; }).join('');
 }
 function pagePurchase() {
@@ -1549,6 +1558,25 @@ const closePage = () => { ui.pages.pop(); renderPages(); renderScreen(); renderT
 /* ============================================================
    ДЕЙСТВИЯ
 ============================================================ */
+const r4 = n => Math.round(n * 10000) / 10000;
+function lastPurchasePaid(mid) {
+  const ps = S.purchases.slice().sort((a, b) => b.date.localeCompare(a.date));
+  for (const p of ps) { const l = p.lines.find(x => x.materialId === mid); if (l) return {paid: l.totalTry + l.share, name: p.supplier || fmtDate(p.date)}; }
+  return null;
+}
+function initMe(m) {
+  ui.me = {name: m.name, category: m.category, subcategory: m.subcategory, brand: m.brand, size: m.size, color: m.color, sku: m.sku, unit: m.unit, mode: m.mode, useCost: m.useCost, life: 0, min: m.min, location: m.location, notes: m.notes,
+    avg: r4(m.avg), total: r2(m.avg * m.qty), newUnit: m.unit === 'г' ? 'шт' : 'г', k: 0};
+}
+function convertUnit(st, mid, newUnit, k) {
+  const m = mat(st, mid); m.qty = r2(m.qty * k); m.avg = m.avg / k; m.min = r2(m.min * k); m.unit = newUnit;
+  st.drafts.forEach(d => d.parts.forEach(p => { if (p.id === mid) { p.used = r2(p.used * k); p.scrap = r2(p.scrap * k); } }));
+  st.movements.forEach(x => { if (x.materialId === mid) { x.delta = r2(x.delta * k); x.unitCost = x.unitCost / k; } });
+  st.purchases.forEach(p => p.lines.forEach(l => { if (l.materialId === mid) { l.count = r2(l.count * k); l.unitCost = l.unitCost / k; l.upp = l.upp * k; } }));
+  st.products.forEach(pr => pr.bom.forEach(b => { if (b.id === mid) b.qty = r2(b.qty * k); }));
+  st.academy.courses.forEach(c => c.lessons.forEach(l => l.bom.forEach(b => { if (b.id === mid) b.qty = r2(b.qty * k); })));
+  st.movements.unshift({id: uid('mv'), date: todayISO(), materialId: mid, delta: 0, unitCost: m.avg, reason: `Единицы пересчитаны: ×${num(k)} (${newUnit})`, ref: null});
+}
 const A = {};
 A.tab = el => { if (ui.mode === 'shop') ui.tab = el.dataset.t; else ui.atab = el.dataset.t; ui.pages = []; ui.sheets = []; render(); };
 A.mode = el => { ui.mode = el.dataset.v; ui.pages = []; ui.sheets = []; render(); };
@@ -1566,13 +1594,16 @@ A.clearFilters = () => { ui.q = ''; ui.cat = 'all'; ui.sub = 'all'; renderScreen
 A.catGo = el => { ui.mode = 'shop'; ui.tab = 'stock'; ui.cat = el.dataset.v; ui.sub = 'all'; ui.q = ''; ui.sheets = []; ui.pages = []; render(); };
 A.openMat = el => {
   const m = mat(S, el.dataset.id); if (!m) return;
-  ui.me = {name: m.name, category: m.category, subcategory: m.subcategory, brand: m.brand, size: m.size, color: m.color, sku: m.sku, unit: m.unit, mode: m.mode, useCost: m.useCost, life: 0, min: m.min, location: m.location, notes: m.notes};
+  initMe(m);
   ui.adj = {qty: m.qty, reason: REASONS[0]}; pushSheet({type: 'mat', id: m.id});
 };
 A.meMode = el => { ui.me.mode = el.dataset.v; renderSheets(); };
 A.matSave = () => {
   const s = ui.sheets[ui.sheets.length - 1], m = mat(S, s.id); if (!ui.me.name.trim()) { toast('Дай материалу название'); return; }
-  const {life, ...rest} = ui.me; Object.assign(m, rest, {name: ui.me.name.trim()}); save(); popSheet(); render(); toast('Карточка сохранена');
+  const {life, total, newUnit, k, ...rest} = ui.me; const oldAvg = m.avg; rest.avg = Math.max(0, nz(rest.avg));
+  Object.assign(m, rest, {name: ui.me.name.trim()});
+  if (Math.abs(oldAvg - m.avg) > 1e-9) S.movements.unshift({id: uid('mv'), date: todayISO(), materialId: m.id, delta: 0, unitCost: m.avg, reason: `Цена исправлена: ${moneyU(oldAvg)} → ${moneyU(m.avg)} за ${m.unit}`, ref: null});
+  save(); popSheet(); render(); toast('Карточка сохранена');
 };
 A.matPhoto = () => { const s = ui.sheets[ui.sheets.length - 1]; pickPhoto(url => { mat(S, s.id).photo = url; save(); render(); toast('Фото заменено'); }); };
 A.matAdjust = () => {
@@ -1582,6 +1613,15 @@ A.matAdjust = () => {
   const delta = r2(q - m.qty); if (!delta) { toast('Количество не изменилось'); return; }
   m.qty = q; S.movements.unshift({id: uid('mv'), date: todayISO(), materialId: m.id, delta, unitCost: m.avg, reason: 'Корректировка: ' + ui.adj.reason, ref: null});
   save(); render(); toast('Остаток обновлён');
+};
+A.meFromPurchase = () => { const s = ui.sheets[ui.sheets.length - 1], m = mat(S, s.id), lp = lastPurchasePaid(m.id); if (!lp) return; ui.me.total = r2(lp.paid); ui.me.avg = m.qty > 0 ? r4(ui.me.total / m.qty) : 0; renderSheets(); toast('Сумма взята из закупки'); };
+A.matConvert = () => {
+  const s = ui.sheets[ui.sheets.length - 1], m = mat(S, s.id), k = nz(ui.me.k), nu = ui.me.newUnit;
+  if (isTool(m)) { toast('Инструменты считаются в штуках, их пересчитывать не нужно'); return; }
+  if (!(k > 0)) { toast('Впиши, сколько новых единиц в одной старой'); return; }
+  if (nu === m.unit) { toast('Выбери другую единицу'); return; }
+  ask('Пересчитать единицы?', `Было ${num(m.qty)} ${m.unit}, станет ${num(m.qty * k)} ${nu}. Цена за ${nu}: ${moneyU(m.avg / k)} (сейчас ${moneyU(m.avg)} за ${m.unit}). Резервы в работах, рецепты и история пересчитаются так же. Завершённые работы в архиве не меняются.`, 'Пересчитать', false,
+    () => { convertUnit(S, m.id, nu, k); save(); initMe(m); render(); toast(`Теперь в ${nu}: на складе ${num(m.qty)} ${nu}`); });
 };
 A.catMgr = () => pushSheet({type: 'cats'});
 A.catAdd = () => {
@@ -1807,7 +1847,9 @@ function onModel(el) {
     if (path === 'ui.lf.life') { const u = lfUnitPrice(); if (ui.lf.life > 0 && u > 0) { ui.lf.useCost = r2(u / ui.lf.life); const x = $('#lf_uc'); if (x) x.value = nv(ui.lf.useCost); } }
     refreshLine();
   }
-  else if (path === 'ui.me.life') { const s = ui.sheets[ui.sheets.length - 1], m = s && mat(S, s.id); if (m && ui.me.life > 0 && m.avg > 0) { ui.me.useCost = r2(m.avg / ui.me.life); const x = $('#me_uc'); if (x) x.value = nv(ui.me.useCost); } }
+  else if (path === 'ui.me.avg' || path === 'ui.me.total') { const s = ui.sheets[ui.sheets.length - 1], m = s && s.type === 'mat' && mat(S, s.id);
+    if (m) { if (path === 'ui.me.avg') { ui.me.total = r2(ui.me.avg * m.qty); const x = $('#me_tot'); if (x) x.value = nv(ui.me.total); } else { ui.me.avg = m.qty > 0 ? r4(ui.me.total / m.qty) : 0; const x = $('#me_avg'); if (x) x.value = nv(ui.me.avg); } } }
+  else if (path === 'ui.me.life') { const s = ui.sheets[ui.sheets.length - 1], m = s && mat(S, s.id); if (m && ui.me.life > 0 && ui.me.avg > 0) { ui.me.useCost = r2(ui.me.avg / ui.me.life); const x = $('#me_uc'); if (x) x.value = nv(ui.me.useCost); } }
   else if (path.startsWith('ui.pf.')) { save(); refreshPf(); }
   else if (parts[0] === 'S' || parts[0] === 'R') save();
   else if (parts[0] === 'C') { save(); if (path === 'C.title' || path === 'C.price') renderScreen(); }
