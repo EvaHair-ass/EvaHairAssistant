@@ -1919,7 +1919,8 @@ A.tryIt = el => {
 A.gateMode = el => { ui.gate.mode = el.dataset.v; ui.gate.err = ''; ui.gate.msg = ''; renderGate(); };
 A.gateRecheck = async () => { ui.gate.err = ''; try { await checkAccess(); if (CLOUD.access.ok) { renderGate(); cloudSync(); } else { ui.gate.err = 'Доступ пока не активен. Если ты оплатила, подожди и проверь ещё раз.'; renderGate(); } } catch (e) { ui.gate.err = errRu(e); renderGate(); } };
 A.gateGo = async () => {
-  const g = ui.gate; if (g.busy || !CLOUD.sb) return; g.err = ''; g.msg = '';
+  const g = ui.gate; if (g.busy) return; g.err = ''; g.msg = '';
+  if (!CLOUD.sb) { g.err = 'Не загрузилась часть приложения. Обнови страницу при включённом интернете.'; return renderGate(); }
   const email = g.email.trim().toLowerCase();
   const fail = m => { g.err = m; renderGate(); };
   if (CLOUD.recovery) {

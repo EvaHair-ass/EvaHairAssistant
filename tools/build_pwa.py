@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "prototype" / "index.html"
 SB_CONFIG = ROOT / "supabase" / "config.json"
-SB_LIB = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
+VENDOR = ROOT / "tools" / "vendor"
 OUT = ROOT / "docs"
 ICONS = OUT / "icons"
 
@@ -121,7 +121,10 @@ body{overscroll-behavior:none}
         (OUT / "config.js").unlink()
     pwa_js = "<script>window.__PWA__=true;</script>\n"
     if cfg:
-        pwa_js += '<script src="config.js"></script>\n<script src="' + SB_LIB + '"></script>\n'
+        (OUT / "vendor").mkdir(exist_ok=True)
+        for f in VENDOR.glob("*.js"):
+            (OUT / "vendor" / f.name).write_bytes(f.read_bytes())
+        pwa_js += '<script src="config.js"></script>\n<script src="vendor/supabase.js"></script>\n'
     sw_js = """<script>
 if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
 if(navigator.storage&&navigator.storage.persist){navigator.storage.persist().catch(function(){});}
@@ -147,7 +150,7 @@ addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__i
 
     cfg_txt = (OUT / "config.js").read_text(encoding="utf-8") if (OUT / "config.js").exists() else ""
     version = hashlib.sha1((html + cfg_txt).encode("utf-8")).hexdigest()[:10]
-    shell_extra = ", './config.js'" if cfg_txt else ""
+    shell_extra = ", './config.js', './vendor/supabase.js'" if cfg_txt else ""
     sw = f"""/* Service worker: офлайн-режим. Версия кэша меняется при каждой сборке, чтобы обновления доходили до пользователя. */
 const CACHE = 'mm-{version}';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'{shell_extra}];
