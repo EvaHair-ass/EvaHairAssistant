@@ -43,6 +43,7 @@
   --scrim:rgba(4,2,0,.64); color-scheme:dark}
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{height:100%}
 body{margin:0;background:var(--stage);color:var(--ink);font-family:var(--f-body);font-size:14.5px;line-height:1.4;-webkit-text-size-adjust:100%;font-variant-numeric:lining-nums}
 button,input,select,textarea{font:inherit;color:inherit}
@@ -782,9 +783,20 @@ function migrate(st) {
    СОСТОЯНИЕ И ХРАНЕНИЕ
 ============================================================ */
 const LS = 'moya-masterskaya-proto-v3';
-let S;
-try { const raw = localStorage.getItem(LS); if (raw) S = migrate(JSON.parse(raw)); } catch (e) { S = null; }
-if (!S) S = buildSeed();
+let S = null;
+/* IndexedDB: места на сотни МБ (localStorage давал только ~5 МБ). Старые данные из localStorage переносятся сами. */
+const idb = {
+  db: null,
+  open() { return new Promise((res, rej) => { const q = indexedDB.open('moya-masterskaya', 1); q.onupgradeneeded = () => q.result.createObjectStore('kv'); q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error); }); },
+  async get(k) { const db = this.db || (this.db = await this.open()); return new Promise((res, rej) => { const r = db.transaction('kv').objectStore('kv').get(k); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); },
+  async set(k, v) { const db = this.db || (this.db = await this.open()); return new Promise((res, rej) => { const t = db.transaction('kv', 'readwrite'); t.objectStore('kv').put(v, k); t.oncomplete = () => res(); t.onerror = () => rej(t.error); t.onabort = () => rej(t.error); }); }
+};
+async function loadState() {
+  let st = null;
+  try { const v = await idb.get('state'); if (v) st = migrate(v); } catch (e) {}
+  if (!st) { try { const raw = localStorage.getItem(LS); if (raw) st = migrate(JSON.parse(raw)); } catch (e) {} }
+  return st || buildSeed();
+}
 /* Заказ №2023 (5 ноября 2026): канекалон. Вносится один раз в любое состояние данных. */
 function applyImports() {
   S.flags = S.flags || {};
@@ -802,10 +814,18 @@ function applyImports() {
     L('m_eb_ombplat', 'Easy Braid Ombre, платиновый блонд', 'Канекалон Easy Braid', 'Платиновый блонд (27+613)', '27+613', '', '#d2b377', 2, 180)]});
   S.flags.order2023 = true; save();
 }
-let saveT = 0;
-function save() { clearTimeout(saveT); saveT = setTimeout(() => { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} }, 250); }
-
-applyImports();
+let saveT = 0, saveWarned = false;
+async function flushSave() {
+  clearTimeout(saveT); saveT = 0; if (!S) return;
+  try { await idb.set('state', S); try { localStorage.removeItem(LS); } catch (e) {} }
+  catch (e) {
+    try { localStorage.setItem(LS, JSON.stringify(S)); }
+    catch (e2) { if (!saveWarned) { saveWarned = true; toast('Не удалось сохранить: память браузера заполнена. Сохрани копию данных в «Ещё».'); } }
+  }
+}
+function save() { clearTimeout(saveT); saveT = setTimeout(flushSave, 250); }
+addEventListener('pagehide', () => { if (saveT) flushSave(); });
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden' && saveT) flushSave(); });
 const nowD = new Date();
 const ui = {mode: 'shop', tab: 'stock', atab: 'courses', q: '', cat: 'all', sub: 'all', archSeg: 'runs', stat: {mode: 'month', y: nowD.getFullYear(), m: nowD.getMonth() + 1},
   pages: [], sheets: [], pf: null, lf: null, pk: null, me: null, adj: null, fin: null, crop: null, ls: null, curQ: '', curMode: 'purchase',
@@ -1168,7 +1188,18 @@ function runChecks() {
   out.push({n: 9, t: 'Инструмент: 3 применения по 12, затем поломка 1 шт', exp: `+${M(36)}, остаток 2 шт; с поломкой +${M(180)} и остаток 1 шт`, got: `${M(t1.toolUse)}, с поломкой ${M(t2.toolUse + t2.scrapC)}, остаток ${num(tool.qty)} шт`, ok: Math.abs(t1.toolUse - 36) < 1e-9 && Math.abs(t2.toolUse + t2.scrapC - 216) < 1e-9 && tool.qty === 1 && !!f2.run});
   return out;
 }
+function installCardHTML() {
+  const installed = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
+  return `<div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Установить приложение</h2></div>
+    ${installed ? `<div class="alert good">${ic('check')}<div>Приложение уже установлено на этом устройстве.</div></div>` : `
+    <p class="hint" style="font-size:13px">Приложение ставится без магазинов, как обычное, и работает без интернета.</p>
+    <p class="hint"><b>iPhone (Safari):</b> «Поделиться» → «На экран Домой».<br><b>Android (Chrome):</b> меню ⋮ → «Установить приложение».<br><b>Компьютер (Chrome, Edge):</b> значок установки справа в адресной строке.</p>
+    <button class="btn pri" data-act="installApp">Установить</button>`}
+    <p class="hint">Пока данные на каждом устройстве свои: телефон и компьютер не синхронизируются. Облако и вход по почте будут на следующем этапе.</p></div>`;
+}
+function fillStorage() { if (navigator.storage && navigator.storage.estimate) navigator.storage.estimate().then(e => { const el = $('#storUse'); if (el && e.quota) el.textContent = `Занято ${(e.usage / 1048576).toFixed(1)} МБ из ${Math.round(e.quota / 1048576)} МБ памяти браузера.`; }).catch(() => {}); }
 function moreScreen() {
+  setTimeout(fillStorage, 0);
   const s = S.settings, checks = runChecks(), bi = curInfo(s.base);
   return `<header class="top px"><div><span class="kick">настрой под себя</span><h1>Ещё</h1><p class="sub">Валюта, настройки, копия данных и проверка расчётов</p></div></header>
     <div class="px stack">
@@ -1183,7 +1214,9 @@ function moreScreen() {
       <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Копия данных</h2></div>
         <p class="hint" style="font-size:13px">Зачем это нужно. Сейчас все твои данные лежат только в этом браузере или телефоне. Если очистить браузер или сменить телефон, склад, закупки и архив пропадут. «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно. Так же можно перенести данные на другое устройство.</p>
         <p class="hint">В настоящем приложении копия будет делаться сама, в облаке. Эта кнопка нужна на время прототипа.</p>
-        <div class="two"><button class="btn" data-act="expOpen">${ic('upload')} Сохранить</button><button class="btn" data-act="impOpen">${ic('copy')} Восстановить</button></div></div>
+        <div class="two"><button class="btn" data-act="expOpen">${ic('upload')} Сохранить</button><button class="btn" data-act="impOpen">${ic('copy')} Восстановить</button></div>
+        <p class="hint num" id="storUse"></p></div>
+      ${window.__PWA__ ? installCardHTML() : ''}
       <div class="card"><div class="sect" style="padding-top:0"><h2>Проверка по ТЗ</h2></div>
         <p class="hint" style="margin-bottom:6px">Эти сценарии из раздела 6 считаются прямо сейчас на отдельном пустом складе.</p>
         ${checks.map(c => `<div class="check"><span class="ok ${c.ok ? '' : 'no'}">${ic(c.ok ? 'check' : 'x')}</span><div><b>Тест ${c.n}. ${esc(c.t)}</b><span>Ожидается: ${esc(c.exp)}<br>Получилось: ${esc(c.got)}</span></div></div>`).join('')}</div>
@@ -1829,6 +1862,7 @@ A.saleConfirm = () => {
 A.saleUndo = () => { const f = S.finished.find(x => x.id === ui.sale.id); ask('Отменить продажу?', 'Изделие вернётся в «в наличии», данные покупателя будут стёрты.', 'Отменить продажу', true, () => { f.status = 'stock'; f.soldPrice = 0; f.soldDate = null; f.sale = null; save(); ui.sheets = []; render(); toast('Изделие снова в наличии'); }); };
 
 /* ещё */
+A.installApp = () => { const pr = window.__installPrompt; if (pr) { pr.prompt(); pr.userChoice.finally(() => { window.__installPrompt = null; }); } else toast('Открой меню браузера и выбери «Установить приложение» (iPhone: Поделиться → На экран Домой)'); };
 A.expOpen = () => pushSheet({type: 'exp'});
 A.copyJson = () => {
   const ta = $('#expTa'); const fallback = () => { ta.focus(); ta.select(); toast('Текст выделен: скопируй его через меню'); };
@@ -1887,6 +1921,7 @@ A.doneToggle = el => { const s = AC().students.find(x => x.id === el.dataset.s),
    СОБЫТИЯ
 ============================================================ */
 document.addEventListener('click', e => {
+  if (!S) return;
   const el = e.target.closest('[data-act]'); if (!el || el.disabled) return;
   const f = A[el.dataset.act]; if (f) f(el, e);
 });
@@ -1943,6 +1978,6 @@ setInterval(() => {
 
 $('#bg').innerHTML = BG;
 $('#side').innerHTML = sideHTML();
-render();
+(async function boot() { S = await loadState(); applyImports(); render(); save(); })();
 })();
 </script>
