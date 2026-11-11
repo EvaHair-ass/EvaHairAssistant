@@ -155,6 +155,9 @@ select.in{appearance:none;background-image:linear-gradient(45deg,transparent 50%
 .pill.bad{background:var(--bad-soft);color:var(--bad)} .pill.acc{background:var(--accent-soft);color:var(--accent)} .pill.clay{background:var(--clay-soft);color:var(--clay)}
 button.pill{height:28px;padding:0 6px 0 11px;cursor:pointer;transition:transform .15s;flex:none}
 button.pill:hover{transform:translateX(2px)}
+.wrow{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1.5px solid var(--line);border-radius:18px;background:var(--glass);cursor:pointer}
+.wrow input{width:22px;height:22px;accent-color:var(--clay);margin-top:1px;flex:none}
+.wrow b{display:block;font-weight:800;font-size:14px}
 .dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--surface2);color:var(--ink3);flex:none}
 .dot.on{background:var(--good-soft);color:var(--good)}
 .dot .ic{width:14px;height:14px;stroke-width:2.4}
@@ -571,7 +574,7 @@ function commitPurchase(st, p) {
   const fx = p.fx || 1;
   const resolved = p.lines.map(l => {
     let m = l.materialId ? mat(st, l.materialId) : null;
-    if (!m) { m = makeMat(l.newMat); st.materials.push(m); }
+    if (!m) { m = makeMat(l.newMat); st.materials.push(m); if (st.categories && !st.categories.includes(m.category)) { st.categories.push(m.category); st.categories.sort(ruCmp); } }
     return {l, m, units: l.packs * l.upp, sum: l.packs * l.pricePack * fx};
   });
   const shares = allocateDelivery(resolved.map(r => r.sum), p.delivery || 0);
@@ -781,7 +784,7 @@ function migrate(st) {
 const LS = 'moya-masterskaya-proto-v3';
 let S;
 try { const raw = localStorage.getItem(LS); if (raw) S = migrate(JSON.parse(raw)); } catch (e) { S = null; }
-if (!S || !S.materials.length) S = buildSeed();
+if (!S) S = buildSeed();
 /* Заказ №2023 (5 ноября 2026): канекалон. Вносится один раз в любое состояние данных. */
 function applyImports() {
   S.flags = S.flags || {};
@@ -1185,8 +1188,11 @@ function moreScreen() {
         <p class="hint" style="margin-bottom:6px">Эти сценарии из раздела 6 считаются прямо сейчас на отдельном пустом складе.</p>
         ${checks.map(c => `<div class="check"><span class="ok ${c.ok ? '' : 'no'}">${ic(c.ok ? 'check' : 'x')}</span><div><b>Тест ${c.n}. ${esc(c.t)}</b><span>Ожидается: ${esc(c.exp)}<br>Получилось: ${esc(c.got)}</span></div></div>`).join('')}</div>
       <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Что попробовать</h2></div>${guideHTML()}</div>
+      <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Начать с чистого листа</h2></div>
+        <p class="hint" style="font-size:13px">Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.</p>
+        <button class="btn dng" data-act="wipeOpen">${ic('trash')} Очистить и начать заново</button></div>
       <div class="card flat stack" style="gap:10px"><p class="hint">Это кликабельный прототип. Данные хранятся только в этом браузере. Картинки материалов нарисованы для примера, а свои фото загружаются файлом.</p>
-        <button class="btn sm dng" data-act="resetOpen">Сбросить демо-данные</button></div>
+        <button class="btn sm dng" data-act="resetOpen">Вернуть демо-данные</button></div>
     </div>`;
 }
 const GUIDE = [
@@ -1267,6 +1273,7 @@ function pageChat(c) {
 const shell = (title, body, foot = '', back = false) => `<div class="sheet-h px">${back ? `<button class="ibtn" data-act="closeSheet" aria-label="Назад">${ic('back')}</button>` : ''}<h2>${title}</h2>${back ? '' : `<button class="ibtn" data-act="closeSheet" aria-label="Закрыть">${ic('x')}</button>`}</div><div class="sheet-b px">${body}</div>${foot ? `<div class="sheet-f px">${foot}</div>` : ''}`;
 const fld = (label, id, model, val, o = {}) => `<div class="fld"><label class="lbl" for="${id}">${label}</label><input id="${id}" class="in" ${o.num ? 'inputmode="decimal" data-num' : ''} ${o.type ? `type="${o.type}"` : ''} ${o.list ? `list="${o.list}"` : ''} data-m="${model}" value="${esc(o.num ? nv(val) : val)}" ${o.ph ? `placeholder="${esc(o.ph)}"` : ''}></div>`;
 const opts = (arr, cur) => arr.map(v => `<option ${v === cur ? 'selected' : ''}>${esc(v)}</option>`).join('');
+const catList = () => S.categories.length ? S.categories : ['Другое'];
 const subsList = () => `<datalist id="dl_subs">${[...new Set(S.materials.map(m => m.subcategory).filter(Boolean))].map(s => `<option value="${esc(s)}">`).join('')}</datalist>`;
 const toolHint = `<p class="hint">Как считать: цена инструмента ÷ на сколько применений его хватит. Например, 180 ÷ 15 = 12 за одно применение.</p>`;
 
@@ -1282,7 +1289,7 @@ const SHEETS = {
       ${by.length ? `<div class="alert warn">${ic('clock')}<div>Зарезервировано в работах: ${by.map(x => `${esc(x.d.name)} (${num(x.n)})`).join(', ')}</div></div>` : ''}
       <div class="sect" style="padding-top:0"><h2>Карточка</h2></div>
       ${fld('Название', 'me_n', 'ui.me.name', me.name)}
-      <div class="two"><div class="fld"><label class="lbl" for="me_c">Группа</label><select id="me_c" class="in" data-m="ui.me.category">${opts(S.categories, me.category)}</select></div>${fld('Подгруппа', 'me_s', 'ui.me.subcategory', me.subcategory, {list: 'dl_subs', ph: 'Hotfix, цепочки…'})}</div>
+      <div class="two"><div class="fld"><label class="lbl" for="me_c">Группа</label><select id="me_c" class="in" data-m="ui.me.category">${opts(catList(), me.category)}</select></div>${fld('Подгруппа', 'me_s', 'ui.me.subcategory', me.subcategory, {list: 'dl_subs', ph: 'Hotfix, цепочки…'})}</div>
       <div class="two">${fld('Бренд', 'me_b', 'ui.me.brand', me.brand)}${fld('Артикул', 'me_k', 'ui.me.sku', me.sku)}</div>
       <div class="two">${fld('Размер', 'me_z', 'ui.me.size', me.size)}${fld('Цвет', 'me_l', 'ui.me.color', me.color)}</div>
       <div class="two"><div class="fld"><label class="lbl" for="me_u">Единица учёта</label><select id="me_u" class="in" data-m="ui.me.unit">${opts(UNITS, me.unit)}</select></div>${fld('Минимум на складе', 'me_mn', 'ui.me.min', me.min, {num: 1})}</div>
@@ -1303,14 +1310,15 @@ const SHEETS = {
         <div class="fld"><label class="lbl" for="ad_r">Причина</label><select id="ad_r" class="in" data-m="ui.adj.reason">${opts(REASONS, adj.reason)}</select></div></div>
       <button class="btn" data-act="matAdjust">Применить корректировку</button>
       ${hist.length ? `<div class="sect" style="padding-top:0"><h2>Движения</h2></div><div class="hist">${hist.map(h => `<div class="h"><span>${fmtDate(h.date)} · ${esc(h.reason)}</span><b class="num ${h.delta >= 0 ? 'pos' : 'neg'}">${h.delta >= 0 ? '+' : ''}${num(h.delta)}</b></div>`).join('')}</div>` : ''}
+      <button class="btn dng" data-act="matDelete">${ic('trash')} Удалить материал</button>
       ${subsList()}`, `<button class="btn pri block" data-act="matSave">Сохранить карточку</button>`);
   },
   cats() {
     return shell('Категории', `<div class="row"><input id="cat_new" class="in" data-m="ui.catNew" placeholder="Новая категория" value="${esc(ui.catNew)}" aria-label="Новая категория"><button class="btn pri" data-act="catAdd" aria-label="Добавить">${ic('plus')}</button></div>
       <p class="hint">Список всегда по алфавиту. Нажми на число, чтобы увидеть материалы категории на складе. Название меняется, когда уходишь из поля.</p>
       ${S.categories.map((c, i) => { const n = S.materials.filter(m => m.category === c).length;
-        return `<div class="row"><input class="in" data-cat="${i}" value="${esc(c)}" aria-label="Название категории"><button class="pill clay" data-act="catGo" data-v="${esc(c)}" aria-label="Показать на складе">${n} ${ic('chev', 'sm')}</button><button class="ibtn sm" data-act="catDel" data-i="${i}" aria-label="Удалить" ${n ? 'disabled style="opacity:.35"' : ''}>${ic('trash', 'sm')}</button></div>`; }).join('')}
-      <p class="hint">Категорию с материалами удалить нельзя. Сначала перенеси их в другую.</p>`);
+        return `<div class="row"><input class="in" data-cat="${i}" value="${esc(c)}" aria-label="Название категории"><button class="pill clay" data-act="catGo" data-v="${esc(c)}" aria-label="Показать на складе">${n} ${ic('chev', 'sm')}</button><button class="ibtn sm" data-act="catDel" data-i="${i}" aria-label="Удалить категорию">${ic('trash', 'sm')}</button></div>`; }).join('')}
+      <p class="hint">Если в категории есть материалы, перед удалением можно перенести их в другую или удалить вместе с ней.</p>`);
   },
   line() { return shell(ui.lf.key ? 'Позиция закупки' : 'Новая позиция', lineBody(), `${ui.lf.dirty && !ui.lf.key ? '<button class="btn" data-act="lfReset">Очистить</button>' : ''}<button class="btn pri" style="flex:1" data-act="saveLine">Сохранить позицию</button>`, true); },
   pick() {
@@ -1375,6 +1383,23 @@ const SHEETS = {
   confirm(s) {
     return shell(esc(s.title), `<p>${esc(s.text)}</p>`, `<button class="btn" data-act="closeSheet">Отмена</button><button class="btn ${s.danger ? 'dng' : 'pri'}" style="flex:1" data-act="confirmOk">${esc(s.ok)}</button>`);
   },
+  catDel() {
+    const cd = ui.cd, n = S.materials.filter(m => m.category === cd.cat).length, others = S.categories.filter(x => x !== cd.cat);
+    return shell('Удалить категорию', `<p>В категории «${esc(cd.cat)}» ${n} ${pl(n, ['материал','материала','материалов'])}. Что с ними сделать?</p>
+      <div class="fld"><label class="lbl" for="cd_t">Действие</label><select id="cd_t" class="in" data-m="ui.cd.target"><option value="__del" ${cd.target === '__del' ? 'selected' : ''}>Удалить вместе с категорией</option>${others.map(o => `<option value="${esc(o)}" ${cd.target === o ? 'selected' : ''}>Перенести в «${esc(o)}»</option>`).join('')}</select></div>
+      <p class="hint">Удалённые материалы убираются из активных работ и рецептов. Завершённые работы в архиве не меняются.</p>`,
+      `<button class="btn" data-act="closeSheet">Отмена</button><button class="btn dng" style="flex:1" data-act="catDelGo">Выполнить</button>`);
+  },
+  wipe() {
+    const w = ui.wipe, row = (k, t, d) => `<label class="wrow"><input type="checkbox" data-wipe="${k}" ${w[k] ? 'checked' : ''}><span><b>${t}</b><span class="hint">${d}</span></span></label>`;
+    return shell('Начать с чистого листа', `<p class="hint" style="font-size:13px">Отметь, что убрать, и создай своё заново. Настройки (валюта, ставка, комиссия) останутся.</p>
+      ${row('stock', 'Склад и закупки', `${S.materials.length} материалов, ${S.purchases.length} закупок, сохранённые дизайны и активные работы (${S.drafts.length})`)}
+      ${row('archive', 'Архив, готовые изделия и продажи', `${S.runs.length} работ, ${S.finished.length} изделий`)}
+      ${row('acad', 'Академия', `${AC().courses.length} курсов, ${AC().students.length} учениц`)}
+      ${row('cats', 'Категории', 'Все созданные категории. Те, в которых остались материалы, сохранятся.')}
+      <button class="btn" data-act="expOpen">Сначала сохранить копию данных</button>`,
+      `<button class="btn" data-act="closeSheet">Отмена</button><button class="btn dng" style="flex:1" data-act="wipeAsk">Удалить выбранное</button>`);
+  },
   newCourse() {
     const nc = ui.nc;
     return shell('Новый курс', `${fld('Название', 'nc_t', 'ui.nc.title', nc.title, {ph: 'Например, Серьги с нуля'})}${fld('Цена, ' + sym(), 'nc_p', 'ui.nc.price', nc.price, {num: 1})}
@@ -1434,7 +1459,7 @@ function lineBody() {
         : `<button class="btn block" data-act="lfPick">${ic('search')} Выбрать материал из галереи</button>`)
       : `<div class="row" style="align-items:flex-start;gap:14px"><button class="photo-drop" style="width:104px;height:104px;min-height:0;flex:none;border-radius:999px 999px 18px 18px" data-act="lfPhoto" aria-label="Фото материала">${lf.photo ? `<img src="${lf.photo}" alt="" style="height:100%;aspect-ratio:auto;object-fit:cover">` : `<div class="stack" style="align-items:center;gap:4px">${ic('camera')}<span class="hint">Фото</span></div>`}</button>
           <div class="grow stack" style="gap:10px">${fld('Название', 'lf_n', 'ui.lf.name', lf.name, {ph: 'Например, Стразы SS16'})}</div></div>
-        <div class="two"><div class="fld"><label class="lbl" for="lf_c">Группа</label><select id="lf_c" class="in" data-m="ui.lf.category">${opts(S.categories, lf.category)}</select></div>${fld('Подгруппа', 'lf_s', 'ui.lf.subcategory', lf.subcategory, {list: 'dl_subs', ph: 'Hotfix, леска…'})}</div>
+        <div class="two"><div class="fld"><label class="lbl" for="lf_c">Группа</label><select id="lf_c" class="in" data-m="ui.lf.category">${opts(catList(), lf.category)}</select></div>${fld('Подгруппа', 'lf_s', 'ui.lf.subcategory', lf.subcategory, {list: 'dl_subs', ph: 'Hotfix, леска…'})}</div>
         <div class="two">${fld('Бренд', 'lf_b', 'ui.lf.brand', lf.brand)}${fld('Артикул', 'lf_k', 'ui.lf.sku', lf.sku)}</div>
         <div class="two">${fld('Размер', 'lf_z', 'ui.lf.size', lf.size)}${fld('Цвет', 'lf_l', 'ui.lf.color', lf.color)}</div>
         <div class="two"><div class="fld"><label class="lbl" for="lf_u">Единица учёта</label><select id="lf_u" class="in" data-m="ui.lf.unit">${opts(UNITS, lf.unit)}</select></div>
@@ -1577,6 +1602,14 @@ function convertUnit(st, mid, newUnit, k) {
   st.academy.courses.forEach(c => c.lessons.forEach(l => l.bom.forEach(b => { if (b.id === mid) b.qty = r2(b.qty * k); })));
   st.movements.unshift({id: uid('mv'), date: todayISO(), materialId: mid, delta: 0, unitCost: m.avg, reason: `Единицы пересчитаны: ×${num(k)} (${newUnit})`, ref: null});
 }
+function deleteMaterial(st, id) {
+  st.materials = st.materials.filter(m => m.id !== id);
+  st.drafts.forEach(d => { d.parts = d.parts.filter(p => p.id !== id); });
+  st.products.forEach(pr => { pr.bom = pr.bom.filter(b => b.id !== id); });
+  st.academy.courses.forEach(c => c.lessons.forEach(l => { l.bom = l.bom.filter(b => b.id !== id); }));
+  st.movements = st.movements.filter(x => x.materialId !== id);
+  if (st.pfDraft) st.pfDraft.lines = st.pfDraft.lines.filter(l => l.materialId !== id);
+}
 const A = {};
 A.tab = el => { if (ui.mode === 'shop') ui.tab = el.dataset.t; else ui.atab = el.dataset.t; ui.pages = []; ui.sheets = []; render(); };
 A.mode = el => { ui.mode = el.dataset.v; ui.pages = []; ui.sheets = []; render(); };
@@ -1629,8 +1662,34 @@ A.catAdd = () => {
   if (S.categories.some(c => c.toLowerCase() === n.toLowerCase())) { toast('Такая категория уже есть'); return; }
   S.categories.push(n); S.categories.sort(ruCmp); ui.catNew = ''; save(); render(); toast('Категория добавлена');
 };
-A.catDel = el => { const i = +el.dataset.i, c = S.categories[i]; if (S.materials.some(m => m.category === c)) { toast('В категории есть материалы'); return; }
+A.catDel = el => { const i = +el.dataset.i, c = S.categories[i];
+  if (S.materials.some(m => m.category === c)) { ui.cd = {cat: c, target: '__del'}; pushSheet({type: 'catDel'}); return; }
   S.categories.splice(i, 1); if (ui.cat === c) ui.cat = 'all'; save(); render(); toast('Категория удалена'); };
+A.catDelGo = () => {
+  const cd = ui.cd, n = S.materials.filter(m => m.category === cd.cat).length;
+  if (cd.target === '__del') S.materials.filter(m => m.category === cd.cat).map(m => m.id).forEach(id => deleteMaterial(S, id));
+  else S.materials.forEach(m => { if (m.category === cd.cat) m.category = cd.target; });
+  S.categories = S.categories.filter(c => c !== cd.cat); if (ui.cat === cd.cat) { ui.cat = 'all'; ui.sub = 'all'; }
+  save(); popSheet(); render(); toast(cd.target === '__del' ? `Категория и материалы (${n}) удалены` : `Категория удалена, материалы (${n}) перенесены`);
+};
+A.matDelete = () => {
+  const s = ui.sheets[ui.sheets.length - 1], m = mat(S, s.id);
+  const ds = S.drafts.filter(d => d.parts.some(p => p.id === m.id)).map(d => `«${d.name}»`), pr = S.products.filter(p => p.bom.some(b => b.id === m.id)).length;
+  ask('Удалить материал?', `«${m.name}» исчезнет со склада.` + (ds.length ? ` Он будет убран из работ: ${ds.join(', ')}.` : '') + (pr ? ` И из сохранённых дизайнов: ${pr}.` : '') + ' Завершённые работы и закупки в архиве останутся как есть.', 'Удалить', true,
+    () => { deleteMaterial(S, m.id); save(); ui.sheets = []; render(); toast('Материал удалён'); });
+};
+A.wipeOpen = () => { ui.wipe = {stock: true, archive: true, acad: true, cats: true}; pushSheet({type: 'wipe'}); };
+A.wipeAsk = () => {
+  const w = ui.wipe; if (!Object.values(w).some(Boolean)) { toast('Отметь, что удалить'); return; }
+  ask('Точно удалить?', 'Это нельзя отменить. Если не сохраняла копию данных, вернуть удалённое будет нельзя.', 'Да, удалить', true, () => {
+    if (w.stock) { S.materials = []; S.purchases = []; S.movements = []; S.products = []; S.drafts = []; S.pfDraft = null; ui.pf = null; ui.lf = null; S.academy.courses.forEach(c => c.lessons.forEach(l => { l.bom = []; })); }
+    if (w.archive) { S.runs = []; S.finished = []; S.sales = []; }
+    if (w.acad) S.academy = {courses: [], students: [], chats: {}};
+    S.categories = w.cats ? [...new Set(S.materials.map(m => m.category))].sort(ruCmp) : S.categories;
+    S.flags = S.flags || {}; S.flags.order2023 = true;
+    save(); ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; ui.pages = []; ui.sheets = []; render(); toast('Готово: можно начинать с чистого листа');
+  });
+};
 
 /* закупки */
 A.newPurchase = () => {
@@ -1862,6 +1921,7 @@ document.addEventListener('input', e => {
 document.addEventListener('focusin', e => { if (e.target.matches && e.target.matches('.step input')) setTimeout(() => e.target.select(), 0); });
 document.addEventListener('change', e => {
   const t = e.target;
+  if (t.dataset && t.dataset.wipe !== undefined) { ui.wipe[t.dataset.wipe] = t.checked; return; }
   if (t.dataset && t.dataset.part !== undefined) { const d = curDraft(); if (d) setPart(d, +t.dataset.part, t.dataset.f, nz(t.value)); return; }
   if (t.dataset && t.dataset.cat !== undefined) {
     const i = +t.dataset.cat, old = S.categories[i], nn = t.value.trim();
