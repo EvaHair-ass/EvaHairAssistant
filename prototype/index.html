@@ -159,6 +159,12 @@ button.pill:hover{transform:translateX(2px)}
 .wrow{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1.5px solid var(--line);border-radius:18px;background:var(--glass);cursor:pointer}
 .wrow input{width:22px;height:22px;accent-color:var(--clay);margin-top:1px;flex:none}
 .wrow b{display:block;font-weight:800;font-size:14px}
+.gate{position:absolute;inset:0;z-index:30;background:var(--bg);overflow-y:auto}
+#gate:empty{display:none}
+.gate-in{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column;justify-content:center;gap:16px;padding-top:28px;padding-bottom:28px}
+.gate .brand{font-size:16px;justify-content:center}
+.gate .lead{text-align:center;color:var(--ink2);font-size:13.5px}
+.gate h2{font-family:var(--f-display);font-style:italic;font-weight:600;font-size:26px;line-height:1.1}
 .dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--surface2);color:var(--ink3);flex:none}
 .dot.on{background:var(--good-soft);color:var(--good)}
 .dot .ic{width:14px;height:14px;stroke-width:2.4}
@@ -408,6 +414,7 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
     <nav class="tabbar" id="tabbar" aria-label="Разделы"></nav>
     <div id="pages"></div>
     <div id="sheetHost"></div>
+    <div class="gate" id="gate"></div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </div>
   <aside class="side" id="side"></aside>
@@ -802,6 +809,7 @@ async function loadState() {
 }
 /* Заказ №2023 (5 ноября 2026): канекалон. Вносится один раз в любое состояние данных. */
 function applyImports() {
+  if (window.__PWA__) return;
   S.flags = S.flags || {};
   if (S.flags.order2023) return;
   const HC = 'Волосы и плетения';
@@ -826,13 +834,13 @@ async function flushSave() {
     catch (e2) { if (!saveWarned) { saveWarned = true; toast('Не удалось сохранить: память браузера заполнена. Сохрани копию данных в «Ещё».'); } }
   }
 }
-function save() { clearTimeout(saveT); saveT = setTimeout(flushSave, 250); }
+function save() { clearTimeout(saveT); saveT = setTimeout(flushSave, 250); if (CLOUD.on && CLOUD.user && S) { CLOUD.dirty = true; CLOUD.seq++; metaSave(); cloudSoon(); } }
 addEventListener('pagehide', () => { if (saveT) flushSave(); });
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden' && saveT) flushSave(); });
 const nowD = new Date();
 const ui = {mode: 'shop', tab: 'stock', atab: 'courses', q: '', cat: 'all', sub: 'all', archSeg: 'runs', stat: {mode: 'month', y: nowD.getFullYear(), m: nowD.getMonth() + 1},
   pages: [], sheets: [], pf: null, lf: null, pk: null, me: null, adj: null, fin: null, crop: null, ls: null, curQ: '', curMode: 'purchase',
-  nw: {tab: 'new', name: '', kind: 'Серьги'}, catNew: '', sale: null, imp: {text: ''}, chatText: '', nc: null, ns: null};
+  nw: {tab: 'new', name: '', kind: 'Серьги'}, catNew: '', sale: null, imp: {text: ''}, chatText: '', nc: null, ns: null, gate: {mode: 'login', email: '', pw: '', agree: false, msg: '', err: '', busy: false}};
 const curPage = () => ui.pages[ui.pages.length - 1];
 const curDraft = () => { const p = curPage(); return p && (p.type === 'draft' || p.type === 'finish') ? S.drafts.find(d => d.id === p.id) : null; };
 const curRun = () => { const p = curPage(); return p && p.type === 'run' ? S.runs.find(r => r.id === p.id) : null; };
@@ -1223,6 +1231,7 @@ function moreScreen() {
         <p class="hint">В настоящем приложении копия будет делаться сама, в облаке. Эта кнопка нужна на время прототипа.</p>
         <div class="two"><button class="btn" data-act="expOpen">${ic('upload')} Сохранить</button><button class="btn" data-act="impOpen">${ic('copy')} Восстановить</button></div>
         <p class="hint num" id="storUse"></p></div>
+      ${CLOUD.on && CLOUD.user ? `<div class="card stack" id="cloudCard" style="gap:10px">${cloudCardInner()}</div>` : ''}
       ${window.__PWA__ ? installCardHTML() : ''}
       <div class="card"><div class="sect" style="padding-top:0"><h2>Проверка по ТЗ</h2></div>
         <p class="hint" style="margin-bottom:6px">Эти сценарии из раздела 6 считаются прямо сейчас на отдельном пустом складе.</p>
@@ -1440,6 +1449,12 @@ const SHEETS = {
       ${row('cats', 'Категории', 'Все созданные категории. Те, в которых остались материалы, сохранятся.')}
       <button class="btn" data-act="expOpen">Сначала сохранить копию данных</button>`,
       `<button class="btn" data-act="closeSheet">Отмена</button><button class="btn dng" style="flex:1" data-act="wipeAsk">Удалить выбранное</button>`);
+  },
+  conflict() {
+    return shell('Данные на двух устройствах', `<p>В облаке уже есть данные, и на этом устройстве тоже. Выбери, какие оставить. Вторые будут заменены.</p>
+      <div class="alert warn">${ic('alert')}<div>Слияния нет: остаются данные только одной стороны. Если не уверена, сначала сохрани копию того, что на этом устройстве.</div></div>
+      <button class="btn" data-act="expOpen">Сохранить копию этого устройства</button>`,
+      `<button class="btn" style="flex:1" data-act="cfCloud">Взять из облака</button><button class="btn pri" style="flex:1" data-act="cfLocal">Оставить эти</button>`);
   },
   newCourse() {
     const nc = ui.nc;
@@ -1899,6 +1914,53 @@ A.tryIt = el => {
   render(); if (k === 'time') toast('Впиши минуты в поле «Вручную»');
 };
 
+
+/* облако: действия */
+A.gateMode = el => { ui.gate.mode = el.dataset.v; ui.gate.err = ''; ui.gate.msg = ''; renderGate(); };
+A.gateRecheck = async () => { ui.gate.err = ''; try { await checkAccess(); if (CLOUD.access.ok) { renderGate(); cloudSync(); } else { ui.gate.err = 'Доступ пока не активен. Если ты оплатила, подожди и проверь ещё раз.'; renderGate(); } } catch (e) { ui.gate.err = errRu(e); renderGate(); } };
+A.gateGo = async () => {
+  const g = ui.gate; if (g.busy || !CLOUD.sb) return; g.err = ''; g.msg = '';
+  const email = g.email.trim().toLowerCase();
+  const fail = m => { g.err = m; renderGate(); };
+  if (CLOUD.recovery) {
+    if (g.pw.length < 8) return fail('Пароль не короче 8 символов.');
+    g.busy = true; renderGate();
+    const {error} = await CLOUD.sb.auth.updateUser({password: g.pw}); g.busy = false;
+    if (error) return fail(errRu(error));
+    CLOUD.recovery = false; const {data} = await CLOUD.sb.auth.getSession(); g.pw = '';
+    if (data && data.session) return onSignedIn(data.session.user); return renderGate();
+  }
+  if (!/^\S+@\S+\.\S+$/.test(email)) return fail('Проверь почту: похоже, в адресе ошибка.');
+  if (g.mode === 'reset') {
+    g.busy = true; renderGate();
+    const {error} = await CLOUD.sb.auth.resetPasswordForEmail(email, {redirectTo: location.origin + location.pathname}); g.busy = false;
+    if (error) return fail(errRu(error)); g.msg = 'Мы отправили письмо со ссылкой. Открой его на этом устройстве.'; return renderGate();
+  }
+  if (g.pw.length < 8) return fail('Пароль не короче 8 символов.');
+  if (g.mode === 'signup' && !g.agree) return fail('Отметь, что принимаешь условия.');
+  g.busy = true; renderGate();
+  try {
+    if (g.mode === 'signup') {
+      const {data, error} = await CLOUD.sb.auth.signUp({email, password: g.pw, options: {emailRedirectTo: location.origin + location.pathname}});
+      g.busy = false; if (error) return fail(errRu(error));
+      if (data.session) return onSignedIn(data.session.user);
+      g.msg = 'Мы отправили письмо. Подтверди почту по ссылке, потом вернись и войди.'; g.mode = 'login'; return renderGate();
+    }
+    const {data, error} = await CLOUD.sb.auth.signInWithPassword({email, password: g.pw}); g.busy = false;
+    if (error) return fail(errRu(error)); return onSignedIn(data.user);
+  } catch (e) { g.busy = false; fail(errRu(e)); }
+};
+A.syncNow = () => { cloudSync(); };
+A.logout = () => ask('Выйти из аккаунта?', 'Перед выходом данные отправятся в облако, и с этого устройства они удалятся. Войдёшь снова, и всё вернётся.', 'Выйти', true, async () => {
+  if (CLOUD.dirty) await cloudSync();
+  const finish = async () => { CLOUD.loggingOut = true; try { await CLOUD.sb.auth.signOut(); } catch (e) {} CLOUD.loggingOut = false;
+    await idb.set('state', null); CLOUD.meta = {}; CLOUD.rev = 0; CLOUD.dirty = false; CLOUD.uploaded = new Set(); CLOUD.user = null; CLOUD.access = null; CLOUD.last = null; CLOUD.err = ''; CLOUD.conflict = null;
+    try { await idb.set('meta', {}); } catch (e) {} S = emptyStart(); ui.pages = []; ui.sheets = []; ui.gate = {mode: 'login', email: '', pw: '', agree: false, msg: '', err: '', busy: false}; render(); renderGate(); };
+  if (CLOUD.dirty || CLOUD.conflict) ask('Не все изменения отправлены', 'Есть данные, которые не попали в облако. Если выйти сейчас, они пропадут. Лучше сначала сохрани копию данных.', 'Выйти всё равно', true, finish); else await finish();
+});
+A.cfCloud = async () => { const row = CLOUD.conflict.row; CLOUD.conflict = null; popSheet(); await adoptRemote(row); CLOUD.last = Date.now(); renderCloudBits(); toast('Взяты данные из облака'); };
+A.cfLocal = async () => { const row = CLOUD.conflict.row; CLOUD.conflict = null; popSheet(); CLOUD.syncing = true; try { await pushDoc(row.rev); CLOUD.last = Date.now(); toast('В облаке теперь данные этого устройства'); } catch (e) { CLOUD.err = errRu(e); } CLOUD.syncing = false; renderCloudBits(); };
+
 /* академия */
 A.newCourse = () => { ui.nc = {title: '', price: 0, desc: ''}; pushSheet({type: 'newCourse'}); };
 A.ncCreate = () => { const n = ui.nc; if (!n.title.trim()) { toast('Дай курсу название'); return; }
@@ -1925,6 +1987,177 @@ A.nsSave = () => { const n = ui.ns; if (!n.name.trim()) { toast('Укажи им
   save(); popSheet(); render(); celebrate(); toast('Ученица добавлена, доступ открыт'); };
 A.openStudent = el => pushSheet({type: 'student', id: el.dataset.id});
 A.doneToggle = el => { const s = AC().students.find(x => x.id === el.dataset.s), e = s.enrolls.find(x => x.courseId === el.dataset.c), l = el.dataset.l; e.done = e.done.includes(l) ? e.done.filter(x => x !== l) : e.done.concat(l); save(); renderSheets(); renderScreen(); };
+
+/* ============================================================
+   ОБЛАКО: вход, подписка и синхронизация (включается, если задан window.__SB__)
+============================================================ */
+const CLOUD = {on: false, sb: null, user: null, access: null, rev: 0, dirty: false, seq: 0, syncing: false, last: null, err: '', conflict: null, recovery: false, deferPull: false, uploaded: new Set(), meta: {}, t: 0};
+const SBCFG = () => window.__SB__ || null;
+const PHCACHE = new Map();
+const isEmptyState = st => !st || (!st.materials.length && !st.purchases.length && !st.runs.length && !st.drafts.length && !st.categories.length && !st.academy.courses.length && !st.academy.students.length);
+async function metaLoad() { try { CLOUD.meta = (await idb.get('meta')) || {}; } catch (e) { CLOUD.meta = {}; } CLOUD.rev = CLOUD.meta.rev || 0; CLOUD.dirty = !!CLOUD.meta.dirty; CLOUD.uploaded = new Set(CLOUD.meta.uploaded || []); }
+let metaT = 0;
+function metaSave() { CLOUD.meta.rev = CLOUD.rev; CLOUD.meta.dirty = CLOUD.dirty; CLOUD.meta.uploaded = [...CLOUD.uploaded].slice(-5000); clearTimeout(metaT); metaT = setTimeout(() => { idb.set('meta', CLOUD.meta).catch(() => {}); }, 100); }
+const sha1 = async str => { const h = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(str)); return [...new Uint8Array(h)].map(x => x.toString(16).padStart(2, '0')).join(''); };
+const blobToDataURL = b => new Promise((res, rej) => { const rd = new FileReader(); rd.onload = () => res(rd.result); rd.onerror = () => rej(rd.error); rd.readAsDataURL(b); });
+function photoHolders(st) {
+  const h = [], add = (o, k) => { if (o && typeof o[k] === 'string') h.push([o, k]); };
+  st.materials.forEach(m => add(m, 'photo')); st.products.forEach(p => add(p, 'photo')); st.finished.forEach(f => add(f, 'photo'));
+  st.runs.forEach(r => { add(r, 'photo'); (r.materialLines || []).forEach(l => add(l, 'photo')); });
+  if (st.pfDraft) st.pfDraft.lines.forEach(l => l.newMat && add(l.newMat, 'photo'));
+  return h;
+}
+/* фото уходят в хранилище, в документе остаются короткие ссылки sbph:хеш */
+async function packState(st) {
+  const doc = structuredClone(st), seen = new Map();
+  for (const [o, k] of photoHolders(doc)) {
+    const v = o[k]; if (!v.startsWith('data:image/jpeg')) continue;
+    let h = seen.get(v); if (!h) { h = await sha1(v); seen.set(v, h); }
+    if (!CLOUD.uploaded.has(h)) {
+      const blob = await (await fetch(v)).blob();
+      const {error} = await CLOUD.sb.storage.from('photos').upload(CLOUD.user.id + '/' + h + '.jpg', blob, {contentType: 'image/jpeg', upsert: false});
+      if (error && !/exist|duplicate/i.test(error.message || '')) throw error;
+      CLOUD.uploaded.add(h); metaSave();
+    }
+    o[k] = 'sbph:' + h;
+  }
+  return doc;
+}
+async function unpackState(doc) {
+  const st = structuredClone(doc); let missing = 0;
+  for (const [o, k] of photoHolders(st)) {
+    const v = o[k]; if (!v.startsWith('sbph:')) continue; const h = v.slice(5);
+    let url = PHCACHE.get(h); if (!url) { try { url = await idb.get('ph:' + h); } catch (e) {} }
+    if (!url) {
+      const {data, error} = await CLOUD.sb.storage.from('photos').download(CLOUD.user.id + '/' + h + '.jpg');
+      if (error || !data) { missing++; o[k] = null; continue; }
+      url = await blobToDataURL(data); idb.set('ph:' + h, url).catch(() => {});
+    }
+    PHCACHE.set(h, url); CLOUD.uploaded.add(h); o[k] = url;
+  }
+  return {st: migrate(st), missing};
+}
+async function checkAccess() {
+  const {data, error} = await CLOUD.sb.from('subscriptions').select('status,valid_until,plan').eq('user_id', CLOUD.user.id).maybeSingle();
+  if (error) throw error;
+  const ok = !!data && ['trial', 'active'].includes(data.status) && new Date(data.valid_until) > new Date();
+  CLOUD.access = {ok, status: data ? data.status : 'none', validUntil: data ? data.valid_until : null, plan: data ? data.plan : ''};
+  CLOUD.meta.cache = {uid: CLOUD.user.id, email: CLOUD.user.email, ...CLOUD.access, checkedAt: Date.now()}; metaSave();
+  renderGate();
+}
+async function adoptRemote(row) {
+  const {st, missing} = await unpackState(row.data);
+  S = st; ui.pf = null; ui.lf = null; ui.pages = []; ui.sheets = []; CLOUD.rev = row.rev; CLOUD.dirty = false; metaSave();
+  await idb.set('state', S); render(); if (missing) CLOUD.err = `Не удалось загрузить фото: ${missing}. Попробуй синхронизировать ещё раз.`;
+}
+class ConflictError extends Error {}
+async function pushDoc(baseRev) {
+  const seq0 = CLOUD.seq, doc = await packState(S), uid = CLOUD.user.id;
+  if (baseRev === 0) {
+    const {error} = await CLOUD.sb.from('user_state').insert({user_id: uid, data: doc, rev: 1});
+    if (error) { if (error.code === '23505') throw new ConflictError(); throw error; }
+    CLOUD.rev = 1;
+  } else {
+    const {data, error} = await CLOUD.sb.from('user_state').update({data: doc, rev: baseRev + 1, updated_at: new Date().toISOString()}).eq('user_id', uid).eq('rev', baseRev).select('rev');
+    if (error) throw error;
+    if (!data || !data.length) throw new ConflictError();
+    CLOUD.rev = baseRev + 1;
+  }
+  if (CLOUD.seq === seq0) CLOUD.dirty = false; else cloudSoon();
+  metaSave();
+}
+async function fetchRow() {
+  const {data, error} = await CLOUD.sb.from('user_state').select('data,rev').eq('user_id', CLOUD.user.id).maybeSingle();
+  if (error) throw error; return data || null;
+}
+function raiseConflict(row) { CLOUD.conflict = {row}; if (!ui.sheets.some(x => x.type === 'conflict')) pushSheet({type: 'conflict'}); }
+async function cloudSync({first = false} = {}) {
+  if (!CLOUD.on || !CLOUD.sb || !CLOUD.user || CLOUD.user.offline || !navigator.onLine || CLOUD.syncing || CLOUD.conflict || CLOUD.recovery) return;
+  CLOUD.syncing = true; CLOUD.err = ''; renderCloudBits();
+  try {
+    await checkAccess();
+    const row = await fetchRow(), canWrite = CLOUD.access.ok;
+    if (!row) { if (canWrite && (!isEmptyState(S) || CLOUD.dirty)) await pushDoc(0); }
+    else if (first && !isEmptyState(S)) raiseConflict(row);
+    else if (first) { if (ui.pages.length || ui.sheets.length) CLOUD.deferPull = true; else await adoptRemote(row); }
+    else if (row.rev === CLOUD.rev) { if (CLOUD.dirty && canWrite) await pushDoc(row.rev); }
+    else if (CLOUD.dirty) raiseConflict(row);
+    else if (ui.pages.length || ui.sheets.length) CLOUD.deferPull = true;
+    else { await adoptRemote(row); toast('Данные обновлены с другого устройства'); }
+    CLOUD.last = Date.now();
+  } catch (e) {
+    if (e instanceof ConflictError) { try { raiseConflict(await fetchRow()); } catch (e2) { CLOUD.err = errRu(e2); } }
+    else CLOUD.err = errRu(e);
+  } finally { CLOUD.syncing = false; renderCloudBits(); }
+}
+function cloudSoon() { clearTimeout(CLOUD.t); CLOUD.t = setTimeout(() => cloudSync(), 4000); }
+async function bindUser() {
+  const u = CLOUD.user;
+  if (CLOUD.meta.uid && CLOUD.meta.uid !== u.id) { S = emptyStart(); await idb.set('state', S); CLOUD.rev = 0; CLOUD.dirty = false; CLOUD.uploaded = new Set(); delete CLOUD.meta.cache; }
+  const first = CLOUD.meta.uid !== u.id; CLOUD.meta.uid = u.id; CLOUD.meta.email = u.email; metaSave();
+  await cloudSync({first});
+  render();
+}
+async function initCloud() {
+  CLOUD.on = true; const c = SBCFG();
+  if (window.supabase) {
+    CLOUD.sb = window.supabase.createClient(c.url, c.anonKey, {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, storageKey: 'mm-auth'}});
+    CLOUD.sb.auth.onAuthStateChange((ev, session) => setTimeout(() => {
+      if (ev === 'PASSWORD_RECOVERY') { CLOUD.recovery = true; if (session) CLOUD.user = session.user; renderGate(); }
+      else if (ev === 'SIGNED_OUT' && !CLOUD.loggingOut) { CLOUD.user = null; renderGate(); }
+      else if (ev === 'SIGNED_IN' && session && !CLOUD.user && !CLOUD.recovery) onSignedIn(session.user);
+    }, 0));
+    try { const {data} = await CLOUD.sb.auth.getSession(); CLOUD.user = data && data.session ? data.session.user : null; } catch (e) {}
+  }
+  const cache = CLOUD.meta.cache;
+  if (!CLOUD.user && cache && !navigator.onLine && cache.ok && new Date(cache.validUntil) > new Date()) CLOUD.user = {id: cache.uid, email: cache.email, offline: true};
+  if (CLOUD.user && cache && cache.uid === CLOUD.user.id) CLOUD.access = {ok: cache.ok && new Date(cache.validUntil) > new Date(), status: cache.status, validUntil: cache.validUntil, plan: cache.plan};
+}
+async function onSignedIn(user) { CLOUD.user = user; ui.gate.pw = ''; ui.gate.err = ''; ui.gate.msg = ''; renderGate(); await bindUser(); }
+const ERR_RU = [[/Invalid login credentials/i, 'Неверная почта или пароль.'], [/already registered|already been registered/i, 'Эта почта уже зарегистрирована. Нажми «Вход».'], [/Email not confirmed/i, 'Почта не подтверждена. Открой письмо от нас и нажми на ссылку.'],
+  [/Password should be at least/i, 'Пароль слишком короткий: нужно не меньше 8 символов.'], [/rate limit|too many|security purposes/i, 'Слишком много попыток. Подожди несколько минут.'], [/fetch|network|offline|Load failed/i, 'Нет связи с интернетом. Для входа нужен интернет.'],
+  [/row-level security|42501|policy/i, 'Доступ к записи закрыт: подписка не активна.']];
+const errRu = e => { const m = (e && e.message) || String(e), hit = ERR_RU.find(([re]) => re.test(m)); return hit ? hit[1] : 'Не получилось: ' + m; };
+const accessLine = () => { const a = CLOUD.access; if (!a) return 'Проверяем доступ…'; const d = a.validUntil ? fmtDate(String(a.validUntil).slice(0, 10)) : ''; return a.ok ? (a.status === 'trial' ? `Пробный период до ${d}` : `Подписка до ${d}`) : (a.status === 'blocked' ? 'Доступ закрыт' : `Доступ закончился${d ? ' ' + d : ''}`); };
+const syncLine = () => CLOUD.syncing ? 'Синхронизация…' : CLOUD.err ? CLOUD.err : (!navigator.onLine ? 'Нет интернета: работаем офлайн, изменения отправятся потом.' : CLOUD.dirty ? 'Есть изменения, они скоро отправятся.' : CLOUD.last ? `Синхронизировано в ${fmtTime(CLOUD.last)}` : 'Ещё не синхронизировано');
+function cloudCardInner() {
+  return `<div class="sect" style="padding-top:0"><h2>Аккаунт</h2></div><div class="row" style="justify-content:space-between"><b>${esc(CLOUD.user.email || '')}</b><span class="pill ${CLOUD.access && CLOUD.access.ok ? 'good' : 'bad'}">${esc(accessLine())}</span></div>
+    <p class="hint ${CLOUD.err ? 'neg' : ''}">${esc(syncLine())}</p>
+    <div class="two"><button class="btn" data-act="syncNow" ${CLOUD.syncing ? 'disabled' : ''}>Синхронизировать</button><button class="btn dng" data-act="logout">Выйти</button></div>`;
+}
+function renderCloudBits() { const c = $('#cloudCard'); if (c && CLOUD.user) c.innerHTML = cloudCardInner(); }
+
+/* экран входа и экран «доступ закончился» */
+const gfld = (label, id, key, type, ac) => `<div class="fld"><label class="lbl" for="${id}">${label}</label><input id="${id}" class="in" type="${type}" data-m="ui.gate.${key}" value="${esc(ui.gate[key] || '')}" autocomplete="${ac}" ${type === 'email' ? 'inputmode="email" autocapitalize="off"' : ''}></div>`;
+function gateHTML() {
+  const g = ui.gate, wrap = inner => `<div class="bg" aria-hidden="true">${BG}</div><div class="gate-in px"><div class="brand">${ic('catcher')}Моя мастерская</div><p class="lead">Склад, закупки и себестоимость для мастериц handmade</p><div class="card stack" style="gap:12px">${inner}</div></div>`;
+  const alerts = `${g.err ? `<div class="alert bad">${ic('alert')}<div>${esc(g.err)}</div></div>` : ''}${g.msg ? `<div class="alert good">${ic('check')}<div>${esc(g.msg)}</div></div>` : ''}`;
+  if (CLOUD.recovery) return wrap(`<h2>Новый пароль</h2><p class="hint">Придумай новый пароль, не короче 8 символов.</p>${gfld('Новый пароль', 'g_pw', 'pw', 'password', 'new-password')}${alerts}<button class="btn pri block" data-act="gateGo" ${g.busy ? 'disabled' : ''}>Сохранить пароль</button>`);
+  if (!CLOUD.user) {
+    const m = g.mode;
+    return wrap(`<div class="seg"><button class="${m === 'login' ? 'on' : ''}" data-act="gateMode" data-v="login">Вход</button><button class="${m === 'signup' ? 'on' : ''}" data-act="gateMode" data-v="signup">Создать аккаунт</button></div>
+      ${m === 'reset' ? '<p class="hint">Введи почту, и мы пришлём ссылку для нового пароля.</p>' : ''}
+      ${gfld('Почта', 'g_em', 'email', 'email', 'email')}
+      ${m === 'reset' ? '' : gfld('Пароль', 'g_pw', 'pw', 'password', m === 'signup' ? 'new-password' : 'current-password')}
+      ${m === 'signup' ? `<label class="wrow" style="padding:10px"><input type="checkbox" data-gate-agree ${g.agree ? 'checked' : ''}><span class="hint">Я принимаю условия использования и политику конфиденциальности.</span></label><p class="hint">Новым аккаунтам доступен пробный период.</p>` : ''}
+      ${alerts}
+      <button class="btn pri block" data-act="gateGo" ${g.busy ? 'disabled' : ''}>${g.busy ? 'Подожди…' : m === 'login' ? 'Войти' : m === 'signup' ? 'Создать аккаунт' : 'Отправить ссылку'}</button>
+      ${m === 'login' ? '<button class="btn sm" data-act="gateMode" data-v="reset">Забыла пароль</button>' : m === 'reset' ? '<button class="btn sm" data-act="gateMode" data-v="login">Назад ко входу</button>' : ''}`);
+  }
+  if (CLOUD.access && !CLOUD.access.ok) {
+    const c = SBCFG() || {};
+    return wrap(`<h2>${CLOUD.access.status === 'blocked' ? 'Доступ закрыт' : 'Доступ закончился'}</h2>
+      <p class="hint" style="font-size:13px">Твои данные в сохранности. Чтобы продолжить работу, продли подписку. Пока доступ не активен, новые изменения не сохраняются в облако.</p>
+      ${c.payUrl ? `<a class="btn pri block" style="text-decoration:none" href="${esc(c.payUrl)}" target="_blank" rel="noopener">Продлить доступ</a>` : ''}
+      ${c.support ? `<p class="hint">${esc(c.support)}</p>` : ''}
+      ${g.err ? `<div class="alert bad">${ic('alert')}<div>${esc(g.err)}</div></div>` : ''}
+      <button class="btn block" data-act="gateRecheck">Я оплатила, проверить снова</button>
+      <button class="btn block" data-act="expOpen">${ic('upload')} Сохранить копию моих данных</button>
+      <button class="btn sm dng" data-act="logout">Выйти</button>`);
+  }
+  return '';
+}
+function renderGate() { const g = $('#gate'); if (!g) return; const keep = g.querySelector('.gate-in') ? g.scrollTop : 0, h = CLOUD.on ? gateHTML() : ''; g.innerHTML = h; g.scrollTop = keep; }
 
 /* ============================================================
    СОБЫТИЯ
@@ -1965,6 +2198,7 @@ document.addEventListener('input', e => {
 document.addEventListener('focusin', e => { if (e.target.matches && e.target.matches('.step input')) setTimeout(() => e.target.select(), 0); });
 document.addEventListener('change', e => {
   const t = e.target;
+  if (t.hasAttribute && t.hasAttribute('data-gate-agree')) { ui.gate.agree = t.checked; return; }
   if (t.dataset && t.dataset.wipe !== undefined) { ui.wipe[t.dataset.wipe] = t.checked; return; }
   if (t.dataset && t.dataset.part !== undefined) { const d = curDraft(); if (d) setPart(d, +t.dataset.part, t.dataset.f, nz(t.value)); return; }
   if (t.dataset && t.dataset.cat !== undefined) {
@@ -1976,8 +2210,13 @@ document.addEventListener('change', e => {
 });
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { if (ui.sheets.length) A.closeSheet(); else if (ui.pages.length) A.back(); }
+  if (e.key === 'Enter' && e.target.closest && e.target.closest('#gate')) { A.gateGo(); return; }
   if (e.key === 'Enter' && e.target.dataset) { if (e.target.dataset.part !== undefined) e.target.blur(); if (e.target.id === 'chatIn') A.chatSend(); }
 });
+addEventListener('online', () => { if (S) cloudSync(); renderCloudBits(); });
+addEventListener('offline', renderCloudBits);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && S && CLOUD.on && CLOUD.user) cloudSync(); });
+setInterval(() => { if (CLOUD.deferPull && !ui.pages.length && !ui.sheets.length) { CLOUD.deferPull = false; cloudSync(); } }, 3000);
 setInterval(() => {
   const p = curPage(); if (!p || p.type !== 'draft') return;
   const d = curDraft(); if (!d) return;
@@ -1987,6 +2226,11 @@ setInterval(() => {
 
 $('#bg').innerHTML = BG;
 $('#side').innerHTML = sideHTML();
-(async function boot() { S = await loadState(); applyImports(); render(); save(); })();
+(async function boot() {
+  S = await loadState(); await metaLoad();
+  if (SBCFG()) await initCloud();
+  applyImports(); render(); renderGate(); flushSave();
+  if (CLOUD.on && CLOUD.user && !CLOUD.recovery) bindUser();
+})();
 })();
 </script>

@@ -1,5 +1,5 @@
 /* Service worker: офлайн-режим. Версия кэша меняется при каждой сборке, чтобы обновления доходили до пользователя. */
-const CACHE = 'mm-324ba8bafc';
+const CACHE = 'mm-21680fe135';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
@@ -14,7 +14,7 @@ self.addEventListener('fetch', e => {
       return;
     }
     e.respondWith(caches.match(r).then(m => m || fetch(r).then(res => { const cp = res.clone(); caches.open(CACHE).then(c => c.put(r, cp)); return res; })));
-  } else if (u.hostname === 'fonts.googleapis.com' || u.hostname === 'fonts.gstatic.com') {
+  } else if (u.hostname === 'fonts.googleapis.com' || u.hostname === 'fonts.gstatic.com' || u.hostname === 'cdn.jsdelivr.net') {
     e.respondWith(caches.open(CACHE).then(c => c.match(r).then(m => {
       const net = fetch(r).then(res => { c.put(r, res.clone()); return res; }).catch(() => m);
       return m || net;

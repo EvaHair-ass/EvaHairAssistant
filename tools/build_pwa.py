@@ -9,6 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "prototype" / "index.html"
+SB_CONFIG = ROOT / "supabase" / "config.json"
+SB_LIB = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
 OUT = ROOT / "docs"
 ICONS = OUT / "icons"
 
@@ -108,8 +110,18 @@ def main():
 body{overscroll-behavior:none}
 </style>
 """
-    pwa_js = """<script>window.__PWA__=true;</script>
-"""
+    cfg = None
+    if SB_CONFIG.exists():
+        cfg = json.loads(SB_CONFIG.read_text(encoding="utf-8"))
+        if not cfg.get("url") or not cfg.get("anonKey"):
+            sys.exit("В supabase/config.json нужны поля url и anonKey")
+        public = {k: cfg[k] for k in ("url", "anonKey", "payUrl", "support") if cfg.get(k)}
+        (OUT / "config.js").write_text("window.__SB__=" + json.dumps(public, ensure_ascii=False) + ";\n", encoding="utf-8")
+    elif (OUT / "config.js").exists():
+        (OUT / "config.js").unlink()
+    pwa_js = "<script>window.__PWA__=true;</script>\n"
+    if cfg:
+        pwa_js += '<script src="config.js"></script>\n<script src="' + SB_LIB + '"></script>\n'
     sw_js = """<script>
 if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
 if(navigator.storage&&navigator.storage.persist){navigator.storage.persist().catch(function(){});}
@@ -133,10 +145,12 @@ addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__i
     }
     (OUT / "manifest.webmanifest").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    version = hashlib.sha1(html.encode("utf-8")).hexdigest()[:10]
+    cfg_txt = (OUT / "config.js").read_text(encoding="utf-8") if (OUT / "config.js").exists() else ""
+    version = hashlib.sha1((html + cfg_txt).encode("utf-8")).hexdigest()[:10]
+    shell_extra = ", './config.js'" if cfg_txt else ""
     sw = f"""/* Service worker: офлайн-режим. Версия кэша меняется при каждой сборке, чтобы обновления доходили до пользователя. */
 const CACHE = 'mm-{version}';
-const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'];
+const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'{shell_extra}];
 self.addEventListener('install', e => {{ e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); }});
 self.addEventListener('activate', e => {{
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith('mm-') && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
@@ -150,7 +164,7 @@ self.addEventListener('fetch', e => {{
       return;
     }}
     e.respondWith(caches.match(r).then(m => m || fetch(r).then(res => {{ const cp = res.clone(); caches.open(CACHE).then(c => c.put(r, cp)); return res; }})));
-  }} else if (u.hostname === 'fonts.googleapis.com' || u.hostname === 'fonts.gstatic.com') {{
+  }} else if (u.hostname === 'fonts.googleapis.com' || u.hostname === 'fonts.gstatic.com' || u.hostname === 'cdn.jsdelivr.net') {{
     e.respondWith(caches.open(CACHE).then(c => c.match(r).then(m => {{
       const net = fetch(r).then(res => {{ c.put(r, res.clone()); return res; }}).catch(() => m);
       return m || net;

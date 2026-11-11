@@ -1,0 +1,6 @@
+{
+  "url": "https://ВАШ-ПРОЕКТ.supabase.co",
+  "anonKey": "публичный ключ anon public из Supabase (НЕ service_role)",
+  "payUrl": "",
+  "support": "Напиши нам, чтобы продлить доступ: @твой_telegram"
+}
