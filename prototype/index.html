@@ -1,7 +1,7 @@
 <title>Моя мастерская</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Forum&family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@400;500;600;700;800&display=swap">
 <style>
 /* Идея: шаманская бохо-мастерская. Тёплая бумага, глина, можжевельник и охра. Фон нарисован линиями:
    ловец снов, амулет-глаз, фазы луны, перья и знаки по краям, всё очень тихо и без перегруза.
@@ -17,7 +17,7 @@
   --art:#8B6B45; --grain:.5; --glass:color-mix(in srgb,var(--surface) 84%,transparent);
   --shadow:0 2px 4px rgba(74,59,44,.08),0 18px 44px rgba(74,59,44,.18); --shadow-s:0 1px 2px rgba(74,59,44,.16); --shadow-c:0 1px 0 rgba(255,255,255,.6) inset,0 6px 18px rgba(120,86,50,.10);
   --scrim:rgba(46,32,20,.5);
-  --f-display:'Cormorant','Cormorant Garamond',Georgia,serif; --f-hand:'Caveat','Segoe Script',cursive; --f-brand:'Forum','Cormorant Garamond',Georgia,serif; --f-body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-display:'Cormorant','Cormorant Garamond',Georgia,serif; --f-brand:'Forum','Cormorant Garamond',Georgia,serif; --f-body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --stage:#0E0B08; --bg:#17120D; --surface:#221B14; --surface2:#2B231A; --line:#3B3024;
@@ -60,7 +60,7 @@ a{color:var(--accent);font-weight:600}
 .grow{flex:1;min-width:0}
 .mute{color:var(--ink2)}
 .num{font-variant-numeric:lining-nums tabular-nums}
-.kick{font-family:var(--f-hand);font-size:21px;line-height:1;color:var(--clay);font-weight:700;display:block;margin-bottom:2px}
+.kick{font-family:var(--f-body);font-size:11px;line-height:1.2;color:var(--clay);font-weight:700;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:4px}
 
 /* сцена и телефон */
 .stage{height:100%;display:grid;grid-template-columns:minmax(0,1fr);place-items:center}
@@ -98,7 +98,7 @@ a{color:var(--accent);font-weight:600}
 .modeseg button:active{transform:scale(.94)}
 .screen{position:relative;z-index:1;flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-bottom:22px}
 .top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:10px}
-.top h1{font-family:var(--f-display);font-weight:600;font-style:italic;font-size:36px;line-height:1;letter-spacing:-.01em}
+.top h1{font-family:var(--f-display);font-weight:600;font-style:italic;font-size:28px;line-height:1.05;letter-spacing:-.005em}
 .sub{font-size:12.5px;color:var(--ink2)}
 
 /* таб-бар с волной */
@@ -320,8 +320,9 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 .ava{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none;font-size:16px}
 
 /* боковая панель */
-.side h1{font-family:var(--f-brand);font-weight:400;font-size:40px;line-height:1.08;letter-spacing:.08em;text-transform:uppercase}
-.side h1 em{color:var(--clay)}
+.side h1{font-family:var(--f-brand);font-weight:400;font-size:29px;line-height:1.15;letter-spacing:.06em;text-transform:uppercase}
+.search input::-webkit-search-cancel-button{display:none}
+.side h1 em{color:var(--clay);font-style:normal}
 .side .lead{margin:12px 0 20px;color:var(--ink2);font-size:14px;max-width:34ch}
 .try{display:flex;flex-direction:column;gap:8px}
 .try button{display:flex;gap:12px;text-align:left;padding:11px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:18px;align-items:flex-start;transition:transform .2s,border-color .2s}
@@ -544,7 +545,7 @@ const BG = buildBg();
 /* ============================================================
    ДВИЖОК: склад, закупки, резервы, себестоимость
 ============================================================ */
-const blankState = () => ({v: 3, categories: CAT.slice().sort(ruCmp), materials: [], purchases: [], movements: [], products: [], drafts: [], runs: [], finished: [], sales: [], pfDraft: null,
+const blankState = () => ({v: 3, categories: CAT.slice().sort(ruCmp), materials: [], purchases: [], movements: [], products: [], drafts: [], runs: [], finished: [], sales: [], pfDraft: null, flags: {},
   academy: {courses: [], students: [], chats: {}},
   settings: {base: 'TRY', hourly: 250, other: 0, fee: 12, margin: 30, shipping: 0, fx: {USD: 41.5, EUR: 45.2}}});
 const mat = (st, id) => st.materials.find(m => m.id === id);
@@ -780,9 +781,27 @@ const LS = 'moya-masterskaya-proto-v3';
 let S;
 try { const raw = localStorage.getItem(LS); if (raw) S = migrate(JSON.parse(raw)); } catch (e) { S = null; }
 if (!S || !S.materials.length) S = buildSeed();
+/* Заказ №2023 (5 ноября 2026): канекалон. Вносится один раз в любое состояние данных. */
+function applyImports() {
+  S.flags = S.flags || {};
+  if (S.flags.order2023) return;
+  const HC = 'Волосы и плетения';
+  if (!S.categories.includes(HC)) { S.categories.push(HC); S.categories.sort(ruCmp); }
+  const L = (id, name, sub, color, sku, size, hex, packs, price) => ({materialId: null, packs, upp: 1, pricePack: price,
+    newMat: {id, name, category: HC, subcategory: sub, brand: 'Easy Braid', size, color, sku, unit: 'шт', mode: 'cons', useCost: 0, photo: art('hair', hex), location: '', notes: 'Заказ №2023, 5 ноября 2026'}});
+  commitPurchase(S, {date: '2026-11-05', supplier: 'Заказ №2023', currency: 'TRY', fx: 1, delivery: 180, lines: [
+    L('m_eb_pink', 'Easy Braid Ombre, розовый', 'Канекалон Easy Braid', 'Розовый (1B+Pink)', '1B+Pink', '', '#e6a3b8', 1, 180),
+    L('m_eb_brown', 'Easy Braid однотонный, тёмно-коричневый', 'Канекалон Easy Braid', 'Тёмно-коричневый (4#)', '4#', '', '#4a2f22', 1, 180),
+    L('m_eb_silver', 'Easy Braid однотонный, серебристо-бежевый', 'Канекалон Easy Braid', 'Серебристо-бежевый (Silver)', 'Silver', '', '#cdc5b8', 2, 180),
+    L('m_eb_plat', 'Easy Braid однотонный, платиновый блонд', 'Канекалон Easy Braid', 'Платиновый блонд (613#)', '613#', '', '#efe2b8', 2, 180),
+    L('m_eb_cream', 'Ombre 100 г, кремово-бежевый', 'Канекалон 100 г', 'Кремово-бежевый (M27)', 'M27', '100 г, 120 см', '#e9dcc4', 1, 120),
+    L('m_eb_ombplat', 'Easy Braid Ombre, платиновый блонд', 'Канекалон Easy Braid', 'Платиновый блонд (27+613)', '27+613', '', '#d2b377', 2, 180)]});
+  S.flags.order2023 = true; save();
+}
 let saveT = 0;
 function save() { clearTimeout(saveT); saveT = setTimeout(() => { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} }, 250); }
 
+applyImports();
 const nowD = new Date();
 const ui = {mode: 'shop', tab: 'stock', atab: 'courses', q: '', cat: 'all', sub: 'all', archSeg: 'runs', stat: {mode: 'month', y: nowD.getFullYear(), m: nowD.getMonth() + 1},
   pages: [], sheets: [], pf: null, lf: null, pk: null, me: null, adj: null, fin: null, crop: null, ls: null, curQ: '', curMode: 'purchase',
@@ -1724,7 +1743,7 @@ A.impDo = () => {
     S = migrate(o); save(); ui.sheets = []; ui.pages = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast(`Загружено материалов: ${S.materials.length}`);
   } catch (e) { toast('Не похоже на сохранённые данные «Моей мастерской»'); }
 };
-A.resetOpen = () => ask('Сбросить демо-данные?', 'Все твои правки в прототипе исчезнут, вернутся стартовые примеры.', 'Сбросить', true, () => { S = buildSeed(); save(); ui.pf = null; ui.pages = []; ui.sheets = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast('Демо-данные восстановлены'); });
+A.resetOpen = () => ask('Сбросить демо-данные?', 'Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023.', 'Сбросить', true, () => { S = buildSeed(); applyImports(); save(); ui.pf = null; ui.pages = []; ui.sheets = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast('Демо-данные восстановлены'); });
 A.tryIt = el => {
   const k = el.dataset.k; ui.sheets = []; ui.pages = [];
   const dr = () => S.drafts.find(d => d.name.includes('Рассвет')) || S.drafts[0];
