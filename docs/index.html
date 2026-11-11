@@ -196,6 +196,7 @@ button.pill:hover{transform:translateX(2px)}
 .mcard .fr{font-size:11.5px;color:var(--accent);font-weight:700}
 .empty{margin-top:22px;text-align:center;color:var(--ink2);display:flex;flex-direction:column;align-items:center;gap:12px;padding:30px 14px;border:2px dashed var(--line);border-radius:28px}
 .empty b{color:var(--ink);font-family:var(--f-display);font-style:italic;font-size:24px;font-weight:600}
+.empty .try b{font-family:var(--f-body);font-style:normal;font-size:13.5px;font-weight:800;color:var(--ink)}
 .empty::before{content:"";width:46px;height:46px;background:var(--accent);opacity:.55;-webkit-mask:var(--charm) center/contain no-repeat;mask:var(--charm) center/contain no-repeat;animation:sway 5s ease-in-out infinite}
 :root{--orn:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 66 10'%3E%3Cpath d='M0 5h24M42 5h24' stroke='black' stroke-width='1.2'/%3E%3Cpath d='M33 0.5l4.5 4.5-4.5 4.5-4.5-4.5z' fill='black'/%3E%3Ccircle cx='26.5' cy='5' r='1' fill='black'/%3E%3Ccircle cx='39.5' cy='5' r='1' fill='black'/%3E%3C/svg%3E");
   --charm:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='9' r='6'/%3E%3Ccircle cx='12' cy='9' r='2.6'/%3E%3Cpath d='M12 3v12M6 9h12M7.8 4.8l8.4 8.4M16.2 4.8l-8.4 8.4M9.5 15v5M12 15.5V22M14.5 15v4'/%3E%3C/svg%3E")}
@@ -445,6 +446,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const uid = p => p + '_' + Math.random().toString(36).slice(2, 8) + Date.now().toString(36).slice(-3);
 const r2 = n => Math.round((n + Number.EPSILON) * 100) / 100;
 const nz = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) ? n : 0; };
+const QUICK_CATS = ['Бусины и камни', 'Нитки и шнуры', 'Фурнитура', 'Ткани и основы', 'Инструменты', 'Клеи', 'Упаковка', 'Другое'];
 const ruCmp = (a, b) => a.localeCompare(b, 'ru');
 
 /* валюты: можно выбрать любую из списка (в прототипе список короткий, в продукте будет полный ISO 4217) */
@@ -813,11 +815,12 @@ const idb = {
   async get(k) { const db = this.db || (this.db = await this.open()); return new Promise((res, rej) => { const r = db.transaction('kv').objectStore('kv').get(k); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }); },
   async set(k, v) { const db = this.db || (this.db = await this.open()); return new Promise((res, rej) => { const t = db.transaction('kv', 'readwrite'); t.objectStore('kv').put(v, k); t.oncomplete = () => res(); t.onerror = () => rej(t.error); t.onabort = () => rej(t.error); }); }
 };
+function emptyStart() { const st = blankState(); st.categories = []; st.flags = {order2023: true}; return st; }
 async function loadState() {
   let st = null;
   try { const v = await idb.get('state'); if (v) st = migrate(v); } catch (e) {}
   if (!st) { try { const raw = localStorage.getItem(LS); if (raw) st = migrate(JSON.parse(raw)); } catch (e) {} }
-  return st || buildSeed();
+  return st || (window.__PWA__ ? emptyStart() : buildSeed());
 }
 /* Заказ №2023 (5 ноября 2026): канекалон. Вносится один раз в любое состояние данных. */
 function applyImports() {
@@ -931,6 +934,10 @@ function mcard(m, act = 'openMat', inDraft = false, i = 0) {
 }
 function stockListHTML() {
   const list = stockFilter();
+  if (!S.materials.length && ui.cat === 'all' && !ui.q) return `<div class="empty" style="align-items:stretch;text-align:left"><b style="text-align:center">Начнём с чистого листа</b>
+    <div class="try" style="margin-top:4px"><button data-act="catMgr"><span class="n">1</span><span><b>Создай категории</b><span class="t">Папки для материалов: бусины, нитки, ткани. Можно выбрать готовые.</span></span></button>
+    <button data-act="newPurchase"><span class="n">2</span><span><b>Оформи первую закупку</b><span class="t">Фото, название, количество и цена. Материал сам попадёт на склад.</span></span></button>
+    <button data-act="tab" data-t="work"><span class="n">3</span><span><b>Собери первую работу</b><span class="t">Выбери материалы со склада, и приложение посчитает себестоимость и цену.</span></span></button></div></div>`;
   if (!list.length) return `<div class="empty"><b>${S.materials.length ? 'Ничего не нашла' : 'Склад пока пуст'}</b>
     <span>${ui.q ? 'Попробуй другой запрос: название, бренд, артикул, цвет или размер.' : ui.cat !== 'all' ? 'В этой категории пока пусто. Материалы появятся после закупки.' : 'Материалы появляются здесь после закупки.'}</span>
     ${ui.q || ui.cat !== 'all' ? '<button class="btn sm" data-act="clearFilters">Сбросить фильтры</button>' : '<button class="btn sm pri" data-act="newPurchase">Оформить закупку</button>'}</div>`;
@@ -989,9 +996,9 @@ function workScreen() {
           <div class="mini" style="margin-top:8px">${thumbs}</div></div>
           <div class="r"><div class="t num">${money(t.cost)}</div><div class="s">себестоимость</div></div></button>`; }).join('')
         : `<div class="empty"><b>Нет активных работ</b><span>Начни с нуля или возьми сохранённый дизайн.</span></div>`}
-      <div class="sect"><h2>Сохранённые дизайны</h2></div>
+      ${S.products.length ? '<div class="sect"><h2>Сохранённые дизайны</h2></div>' : ''}
       ${S.products.map((p, i) => `<button class="lcard" style="--i:${i}" data-act="startTpl" data-id="${p.id}"><img class="thumb" src="${p.photo}" alt=""><div class="grow"><div class="t">${esc(p.name)}</div><div class="s">${p.bom.length} ${pl(p.bom.length, ['материал','материала','материалов'])} по рецепту</div></div>${ic('chev')}</button>`).join('')}
-      <p class="hint">Рецепт — только план. Фактический расход в работе можно менять как угодно.</p>
+      ${S.products.length ? '<p class="hint">Рецепт — только план. Фактический расход в работе можно менять как угодно.</p>' : ''}
     </div>`;
 }
 
@@ -1247,7 +1254,7 @@ function moreScreen() {
         <p class="hint" style="font-size:13px">Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.</p>
         <button class="btn dng" data-act="wipeOpen">${ic('trash')} Очистить и начать заново</button></div>
       <div class="card flat stack" style="gap:10px"><p class="hint">Это кликабельный прототип. Данные хранятся только в этом браузере. Картинки материалов нарисованы для примера, а свои фото загружаются файлом.</p>
-        <button class="btn sm dng" data-act="resetOpen">Вернуть демо-данные</button></div>
+        <button class="btn sm dng" data-act="resetOpen">${window.__PWA__ ? 'Загрузить учебные примеры' : 'Вернуть демо-данные'}</button></div>
     </div>`;
 }
 const GUIDE = [
@@ -1287,7 +1294,7 @@ function coursesScreen() {
 function chatListScreen() {
   const cs = AC().courses;
   return `<header class="top px"><div><span class="kick">общаемся</span><h1>Чаты курсов</h1><p class="sub">Один общий чат на каждый курс</p></div></header>
-    <div class="px stack">${cs.map((c, i) => { const msgs = AC().chats[c.id] || [], last = msgs[msgs.length - 1];
+    <div class="px stack">${cs.length ? '' : '<div class="empty"><b>Чатов пока нет</b><span>Чат появляется у каждого курса. Создай первый курс во вкладке «Курсы».</span></div>'}${cs.map((c, i) => { const msgs = AC().chats[c.id] || [], last = msgs[msgs.length - 1];
       return `<button class="lcard" style="--i:${i}" data-act="openChat" data-id="${c.id}"><span class="ava" style="background:${AVA[i % AVA.length]}">${ic('chat')}</span><div class="grow"><div class="t">${esc(c.title)}</div><div class="s" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${last ? esc(last.text) : 'Сообщений пока нет'}</div></div><div class="r"><span class="pill">${studentsOf(c.id).length}</span></div></button>`; }).join('')}
       <p class="hint">Личные сообщения ученицам не нужны на старте: общий чат курса проще вести и модерировать.</p></div>`;
 }
@@ -1370,6 +1377,7 @@ const SHEETS = {
   },
   cats() {
     return shell('Категории', `<div class="row"><input id="cat_new" class="in" data-m="ui.catNew" placeholder="Новая категория" value="${esc(ui.catNew)}" aria-label="Новая категория"><button class="btn pri" data-act="catAdd" aria-label="Добавить">${ic('plus')}</button></div>
+      ${S.categories.length < 4 ? `<div><div class="lbl" style="margin-bottom:6px">Быстро добавить</div><div class="chips" style="padding-top:0">${QUICK_CATS.filter(c => !S.categories.includes(c)).map(c => `<button class="chip" data-act="catQuick" data-v="${esc(c)}">${ic('plus', 'sm')} ${esc(c)}</button>`).join('')}</div></div>` : ''}
       <p class="hint">Список всегда по алфавиту. Нажми на число, чтобы увидеть материалы категории на складе. Название меняется, когда уходишь из поля.</p>
       ${S.categories.map((c, i) => { const n = S.materials.filter(m => m.category === c).length;
         return `<div class="row"><input class="in" data-cat="${i}" value="${esc(c)}" aria-label="Название категории"><button class="pill clay" data-act="catGo" data-v="${esc(c)}" aria-label="Показать на складе">${n} ${ic('chev', 'sm')}</button><button class="ibtn sm" data-act="catDel" data-i="${i}" aria-label="Удалить категорию">${ic('trash', 'sm')}</button></div>`; }).join('')}
@@ -1711,6 +1719,7 @@ A.matConvert = () => {
   ask('Пересчитать единицы?', `Было ${num(m.qty)} ${m.unit}, станет ${num(m.qty * k)} ${nu}. Цена за ${nu}: ${moneyU(m.avg / k)} (сейчас ${moneyU(m.avg)} за ${m.unit}). Резервы в работах, рецепты и история пересчитаются так же. Завершённые работы в архиве не меняются.`, 'Пересчитать', false,
     () => { convertUnit(S, m.id, nu, k); save(); initMe(m); render(); toast(`Теперь в ${nu}: на складе ${num(m.qty)} ${nu}`); });
 };
+A.catQuick = el => { const c = el.dataset.v; if (!S.categories.includes(c)) { S.categories.push(c); S.categories.sort(ruCmp); save(); render(); } };
 A.catMgr = () => pushSheet({type: 'cats'});
 A.catAdd = () => {
   const n = (ui.catNew || '').trim(); if (!n) { toast('Впиши название категории'); return; }
@@ -1898,7 +1907,7 @@ A.impDo = () => {
     S = migrate(o); save(); ui.sheets = []; ui.pages = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast(`Загружено материалов: ${S.materials.length}`);
   } catch (e) { toast('Не похоже на сохранённые данные «Моей мастерской»'); }
 };
-A.resetOpen = () => ask('Сбросить демо-данные?', 'Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023.', 'Сбросить', true, () => { S = buildSeed(); applyImports(); save(); ui.pf = null; ui.pages = []; ui.sheets = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast('Демо-данные восстановлены'); });
+A.resetOpen = () => ask(window.__PWA__ ? 'Загрузить учебные примеры?' : 'Сбросить демо-данные?', window.__PWA__ ? 'Все твои данные будут заменены учебными примерами. Сначала сохрани копию, если она нужна.' : 'Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023.', window.__PWA__ ? 'Заменить' : 'Сбросить', true, () => { S = buildSeed(); if (window.__PWA__) S.flags.order2023 = true; else applyImports(); save(); ui.pf = null; ui.pages = []; ui.sheets = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast('Демо-данные восстановлены'); });
 A.tryIt = el => {
   const k = el.dataset.k; ui.sheets = []; ui.pages = [];
   const dr = () => S.drafts.find(d => d.name.includes('Рассвет')) || S.drafts[0];
