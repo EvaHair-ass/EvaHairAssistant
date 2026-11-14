@@ -1,28 +1,30 @@
 # Melaymade: турецкие тексты посадочной страницы (для проверки носителем)
 
-Пояснение для носителя (на турецком): Bu metinler, el işi (handmade) ustaları için hazırlanan bir uygulamanın tanıtım sayfasına aittir. Lütfen doğallık ve doğruluk açısından kontrol eder misin? Üslup: «siz». Terimler: Malzeme Stoku, Maliyet Hesaplama, Fiyatlandırma. Marka adı: Melaymade (tek kelime). Düzeltmeleri madde madde yazman yeterli, teşekkürler!
+Пояснение для носителя (на турецком): Bu metinler, el işi (handmade) ustaları için hazırlanan bir uygulamanın tanıtım sayfasına aittir. Lütfen doğallık ve doğruluk açısından kontrol eder misin? Üslup: «siz». Terimler: Malzeme Stoku, Maliyet Hesaplama, Fiyatlandırma. Marka adı: Melaymade (tek kelime). Başlıklar kasıtlı olarak cesur ve duygusal yazıldı; doğal ve şık duruyor mu, daha iyi bir söyleyiş var mı? Düzeltmeleri madde madde yazman yeterli, teşekkürler!
 
-Особенно важно проверить раздел «Akademi» ниже: это новый, самый важный текст страницы.
+Особенно важно проверить: заголовки (они смелые и образные) и раздел «Akademi».
 
 ## Başlık ve giriş
 - Sayfa başlığı: Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi
 - Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda.
 - Menü: Nasıl çalışır? | Akademi | Özellikler | Sık sorulanlar | Giriş Yap
-- Etiket (üstte): Yeni · dersleriniz için kişisel Akademi
+- Etiket: Yeni · dersleriniz için kişisel Akademi
 - Üst yazı: el işi ustaları için
-- Ana başlık: Ürününüzün gerçek maliyetini bilin
+- Ana başlık: Siz büyüyü yaratın. Ne kadar ettiğini biz hesaplayalım.
 - Alt başlık: Melaymade malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.
 - Düğmeler: Ücretsiz Deneyin | Nasıl çalışır?
 - Not: Banka kartı gerekmez. Telefonda ve bilgisayarda çalışır, internet olmadan da.
+- Kayan şerit: Stok · Maliyet · Fiyat · Akademi · Dersler · Öğrenciler · Handmade
 
-## Doğru fiyata üç adımda
+## Bir avuç boncuktan dürüst fiyata: üç adım
 1. **Malzemeleri ekleyin**. Fotoğraf çekin, miktarı ve fiyatı girin. Malzemeler stoka kendiliğinden eklenir, kargo ücreti kalemlere dağıtılır.
 2. **Ürününüzü oluşturun**. Galeriden malzemeleri seçin. Uygulama malzemeleri ayırır; fireyi, süreyi ve aletleri hesaba katar.
 3. **Fiyatı öğrenin**. Pazar yeri komisyonunu, kargoyu ve istediğiniz kârı hesaba katan maliyeti ve önerilen fiyatı görün.
 
 ## Akademi (yeni bölüm)
 - Rozet: Akademim · beta
-- Başlık: **El işi okulunuz tek uygulamada**
+- Ana başlık: **Ellerinizin bildiğini başkaları da öğrenmek ister**
+- Alt başlık: El işi okulunuz tek uygulamada
 - Giriş: Bir ustanın okulu çoğu zaman beş ayrı yerde yaşar: sohbet, tablo, fotoğraf bulutu, notlar ve alışveriş defteri. Melaymade hepsini bir araya getirir: dersler, malzemeler, öğrenciler ve gelir; stokunuzun ve fiyat hesabının yanında.
 - Düğme: Akademinizi Kurun
 
@@ -47,7 +49,7 @@
   Dersi bir kez hazırlarsınız; biz de satış yapmak istediğiniz el işi platformlarına göndeririz. Yeniden yazmak ve tekrar yüklemek yok. Şu anda geliştirme aşamasında, tarihi kesinleşince duyuracağız. Hangi platformları istediğinizi birlikte belirleriz.
 - Dürüst not: Dürüst olalım: şu anda Akademi'de kursları, dersleri, öğrencileri ve geliri siz yönetirsiniz; öğrenciler henüz uygulamaya giriş yapmaz. «Yakında» işaretli her şey geliştirme aşamasındadır.
 
-## Bir ustanın ihtiyaç duyduğu her şey
+## Her boncuk hesapta
 - **Fotoğraflı Malzeme Stoku**. Malzemeler şık kartlar halinde. Ada, renge, boyuta ve ürün koduna göre arama.
 - **Her para biriminde alışveriş**. 40'tan fazla para birimi. Kargo kalemlere dağıtılır, ortalama fiyat otomatik hesaplanır.
 - **Stoktan düşmeden ayırma**. Malzeme işte ayrılır ama stoktan ancak iş tamamlanınca düşer. Aynı anda birden fazla iş yürütebilirsiniz.
@@ -58,11 +60,11 @@
 - **Her yerde, internetsiz de**. Telefon, tablet, bilgisayar. Veriler eşitlenir ve çevrimdışı da kullanılabilir.
 - **Kişisel Akademi**. Kurslar, malzemeli dersler ve öğrenciler stokunuzun yanında. Bölüm gelişmeye devam ediyor.
 
-## Uygulama böyle görünüyor
+## İçeri bir göz atın
 - Altyazılar: Fotoğraflı Malzeme Stoku | Maliyet ve Fiyat | Satışlar ve İstatistik | İş Arşivi
 - Not: Arayüz şu anda Rusça. Türkçe ve İngilizce çok yakında.
 
-## Sık sorulan sorular
+## Aklınıza takılanlar
 - **Akademi nedir?**
   «Akademim» bölümü, Melaymade içindeki kişisel okulunuzdur: kurslar, stoktan malzemeli dersler, öğrenciler ve kurs geliri. Hepsi maliyet hesabının yanında.
 - **Öğrenciler doğrudan uygulamada öğrenebilir mi?**
@@ -83,7 +85,7 @@
   Verileriniz saklanır, istediğiniz zaman yedeğini alabilirsiniz.
 
 ## Son çağrı
-- **Stokla başlayın, ilk kursunuzu kurun**
+- **El emeğinizi kendi işinize dönüştürme zamanı**
 - Bir dakikada hesap oluşturun: ilk ürününüzün maliyetini hesaplayın ve Akademinizde ilk kursunuzu oluşturun.
 - Düğme: Hesap Oluştur
 - Alt bilgi: © 2026 Melaymade. El işi ustaları için sevgiyle yapıldı.

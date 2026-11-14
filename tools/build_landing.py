@@ -349,6 +349,88 @@ for _c, _a in ACADEMY.items():
     _t["faq"] = list(_a["faq_extra"]) + list(_t["faq"])
     _t["ac"] = _a
 
+# ------------------------------------------------- смелые заголовки и лента
+BOLD = {
+    "ru": {
+        "h1": "Ты создаёшь магию. *Мы считаем, сколько она стоит.*",
+        "how_title": "От горсти бусин до честной цены: три шага",
+        "feat_title": "Каждая бусина на счету",
+        "gal_title": "Загляни внутрь",
+        "faq_title": "Остались вопросы?",
+        "final_title": "Пора превратить рукоделие в своё дело",
+        "ribbon": ["Склад", "Себестоимость", "Цена", "Академия", "Уроки", "Ученицы", "Handmade"],
+        "ac_big": "Твои руки знают то, чему хотят научиться другие",
+    },
+    "tr": {
+        "h1": "Siz büyüyü yaratın. *Ne kadar ettiğini biz hesaplayalım.*",
+        "how_title": "Bir avuç boncuktan dürüst fiyata: üç adım",
+        "feat_title": "Her boncuk hesapta",
+        "gal_title": "İçeri bir göz atın",
+        "faq_title": "Aklınıza takılanlar",
+        "final_title": "El emeğinizi kendi işinize dönüştürme zamanı",
+        "ribbon": ["Stok", "Maliyet", "Fiyat", "Akademi", "Dersler", "Öğrenciler", "Handmade"],
+        "ac_big": "Ellerinizin bildiğini başkaları da öğrenmek ister",
+    },
+    "en": {
+        "h1": "You make the magic. *We work out what it's worth.*",
+        "how_title": "From a handful of beads to an honest price: three steps",
+        "feat_title": "Every bead counted",
+        "gal_title": "Take a look inside",
+        "faq_title": "Still wondering?",
+        "final_title": "Time to turn your craft into your business",
+        "ribbon": ["Stock", "Cost", "Price", "Academy", "Lessons", "Students", "Handmade"],
+        "ac_big": "Your hands know what others want to learn",
+    },
+}
+for _c, _b in BOLD.items():
+    TEXTS[_c].update({k: v for k, v in _b.items() if k != "ac_big"})
+    TEXTS[_c]["ac"]["ac_big"] = _b["ac_big"]
+
+import math
+
+
+def moon(cx, cy, r, illum):
+    """Фаза луны: illum 0..1, освещена правая сторона."""
+    out = f'<circle cx="{cx}" cy="{cy}" r="{r}"/>'
+    if illum <= 0.02:
+        return out
+    if illum >= 0.98:
+        return out.replace("/>", ' fill="currentColor"/>')
+    rx = abs(1 - 2 * illum) * r
+    sweep = 0 if illum < 0.5 else 1
+    return out + f'<path d="M{cx} {cy - r}A{r} {r} 0 0 1 {cx} {cy + r}A{rx:.2f} {r} 0 0 {sweep} {cx} {cy - r}Z" fill="currentColor"/>'
+
+
+def moons_row():
+    ph = [0.12, 0.35, 1, 0.65, 0.88]
+    return '<div class="moons rv" aria-hidden="true">' + "".join(
+        f'<svg viewBox="0 0 24 24" style="--i:{i}">{moon(12, 12, 9, v)}</svg>' for i, v in enumerate(ph)) + "</div>"
+
+
+def mandala_svg():
+    c = 200
+    a = [f'<circle cx="{c}" cy="{c}" r="196" stroke-dasharray="2 7"/>', f'<circle cx="{c}" cy="{c}" r="176"/>',
+         f'<circle cx="{c}" cy="{c}" r="122"/>', f'<circle cx="{c}" cy="{c}" r="70" stroke-dasharray="1 4"/>']
+    for k in range(48):
+        ang = math.radians(k * 7.5)
+        r1, r2 = (126, 170) if k % 2 == 0 else (126, 152)
+        a.append(f'<path d="M{c + r1 * math.sin(ang):.1f} {c - r1 * math.cos(ang):.1f}L{c + r2 * math.sin(ang):.1f} {c - r2 * math.cos(ang):.1f}"/>')
+    b = []
+    for k in range(12):
+        b.append(f'<path d="M200 70C216 98 216 124 200 150C184 124 184 98 200 70" transform="rotate({k * 30} 200 200)"/>')
+    for k in range(8):
+        ang = math.radians(k * 45)
+        b.append(moon(round(200 + 186 * math.sin(ang), 1), round(200 - 186 * math.cos(ang), 1), 7, [0.08, 0.3, 0.6, 1, 0.6, 0.3, 0.08, 0][k]))
+    return (f'<div class="halo" aria-hidden="true"><svg class="a" viewBox="0 0 400 400">{"".join(a)}</svg>'
+            f'<svg class="b" viewBox="0 0 400 400">{"".join(b)}</svg></div>')
+
+
+def feather_svg(left, top, size, t, dl):
+    return (f'<svg class="fe" viewBox="-10 0 20 48" style="left:{left};top:{top};width:{size}px;--t:{t}s;--dl:{dl}s" aria-hidden="true">'
+            '<path d="M0 0V46"/><path d="M0 13.8C7.8 20.7 7.8 36.8 0 46C-7.8 36.8-7.8 20.7 0 13.8"/>'
+            '<path d="M0 19l4.3-2.8M0 19l-4.3-2.8M0 24.5l6-2.8M0 24.5l-6-2.8M0 30l7.5-2.8M0 30l-7.5-2.8M0 35.3l6-2.8M0 35.3l-6-2.8M0 40.6l4.3-2.8M0 40.6l-4.3-2.8" stroke-width=".6"/></svg>')
+
+
 CSS = """
 :root{--bg:#F1E8D6;--surface:#FAF4E7;--surface2:#EDE1CA;--line:#D9C7A6;--ink:#33291F;--ink2:#645644;--clay:#A64F2E;--clay-ink:#FFF6EA;--clay-soft:#EFD3C0;--accent:#3E6150;--accent-soft:#D3E0D4;--ochre:#C98F27;--art:#8B6B45;--glass:color-mix(in srgb,var(--surface) 90%,transparent);--shadow:0 2px 4px rgba(74,59,44,.08),0 24px 60px rgba(74,59,44,.2)}
 @media (prefers-color-scheme:dark){:root{--bg:#17120D;--surface:#221B14;--surface2:#2B231A;--line:#3B3024;--ink:#F1E6D2;--ink2:#C2B297;--clay:#D8805A;--clay-ink:#2A130A;--clay-soft:#4A281C;--accent:#A5BD8F;--accent-soft:#2A3523;--ochre:#E2B25A;--art:#C7A877;--shadow:0 2px 4px rgba(0,0,0,.4),0 24px 60px rgba(0,0,0,.55);color-scheme:dark}}
@@ -456,6 +538,70 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
   .road{grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:36px 40px}
 }
 @media (min-width:640px) and (max-width:859px){.grid.four{grid-template-columns:repeat(2,1fr)}}
+
+html,body{overflow-x:clip}
+main{overflow-x:clip}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.06)}}
+@keyframes bob{from{transform:translateY(-8px)}to{transform:translateY(10px)}}
+@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes shine{to{background-position:-220% 0}}
+@keyframes rise{0%{opacity:0;transform:translate(0,0)}12%{opacity:.95}85%{opacity:.5}100%{opacity:0;transform:translate(var(--dx),-680px)}}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes drift{0%{opacity:0;transform:translate(0,-30px) rotate(-22deg)}12%{opacity:.6}50%{transform:translate(34px,240px) rotate(24deg)}88%{opacity:.5}100%{opacity:0;transform:translate(-14px,520px) rotate(-18deg)}}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(166,79,46,.35)}100%{box-shadow:0 0 0 14px rgba(166,79,46,0)}}
+.hero{background:radial-gradient(60% 55% at 82% 28%,rgba(201,143,39,.2),transparent 70%),radial-gradient(50% 50% at 6% 90%,rgba(166,79,46,.12),transparent 70%)}
+.hero .txt>*{animation:floatin .9s both}
+.hero .txt>*:nth-child(1){animation-delay:.05s}.hero .txt>*:nth-child(2){animation-delay:.15s}.hero .txt>*:nth-child(3){animation-delay:.28s}.hero .txt>*:nth-child(4){animation-delay:.42s}.hero .txt>*:nth-child(5){animation-delay:.56s}.hero .txt>*:nth-child(6){animation-delay:.68s}
+.shine{background:linear-gradient(100deg,var(--clay) 0%,var(--ochre) 38%,var(--clay) 76%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+h1{font-size:clamp(40px,8.4vw,68px)}
+.herovis{min-height:420px;align-items:center;perspective:900px}
+.halo{position:absolute;left:50%;top:50%;width:min(620px,150vw);aspect-ratio:1;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
+.halo svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--art);stroke-width:.9;stroke-linecap:round;color:var(--ochre);opacity:.6}
+.halo .a{animation:spin 110s linear infinite}.halo .b{animation:spin 160s linear infinite reverse}
+.halo::before{content:"";position:absolute;inset:20%;border-radius:50%;background:radial-gradient(closest-side,rgba(232,184,95,.55),rgba(232,184,95,0));animation:pulse 6s ease-in-out infinite}
+.herovis .bob{position:relative;z-index:1;animation:bob 7s ease-in-out infinite alternate}
+.herovis .phone{transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out;will-change:transform}
+.sparks,.stars{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.sparks i{position:absolute;bottom:-12px;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;background:var(--ochre);box-shadow:0 0 10px 2px var(--ochre);opacity:0;animation:rise var(--t) var(--dl) linear infinite}
+.stars i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;background:#FFE9BE;box-shadow:0 0 8px 1px rgba(255,226,160,.8);animation:twinkle var(--t) var(--dl) ease-in-out infinite}
+.fe{position:absolute;z-index:0;fill:none;stroke:var(--art);stroke-width:1;stroke-linecap:round;opacity:0;animation:drift var(--t) var(--dl) ease-in-out infinite;pointer-events:none}
+.ribbonwrap{overflow:hidden;padding:26px 0;position:relative;z-index:2;margin-top:-26px}
+.ribbon{background:var(--clay);color:var(--clay-ink);transform:rotate(-1.4deg);margin:0 -3%;padding:15px 0;box-shadow:0 10px 30px rgba(120,60,30,.25)}
+.ribbon .track{display:flex;width:max-content;animation:marq 42s linear infinite}
+.ribbon:hover .track{animation-play-state:paused}
+.ribbon span{font-family:'Forum','Cormorant Garamond',Georgia,serif;font-size:clamp(18px,3vw,27px);letter-spacing:.2em;text-transform:uppercase;padding:0 22px;display:inline-flex;align-items:center;gap:44px;white-space:nowrap}
+.ribbon span::after{content:"";width:10px;height:10px;background:currentColor;transform:rotate(45deg);opacity:.75}
+.moons{display:flex;justify-content:center;gap:clamp(18px,4vw,40px);color:var(--ochre);padding:4px 0}
+.moons svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.3;animation:twinkle 5s calc(var(--i)*.7s) ease-in-out infinite}
+.step .n{animation:ring 2.6s ease-out infinite}
+.card{transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--ochre);box-shadow:0 18px 40px rgba(120,86,50,.2)}
+.phone{transition:transform .4s}
+.gallery figure:hover .phone{transform:translateY(-8px) rotate(-1deg)}
+.acad{--ink:#F3E8D3;--ink2:#CDBEA3;--surface:#2A2119;--glass:rgba(255,238,210,.055);--line:rgba(232,184,95,.3);--clay:#EBA27A;--clay-ink:#2A130A;--clay-soft:rgba(235,162,122,.18);--accent:#B4CC9E;--accent-soft:rgba(180,204,158,.16);--ochre:#E8B85F;--shadow:0 30px 80px rgba(0,0,0,.55);color:var(--ink);padding:96px 0 104px;background:radial-gradient(70% 45% at 82% 6%,rgba(232,184,95,.2),transparent 70%),radial-gradient(60% 40% at 8% 96%,rgba(235,162,122,.16),transparent 70%),#1A1410}
+.acad::before,.acad::after{content:"";position:absolute;left:0;right:0;height:22px;z-index:1}
+.acad::before{top:-1px;background:radial-gradient(circle at 14px 0,var(--bg) 13px,transparent 14px) 0 0/28px 22px repeat-x}
+.acad::after{bottom:-1px;background:radial-gradient(circle at 14px 22px,var(--surface2) 13px,transparent 14px) 0 0/28px 22px repeat-x}
+.acad .wrap{position:relative;z-index:2}
+.acad .phone{border-color:#FAF4E7;box-shadow:0 0 0 1px rgba(232,184,95,.3),0 0 60px rgba(232,184,95,.28),0 30px 70px rgba(0,0,0,.6)}
+.acad .vis .phone:first-child{animation:bob 7s ease-in-out infinite alternate}
+.acad .vis .phone+.phone{animation:bob 8s 1s ease-in-out infinite alternate-reverse}
+.acad .ac-sub{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(22px,3.4vw,28px);color:var(--clay);margin:4px 0 12px}
+.acad h2.big{font-size:clamp(36px,6.8vw,58px)}
+.acad .btn:not(.pri){background:transparent;color:var(--ink)}
+.road{background:linear-gradient(135deg,rgba(232,184,95,.14),rgba(255,238,210,.04))}
+.road .ic{animation:pulse 3.6s ease-in-out infinite}
+.final{padding:0 0 88px;background:radial-gradient(50% 60% at 50% 100%,rgba(232,184,95,.22),transparent 70%)}
+.final .hang{width:150px;margin:0 auto 18px;display:block;transform-origin:50% 0;animation:hang 7s ease-in-out infinite alternate;position:relative;z-index:1}
+.final .wrap{position:relative;z-index:1}
+.final h2{font-size:clamp(34px,6vw,54px)}
+@media (prefers-reduced-motion:no-preference){
+  .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .card.rv.in:hover{transform:translateY(-6px);transition-delay:0s;transition-duration:.3s}
+}
+@media (max-width:560px){.herovis{min-height:380px}.ribbon span{gap:30px;padding:0 14px}.acad{padding:80px 0 88px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 """
 
@@ -468,6 +614,23 @@ REDIRECT_JS = """<script>
     if(want==='tr')location.replace('/tr/');else if(want==='en')location.replace('/en/');}
   else if(saved==='tr')location.replace('/tr/');else if(saved==='en')location.replace('/en/');
 }catch(e){}})();
+</script>"""
+
+SCRIPT = """<script>
+(function(){
+var d=document,R=Math.random;
+try{
+d.querySelectorAll('[data-sparks]').forEach(function(b){for(var i=0;i<+b.dataset.sparks;i++){var s=d.createElement('i');s.style.cssText='--x:'+(R()*100)+'%;--s:'+(2+R()*4)+'px;--t:'+(10+R()*12)+'s;--dl:-'+(R()*20)+'s;--dx:'+(R()*90-45)+'px';b.appendChild(s)}});
+d.querySelectorAll('[data-stars]').forEach(function(b){for(var i=0;i<+b.dataset.stars;i++){var s=d.createElement('i');s.style.cssText='--x:'+(R()*100)+'%;--y:'+(R()*100)+'%;--s:'+(1+R()*2.2)+'px;--t:'+(3+R()*5)+'s;--dl:-'+(R()*8)+'s';b.appendChild(s)}});
+var els=d.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e)})}
+var hv=d.querySelector('.herovis');
+if(hv&&matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+hv.addEventListener('pointermove',function(e){var r=hv.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;hv.style.setProperty('--ry',(x*12).toFixed(1)+'deg');hv.style.setProperty('--rx',(-y*10).toFixed(1)+'deg')});
+hv.addEventListener('pointerleave',function(){hv.style.setProperty('--ry','0deg');hv.style.setProperty('--rx','0deg')})}
+}catch(e){d.querySelectorAll('.rv').forEach(function(x){x.classList.add('in')})}
+})();
 </script>"""
 
 FAV = '<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png"><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">'
@@ -484,19 +647,24 @@ def render(code):
         for c in ("ru", "tr", "en"))
     alts = "".join(f'<link rel="alternate" hreflang="{c}" href="{BASE}{TEXTS[c]["path"]}">' for c in ("ru", "tr", "en"))
     alts += f'<link rel="alternate" hreflang="x-default" href="{BASE}/">'
-    steps = "".join(f'<div class="card step"><div class="n">{i + 1}</div><h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (a, b) in enumerate(t["steps"]))
-    feats = "".join(f'<div class="card feat">{icon(ic)}<h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for ic, a, b in t["features"])
+    import re as _re
+    h1 = _re.sub(r"\*(.+?)\*", r'<span class="shine">\1</span>', esc(t["h1"]))
+    ribbon = "".join(f"<span>{esc(w)}</span>" for w in t["ribbon"] * 2)
+    ribbon = f'<div class="ribbonwrap" aria-hidden="true"><div class="ribbon"><div class="track">{ribbon}{ribbon}</div></div></div>'
+    feathers = feather_svg("4%", "-30px", 20, 17, -2) + feather_svg("46%", "-40px", 16, 22, -9) + feather_svg("92%", "-30px", 22, 19, -5) + feather_svg("68%", "-50px", 14, 25, -14)
+    steps = "".join(f'<div class="card step rv" style="--i:{i}"><div class="n">{i + 1}</div><h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (a, b) in enumerate(t["steps"]))
+    feats = "".join(f'<div class="card feat rv" style="--i:{i % 3}">{icon(ic)}<h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (ic, a, b) in enumerate(t["features"]))
     imgs = ["stock", "price", "stats", "archive"]
     gal = "".join(
-        f'<figure><div class="phone"><img src="/img/{n}.jpg" width="780" height="1688" loading="lazy" alt="{esc(t["gal_alt"][i])}"></div><figcaption>{esc(t["gal"][i])}</figcaption></figure>'
+        f'<figure class="rv" style="--i:{i}"><div class="phone"><img src="/img/{n}.jpg" width="780" height="1688" loading="lazy" alt="{esc(t["gal_alt"][i])}"></div><figcaption>{esc(t["gal"][i])}</figcaption></figure>'
         for i, n in enumerate(imgs))
-    faq = "".join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t["faq"])
+    faq = "".join(f'<details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t["faq"])
     nav = f'<a href="#how">{esc(t["nav"][0])}</a><a href="#academy">{esc(t["nav"][1])}</a><a href="#features">{esc(t["nav"][2])}</a><a href="#faq">{esc(t["nav"][3])}</a>'
     a = t["ac"]
-    pains = "".join(f'<div class="card"><q>{esc(q)}</q><p>{esc(x)}</p></div>' for q, x in a["pains"])
+    pains = "".join(f'<div class="card rv" style="--i:{i}"><q>{esc(q)}</q><p>{esc(x)}</p></div>' for i, (q, x) in enumerate(a["pains"]))
     acards = "".join(
-        f'<div class="card feat acard {st}">{icon(ic)}<span class="st {st}">{esc(a["b_ok"] if st == "ok" else a["b_soon"])}</span><h3>{esc(ti)}</h3><p>{esc(tx)}</p></div>'
-        for ic, ti, tx, st in a["ac_cards"])
+        f'<div class="card feat acard rv {st}" style="--i:{i % 3}">{icon(ic)}<span class="st {st}">{esc(a["b_ok"] if st == "ok" else a["b_soon"])}</span><h3>{esc(ti)}</h3><p>{esc(tx)}</p></div>'
+        for i, (ic, ti, tx, st) in enumerate(a["ac_cards"]))
     redirect = REDIRECT_JS if code == "ru" else ""
     brand_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><circle cx="12" cy="9" r="2.6"/><path d="M12 3v12M6 9h12M9.5 15v5M12 15.5V22M14.5 15v4"/></svg>'
     return f"""<!doctype html>
@@ -516,6 +684,7 @@ def render(code):
 {FAV}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Forum&family=Nunito:wght@400;600;700;800&display=swap">
+<script>document.documentElement.className+=" js"</script>
 <style>{CSS}</style>
 {redirect}
 </head>
@@ -527,57 +696,61 @@ def render(code):
   <a class="btn sm" href="{APP}">{esc(t["login"])}</a>
 </div></header>
 <main>
-<section class="hero"><div class="wrap">
-  <div>
+<section class="hero"><div class="sparks" data-sparks="22"></div>{feathers}<div class="wrap">
+  <div class="txt">
     <a class="pill" href="#academy">{icon("cap")}{esc(a["pill"])}</a>
     <span class="kick">{esc(t["kicker"])}</span>
-    <h1>{esc(t["h1"])}</h1>
+    <h1>{h1}</h1>
     <p class="sub">{esc(t["sub"])}</p>
     <div class="cta"><a class="btn pri" href="{APP}">{esc(t["cta"])}</a><a class="btn" href="#how">{esc(t["cta2"])}</a></div>
     <p class="note">{esc(t["note"])}</p>
   </div>
-  <div class="herovis">{catcher_svg()}<div class="phone"><img src="/img/stock.jpg" width="780" height="1688" alt="{esc(t["gal_alt"][0])}"></div></div>
+  <div class="herovis">{mandala_svg()}<div class="bob"><div class="phone"><img src="/img/stock.jpg" width="780" height="1688" alt="{esc(t["gal_alt"][0])}"></div></div></div>
 </div></section>
+{ribbon}
 <section id="how"><div class="wrap">
-  <h2>{esc(t["how_title"])}</h2>
+  <h2 class="rv">{esc(t["how_title"])}</h2>
   <div class="grid three">{steps}</div>
 </div></section>
-<section id="academy" class="acad"><div class="wrap">
+<section id="academy" class="acad"><div class="stars" data-stars="70"></div><div class="wrap">
   <div class="top">
     <div>
       <span class="badge">{icon("cap")}{esc(a["ac_badge"])}</span>
-      <h2 class="big">{esc(a["ac_h"])}</h2>
+      <h2 class="big">{esc(a["ac_big"])}</h2>
+      <p class="ac-sub">{esc(a["ac_h"])}</p>
       <p class="lead">{esc(a["ac_lead"])}</p>
       <div class="cta"><a class="btn pri" href="{APP}">{esc(a["ac_cta"])}</a></div>
     </div>
     <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
   </div>
-  <h3 class="sec">{esc(a["pain_title"])}</h3>
+  <h3 class="sec rv">{esc(a["pain_title"])}</h3>
   <div class="grid three pains">{pains}</div>
   <div class="grid three">{acards}</div>
-  <div class="road">{icon("upload")}<div><span class="kick">{esc(a["road_kick"])}</span><h3>{esc(a["road_title"])}</h3><p>{esc(a["road_text"])}</p></div></div>
-  <p class="acnote">{esc(a["ac_note"])}</p>
+  <div class="road rv">{icon("upload")}<div><span class="kick">{esc(a["road_kick"])}</span><h3>{esc(a["road_title"])}</h3><p>{esc(a["road_text"])}</p></div></div>
+  <p class="acnote rv">{esc(a["ac_note"])}</p>
 </div></section>
 <section id="features" class="alt"><div class="wrap">
-  <h2>{esc(t["feat_title"])}</h2>
+  <h2 class="rv">{esc(t["feat_title"])}</h2>
   <div class="grid three">{feats}</div>
 </div></section>
 <section><div class="wrap">
-  <h2>{esc(t["gal_title"])}</h2>
+  <h2 class="rv">{esc(t["gal_title"])}</h2>
   <div class="gallery">{gal}</div>
   <p class="uinote">{esc(t["ui_note"])}</p>
 </div></section>
 <section id="faq"><div class="wrap">
-  <h2>{esc(t["faq_title"])}</h2>
+  {moons_row()}
+  <h2 class="rv">{esc(t["faq_title"])}</h2>
   {faq}
 </div></section>
-<section class="final"><div class="wrap">
-  <h2>{esc(t["final_title"])}</h2>
+<section class="final"><div class="sparks" data-sparks="14"></div>{catcher_svg("hang")}<div class="wrap">
+  <h2 class="rv">{esc(t["final_title"])}</h2>
   <p>{esc(t["final_text"])}</p>
   <a class="btn pri" href="{APP}">{esc(t["final_cta"])}</a>
 </div></section>
 </main>
 <footer><div class="wrap">{esc(t["footer"])}</div></footer>
+{SCRIPT}
 </body>
 </html>
 """
