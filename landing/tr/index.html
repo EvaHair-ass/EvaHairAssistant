@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Melaymade: El işi ustaları için stok, alışveriş ve maliyet hesabı</title>
-<meta name="description" content="Fotoğraflı malzeme stoku, fire ve süreyi hesaba katan maliyet hesabı, önerilen fiyat ve iş arşivi. Telefonda ve bilgisayarda, internet olmadan da çalışır.">
+<title>Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi</title>
+<meta name="description" content="Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda.">
 <link rel="canonical" href="https://melaymade.com/tr/">
 <link rel="alternate" hreflang="ru" href="https://melaymade.com/"><link rel="alternate" hreflang="tr" href="https://melaymade.com/tr/"><link rel="alternate" hreflang="en" href="https://melaymade.com/en/"><link rel="alternate" hreflang="x-default" href="https://melaymade.com/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Melaymade">
-<meta property="og:title" content="Melaymade: El işi ustaları için stok, alışveriş ve maliyet hesabı"><meta property="og:description" content="Fotoğraflı malzeme stoku, fire ve süreyi hesaba katan maliyet hesabı, önerilen fiyat ve iş arşivi. Telefonda ve bilgisayarda, internet olmadan da çalışır.">
+<meta property="og:title" content="Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi"><meta property="og:description" content="Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda.">
 <meta property="og:url" content="https://melaymade.com/tr/"><meta property="og:image" content="https://melaymade.com/og.png"><meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F1E8D6" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#17120D" media="(prefers-color-scheme: dark)">
@@ -45,7 +45,7 @@ img{max-width:100%;height:auto;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:16px;font-weight:800;font-size:16px;text-decoration:none;border:1.5px solid var(--line);background:var(--surface);transition:transform .15s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(120,86,50,.18)}
 .btn.pri{background:var(--clay);color:var(--clay-ink);border-color:var(--clay)}
-.btn.sm{min-height:40px;padding:0 16px;font-size:14px;border-radius:12px}
+.btn.sm{white-space:nowrap;min-height:40px;padding:0 16px;font-size:14px;border-radius:12px}
 .hero{position:relative;overflow:hidden;padding:48px 0 64px}
 .hero .wrap{display:grid;gap:40px;position:relative;z-index:1}
 .kick{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:14px;display:block}
@@ -85,6 +85,31 @@ details p{margin-top:10px;color:var(--ink2);font-size:16px}
 .final h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
 footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;border-top:1px solid var(--line)}
 :focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 16px 7px 11px;border-radius:999px;background:var(--clay-soft);color:var(--clay);font-weight:800;font-size:13px;text-decoration:none;margin-bottom:18px;line-height:1.3}
+.pill .ic{width:18px;height:18px}
+.acad{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--accent-soft) 0%,var(--bg) 100%)}
+.acad .top{display:grid;gap:40px;align-items:center}
+.acad .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:5px 14px;margin-bottom:16px}
+.acad h2.big{font-size:clamp(34px,6.4vw,54px);line-height:1.04}
+.acad .lead{font-size:19px;color:var(--ink2);margin-top:6px;max-width:34em}
+.acad .vis{display:flex;gap:16px;justify-content:center;align-items:flex-start}
+.acad .vis .phone{width:min(210px,42vw)}
+.acad .vis .phone+.phone{margin-top:48px}
+.acad h3.sec{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(26px,4.4vw,34px);margin:56px 0 0;color:var(--clay)}
+.pains .card{border-style:dashed;background:var(--surface)}
+.pains q{display:block;quotes:none;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:23px;line-height:1.2;color:var(--clay);margin-bottom:10px}
+.acard{position:relative}
+.acard .st{position:absolute;top:18px;right:18px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.acard .st.ok{background:var(--accent-soft);color:var(--accent)}
+.acard .st.soon{background:var(--clay-soft);color:var(--clay)}
+.acard.soon{border-style:dashed}
+.road{margin-top:32px;border-radius:28px;padding:32px 28px;background:var(--surface);border:1.5px solid var(--ochre);display:grid;gap:18px;box-shadow:var(--shadow)}
+.road .ic{width:38px;height:38px;color:var(--ochre)}
+.road .kick{margin-bottom:6px}
+.road h3{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(26px,4.6vw,36px);line-height:1.1;margin-bottom:10px}
+.road p{color:var(--ink2)}
+.acnote{margin-top:20px;font-size:14px;color:var(--ink2);max-width:46em}
+.acad .cta{margin-top:32px}
 @media (max-width:560px){.hdr .wrap{gap:10px;min-height:60px}.brand{font-size:15px;letter-spacing:.1em;gap:7px}.brand svg{width:22px;height:22px}.lang a{padding:4px 8px;font-size:12px}.btn.sm{padding:0 12px;min-height:38px;font-size:13px}.herovis .art{width:150px;right:-4%}}
 @media (min-width:860px){
   .nav{display:flex}
@@ -93,6 +118,8 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
   .grid.three{grid-template-columns:repeat(3,1fr)}
   .grid.four{grid-template-columns:repeat(4,1fr)}
   .gallery{justify-content:center;overflow:visible;margin:0;padding:32px 0 12px}
+  .acad .top{grid-template-columns:1.1fr .9fr}
+  .road{grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:36px 40px}
 }
 @media (min-width:640px) and (max-width:859px){.grid.four{grid-template-columns:repeat(2,1fr)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
@@ -102,16 +129,17 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
 <body>
 <header class="hdr"><div class="wrap">
   <a class="brand" href="/tr/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><circle cx="12" cy="9" r="2.6"/><path d="M12 3v12M6 9h12M9.5 15v5M12 15.5V22M14.5 15v4"/></svg>MELAYMADE</a>
-  <nav class="nav" aria-label="Menu"><a href="#how">Nasıl çalışır?</a><a href="#features">Özellikler</a><a href="#faq">Sık sorulanlar</a></nav><span class="sp"></span>
+  <nav class="nav" aria-label="Menu"><a href="#how">Nasıl çalışır?</a><a href="#academy">Akademi</a><a href="#features">Özellikler</a><a href="#faq">Sık sorulanlar</a></nav><span class="sp"></span>
   <div class="lang" role="navigation" aria-label="Language"><a href="/" hreflang="ru" lang="ru" class="" onclick="try{localStorage.setItem('mm-lang','ru')}catch(e){}">RU</a><a href="/tr/" hreflang="tr" lang="tr" class="on" onclick="try{localStorage.setItem('mm-lang','tr')}catch(e){}">TR</a><a href="/en/" hreflang="en" lang="en" class="" onclick="try{localStorage.setItem('mm-lang','en')}catch(e){}">EN</a></div>
   <a class="btn sm" href="https://app.melaymade.com/">Giriş Yap</a>
 </div></header>
 <main>
 <section class="hero"><div class="wrap">
   <div>
+    <a class="pill" href="#academy"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m2.5 9 9.5-4.5L21.5 9 12 13.5z"/><path d="M6.5 11.5v4.5c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.5M21.5 9v5.5"/></svg>Yeni · dersleriniz için kişisel Akademi</a>
     <span class="kick">el işi ustaları için</span>
     <h1>Ürününüzün gerçek maliyetini bilin</h1>
-    <p class="sub">Melaymade, malzeme stokunuzu fotoğraflarla tutar; fireyi, süreyi ve aletleri hesaba katarak maliyeti çıkarır ve kazanç sağlayacağınız fiyatı önerir.</p>
+    <p class="sub">Melaymade malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.</p>
     <div class="cta"><a class="btn pri" href="https://app.melaymade.com/">Ücretsiz Deneyin</a><a class="btn" href="#how">Nasıl çalışır?</a></div>
     <p class="note">Banka kartı gerekmez. Telefonda ve bilgisayarda çalışır, internet olmadan da.</p>
   </div>
@@ -121,27 +149,38 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
   <h2>Doğru fiyata üç adımda</h2>
   <div class="grid three"><div class="card step"><div class="n">1</div><h3>Malzemeleri ekleyin</h3><p>Fotoğraf çekin, miktarı ve fiyatı girin. Malzemeler stoka kendiliğinden eklenir, kargo ücreti kalemlere dağıtılır.</p></div><div class="card step"><div class="n">2</div><h3>Ürününüzü oluşturun</h3><p>Galeriden malzemeleri seçin. Uygulama malzemeleri ayırır; fireyi, süreyi ve aletleri hesaba katar.</p></div><div class="card step"><div class="n">3</div><h3>Fiyatı öğrenin</h3><p>Pazar yeri komisyonunu, kargoyu ve istediğiniz kârı hesaba katan maliyeti ve önerilen fiyatı görün.</p></div></div>
 </div></section>
+<section id="academy" class="acad"><div class="wrap">
+  <div class="top">
+    <div>
+      <span class="badge"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m2.5 9 9.5-4.5L21.5 9 12 13.5z"/><path d="M6.5 11.5v4.5c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.5M21.5 9v5.5"/></svg>Akademim · beta</span>
+      <h2 class="big">El işi okulunuz tek uygulamada</h2>
+      <p class="lead">Bir ustanın okulu çoğu zaman beş ayrı yerde yaşar: sohbet, tablo, fotoğraf bulutu, notlar ve alışveriş defteri. Melaymade hepsini bir araya getirir: dersler, malzemeler, öğrenciler ve gelir; stokunuzun ve fiyat hesabının yanında.</p>
+      <div class="cta"><a class="btn pri" href="https://app.melaymade.com/">Akademinizi Kurun</a></div>
+    </div>
+    <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="Akademim · beta"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="Malzemeler dersin içinde"></div></div>
+  </div>
+  <h3 class="sec">Tanıdık geliyor mu?</h3>
+  <div class="grid three pains"><div class="card"><q>«Ders için ne almalıyım?» yüzüncü kez</q><p>Malzemeler doğrudan stokunuzdan derse eklenir. Liste her zaman elinizin altında, dersin maliyeti kendiliğinden hesaplanır.</p></div><div class="card"><q>Kim ödedi, hangi derste kaldı?</q><p>Öğrenciler, erişimleri ve ilerlemeleri tek listede. Tablolara ve dağınık notlara gerek yok.</p></div><div class="card"><q>Bir ders, bir akşam uğraş</q><p>Derslerinizi el işi ustalarının platformlarına tek dokunuşla yüklemek için çalışıyoruz. Henüz geliştirme aşamasında, ama yön tam olarak bu.</p></div></div>
+  <div class="grid three"><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2 2 0 0 1 6 3.5h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20.5v-15M8.5 8h6"/></svg><span class="st ok">Hazır</span><h3>Kurslar ve dersler düzenli</h3><p>Kurs oluşturun, açıklamalı dersler ekleyin, hazır olunca yayınlayın.</p></div><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 9 4.8-9 4.8-9-4.8z"/><path d="m3 13 9 4.8 9-4.8"/></svg><span class="st ok">Hazır</span><h3>Malzemeler dersin içinde</h3><p>Derse stoktan malzeme ekleyin. Tek dokunuşla dersteki işinizi oluşturun: ayırma, hesap ve fiyat hazır.</p></div><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M17 14c2.5 0 4.5 1.6 4.5 4.5"/></svg><span class="st ok">Hazır</span><h3>Öğrenciler ve ilerlemeleri</h3><p>Öğrenci listesini, kurslara erişimi ve tamamlanan dersleri tutun. Hepsini siz girersiniz.</p></div><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg><span class="st ok">Hazır</span><h3>Kurs geliri</h3><p>Kursların ne kazandırdığını görün. Öğrencilerden ödemeyi şimdiki gibi siz alırsınız, uygulamada satın alımı işaretlersiniz.</p></div><div class="card feat acard soon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg><span class="st soon">Yakında</span><h3>Öğrenci hesabı</h3><p>Öğrenci kendisi giriş yapar, dersleri izler ve ilerlemesini işaretler.</p></div><div class="card feat acard soon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v11H11l-4.5 3.5V16.5H4z"/></svg><span class="st soon">Yakında</span><h3>Kurs sohbeti</h3><p>Ders soruları ve öğrenci sohbeti malzemelerin yanında.</p></div></div>
+  <div class="road"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4.5 20h15"/></svg><div><span class="kick">Gelişmeye devam ediyoruz</span><h3>Sıradaki adım: dersler tek dokunuşla platformlara</h3><p>Dersi bir kez hazırlarsınız; biz de satış yapmak istediğiniz el işi platformlarına göndeririz. Yeniden yazmak ve tekrar yüklemek yok. Şu anda geliştirme aşamasında, tarihi kesinleşince duyuracağız. Hangi platformları istediğinizi birlikte belirleriz.</p></div></div>
+  <p class="acnote">Dürüst olalım: şu anda Akademi&#x27;de kursları, dersleri, öğrencileri ve geliri siz yönetirsiniz; öğrenciler henüz uygulamaya giriş yapmaz. «Yakında» işaretli her şey geliştirme aşamasındadır.</p>
+</div></section>
 <section id="features" class="alt"><div class="wrap">
   <h2>Bir ustanın ihtiyaç duyduğu her şey</h2>
-  <div class="grid four"><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="3"/><rect x="13.5" y="3.5" width="7" height="7" rx="3"/><rect x="3.5" y="13.5" width="7" height="7" rx="3"/><rect x="13.5" y="13.5" width="7" height="7" rx="3"/></svg><h3>Fotoğraflı Malzeme Stoku</h3><p>Malzemeler şık kartlar halinde. Ada, renge, boyuta ve ürün koduna göre arama.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><h3>Her para biriminde alışveriş</h3><p>40&#x27;tan fazla para birimi. Kargo kalemlere dağıtılır, ortalama fiyat otomatik hesaplanır.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 9 4.8-9 4.8-9-4.8z"/><path d="m3 13 9 4.8 9-4.8"/></svg><h3>Stoktan düşmeden ayırma</h3><p>Malzeme işte ayrılır ama stoktan ancak iş tamamlanınca düşer. Aynı anda birden fazla iş yürütebilirsiniz.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5 5L3.5 17.5l3 3 6.2-6.2a4 4 0 0 0 5-5l-2.4 2.4-2.6-.6-.6-2.6z"/></svg><h3>Fire ve aletler</h3><p>Fire ayrı hesaplanır. Aletler için her kullanımın maliyeti eklenir.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h3>Sayaç ve emek</h3><p>Sayacı başlatın ya da süreyi girin. İşçilik, saat ücretinize göre hesaplanır.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12V4.5H11l9.5 9.5-7 7z"/><circle cx="8" cy="9" r="1.2"/></svg><h3>Önerilen fiyat</h3><p>Pazar yeri komisyonu, alıcıya kargo ve istediğiniz kâr hesaba katılır.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="4.5" rx="1.8"/><path d="M5 9v10.5h14V9M10 13h4"/></svg><h3>Arşiv ve satışlar</h3><p>Her iş fotoğrafı ve içeriğiyle saklanır. Kime ve nereye satıldığı. Aylık ve yıllık istatistik.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg><h3>Her yerde, internetsiz de</h3><p>Telefon, tablet, bilgisayar. Veriler eşitlenir ve çevrimdışı da kullanılabilir.</p></div></div>
+  <div class="grid three"><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="3"/><rect x="13.5" y="3.5" width="7" height="7" rx="3"/><rect x="3.5" y="13.5" width="7" height="7" rx="3"/><rect x="13.5" y="13.5" width="7" height="7" rx="3"/></svg><h3>Fotoğraflı Malzeme Stoku</h3><p>Malzemeler şık kartlar halinde. Ada, renge, boyuta ve ürün koduna göre arama.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><h3>Her para biriminde alışveriş</h3><p>40&#x27;tan fazla para birimi. Kargo kalemlere dağıtılır, ortalama fiyat otomatik hesaplanır.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 9 4.8-9 4.8-9-4.8z"/><path d="m3 13 9 4.8 9-4.8"/></svg><h3>Stoktan düşmeden ayırma</h3><p>Malzeme işte ayrılır ama stoktan ancak iş tamamlanınca düşer. Aynı anda birden fazla iş yürütebilirsiniz.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5 5L3.5 17.5l3 3 6.2-6.2a4 4 0 0 0 5-5l-2.4 2.4-2.6-.6-.6-2.6z"/></svg><h3>Fire ve aletler</h3><p>Fire ayrı hesaplanır. Aletler için her kullanımın maliyeti eklenir.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h3>Sayaç ve emek</h3><p>Sayacı başlatın ya da süreyi girin. İşçilik, saat ücretinize göre hesaplanır.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12V4.5H11l9.5 9.5-7 7z"/><circle cx="8" cy="9" r="1.2"/></svg><h3>Önerilen fiyat</h3><p>Pazar yeri komisyonu, alıcıya kargo ve istediğiniz kâr hesaba katılır.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="4.5" rx="1.8"/><path d="M5 9v10.5h14V9M10 13h4"/></svg><h3>Arşiv ve satışlar</h3><p>Her iş fotoğrafı ve içeriğiyle saklanır. Kime ve nereye satıldığı. Aylık ve yıllık istatistik.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg><h3>Her yerde, internetsiz de</h3><p>Telefon, tablet, bilgisayar. Veriler eşitlenir ve çevrimdışı da kullanılabilir.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2 2 0 0 1 6 3.5h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20.5v-15M8.5 8h6"/></svg><h3>Kişisel Akademi</h3><p>Kurslar, malzemeli dersler ve öğrenciler stokunuzun yanında. Bölüm gelişmeye devam ediyor.</p></div></div>
 </div></section>
 <section><div class="wrap">
   <h2>Uygulama böyle görünüyor</h2>
   <div class="gallery"><figure><div class="phone"><img src="/img/stock.jpg" width="780" height="1688" loading="lazy" alt="Malzeme stoku ekranı"></div><figcaption>Fotoğraflı Malzeme Stoku</figcaption></figure><figure><div class="phone"><img src="/img/price.jpg" width="780" height="1688" loading="lazy" alt="Maliyet ve fiyat hesabı ekranı"></div><figcaption>Maliyet ve Fiyat</figcaption></figure><figure><div class="phone"><img src="/img/stats.jpg" width="780" height="1688" loading="lazy" alt="Satış istatistikleri ekranı"></div><figcaption>Satışlar ve İstatistik</figcaption></figure><figure><div class="phone"><img src="/img/archive.jpg" width="780" height="1688" loading="lazy" alt="Arşivdeki iş ekranı"></div><figcaption>İş Arşivi</figcaption></figure></div>
   <p class="uinote">Arayüz şu anda Rusça. Türkçe ve İngilizce çok yakında.</p>
 </div></section>
-<section class="alt"><div class="wrap"><div class="ac">
-  <span class="kick">Çok yakında</span>
-  <h2 style="margin-bottom:12px">Akademi: derslerinizi satın</h2>
-  <p>Kurslar, öğrenciler ve ortak sohbet, stokunuzun yanında. Atölyenizi bir okula da dönüştürün.</p>
-</div></div></section>
 <section id="faq"><div class="wrap">
   <h2>Sık sorulan sorular</h2>
-  <details><summary>Mağazadan indirmem gerekiyor mu?</summary><p>Hayır. Uygulamayı tarayıcıda açın ve ana ekrana ekleyin. Normal bir uygulama gibi çalışır.</p></details><details><summary>Verilerim güvende mi?</summary><p>Her kullanıcının kendine ait ayrı bir stoku vardır, başkaları göremez. Veriler Avrupa&#x27;daki (Paris) güvenli bir bulutta saklanır.</p></details><details><summary>İnternet olmadan çalışır mı?</summary><p>Evet. Değişiklikler cihazınıza kaydedilir ve bağlantı geldiğinde buluta gönderilir.</p></details><details><summary>Hangi dillerde?</summary><p>Şu anda Rusça. Türkçe ve İngilizce hazırlanıyor.</p></details><details><summary>Ne kadar?</summary><p>Önce deneme süresi, sonra abonelik. Fiyatları yakında duyuracağız.</p></details><details><summary>Abonelik biterse ne olur?</summary><p>Verileriniz saklanır, istediğiniz zaman yedeğini alabilirsiniz.</p></details>
+  <details><summary>Akademi nedir?</summary><p>«Akademim» bölümü, Melaymade içindeki kişisel okulunuzdur: kurslar, stoktan malzemeli dersler, öğrenciler ve kurs geliri. Hepsi maliyet hesabının yanında.</p></details><details><summary>Öğrenciler doğrudan uygulamada öğrenebilir mi?</summary><p>Henüz değil: şu anda öğrencileri ve ilerlemelerini siz takip edersiniz. Öğrenci hesabı ve kurs sohbeti geliştirme aşamasında.</p></details><details><summary>Dersleri platformlara yükleyebilir miyim?</summary><p>Planlarımızda var: dersleri el işi ustalarının platformlarına tek dokunuşla yüklemek. Geliştirme aşamasında, kesin tarih vermiyoruz.</p></details><details><summary>Mağazadan indirmem gerekiyor mu?</summary><p>Hayır. Uygulamayı tarayıcıda açın ve ana ekrana ekleyin. Normal bir uygulama gibi çalışır.</p></details><details><summary>Verilerim güvende mi?</summary><p>Her kullanıcının kendine ait ayrı bir stoku vardır, başkaları göremez. Veriler Avrupa&#x27;daki (Paris) güvenli bir bulutta saklanır.</p></details><details><summary>İnternet olmadan çalışır mı?</summary><p>Evet. Değişiklikler cihazınıza kaydedilir ve bağlantı geldiğinde buluta gönderilir.</p></details><details><summary>Hangi dillerde?</summary><p>Şu anda Rusça. Türkçe ve İngilizce hazırlanıyor.</p></details><details><summary>Ne kadar?</summary><p>Önce deneme süresi, sonra abonelik. Fiyatları yakında duyuracağız.</p></details><details><summary>Abonelik biterse ne olur?</summary><p>Verileriniz saklanır, istediğiniz zaman yedeğini alabilirsiniz.</p></details>
 </div></section>
 <section class="final"><div class="wrap">
-  <h2>İlk alışverişinizle başlayın</h2>
-  <p>Bir dakikada hesap oluşturun ve ilk ürününüzün maliyetini hesaplayın.</p>
+  <h2>Stokla başlayın, ilk kursunuzu kurun</h2>
+  <p>Bir dakikada hesap oluşturun: ilk ürününüzün maliyetini hesaplayın ve Akademinizde ilk kursunuzu oluşturun.</p>
   <a class="btn pri" href="https://app.melaymade.com/">Hesap Oluştur</a>
 </div></section>
 </main>

@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Melaymade: stock, purchases and pricing for handmade makers</title>
-<meta name="description" content="Photo inventory of your materials, cost calculation including waste and time, a recommended price and an archive of your work. On phone and computer, even offline.">
+<title>Melaymade: stock, pricing and a personal Academy for handmade makers</title>
+<meta name="description" content="Photo inventory, cost and price calculation, plus a personal Academy: courses, lessons and students in one app. On phone and computer.">
 <link rel="canonical" href="https://melaymade.com/en/">
 <link rel="alternate" hreflang="ru" href="https://melaymade.com/"><link rel="alternate" hreflang="tr" href="https://melaymade.com/tr/"><link rel="alternate" hreflang="en" href="https://melaymade.com/en/"><link rel="alternate" hreflang="x-default" href="https://melaymade.com/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Melaymade">
-<meta property="og:title" content="Melaymade: stock, purchases and pricing for handmade makers"><meta property="og:description" content="Photo inventory of your materials, cost calculation including waste and time, a recommended price and an archive of your work. On phone and computer, even offline.">
+<meta property="og:title" content="Melaymade: stock, pricing and a personal Academy for handmade makers"><meta property="og:description" content="Photo inventory, cost and price calculation, plus a personal Academy: courses, lessons and students in one app. On phone and computer.">
 <meta property="og:url" content="https://melaymade.com/en/"><meta property="og:image" content="https://melaymade.com/og.png"><meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F1E8D6" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#17120D" media="(prefers-color-scheme: dark)">
@@ -45,7 +45,7 @@ img{max-width:100%;height:auto;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:16px;font-weight:800;font-size:16px;text-decoration:none;border:1.5px solid var(--line);background:var(--surface);transition:transform .15s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(120,86,50,.18)}
 .btn.pri{background:var(--clay);color:var(--clay-ink);border-color:var(--clay)}
-.btn.sm{min-height:40px;padding:0 16px;font-size:14px;border-radius:12px}
+.btn.sm{white-space:nowrap;min-height:40px;padding:0 16px;font-size:14px;border-radius:12px}
 .hero{position:relative;overflow:hidden;padding:48px 0 64px}
 .hero .wrap{display:grid;gap:40px;position:relative;z-index:1}
 .kick{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:14px;display:block}
@@ -85,6 +85,31 @@ details p{margin-top:10px;color:var(--ink2);font-size:16px}
 .final h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
 footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;border-top:1px solid var(--line)}
 :focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 16px 7px 11px;border-radius:999px;background:var(--clay-soft);color:var(--clay);font-weight:800;font-size:13px;text-decoration:none;margin-bottom:18px;line-height:1.3}
+.pill .ic{width:18px;height:18px}
+.acad{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--accent-soft) 0%,var(--bg) 100%)}
+.acad .top{display:grid;gap:40px;align-items:center}
+.acad .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:5px 14px;margin-bottom:16px}
+.acad h2.big{font-size:clamp(34px,6.4vw,54px);line-height:1.04}
+.acad .lead{font-size:19px;color:var(--ink2);margin-top:6px;max-width:34em}
+.acad .vis{display:flex;gap:16px;justify-content:center;align-items:flex-start}
+.acad .vis .phone{width:min(210px,42vw)}
+.acad .vis .phone+.phone{margin-top:48px}
+.acad h3.sec{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(26px,4.4vw,34px);margin:56px 0 0;color:var(--clay)}
+.pains .card{border-style:dashed;background:var(--surface)}
+.pains q{display:block;quotes:none;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:23px;line-height:1.2;color:var(--clay);margin-bottom:10px}
+.acard{position:relative}
+.acard .st{position:absolute;top:18px;right:18px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.acard .st.ok{background:var(--accent-soft);color:var(--accent)}
+.acard .st.soon{background:var(--clay-soft);color:var(--clay)}
+.acard.soon{border-style:dashed}
+.road{margin-top:32px;border-radius:28px;padding:32px 28px;background:var(--surface);border:1.5px solid var(--ochre);display:grid;gap:18px;box-shadow:var(--shadow)}
+.road .ic{width:38px;height:38px;color:var(--ochre)}
+.road .kick{margin-bottom:6px}
+.road h3{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(26px,4.6vw,36px);line-height:1.1;margin-bottom:10px}
+.road p{color:var(--ink2)}
+.acnote{margin-top:20px;font-size:14px;color:var(--ink2);max-width:46em}
+.acad .cta{margin-top:32px}
 @media (max-width:560px){.hdr .wrap{gap:10px;min-height:60px}.brand{font-size:15px;letter-spacing:.1em;gap:7px}.brand svg{width:22px;height:22px}.lang a{padding:4px 8px;font-size:12px}.btn.sm{padding:0 12px;min-height:38px;font-size:13px}.herovis .art{width:150px;right:-4%}}
 @media (min-width:860px){
   .nav{display:flex}
@@ -93,6 +118,8 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
   .grid.three{grid-template-columns:repeat(3,1fr)}
   .grid.four{grid-template-columns:repeat(4,1fr)}
   .gallery{justify-content:center;overflow:visible;margin:0;padding:32px 0 12px}
+  .acad .top{grid-template-columns:1.1fr .9fr}
+  .road{grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:36px 40px}
 }
 @media (min-width:640px) and (max-width:859px){.grid.four{grid-template-columns:repeat(2,1fr)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
@@ -102,16 +129,17 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
 <body>
 <header class="hdr"><div class="wrap">
   <a class="brand" href="/en/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><circle cx="12" cy="9" r="2.6"/><path d="M12 3v12M6 9h12M9.5 15v5M12 15.5V22M14.5 15v4"/></svg>MELAYMADE</a>
-  <nav class="nav" aria-label="Menu"><a href="#how">How it works</a><a href="#features">Features</a><a href="#faq">FAQ</a></nav><span class="sp"></span>
+  <nav class="nav" aria-label="Menu"><a href="#how">How it works</a><a href="#academy">Academy</a><a href="#features">Features</a><a href="#faq">FAQ</a></nav><span class="sp"></span>
   <div class="lang" role="navigation" aria-label="Language"><a href="/" hreflang="ru" lang="ru" class="" onclick="try{localStorage.setItem('mm-lang','ru')}catch(e){}">RU</a><a href="/tr/" hreflang="tr" lang="tr" class="" onclick="try{localStorage.setItem('mm-lang','tr')}catch(e){}">TR</a><a href="/en/" hreflang="en" lang="en" class="on" onclick="try{localStorage.setItem('mm-lang','en')}catch(e){}">EN</a></div>
   <a class="btn sm" href="https://app.melaymade.com/">Log in</a>
 </div></header>
 <main>
 <section class="hero"><div class="wrap">
   <div>
+    <a class="pill" href="#academy"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m2.5 9 9.5-4.5L21.5 9 12 13.5z"/><path d="M6.5 11.5v4.5c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.5M21.5 9v5.5"/></svg>New · your personal Academy for your lessons</a>
     <span class="kick">for handmade makers</span>
     <h1>Know what your handmade piece really costs</h1>
-    <p class="sub">Melaymade keeps a photo inventory of your materials, calculates the cost including waste, time and tools, and suggests a price that actually earns you money.</p>
+    <p class="sub">Melaymade keeps a photo inventory of your materials, calculates your cost and a price that earns you money, and hosts your personal Academy: lessons, students and materials in one place.</p>
     <div class="cta"><a class="btn pri" href="https://app.melaymade.com/">Try it free</a><a class="btn" href="#how">How it works</a></div>
     <p class="note">No credit card needed. Works on phone and computer, even offline.</p>
   </div>
@@ -121,27 +149,38 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
   <h2>Three steps to an honest price</h2>
   <div class="grid three"><div class="card step"><div class="n">1</div><h3>Add your materials</h3><p>Take a photo, enter the quantity and price. Materials go to your stock automatically and shipping is split across items.</p></div><div class="card step"><div class="n">2</div><h3>Build your piece</h3><p>Pick materials from the gallery. The app reserves them and accounts for waste, time and tools.</p></div><div class="card step"><div class="n">3</div><h3>Find your price</h3><p>Get the cost and a recommended price that includes the marketplace fee, shipping and your profit.</p></div></div>
 </div></section>
+<section id="academy" class="acad"><div class="wrap">
+  <div class="top">
+    <div>
+      <span class="badge"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m2.5 9 9.5-4.5L21.5 9 12 13.5z"/><path d="M6.5 11.5v4.5c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.5M21.5 9v5.5"/></svg>My Academy · beta</span>
+      <h2 class="big">Your craft school, in one app</h2>
+      <p class="lead">A maker&#x27;s school usually lives in five places: a chat, a spreadsheet, a cloud with photos, notes and a shopping notebook. Melaymade brings it together: lessons, materials, students and income, right next to your stock and pricing.</p>
+      <div class="cta"><a class="btn pri" href="https://app.melaymade.com/">Build your academy</a></div>
+    </div>
+    <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="My Academy · beta"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="Materials right in the lesson"></div></div>
+  </div>
+  <h3 class="sec">Sound familiar?</h3>
+  <div class="grid three pains"><div class="card"><q>“What do I buy for the lesson?” for the hundredth time</q><p>Attach materials to a lesson straight from your stock. The list is always at hand and the lesson cost calculates itself.</p></div><div class="card"><q>Who paid, and which lesson are they on?</q><p>Students, their access and progress in one list. No spreadsheets or scattered notes.</p></div><div class="card"><q>One lesson, one evening of uploading</q><p>We are working on uploading your lessons to handmade platforms in one tap. It is still in development, but that is exactly where we are heading.</p></div></div>
+  <div class="grid three"><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2 2 0 0 1 6 3.5h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20.5v-15M8.5 8h6"/></svg><span class="st ok">Available</span><h3>Courses and lessons, neatly shelved</h3><p>Create courses, add lessons with descriptions and publish when ready.</p></div><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 9 4.8-9 4.8-9-4.8z"/><path d="m3 13 9 4.8 9-4.8"/></svg><span class="st ok">Available</span><h3>Materials right in the lesson</h3><p>Attach materials from your stock. Build your own piece from a lesson in one tap: reserve, cost and price are ready.</p></div><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M17 14c2.5 0 4.5 1.6 4.5 4.5"/></svg><span class="st ok">Available</span><h3>Students and their progress</h3><p>Keep a list of students, their course access and completed lessons. You enter everything yourself.</p></div><div class="card feat acard ok"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg><span class="st ok">Available</span><h3>Course income</h3><p>See what your courses earn. You collect payments from students as you do now and mark the purchase in the app.</p></div><div class="card feat acard soon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg><span class="st soon">Coming soon</span><h3>Student account</h3><p>Students sign in themselves, watch lessons and mark their progress.</p></div><div class="card feat acard soon"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v11H11l-4.5 3.5V16.5H4z"/></svg><span class="st soon">Coming soon</span><h3>Shared course chat</h3><p>Lesson questions and student conversation next to the materials.</p></div></div>
+  <div class="road"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4.5 20h15"/></svg><div><span class="kick">What we are building next</span><h3>Next: lessons to platforms in one tap</h3><p>Prepare a lesson once and we send it to the handmade platforms where you want to sell. No retyping, no repeat uploads. This is in development and we will share dates once we are sure. Which platforms matter to you, we will decide together.</p></div></div>
+  <p class="acnote">To be honest: right now in the Academy you run courses, lessons, students and income yourself, and students do not sign in to the app yet. Everything marked “Coming soon” is in development.</p>
+</div></section>
 <section id="features" class="alt"><div class="wrap">
   <h2>Everything a maker needs</h2>
-  <div class="grid four"><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="3"/><rect x="13.5" y="3.5" width="7" height="7" rx="3"/><rect x="3.5" y="13.5" width="7" height="7" rx="3"/><rect x="13.5" y="13.5" width="7" height="7" rx="3"/></svg><h3>Photo inventory</h3><p>Materials as beautiful cards. Search by name, colour, size and article number.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><h3>Purchases in any currency</h3><p>40+ currencies. Shipping is split across items and the average price is calculated for you.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 9 4.8-9 4.8-9-4.8z"/><path d="m3 13 9 4.8 9-4.8"/></svg><h3>Reserve without writing off</h3><p>Materials are held for a project but leave your stock only when it is finished. Run several projects at once.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5 5L3.5 17.5l3 3 6.2-6.2a4 4 0 0 0 5-5l-2.4 2.4-2.6-.6-.6-2.6z"/></svg><h3>Waste and tools</h3><p>Waste is tracked separately. Tools carry a cost per use.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h3>Timer and labour</h3><p>Start the timer or type the time. Labour is calculated at your hourly rate.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12V4.5H11l9.5 9.5-7 7z"/><circle cx="8" cy="9" r="1.2"/></svg><h3>Recommended price</h3><p>Includes the marketplace fee, shipping to the buyer and the profit you want.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="4.5" rx="1.8"/><path d="M5 9v10.5h14V9M10 13h4"/></svg><h3>Archive and sales</h3><p>Every project with its photo and materials. Who bought it and where it went. Statistics by month and year.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg><h3>Everywhere, even offline</h3><p>Phone, tablet, computer. Data syncs and stays available offline.</p></div></div>
+  <div class="grid three"><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="3"/><rect x="13.5" y="3.5" width="7" height="7" rx="3"/><rect x="3.5" y="13.5" width="7" height="7" rx="3"/><rect x="13.5" y="13.5" width="7" height="7" rx="3"/></svg><h3>Photo inventory</h3><p>Materials as beautiful cards. Search by name, colour, size and article number.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><h3>Purchases in any currency</h3><p>40+ currencies. Shipping is split across items and the average price is calculated for you.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.5 9 4.8-9 4.8-9-4.8z"/><path d="m3 13 9 4.8 9-4.8"/></svg><h3>Reserve without writing off</h3><p>Materials are held for a project but leave your stock only when it is finished. Run several projects at once.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5 5L3.5 17.5l3 3 6.2-6.2a4 4 0 0 0 5-5l-2.4 2.4-2.6-.6-.6-2.6z"/></svg><h3>Waste and tools</h3><p>Waste is tracked separately. Tools carry a cost per use.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h3>Timer and labour</h3><p>Start the timer or type the time. Labour is calculated at your hourly rate.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12V4.5H11l9.5 9.5-7 7z"/><circle cx="8" cy="9" r="1.2"/></svg><h3>Recommended price</h3><p>Includes the marketplace fee, shipping to the buyer and the profit you want.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="4.5" rx="1.8"/><path d="M5 9v10.5h14V9M10 13h4"/></svg><h3>Archive and sales</h3><p>Every project with its photo and materials. Who bought it and where it went. Statistics by month and year.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg><h3>Everywhere, even offline</h3><p>Phone, tablet, computer. Data syncs and stays available offline.</p></div><div class="card feat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2 2 0 0 1 6 3.5h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20.5v-15M8.5 8h6"/></svg><h3>Personal Academy</h3><p>Courses, lessons with materials and students next to your stock. This section keeps growing.</p></div></div>
 </div></section>
 <section><div class="wrap">
   <h2>This is how the app looks</h2>
   <div class="gallery"><figure><div class="phone"><img src="/img/stock.jpg" width="780" height="1688" loading="lazy" alt="Photo inventory screen"></div><figcaption>Photo inventory</figcaption></figure><figure><div class="phone"><img src="/img/price.jpg" width="780" height="1688" loading="lazy" alt="Cost and price calculation screen"></div><figcaption>Cost and price</figcaption></figure><figure><div class="phone"><img src="/img/stats.jpg" width="780" height="1688" loading="lazy" alt="Sales statistics screen"></div><figcaption>Sales and statistics</figcaption></figure><figure><div class="phone"><img src="/img/archive.jpg" width="780" height="1688" loading="lazy" alt="Archived project screen"></div><figcaption>Project archive</figcaption></figure></div>
   <p class="uinote">The interface is currently in Russian. Turkish and English are coming soon.</p>
 </div></section>
-<section class="alt"><div class="wrap"><div class="ac">
-  <span class="kick">Coming soon</span>
-  <h2 style="margin-bottom:12px">Academy: sell your own lessons</h2>
-  <p>Courses, students and a shared chat next to your stock. Turn your workshop into a school too.</p>
-</div></div></section>
 <section id="faq"><div class="wrap">
   <h2>Frequently asked questions</h2>
-  <details><summary>Do I need to install it from an app store?</summary><p>No. Open the app in your browser and add it to your home screen. It works like a regular app.</p></details><details><summary>Is my data safe?</summary><p>Every user has their own separate stock that nobody else can see. Data is stored in a secure cloud in Europe (Paris).</p></details><details><summary>Does it work offline?</summary><p>Yes. Changes are saved on your device and sent to the cloud when you are back online.</p></details><details><summary>Which languages are supported?</summary><p>Russian for now. Turkish and English are on the way.</p></details><details><summary>How much does it cost?</summary><p>A trial first, then a subscription. We will announce pricing soon.</p></details><details><summary>What happens when my subscription ends?</summary><p>Your data stays safe and you can save a copy of it at any time.</p></details>
+  <details><summary>What is the Academy?</summary><p>“My Academy” is your personal school inside Melaymade: courses, lessons with materials from your stock, students and course income. All next to your cost calculation.</p></details><details><summary>Can students learn right in the app?</summary><p>Not yet: for now you manage students and their progress yourself. A student account and a shared course chat are in development.</p></details><details><summary>Can I upload lessons to platforms?</summary><p>It is planned: uploading lessons to handmade platforms in one tap. It is in development and we are not giving exact dates yet.</p></details><details><summary>Do I need to install it from an app store?</summary><p>No. Open the app in your browser and add it to your home screen. It works like a regular app.</p></details><details><summary>Is my data safe?</summary><p>Every user has their own separate stock that nobody else can see. Data is stored in a secure cloud in Europe (Paris).</p></details><details><summary>Does it work offline?</summary><p>Yes. Changes are saved on your device and sent to the cloud when you are back online.</p></details><details><summary>Which languages are supported?</summary><p>Russian for now. Turkish and English are on the way.</p></details><details><summary>How much does it cost?</summary><p>A trial first, then a subscription. We will announce pricing soon.</p></details><details><summary>What happens when my subscription ends?</summary><p>Your data stays safe and you can save a copy of it at any time.</p></details>
 </div></section>
 <section class="final"><div class="wrap">
-  <h2>Start with your first purchase</h2>
-  <p>Create an account in a minute and calculate your first piece.</p>
+  <h2>Start with your stock, then build your first course</h2>
+  <p>Create an account in a minute: calculate your first piece and build your first course in your Academy.</p>
   <a class="btn pri" href="https://app.melaymade.com/">Create an account</a>
 </div></section>
 </main>

@@ -65,6 +65,13 @@ ICONS = {
     "tag": '<path d="M3.5 12V4.5H11l9.5 9.5-7 7z"/><circle cx="8" cy="9" r="1.2"/>',
     "archive": '<rect x="3" y="4.5" width="18" height="4.5" rx="1.8"/><path d="M5 9v10.5h14V9M10 13h4"/>',
     "phone": '<rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/>',
+    "book": '<path d="M4 5.5A2 2 0 0 1 6 3.5h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20.5v-15M8.5 8h6"/>',
+    "users": '<circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M17 14c2.5 0 4.5 1.6 4.5 4.5"/>',
+    "chart": '<path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/>',
+    "user": '<circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/>',
+    "chat": '<path d="M4 5.5h16v11H11l-4.5 3.5V16.5H4z"/>',
+    "upload": '<path d="M12 16V4M7 9l5-5 5 5M4.5 20h15"/>',
+    "cap": '<path d="m2.5 9 9.5-4.5L21.5 9 12 13.5z"/><path d="M6.5 11.5v4.5c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.5M21.5 9v5.5"/>',
 }
 
 
@@ -217,6 +224,131 @@ TEXTS = {
     },
 }
 
+# ------------------------------------------------- Академия (дополнения к текстам)
+ACADEMY = {
+    "ru": {
+        "title": "Melaymade: склад, цена и личная Академия для мастериц handmade",
+        "desc": "Фото-склад материалов, расчёт себестоимости и цены, а ещё личная Академия: курсы, уроки и ученицы в одном приложении. На телефоне и компьютере.",
+        "sub": "Melaymade ведёт склад материалов с фото, считает себестоимость и цену, на которой ты зарабатываешь, а ещё хранит твою личную Академию: уроки, ученицы и материалы в одном месте.",
+        "nav": ["Как это работает", "Академия", "Возможности", "Вопросы"],
+        "pill": "Новое · личная Академия для твоих уроков",
+        "ac_badge": "Моя Академия · бета",
+        "ac_h": "Твоя школа рукоделия в одном приложении",
+        "ac_lead": "Обычно школа мастерицы живёт в пяти местах: чат, таблица, облако с фото, заметки и блокнот с закупками. Melaymade собирает всё вместе: уроки, материалы, ученицы и доход рядом со складом и расчётом цены.",
+        "pain_title": "Знакомо?",
+        "pains": [
+            ("«А что покупать для урока?» в сотый раз", "Материалы прикрепляются к уроку прямо из твоего склада. Список всегда под рукой, а себестоимость урока считается сама."),
+            ("Кто оплатил и на каком уроке остановилась?", "Ученицы, их доступ и прогресс собраны в одном списке. Без таблиц и разрозненных заметок."),
+            ("Один урок, один вечер возни", "Мы делаем загрузку уроков на площадки для мастериц в одно нажатие. Пока это в разработке, но направление именно такое."),
+        ],
+        "ac_cta": "Собрать свою академию",
+        "ac_cards": [
+            ("book", "Курсы и уроки по полочкам", "Создавай курсы, добавляй уроки с описанием и публикуй, когда готово.", "ok"),
+            ("layers", "Материалы прямо в уроке", "Прикрепи материалы со склада. Одним нажатием собери свою работу по уроку: резерв, расчёт и цена уже готовы.", "ok"),
+            ("users", "Ученицы и их прогресс", "Веди список учениц, доступ к курсам и пройденные уроки. Всё вносишь ты.", "ok"),
+            ("chart", "Доход от курсов", "Видно, сколько приносят курсы. Оплату от учениц ты принимаешь как сейчас, а в приложении отмечаешь покупку.", "ok"),
+            ("user", "Личный кабинет ученицы", "Ученица заходит сама, смотрит уроки и отмечает свой прогресс.", "soon"),
+            ("chat", "Общий чат курса", "Вопросы по уроку и общение учениц рядом с материалами.", "soon"),
+        ],
+        "b_ok": "Работает", "b_soon": "Скоро",
+        "road_kick": "Развиваем дальше",
+        "road_title": "Следующий шаг: уроки на площадки в одно нажатие",
+        "road_text": "Ты готовишь урок один раз, а мы отправляем его на площадки для мастериц, где ты хочешь продавать. Без переписывания и повторных загрузок. Сейчас это в разработке, сроки назовём, когда будем уверены. Какие площадки нужны тебе, решим вместе.",
+        "ac_note": "Честно: сейчас в Академии ты сама ведёшь курсы, уроки, учениц и доход, а ученицы пока не заходят в приложение. Всё, что помечено «Скоро», в разработке.",
+        "features_extra": ("book", "Личная Академия", "Курсы, уроки с материалами и ученицы рядом со складом. Раздел развивается."),
+        "faq_extra": [
+            ("Что такое Академия?", "Раздел «Моя Академия» — твоя личная школа внутри Melaymade: курсы, уроки с материалами со склада, ученицы и доход от курсов. Всё рядом с расчётом себестоимости."),
+            ("Смогут ли ученицы учиться прямо в приложении?", "Пока нет: сейчас ты сама ведёшь учениц и их прогресс. Личный кабинет ученицы и общий чат курса в разработке."),
+            ("Можно ли загружать уроки на площадки?", "Это в планах: загрузка уроков на площадки для мастериц в одно нажатие. Сейчас в разработке, точные сроки пока не назовём."),
+        ],
+        "final_title": "Начни со склада, а потом собери первый курс",
+        "final_text": "Создай аккаунт за минуту: посчитай своё первое изделие и собери первый курс в своей Академии.",
+    },
+    "tr": {
+        "title": "Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi",
+        "desc": "Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda.",
+        "sub": "Melaymade malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.",
+        "nav": ["Nasıl çalışır?", "Akademi", "Özellikler", "Sık sorulanlar"],
+        "pill": "Yeni · dersleriniz için kişisel Akademi",
+        "ac_badge": "Akademim · beta",
+        "ac_h": "El işi okulunuz tek uygulamada",
+        "ac_lead": "Bir ustanın okulu çoğu zaman beş ayrı yerde yaşar: sohbet, tablo, fotoğraf bulutu, notlar ve alışveriş defteri. Melaymade hepsini bir araya getirir: dersler, malzemeler, öğrenciler ve gelir; stokunuzun ve fiyat hesabının yanında.",
+        "pain_title": "Tanıdık geliyor mu?",
+        "pains": [
+            ("«Ders için ne almalıyım?» yüzüncü kez", "Malzemeler doğrudan stokunuzdan derse eklenir. Liste her zaman elinizin altında, dersin maliyeti kendiliğinden hesaplanır."),
+            ("Kim ödedi, hangi derste kaldı?", "Öğrenciler, erişimleri ve ilerlemeleri tek listede. Tablolara ve dağınık notlara gerek yok."),
+            ("Bir ders, bir akşam uğraş", "Derslerinizi el işi ustalarının platformlarına tek dokunuşla yüklemek için çalışıyoruz. Henüz geliştirme aşamasında, ama yön tam olarak bu."),
+        ],
+        "ac_cta": "Akademinizi Kurun",
+        "ac_cards": [
+            ("book", "Kurslar ve dersler düzenli", "Kurs oluşturun, açıklamalı dersler ekleyin, hazır olunca yayınlayın.", "ok"),
+            ("layers", "Malzemeler dersin içinde", "Derse stoktan malzeme ekleyin. Tek dokunuşla dersteki işinizi oluşturun: ayırma, hesap ve fiyat hazır.", "ok"),
+            ("users", "Öğrenciler ve ilerlemeleri", "Öğrenci listesini, kurslara erişimi ve tamamlanan dersleri tutun. Hepsini siz girersiniz.", "ok"),
+            ("chart", "Kurs geliri", "Kursların ne kazandırdığını görün. Öğrencilerden ödemeyi şimdiki gibi siz alırsınız, uygulamada satın alımı işaretlersiniz.", "ok"),
+            ("user", "Öğrenci hesabı", "Öğrenci kendisi giriş yapar, dersleri izler ve ilerlemesini işaretler.", "soon"),
+            ("chat", "Kurs sohbeti", "Ders soruları ve öğrenci sohbeti malzemelerin yanında.", "soon"),
+        ],
+        "b_ok": "Hazır", "b_soon": "Yakında",
+        "road_kick": "Gelişmeye devam ediyoruz",
+        "road_title": "Sıradaki adım: dersler tek dokunuşla platformlara",
+        "road_text": "Dersi bir kez hazırlarsınız; biz de satış yapmak istediğiniz el işi platformlarına göndeririz. Yeniden yazmak ve tekrar yüklemek yok. Şu anda geliştirme aşamasında, tarihi kesinleşince duyuracağız. Hangi platformları istediğinizi birlikte belirleriz.",
+        "ac_note": "Dürüst olalım: şu anda Akademi'de kursları, dersleri, öğrencileri ve geliri siz yönetirsiniz; öğrenciler henüz uygulamaya giriş yapmaz. «Yakında» işaretli her şey geliştirme aşamasındadır.",
+        "features_extra": ("book", "Kişisel Akademi", "Kurslar, malzemeli dersler ve öğrenciler stokunuzun yanında. Bölüm gelişmeye devam ediyor."),
+        "faq_extra": [
+            ("Akademi nedir?", "«Akademim» bölümü, Melaymade içindeki kişisel okulunuzdur: kurslar, stoktan malzemeli dersler, öğrenciler ve kurs geliri. Hepsi maliyet hesabının yanında."),
+            ("Öğrenciler doğrudan uygulamada öğrenebilir mi?", "Henüz değil: şu anda öğrencileri ve ilerlemelerini siz takip edersiniz. Öğrenci hesabı ve kurs sohbeti geliştirme aşamasında."),
+            ("Dersleri platformlara yükleyebilir miyim?", "Planlarımızda var: dersleri el işi ustalarının platformlarına tek dokunuşla yüklemek. Geliştirme aşamasında, kesin tarih vermiyoruz."),
+        ],
+        "final_title": "Stokla başlayın, ilk kursunuzu kurun",
+        "final_text": "Bir dakikada hesap oluşturun: ilk ürününüzün maliyetini hesaplayın ve Akademinizde ilk kursunuzu oluşturun.",
+    },
+    "en": {
+        "title": "Melaymade: stock, pricing and a personal Academy for handmade makers",
+        "desc": "Photo inventory, cost and price calculation, plus a personal Academy: courses, lessons and students in one app. On phone and computer.",
+        "sub": "Melaymade keeps a photo inventory of your materials, calculates your cost and a price that earns you money, and hosts your personal Academy: lessons, students and materials in one place.",
+        "nav": ["How it works", "Academy", "Features", "FAQ"],
+        "pill": "New · your personal Academy for your lessons",
+        "ac_badge": "My Academy · beta",
+        "ac_h": "Your craft school, in one app",
+        "ac_lead": "A maker's school usually lives in five places: a chat, a spreadsheet, a cloud with photos, notes and a shopping notebook. Melaymade brings it together: lessons, materials, students and income, right next to your stock and pricing.",
+        "pain_title": "Sound familiar?",
+        "pains": [
+            ("“What do I buy for the lesson?” for the hundredth time", "Attach materials to a lesson straight from your stock. The list is always at hand and the lesson cost calculates itself."),
+            ("Who paid, and which lesson are they on?", "Students, their access and progress in one list. No spreadsheets or scattered notes."),
+            ("One lesson, one evening of uploading", "We are working on uploading your lessons to handmade platforms in one tap. It is still in development, but that is exactly where we are heading."),
+        ],
+        "ac_cta": "Build your academy",
+        "ac_cards": [
+            ("book", "Courses and lessons, neatly shelved", "Create courses, add lessons with descriptions and publish when ready.", "ok"),
+            ("layers", "Materials right in the lesson", "Attach materials from your stock. Build your own piece from a lesson in one tap: reserve, cost and price are ready.", "ok"),
+            ("users", "Students and their progress", "Keep a list of students, their course access and completed lessons. You enter everything yourself.", "ok"),
+            ("chart", "Course income", "See what your courses earn. You collect payments from students as you do now and mark the purchase in the app.", "ok"),
+            ("user", "Student account", "Students sign in themselves, watch lessons and mark their progress.", "soon"),
+            ("chat", "Shared course chat", "Lesson questions and student conversation next to the materials.", "soon"),
+        ],
+        "b_ok": "Available", "b_soon": "Coming soon",
+        "road_kick": "What we are building next",
+        "road_title": "Next: lessons to platforms in one tap",
+        "road_text": "Prepare a lesson once and we send it to the handmade platforms where you want to sell. No retyping, no repeat uploads. This is in development and we will share dates once we are sure. Which platforms matter to you, we will decide together.",
+        "ac_note": "To be honest: right now in the Academy you run courses, lessons, students and income yourself, and students do not sign in to the app yet. Everything marked “Coming soon” is in development.",
+        "features_extra": ("book", "Personal Academy", "Courses, lessons with materials and students next to your stock. This section keeps growing."),
+        "faq_extra": [
+            ("What is the Academy?", "“My Academy” is your personal school inside Melaymade: courses, lessons with materials from your stock, students and course income. All next to your cost calculation."),
+            ("Can students learn right in the app?", "Not yet: for now you manage students and their progress yourself. A student account and a shared course chat are in development."),
+            ("Can I upload lessons to platforms?", "It is planned: uploading lessons to handmade platforms in one tap. It is in development and we are not giving exact dates yet."),
+        ],
+        "final_title": "Start with your stock, then build your first course",
+        "final_text": "Create an account in a minute: calculate your first piece and build your first course in your Academy.",
+    },
+}
+for _c, _a in ACADEMY.items():
+    _t = TEXTS[_c]
+    for _k in ("title", "desc", "sub", "nav", "final_title", "final_text"):
+        _t[_k] = _a[_k]
+    _t["features"] = list(_t["features"]) + [_a["features_extra"]]
+    _t["faq"] = list(_a["faq_extra"]) + list(_t["faq"])
+    _t["ac"] = _a
+
 CSS = """
 :root{--bg:#F1E8D6;--surface:#FAF4E7;--surface2:#EDE1CA;--line:#D9C7A6;--ink:#33291F;--ink2:#645644;--clay:#A64F2E;--clay-ink:#FFF6EA;--clay-soft:#EFD3C0;--accent:#3E6150;--accent-soft:#D3E0D4;--ochre:#C98F27;--art:#8B6B45;--glass:color-mix(in srgb,var(--surface) 90%,transparent);--shadow:0 2px 4px rgba(74,59,44,.08),0 24px 60px rgba(74,59,44,.2)}
 @media (prefers-color-scheme:dark){:root{--bg:#17120D;--surface:#221B14;--surface2:#2B231A;--line:#3B3024;--ink:#F1E6D2;--ink2:#C2B297;--clay:#D8805A;--clay-ink:#2A130A;--clay-soft:#4A281C;--accent:#A5BD8F;--accent-soft:#2A3523;--ochre:#E2B25A;--art:#C7A877;--shadow:0 2px 4px rgba(0,0,0,.4),0 24px 60px rgba(0,0,0,.55);color-scheme:dark}}
@@ -247,7 +379,7 @@ img{max-width:100%;height:auto;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:16px;font-weight:800;font-size:16px;text-decoration:none;border:1.5px solid var(--line);background:var(--surface);transition:transform .15s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(120,86,50,.18)}
 .btn.pri{background:var(--clay);color:var(--clay-ink);border-color:var(--clay)}
-.btn.sm{min-height:40px;padding:0 16px;font-size:14px;border-radius:12px}
+.btn.sm{white-space:nowrap;min-height:40px;padding:0 16px;font-size:14px;border-radius:12px}
 .hero{position:relative;overflow:hidden;padding:48px 0 64px}
 .hero .wrap{display:grid;gap:40px;position:relative;z-index:1}
 .kick{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:14px;display:block}
@@ -287,6 +419,31 @@ details p{margin-top:10px;color:var(--ink2);font-size:16px}
 .final h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
 footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;border-top:1px solid var(--line)}
 :focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 16px 7px 11px;border-radius:999px;background:var(--clay-soft);color:var(--clay);font-weight:800;font-size:13px;text-decoration:none;margin-bottom:18px;line-height:1.3}
+.pill .ic{width:18px;height:18px}
+.acad{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--accent-soft) 0%,var(--bg) 100%)}
+.acad .top{display:grid;gap:40px;align-items:center}
+.acad .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:5px 14px;margin-bottom:16px}
+.acad h2.big{font-size:clamp(34px,6.4vw,54px);line-height:1.04}
+.acad .lead{font-size:19px;color:var(--ink2);margin-top:6px;max-width:34em}
+.acad .vis{display:flex;gap:16px;justify-content:center;align-items:flex-start}
+.acad .vis .phone{width:min(210px,42vw)}
+.acad .vis .phone+.phone{margin-top:48px}
+.acad h3.sec{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(26px,4.4vw,34px);margin:56px 0 0;color:var(--clay)}
+.pains .card{border-style:dashed;background:var(--surface)}
+.pains q{display:block;quotes:none;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:23px;line-height:1.2;color:var(--clay);margin-bottom:10px}
+.acard{position:relative}
+.acard .st{position:absolute;top:18px;right:18px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
+.acard .st.ok{background:var(--accent-soft);color:var(--accent)}
+.acard .st.soon{background:var(--clay-soft);color:var(--clay)}
+.acard.soon{border-style:dashed}
+.road{margin-top:32px;border-radius:28px;padding:32px 28px;background:var(--surface);border:1.5px solid var(--ochre);display:grid;gap:18px;box-shadow:var(--shadow)}
+.road .ic{width:38px;height:38px;color:var(--ochre)}
+.road .kick{margin-bottom:6px}
+.road h3{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(26px,4.6vw,36px);line-height:1.1;margin-bottom:10px}
+.road p{color:var(--ink2)}
+.acnote{margin-top:20px;font-size:14px;color:var(--ink2);max-width:46em}
+.acad .cta{margin-top:32px}
 @media (max-width:560px){.hdr .wrap{gap:10px;min-height:60px}.brand{font-size:15px;letter-spacing:.1em;gap:7px}.brand svg{width:22px;height:22px}.lang a{padding:4px 8px;font-size:12px}.btn.sm{padding:0 12px;min-height:38px;font-size:13px}.herovis .art{width:150px;right:-4%}}
 @media (min-width:860px){
   .nav{display:flex}
@@ -295,6 +452,8 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
   .grid.three{grid-template-columns:repeat(3,1fr)}
   .grid.four{grid-template-columns:repeat(4,1fr)}
   .gallery{justify-content:center;overflow:visible;margin:0;padding:32px 0 12px}
+  .acad .top{grid-template-columns:1.1fr .9fr}
+  .road{grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:36px 40px}
 }
 @media (min-width:640px) and (max-width:859px){.grid.four{grid-template-columns:repeat(2,1fr)}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
@@ -332,7 +491,12 @@ def render(code):
         f'<figure><div class="phone"><img src="/img/{n}.jpg" width="780" height="1688" loading="lazy" alt="{esc(t["gal_alt"][i])}"></div><figcaption>{esc(t["gal"][i])}</figcaption></figure>'
         for i, n in enumerate(imgs))
     faq = "".join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t["faq"])
-    nav = f'<a href="#how">{esc(t["nav"][0])}</a><a href="#features">{esc(t["nav"][1])}</a><a href="#faq">{esc(t["nav"][2])}</a>'
+    nav = f'<a href="#how">{esc(t["nav"][0])}</a><a href="#academy">{esc(t["nav"][1])}</a><a href="#features">{esc(t["nav"][2])}</a><a href="#faq">{esc(t["nav"][3])}</a>'
+    a = t["ac"]
+    pains = "".join(f'<div class="card"><q>{esc(q)}</q><p>{esc(x)}</p></div>' for q, x in a["pains"])
+    acards = "".join(
+        f'<div class="card feat acard {st}">{icon(ic)}<span class="st {st}">{esc(a["b_ok"] if st == "ok" else a["b_soon"])}</span><h3>{esc(ti)}</h3><p>{esc(tx)}</p></div>'
+        for ic, ti, tx, st in a["ac_cards"])
     redirect = REDIRECT_JS if code == "ru" else ""
     brand_icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><circle cx="12" cy="9" r="2.6"/><path d="M12 3v12M6 9h12M9.5 15v5M12 15.5V22M14.5 15v4"/></svg>'
     return f"""<!doctype html>
@@ -365,6 +529,7 @@ def render(code):
 <main>
 <section class="hero"><div class="wrap">
   <div>
+    <a class="pill" href="#academy">{icon("cap")}{esc(a["pill"])}</a>
     <span class="kick">{esc(t["kicker"])}</span>
     <h1>{esc(t["h1"])}</h1>
     <p class="sub">{esc(t["sub"])}</p>
@@ -377,20 +542,31 @@ def render(code):
   <h2>{esc(t["how_title"])}</h2>
   <div class="grid three">{steps}</div>
 </div></section>
+<section id="academy" class="acad"><div class="wrap">
+  <div class="top">
+    <div>
+      <span class="badge">{icon("cap")}{esc(a["ac_badge"])}</span>
+      <h2 class="big">{esc(a["ac_h"])}</h2>
+      <p class="lead">{esc(a["ac_lead"])}</p>
+      <div class="cta"><a class="btn pri" href="{APP}">{esc(a["ac_cta"])}</a></div>
+    </div>
+    <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
+  </div>
+  <h3 class="sec">{esc(a["pain_title"])}</h3>
+  <div class="grid three pains">{pains}</div>
+  <div class="grid three">{acards}</div>
+  <div class="road">{icon("upload")}<div><span class="kick">{esc(a["road_kick"])}</span><h3>{esc(a["road_title"])}</h3><p>{esc(a["road_text"])}</p></div></div>
+  <p class="acnote">{esc(a["ac_note"])}</p>
+</div></section>
 <section id="features" class="alt"><div class="wrap">
   <h2>{esc(t["feat_title"])}</h2>
-  <div class="grid four">{feats}</div>
+  <div class="grid three">{feats}</div>
 </div></section>
 <section><div class="wrap">
   <h2>{esc(t["gal_title"])}</h2>
   <div class="gallery">{gal}</div>
   <p class="uinote">{esc(t["ui_note"])}</p>
 </div></section>
-<section class="alt"><div class="wrap"><div class="ac">
-  <span class="kick">{esc(t["ac_kicker"])}</span>
-  <h2 style="margin-bottom:12px">{esc(t["ac_title"])}</h2>
-  <p>{esc(t["ac_text"])}</p>
-</div></div></section>
 <section id="faq"><div class="wrap">
   <h2>{esc(t["faq_title"])}</h2>
   {faq}
