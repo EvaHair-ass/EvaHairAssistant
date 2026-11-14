@@ -71,6 +71,10 @@ ICONS = {
     "user": '<circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/>',
     "chat": '<path d="M4 5.5h16v11H11l-4.5 3.5V16.5H4z"/>',
     "upload": '<path d="M12 16V4M7 9l5-5 5 5M4.5 20h15"/>',
+    "camera": '<path d="M4 8.5h3l1.6-2.5h6.8L17 8.5h3v11H4z"/><circle cx="12" cy="14" r="3.5"/>',
+    "ruler": '<path d="M3.5 15.5 15.5 3.5l5 5-12 12z"/><path d="m7 12 2 2M10 9l2 2M13 6l2 2"/>',
+    "coin": '<circle cx="12" cy="12" r="8.5"/><path d="M14.8 9.4c-.6-1-1.7-1.6-2.9-1.6-1.6 0-2.8.9-2.8 2.1 0 2.9 5.8 1.4 5.8 4.3 0 1.2-1.2 2.2-2.9 2.2-1.3 0-2.4-.6-3-1.7M12 6v1.8M12 16.2V18"/>',
+    "sliders": '<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>',
     "cap": '<path d="m2.5 9 9.5-4.5L21.5 9 12 13.5z"/><path d="M6.5 11.5v4.5c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4.5M21.5 9v5.5"/>',
 }
 
@@ -386,6 +390,94 @@ for _c, _b in BOLD.items():
     TEXTS[_c].update({k: v for k, v in _b.items() if k != "ac_big"})
     TEXTS[_c]["ac"]["ac_big"] = _b["ac_big"]
 
+# ------------------------------------------------- виды рукоделия (линейные знаки)
+CRAFT_ICONS = {
+    "beads": '<path d="M5 14C10 36 38 36 43 14"/><circle cx="7" cy="20" r="3"/><circle cx="12.3" cy="26.4" r="3"/><circle cx="24" cy="30.5" r="3.4"/><circle cx="35.7" cy="26.4" r="3"/><circle cx="41" cy="20" r="3"/><path d="M24 34v3.5"/><path d="M24 37.5c3 3 3 5.5 0 7.5-3-2-3-4.5 0-7.5z"/>',
+    "stones": '<path d="M14 8h20l8 10-18 22L6 18z"/><path d="M6 18h36M18 8l-4 10 10 22M30 8l4 10-10 22"/>',
+    "knit": '<circle cx="21" cy="27" r="14"/><path d="M9 21c8 3 20 3 28-2M8 29c9 3 21 2 28-4M12 38c6-3 14-4 22-2M16 14c5 8 5 18 2 26M26 13c3 8 3 18-1 27"/><path d="M31 9l14 23"/><circle cx="30" cy="7.5" r="1.6"/>',
+    "sew": '<path d="M9 41 36 11"/><ellipse cx="38" cy="9" rx="1.1" ry="3.3" transform="rotate(40 38 9)"/><path d="M39 11c8 5-8 14-15 9-8-6-15 4-9 11 4 5-2 10-8 7"/>',
+    "clay": '<path d="M18 6h12M20 6c0 4-1 6-4 10-6 6-6 18 2 24h12c8-6 8-18 2-24-3-4-4-6-4-10"/><path d="M12 25c8 4 16 4 24 0M14 18c6 3 14 3 20 0"/>',
+    "hair": '<path d="M24 4c-9 5-9 9 0 14s9 9 0 14-9 9 0 12"/><path d="M24 4c9 5 9 9 0 14s-9 9 0 14 9 9 0 12"/><path d="M24 40l-6 5M24 40l6 5"/>',
+    "macrame": '<path d="M5 8h38"/><path d="M12 8v32M18 8v10M24 8v32M30 8v10M36 8v32"/><path d="M18 18l6 8M30 18l-6 8M12 26l6-8M36 26l-6-8"/><path d="M10 40l2 4 2-4M22 40l2 4 2-4M34 40l2 4 2-4"/>',
+    "candle": '<rect x="14" y="21" width="20" height="22" rx="2"/><path d="M24 21v-4M14 29h20"/><path d="M24 5c5 4 5 8 0 11-5-3-5-7 0-11z"/>',
+    "embroid": '<circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="14.5"/><path d="M24 6V3M24 31v-9"/><path d="M24 22c-5-1-6-6-2-8M24 22c5-1 6-6 2-8M24 19c-1-4 1-6 3-7M24 27c-4 0-8 2-9 6M24 27c4 0 8 2 9 6"/>',
+}
+
+
+def craft_icon(n):
+    return f'<svg viewBox="0 0 48 48" aria-hidden="true">{CRAFT_ICONS[n]}</svg>'
+
+
+CRAFTS = {
+    "ru": {
+        "nav": "Ремёсла",
+        "kick": "для любого рукоделия",
+        "title": "Любое рукоделие, которое можно посчитать",
+        "lead": "Если твоё изделие собирается из материалов, Melaymade его посчитает: штуки, метры, граммы, миллилитры. Неважно, чем ты занимаешься.",
+        "items": ["Бисероплетение", "Украшения из камней", "Вязание", "Шитьё", "Изделия из глины", "Изделия из волос", "Макраме", "Свечи и мыло", "Вышивка"],
+        "foot": "…и всё остальное, что рождается у тебя в руках.",
+        "desc_add": "Для любого рукоделия: бисер, камни, вязание, шитьё, глина, изделия из волос.",
+        "yk": "Твоя мастерская",
+        "yt": "Твои правила. Приложение подстраивается под тебя.",
+        "yl": "Ты не подгоняешь своё ремесло под программу. Это программа подстраивается под твоё ремесло.",
+        "yi": [
+            ("camera", "Твои фотографии", "Каждый материал и каждая работа с твоим фото. Кадрируй и приближай, как тебе нравится."),
+            ("tag", "Твои категории", "Придумай разделы под свой вид рукоделия: от «Бусин» до «Пряжи», «Глины» и «Волос»."),
+            ("ruler", "Твои единицы", "Штуки, метры, граммы, миллилитры и пересчёт между ними."),
+            ("coin", "Твоя валюта", "Больше 40 валют. Закупай в любой, а считай в удобной."),
+            ("sliders", "Твои правила цены", "Комиссия площадки, желаемая прибыль, ставка за час работы и стоимость инструмента."),
+        ],
+        "faq": ("Подойдёт ли это для моего вида рукоделия?", "Да, если изделие собирается из материалов, которые можно посчитать: бисер, камни, пряжа, ткань, глина, волосы, воск и многое другое. Не уверена, попробуй бесплатно на своих материалах."),
+    },
+    "tr": {
+        "nav": "El işleri",
+        "kick": "her el işi için",
+        "title": "Sayabildiğiniz her el işi için",
+        "lead": "Ürününüz malzemelerden oluşuyorsa Melaymade onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.",
+        "items": ["Boncuk işi", "Doğal taş takılar", "Örgü", "Dikiş", "Seramik ve kil", "Saç ürünleri", "Makrome", "Mum ve sabun", "Nakış"],
+        "foot": "…ve ellerinizle yarattığınız her şey.",
+        "desc_add": "Her el işi için: boncuk, taş, örgü, dikiş, kil, saç ürünleri.",
+        "yk": "Sizin atölyeniz",
+        "yt": "Kurallar sizin. Uygulama size uyum sağlar.",
+        "yl": "El işinizi programa uydurmazsınız. Program sizin el işinize uyum sağlar.",
+        "yi": [
+            ("camera", "Kendi fotoğraflarınız", "Her malzeme ve her iş sizin fotoğrafınızla. İstediğiniz gibi kırpın ve yakınlaştırın."),
+            ("tag", "Kendi kategorileriniz", "El işinize göre bölümler oluşturun: «Boncuklar»dan «İplik», «Kil» ve «Saç»a kadar."),
+            ("ruler", "Kendi birimleriniz", "Adet, metre, gram, mililitre ve aralarında dönüştürme."),
+            ("coin", "Kendi para biriminiz", "40'tan fazla para birimi. İstediğinizle alışveriş yapın, rahat ettiğinizle hesaplayın."),
+            ("sliders", "Kendi fiyat kurallarınız", "Pazar yeri komisyonu, istediğiniz kâr, saat ücretiniz ve aletlerin maliyeti."),
+        ],
+        "faq": ("Benim el işime uygun mu?", "Evet, ürününüz sayılabilen malzemelerden oluşuyorsa: boncuk, taş, iplik, kumaş, kil, saç, balmumu ve daha fazlası. Emin değilseniz kendi malzemelerinizle ücretsiz deneyin."),
+    },
+    "en": {
+        "nav": "Crafts",
+        "kick": "for every craft",
+        "title": "Any craft you can count",
+        "lead": "If your piece is built from materials, Melaymade can price it: pieces, metres, grams, millilitres. It does not matter what you make.",
+        "items": ["Beadwork", "Natural-stone jewelry", "Knitting and crochet", "Sewing", "Clay and ceramics", "Hair work", "Macramé", "Candles and soap", "Embroidery"],
+        "foot": "…and anything else your hands make.",
+        "desc_add": "For every craft: beads, stones, knitting, sewing, clay, hair work.",
+        "yk": "Your workshop",
+        "yt": "Your rules. The app adapts to you.",
+        "yl": "You do not bend your craft to fit a program. The program bends to fit your craft.",
+        "yi": [
+            ("camera", "Your own photos", "Every material and every piece with your own photo. Crop and zoom as you like."),
+            ("tag", "Your own categories", "Create sections for your craft: from “Beads” to “Yarn”, “Clay” and “Hair”."),
+            ("ruler", "Your own units", "Pieces, metres, grams, millilitres and conversion between them."),
+            ("coin", "Your own currency", "40+ currencies. Buy in any, calculate in the one you like."),
+            ("sliders", "Your own pricing rules", "Marketplace fee, the profit you want, your hourly rate and the cost of tools."),
+        ],
+        "faq": ("Will it work for my kind of craft?", "Yes, if your piece is built from materials you can count: beads, stones, yarn, fabric, clay, hair, wax and more. Not sure? Try it free with your own materials."),
+    },
+}
+for _c, _x in CRAFTS.items():
+    _t = TEXTS[_c]
+    _t["cr"] = _x
+    _t["nav"] = [_x["nav"]] + list(_t["nav"])
+    _t["desc"] = _t["desc"].rstrip() + " " + _x["desc_add"]
+    _t["faq"] = [_x["faq"]] + list(_t["faq"])
+
+
 import math
 
 
@@ -566,12 +658,6 @@ h1{font-size:clamp(40px,8.4vw,68px)}
 .sparks i{position:absolute;bottom:-12px;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;background:var(--ochre);box-shadow:0 0 10px 2px var(--ochre);opacity:0;animation:rise var(--t) var(--dl) linear infinite}
 .stars i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%;background:#FFE9BE;box-shadow:0 0 8px 1px rgba(255,226,160,.8);animation:twinkle var(--t) var(--dl) ease-in-out infinite}
 .fe{position:absolute;z-index:0;fill:none;stroke:var(--art);stroke-width:1;stroke-linecap:round;opacity:0;animation:drift var(--t) var(--dl) ease-in-out infinite;pointer-events:none}
-.ribbonwrap{overflow:hidden;padding:26px 0;position:relative;z-index:2;margin-top:-26px}
-.ribbon{background:var(--clay);color:var(--clay-ink);transform:rotate(-1.4deg);margin:0 -3%;padding:15px 0;box-shadow:0 10px 30px rgba(120,60,30,.25)}
-.ribbon .track{display:flex;width:max-content;animation:marq 42s linear infinite}
-.ribbon:hover .track{animation-play-state:paused}
-.ribbon span{font-family:'Forum','Cormorant Garamond',Georgia,serif;font-size:clamp(18px,3vw,27px);letter-spacing:.2em;text-transform:uppercase;padding:0 22px;display:inline-flex;align-items:center;gap:44px;white-space:nowrap}
-.ribbon span::after{content:"";width:10px;height:10px;background:currentColor;transform:rotate(45deg);opacity:.75}
 .moons{display:flex;justify-content:center;gap:clamp(18px,4vw,40px);color:var(--ochre);padding:4px 0}
 .moons svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.3;animation:twinkle 5s calc(var(--i)*.7s) ease-in-out infinite}
 .step .n{animation:ring 2.6s ease-out infinite}
@@ -596,12 +682,48 @@ h1{font-size:clamp(40px,8.4vw,68px)}
 .final .hang{width:150px;margin:0 auto 18px;display:block;transform-origin:50% 0;animation:hang 7s ease-in-out infinite alternate;position:relative;z-index:1}
 .final .wrap{position:relative;z-index:1}
 .final h2{font-size:clamp(34px,6vw,54px)}
+
+@keyframes swing{from{transform:rotate(-2.6deg)}to{transform:rotate(2.6deg)}}
+@keyframes sheen{from{transform:translateX(-120%)}to{transform:translateX(220%)}}
+body{background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .3 0 0 0 0 .18 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+section{padding:92px 0}
+h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
+.card{border-radius:22px;border:1px solid color-mix(in srgb,var(--ochre) 42%,var(--line));background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 96%,#fff),var(--glass));box-shadow:inset 0 1px 0 rgba(255,255,255,.55)}
+.btn{border-radius:14px;letter-spacing:.02em}
+.btn.pri{position:relative;overflow:hidden;background:linear-gradient(135deg,#B9583A,#A04A2A);border-color:transparent;box-shadow:0 0 0 1px rgba(240,204,120,.65) inset,0 10px 26px rgba(166,79,46,.35)}
+.btn.pri::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:0;background:linear-gradient(100deg,transparent,rgba(255,240,200,.45),transparent);transform:translateX(-120%)}
+.btn.pri:hover::after{animation:sheen .9s ease}
+.kick{letter-spacing:.28em}
+.lead2{font-size:19px;color:var(--ink2);max-width:36em;margin-top:6px}
+.crafts{text-align:center;padding-top:80px}
+.crafts h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
+.crafts .lead2{margin-left:auto;margin-right:auto}
+.garland{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:36px 10px;margin-top:56px;padding-top:34px}
+.garland::before{content:"";position:absolute;left:-20px;right:-20px;top:0;height:28px;background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='28' viewBox='0 0 72 28'%3E%3Cpath d='M0 4Q36 26 72 4' fill='none' stroke='%23C98F27' stroke-width='1.6'/%3E%3C/svg%3E") repeat-x 0 0/72px 28px;opacity:.8}
+.charm{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:var(--len);transform-origin:50% -34px}
+.charm.in{animation:swing 6.5s var(--dl) ease-in-out infinite alternate}
+.charm::before{content:"";position:absolute;top:-14px;left:50%;width:1px;height:calc(var(--len) + 14px);background:linear-gradient(180deg,var(--ochre),color-mix(in srgb,var(--ochre) 40%,transparent))}
+.orb{position:relative;width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 28%,color-mix(in srgb,var(--surface) 70%,#fff),var(--surface));border:1px solid color-mix(in srgb,var(--ochre) 60%,var(--line));box-shadow:0 0 0 5px var(--bg),0 0 0 6px color-mix(in srgb,var(--ochre) 38%,transparent),0 14px 28px rgba(120,86,50,.18);transition:transform .35s,box-shadow .35s}
+.orb svg{width:54px;height:54px;fill:none;stroke:var(--clay);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.charm:hover .orb{transform:translateY(-4px) scale(1.06);box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--ochre),0 0 34px rgba(232,184,95,.55)}
+.charm span{font-weight:800;font-size:15px;line-height:1.25;max-width:9em}
+.foot2{margin-top:44px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(22px,3.4vw,30px);color:var(--clay)}
+.yours .ytop{max-width:40em}
+.ygrid{display:grid;gap:18px;margin-top:36px;counter-reset:y}
+.yitem{display:flex;gap:18px;align-items:flex-start;padding:22px 24px;border-radius:22px;border:1px solid color-mix(in srgb,var(--ochre) 42%,var(--line));background:var(--glass)}
+.yn{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+.yn .ic{width:26px;height:26px}
+.yitem h3{font-size:18px;font-weight:800;margin-bottom:4px}
+.yitem p{color:var(--ink2);font-size:16px}
+@media (min-width:1000px){.garland{grid-template-columns:repeat(9,1fr);gap:36px 6px}}
+@media (min-width:860px){.ygrid{grid-template-columns:repeat(2,1fr)}.ygrid .yitem:last-child{grid-column:1/-1}}
+@media (max-width:560px){.garland{grid-template-columns:repeat(3,1fr);gap:30px 6px}.orb{width:74px;height:74px}.orb svg{width:40px;height:40px}.charm span{font-size:13px}section{padding:72px 0}}
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
   .js .rv.in{opacity:1;transform:none}
   .js .card.rv.in:hover{transform:translateY(-6px);transition-delay:0s;transition-duration:.3s}
 }
-@media (max-width:560px){.herovis{min-height:380px}.ribbon span{gap:30px;padding:0 14px}.acad{padding:80px 0 88px}}
+@media (max-width:560px){.herovis{min-height:380px}.acad{padding:80px 0 88px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 """
 
@@ -649,9 +771,12 @@ def render(code):
     alts += f'<link rel="alternate" hreflang="x-default" href="{BASE}/">'
     import re as _re
     h1 = _re.sub(r"\*(.+?)\*", r'<span class="shine">\1</span>', esc(t["h1"]))
-    ribbon = "".join(f"<span>{esc(w)}</span>" for w in t["ribbon"] * 2)
-    ribbon = f'<div class="ribbonwrap" aria-hidden="true"><div class="ribbon"><div class="track">{ribbon}{ribbon}</div></div></div>'
     feathers = feather_svg("4%", "-30px", 20, 17, -2) + feather_svg("46%", "-40px", 16, 22, -9) + feather_svg("92%", "-30px", 22, 19, -5) + feather_svg("68%", "-50px", 14, 25, -14)
+    cr = t["cr"]
+    charms = "".join(
+        f'<div class="charm rv" style="--i:{i};--len:{(i * 37) % 5 * 14 + 8}px;--dl:-{i * 1.3:.1f}s"><div class="orb">{craft_icon(k)}</div><span>{esc(nm)}</span></div>'
+        for i, (k, nm) in enumerate(zip(CRAFT_ICONS, cr["items"])))
+    yours = "".join(f'<div class="yitem rv" style="--i:{i}"><span class="yn">{icon(ic)}</span><div><h3>{esc(a_)}</h3><p>{esc(b_)}</p></div></div>' for i, (ic, a_, b_) in enumerate(cr["yi"]))
     steps = "".join(f'<div class="card step rv" style="--i:{i}"><div class="n">{i + 1}</div><h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (a, b) in enumerate(t["steps"]))
     feats = "".join(f'<div class="card feat rv" style="--i:{i % 3}">{icon(ic)}<h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (ic, a, b) in enumerate(t["features"]))
     imgs = ["stock", "price", "stats", "archive"]
@@ -659,7 +784,7 @@ def render(code):
         f'<figure class="rv" style="--i:{i}"><div class="phone"><img src="/img/{n}.jpg" width="780" height="1688" loading="lazy" alt="{esc(t["gal_alt"][i])}"></div><figcaption>{esc(t["gal"][i])}</figcaption></figure>'
         for i, n in enumerate(imgs))
     faq = "".join(f'<details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t["faq"])
-    nav = f'<a href="#how">{esc(t["nav"][0])}</a><a href="#academy">{esc(t["nav"][1])}</a><a href="#features">{esc(t["nav"][2])}</a><a href="#faq">{esc(t["nav"][3])}</a>'
+    nav = "".join(f'<a href="#{h}">{esc(n)}</a>' for h, n in zip(("crafts", "how", "academy", "features", "faq"), t["nav"]))
     a = t["ac"]
     pains = "".join(f'<div class="card rv" style="--i:{i}"><q>{esc(q)}</q><p>{esc(x)}</p></div>' for i, (q, x) in enumerate(a["pains"]))
     acards = "".join(
@@ -707,7 +832,13 @@ def render(code):
   </div>
   <div class="herovis">{mandala_svg()}<div class="bob"><div class="phone"><img src="/img/stock.jpg" width="780" height="1688" alt="{esc(t["gal_alt"][0])}"></div></div></div>
 </div></section>
-{ribbon}
+<section id="crafts" class="crafts"><div class="wrap">
+  <span class="kick rv">{esc(cr["kick"])}</span>
+  <h2 class="rv">{esc(cr["title"])}</h2>
+  <p class="lead2 rv">{esc(cr["lead"])}</p>
+  <div class="garland">{charms}</div>
+  <p class="foot2 rv">{esc(cr["foot"])}</p>
+</div></section>
 <section id="how"><div class="wrap">
   <h2 class="rv">{esc(t["how_title"])}</h2>
   <div class="grid three">{steps}</div>
@@ -732,6 +863,10 @@ def render(code):
 <section id="features" class="alt"><div class="wrap">
   <h2 class="rv">{esc(t["feat_title"])}</h2>
   <div class="grid three">{feats}</div>
+</div></section>
+<section class="yours alt"><div class="wrap">
+  <div class="ytop"><div><span class="kick rv">{esc(cr["yk"])}</span><h2 class="rv">{esc(cr["yt"])}</h2><p class="lead2 rv">{esc(cr["yl"])}</p></div></div>
+  <div class="ygrid">{yours}</div>
 </div></section>
 <section><div class="wrap">
   <h2 class="rv">{esc(t["gal_title"])}</h2>

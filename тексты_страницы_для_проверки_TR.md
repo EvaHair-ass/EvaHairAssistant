@@ -6,20 +6,34 @@
 
 ## Başlık ve giriş
 - Sayfa başlığı: Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi
-- Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda.
-- Menü: Nasıl çalışır? | Akademi | Özellikler | Sık sorulanlar | Giriş Yap
+- Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda. Her el işi için: boncuk, taş, örgü, dikiş, kil, saç ürünleri.
+- Menü: El işleri | Nasıl çalışır? | Akademi | Özellikler | Sık sorulanlar | Giriş Yap
 - Etiket: Yeni · dersleriniz için kişisel Akademi
 - Üst yazı: el işi ustaları için
 - Ana başlık: Siz büyüyü yaratın. Ne kadar ettiğini biz hesaplayalım.
 - Alt başlık: Melaymade malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.
 - Düğmeler: Ücretsiz Deneyin | Nasıl çalışır?
 - Not: Banka kartı gerekmez. Telefonda ve bilgisayarda çalışır, internet olmadan da.
-- Kayan şerit: Stok · Maliyet · Fiyat · Akademi · Dersler · Öğrenciler · Handmade
 
 ## Bir avuç boncuktan dürüst fiyata: üç adım
 1. **Malzemeleri ekleyin**. Fotoğraf çekin, miktarı ve fiyatı girin. Malzemeler stoka kendiliğinden eklenir, kargo ücreti kalemlere dağıtılır.
 2. **Ürününüzü oluşturun**. Galeriden malzemeleri seçin. Uygulama malzemeleri ayırır; fireyi, süreyi ve aletleri hesaba katar.
 3. **Fiyatı öğrenin**. Pazar yeri komisyonunu, kargoyu ve istediğiniz kârı hesaba katan maliyeti ve önerilen fiyatı görün.
+
+## Sayabildiğiniz her el işi için (yeni bölüm)
+- Üst yazı: her el işi için
+- Giriş: Ürününüz malzemelerden oluşuyorsa Melaymade onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.
+- Etiketler: Boncuk işi | Doğal taş takılar | Örgü | Dikiş | Seramik ve kil | Saç ürünleri | Makrome | Mum ve sabun | Nakış
+- Alt not: …ve ellerinizle yarattığınız her şey.
+
+## Kurallar sizin. Uygulama size uyum sağlar. (yeni bölüm)
+- Üst yazı: Sizin atölyeniz
+- Giriş: El işinizi programa uydurmazsınız. Program sizin el işinize uyum sağlar.
+- **Kendi fotoğraflarınız**. Her malzeme ve her iş sizin fotoğrafınızla. İstediğiniz gibi kırpın ve yakınlaştırın.
+- **Kendi kategorileriniz**. El işinize göre bölümler oluşturun: «Boncuklar»dan «İplik», «Kil» ve «Saç»a kadar.
+- **Kendi birimleriniz**. Adet, metre, gram, mililitre ve aralarında dönüştürme.
+- **Kendi para biriminiz**. 40'tan fazla para birimi. İstediğinizle alışveriş yapın, rahat ettiğinizle hesaplayın.
+- **Kendi fiyat kurallarınız**. Pazar yeri komisyonu, istediğiniz kâr, saat ücretiniz ve aletlerin maliyeti.
 
 ## Akademi (yeni bölüm)
 - Rozet: Akademim · beta
@@ -65,6 +79,8 @@
 - Not: Arayüz şu anda Rusça. Türkçe ve İngilizce çok yakında.
 
 ## Aklınıza takılanlar
+- **Benim el işime uygun mu?**
+  Evet, ürününüz sayılabilen malzemelerden oluşuyorsa: boncuk, taş, iplik, kumaş, kil, saç, balmumu ve daha fazlası. Emin değilseniz kendi malzemelerinizle ücretsiz deneyin.
 - **Akademi nedir?**
   «Akademim» bölümü, Melaymade içindeki kişisel okulunuzdur: kurslar, stoktan malzemeli dersler, öğrenciler ve kurs geliri. Hepsi maliyet hesabının yanında.
 - **Öğrenciler doğrudan uygulamada öğrenebilir mi?**

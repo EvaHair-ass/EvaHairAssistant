@@ -8,9 +8,12 @@ L = ["# Melaymade: турецкие тексты посадочной стран
  "Особенно важно проверить: заголовки (они смелые и образные) и раздел «Akademi».\n",
  "## Başlık ve giriş",
  f"- Sayfa başlığı: {t['title']}\n- Açıklama: {t['desc']}\n- Menü: {' | '.join(t['nav'])} | {t['login']}",
- f"- Etiket: {a['pill']}\n- Üst yazı: {t['kicker']}\n- Ana başlık: {t['h1'].replace('*','')}\n- Alt başlık: {t['sub']}\n- Düğmeler: {t['cta']} | {t['cta2']}\n- Not: {t['note']}\n- Kayan şerit: {' · '.join(t['ribbon'])}\n",
+ f"- Etiket: {a['pill']}\n- Üst yazı: {t['kicker']}\n- Ana başlık: {t['h1'].replace('*','')}\n- Alt başlık: {t['sub']}\n- Düğmeler: {t['cta']} | {t['cta2']}\n- Not: {t['note']}\n",
  f"## {t['how_title']}"]
 L += [f"{i}. **{x}**. {y}" for i, (x, y) in enumerate(t["steps"], 1)]
+c = t["cr"]
+L += ["", f"## {c['title']} (yeni bölüm)", f"- Üst yazı: {c['kick']}\n- Giriş: {c['lead']}\n- Etiketler: " + " | ".join(c["items"]) + f"\n- Alt not: {c['foot']}\n", f"## {c['yt']} (yeni bölüm)", f"- Üst yazı: {c['yk']}\n- Giriş: {c['yl']}"]
+L += [f"- **{x}**. {y}" for _, x, y in c["yi"]]
 L += ["", "## Akademi (yeni bölüm)",
  f"- Rozet: {a['ac_badge']}\n- Ana başlık: **{a['ac_big']}**\n- Alt başlık: {a['ac_h']}\n- Giriş: {a['ac_lead']}\n- Düğme: {a['ac_cta']}\n", f"### {a['pain_title']}"]
 L += [f"- **{q}**\n  {x}" for q, x in a["pains"]]
