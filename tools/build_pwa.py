@@ -152,7 +152,8 @@ addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__i
     (OUT / "manifest.webmanifest").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
     cfg_txt = (OUT / "config.js").read_text(encoding="utf-8") if (OUT / "config.js").exists() else ""
-    version = hashlib.sha1((html + cfg_txt).encode("utf-8")).hexdigest()[:10]
+    demo_txt = (ROOT / "prototype" / "demo-photos.js").read_text(encoding="utf-8") if (ROOT / "prototype" / "demo-photos.js").exists() else ""
+    version = hashlib.sha1((html + cfg_txt + demo_txt).encode("utf-8")).hexdigest()[:10]
     shell_extra = ", './config.js', './vendor/supabase.js'" if cfg_txt else ""
     sw = f"""/* Service worker: офлайн-режим. Версия кэша меняется при каждой сборке, чтобы обновления доходили до пользователя. */
 const CACHE = 'mm-{version}';

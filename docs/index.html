@@ -714,12 +714,12 @@ function buildSeed() {
   M({id: 'm_ring', name: 'Колечки соединительные', category: C[3], subcategory: 'Фурнитура', size: '4 мм', color: 'Золото', sku: 'JR-GL-4', location: 'Пакет C2', min: 60, photo: art('rings', '#d4a63a')});
   M({id: 'm_thread', name: 'Леска прозрачная', category: C[2], subcategory: 'Леска', size: '0,3 мм', color: 'Прозрачный', sku: 'LS-03', unit: 'м', location: 'Катушка D1', min: 10, photo: art('spool', '#8fb8c4')});
   M({id: 'm_silk', name: 'Нить шёлковая для бусин', category: C[2], subcategory: 'Швейные нити', size: '0,5 мм', color: 'Бордо', sku: 'SK-05', unit: 'м', location: 'Катушка D2', min: 8, photo: art('spool', '#a8325e')});
-  M({id: 'm_glue', name: 'Клей ювелирный прозрачный', category: C[4], subcategory: 'Клей', size: 'туба 15 мл', color: 'Прозрачный', sku: 'GL-15', unit: 'мл', location: 'Ящик E1', min: 15, photo: art('tube', '#d8d3b4')});
+  M({id: 'm_glue', name: 'Клей ювелирный прозрачный', category: C[4], subcategory: 'Клей', size: 'туба 15 мл', color: 'Прозрачный', sku: 'GL-15', unit: 'мл', location: 'Ящик E1', min: 15, photo: ph('m_glue', art('tube', '#d8d3b4'))});
   M({id: 'm_tw', name: 'Пинцет ювелирный', category: C[4], subcategory: 'Инструменты', size: '', color: 'Сталь', sku: 'TW-01', mode: 'tool', useCost: 12, location: 'Ящик E2', min: 1, photo: ph('m_tw', art('tool', '#6b7280'))});
-  M({id: 'm_pl', name: 'Круглогубцы', category: C[4], subcategory: 'Инструменты', size: '', color: 'Сталь', sku: 'PL-02', mode: 'tool', useCost: 8, location: 'Ящик E2', min: 1, photo: art('tool', '#46506a')});
-  M({id: 'm_clip', name: 'Заколка-автомат 6 см', category: C[5], subcategory: 'Основы для заколок', size: '6 см', color: 'Золото', sku: 'CL-60', location: 'Коробка F1', min: 5, photo: art('clip', '#d4a63a')});
-  M({id: 'm_band', name: 'Ободок металлический', category: C[5], subcategory: 'Ободки', size: '5 мм', color: 'Серебро', sku: 'BD-05', location: 'Коробка F2', min: 3, photo: art('band', '#aeb4c4')});
-  M({id: 'm_ribbon', name: 'Тесьма атласная', category: C[5], subcategory: 'Тесьма', size: '6 мм', color: 'Пудровый', sku: 'RB-06', unit: 'м', location: 'Коробка F3', min: 5, photo: art('ribbon', '#e3a6b5')});
+  M({id: 'm_pl', name: 'Круглогубцы', category: C[4], subcategory: 'Инструменты', size: '', color: 'Сталь', sku: 'PL-02', mode: 'tool', useCost: 8, location: 'Ящик E2', min: 1, photo: ph('m_pl', art('tool', '#46506a'))});
+  M({id: 'm_clip', name: 'Заколка-автомат 6 см', category: C[5], subcategory: 'Основы для заколок', size: '6 см', color: 'Золото', sku: 'CL-60', location: 'Коробка F1', min: 5, photo: ph('m_clip', art('clip', '#d4a63a'))});
+  M({id: 'm_band', name: 'Ободок металлический', category: C[5], subcategory: 'Ободки', size: '5 мм', color: 'Серебро', sku: 'BD-05', location: 'Коробка F2', min: 3, photo: ph('m_band', art('band', '#aeb4c4'))});
+  M({id: 'm_ribbon', name: 'Тесьма атласная', category: C[5], subcategory: 'Тесьма', size: '6 мм', color: 'Пудровый', sku: 'RB-06', unit: 'м', location: 'Коробка F3', min: 5, photo: ph('m_ribbon', art('ribbon', '#e3a6b5'))});
   M({id: 'm_braid', name: 'Канекалон для кос, 60 см', category: C[6], subcategory: 'Накладные пряди', size: '60 см', color: 'Блонд', sku: 'KN-60-BL', location: 'Пакет G1', min: 3, photo: ph('m_braid', art('hair', '#d9b77e'))});
   M({id: 'm_box', name: 'Коробочка подарочная', category: C[7], subcategory: 'Коробки', size: '7×7 см', color: 'Пудровый', sku: 'BX-77', location: 'Полка H1', min: 10, photo: art('box', '#c9a7a0')});
   const g = id => mat(st, id);
