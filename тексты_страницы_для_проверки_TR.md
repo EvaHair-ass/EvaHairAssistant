@@ -23,7 +23,7 @@
 ## Dürüst fiyatı olan güzellik (yeni bölüm)
 - Üst yazı: örnek çalışmalar
 - Giriş: Böyle ürünler onlarca malzemeden oluşur. Melaymade hepsini hatırlar ve toplamının maliyetini hesaplar.
-- Başlıklar: Orman Muskası (Toka) | Kehribar Ay (Toka) | Ay Taşı (Saç parçası) | Hayat Ağacı (Tika) | Altın Labradorit (Süslü örgü) | Kül, Bakır ve Gece (Karabinalı örgüler) | Gül Kuvarsı (Kristalli örgü) | Sonbahar Ormanı (Afro lastik)
+- Başlıklar: Orman Muskası (Toka) | Rüzgârın Nefesi (Makrome pano) | Kehribar Ay (Toka) | Kır Otları (Nakış) | Ay Taşı (Saç parçası) | Lavanta ve Portakal (Mum ve sabun) | Hayat Ağacı (Tika) | Kum ve Terakota (Seramik) | Altın Labradorit (Süslü örgü) | Keten Fısıltısı (Nakışlı keseler) | Kül, Bakır ve Gece (Karabinalı örgüler) | Gül Kuvarsı (Kristalli örgü) | Sonbahar Ormanı (Afro lastik)
 - Not: Örnek ürünler.
 
 ## Sayabildiğiniz her el işi için (yeni bölüm)

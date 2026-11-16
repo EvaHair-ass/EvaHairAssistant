@@ -478,16 +478,22 @@ for _c, _x in CRAFTS.items():
     _t["faq"] = [_x["faq"]] + list(_t["faq"])
 
 
+# порядок работ в галерее: (ремесло, файл)
+WORKS = [("hair", "work1"), ("macrame", "w_macrame"), ("hair", "work2"), ("embroid", "w_embroid"), ("hair", "work3"), ("candles", "w_candles"),
+         ("hair", "work4"), ("clay", "w_clay"), ("hair", "work5"), ("sewing", "w_sewing"), ("hair", "work6"), ("hair", "work7"), ("hair", "work8")]
 SHOW = {
     "ru": {"kick": "примеры работ", "title": "Красота, у которой есть честная цена", "lead": "Такие изделия собираются из десятков материалов. Melaymade помнит каждый и считает, сколько стоит всё вместе.",
-           "names": ["Лесной оберег", "Янтарная луна", "Лунный камень", "Древо жизни", "Золотой лабрадорит", "Пепел, медь и ночь", "Розовый кварц", "Осенний лес"],
-           "kinds": ["Заколка", "Заколка", "Съёмная прядь", "Тика", "Коса с украшениями", "Косы на карабинах", "Коса с кристаллами", "Афро-резинки"], "note": "Примеры изделий."},
+           "chips": {"all": "Все", "hair": "Волосы", "embroid": "Вышивка", "macrame": "Макраме", "candles": "Свечи и мыло", "clay": "Глина", "sewing": "Шитьё"},
+           "names": ["Лесной оберег", "Дыхание ветра", "Янтарная луна", "Луговые травы", "Лунный камень", "Лаванда и апельсин", "Древо жизни", "Песок и терракота", "Золотой лабрадорит", "Льняной шёпот", "Пепел, медь и ночь", "Розовый кварц", "Осенний лес"],
+           "kinds": ["Заколка", "Макраме-панно", "Заколка", "Вышивка", "Съёмная прядь", "Свеча и мыло", "Тика", "Керамика", "Коса с украшениями", "Мешочек с вышивкой", "Косы на карабинах", "Коса с кристаллами", "Афро-резинки"], "note": "Примеры изделий."},
     "tr": {"kick": "örnek çalışmalar", "title": "Dürüst fiyatı olan güzellik", "lead": "Böyle ürünler onlarca malzemeden oluşur. Melaymade hepsini hatırlar ve toplamının maliyetini hesaplar.",
-           "names": ["Orman Muskası", "Kehribar Ay", "Ay Taşı", "Hayat Ağacı", "Altın Labradorit", "Kül, Bakır ve Gece", "Gül Kuvarsı", "Sonbahar Ormanı"],
-           "kinds": ["Toka", "Toka", "Saç parçası", "Tika", "Süslü örgü", "Karabinalı örgüler", "Kristalli örgü", "Afro lastik"], "note": "Örnek ürünler."},
+           "chips": {"all": "Tümü", "hair": "Saç", "embroid": "Nakış", "macrame": "Makrome", "candles": "Mum ve sabun", "clay": "Kil", "sewing": "Dikiş"},
+           "names": ["Orman Muskası", "Rüzgârın Nefesi", "Kehribar Ay", "Kır Otları", "Ay Taşı", "Lavanta ve Portakal", "Hayat Ağacı", "Kum ve Terakota", "Altın Labradorit", "Keten Fısıltısı", "Kül, Bakır ve Gece", "Gül Kuvarsı", "Sonbahar Ormanı"],
+           "kinds": ["Toka", "Makrome pano", "Toka", "Nakış", "Saç parçası", "Mum ve sabun", "Tika", "Seramik", "Süslü örgü", "Nakışlı keseler", "Karabinalı örgüler", "Kristalli örgü", "Afro lastik"], "note": "Örnek ürünler."},
     "en": {"kick": "example pieces", "title": "Beauty with an honest price", "lead": "Pieces like these are built from dozens of materials. Melaymade remembers every one and works out what it all costs together.",
-           "names": ["Forest Amulet", "Amber Moon", "Moonstone", "Tree of Life", "Golden Labradorite", "Ash, Copper and Night", "Rose Quartz", "Autumn Forest"],
-           "kinds": ["Hair slide", "Hair slide", "Hair piece", "Tikka headpiece", "Jeweled braid", "Braids on carabiners", "Crystal braid", "Afro hair ties"], "note": "Example pieces."},
+           "chips": {"all": "All", "hair": "Hair", "embroid": "Embroidery", "macrame": "Macramé", "candles": "Candles and soap", "clay": "Clay", "sewing": "Sewing"},
+           "names": ["Forest Amulet", "Breath of the Wind", "Amber Moon", "Meadow Herbs", "Moonstone", "Lavender and Orange", "Tree of Life", "Sand and Terracotta", "Golden Labradorite", "Linen Whisper", "Ash, Copper and Night", "Rose Quartz", "Autumn Forest"],
+           "kinds": ["Hair slide", "Macramé wall hanging", "Hair slide", "Hand embroidery", "Hair piece", "Candle and soap", "Tikka headpiece", "Ceramics", "Jeweled braid", "Embroidered pouch", "Braids on carabiners", "Crystal braid", "Afro hair ties"], "note": "Example pieces."},
 }
 for _c, _x in SHOW.items():
     TEXTS[_c]["sh"] = _x
@@ -737,9 +743,14 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .showcase{text-align:center}
 .showcase h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
 .showcase .lead2{margin-left:auto;margin-right:auto}
-.works{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 14px;margin-top:48px}
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 14px;margin-top:40px}
 .work{margin:0;width:100%}
-.work:nth-child(even){margin-top:34px}
+.work[hidden]{display:none}
+.work.lift{margin-top:34px}
+.wchips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.wchips button{font:inherit;font-weight:800;font-size:14px;padding:9px 18px;border-radius:999px;border:1px solid color-mix(in srgb,var(--ochre) 50%,var(--line));background:var(--glass);color:var(--ink);cursor:pointer;transition:background .25s,color .25s,transform .2s}
+.wchips button:hover{transform:translateY(-2px)}
+.wchips button.on{background:var(--clay);color:var(--clay-ink);border-color:transparent}
 .work .arch{aspect-ratio:3/4;border-radius:999px 999px 22px 22px;overflow:hidden;border:1px solid color-mix(in srgb,var(--ochre) 55%,var(--line));box-shadow:0 0 0 5px var(--bg),0 0 0 6px color-mix(in srgb,var(--ochre) 40%,transparent),0 20px 44px rgba(90,60,30,.25);transition:transform .5s,box-shadow .5s}
 .work img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
 .work:hover .arch{transform:translateY(-8px)}
@@ -747,7 +758,7 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .work figcaption{margin-top:20px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(18px,2.4vw,24px);line-height:1.15;color:var(--clay)}
 .work figcaption small{display:block;margin-top:4px;font-family:'Nunito',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
 .shnote{margin-top:38px;font-size:14px;color:var(--ink2)}
-@media (min-width:860px){.works{grid-template-columns:repeat(4,1fr);gap:44px 22px}.work:nth-child(even){margin-top:56px}}
+@media (min-width:860px){.works{grid-template-columns:repeat(4,1fr);gap:44px 22px}.work.lift{margin-top:56px}}
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
   .js .rv.in{opacity:1;transform:none}
@@ -777,6 +788,9 @@ d.querySelectorAll('[data-stars]').forEach(function(b){for(var i=0;i<+b.dataset.
 var els=d.querySelectorAll('.rv');
 if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
 else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -5% 0px'});els.forEach(function(e){io.observe(e)})}
+var wc=d.querySelectorAll('.wchips button'),ws=d.querySelectorAll('.work');
+function lay(){var k=0;ws.forEach(function(w){if(!w.hidden){w.classList.toggle('lift',k%2===1);k++}})}
+wc.forEach(function(c){c.addEventListener('click',function(){wc.forEach(function(x){x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c?'true':'false')});var f=c.dataset.f;ws.forEach(function(w){var on=f==='all'||w.dataset.c===f;w.hidden=!on;if(on){w.classList.remove('in');void w.offsetWidth;w.classList.add('in')}});lay()})});lay();
 var hv=d.querySelector('.herovis');
 if(hv&&matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
 hv.addEventListener('pointermove',function(e){var r=hv.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;hv.style.setProperty('--ry',(x*12).toFixed(1)+'deg');hv.style.setProperty('--rx',(-y*10).toFixed(1)+'deg')});
@@ -805,11 +819,12 @@ def render(code):
     cr = t["cr"]
     sh = t["sh"]
     works = "".join(
-        f'<figure class="work rv" style="--i:{i % 4}"><div class="arch"><img src="/img/work{i + 1}.jpg" width="800" height="1067" loading="lazy" alt="{esc(sh["kinds"][i])}: {esc(sh["names"][i])}"></div><figcaption>{esc(sh["names"][i])}<small>{esc(sh["kinds"][i])}</small></figcaption></figure>'
-        for i in range(8))
+        f'<figure class="work rv" data-c="{cr_}" style="--i:{n % 4}"><div class="arch"><img src="/img/{fn}.jpg" width="800" height="1067" loading="lazy" alt="{esc(sh["kinds"][n])}: {esc(sh["names"][n])}"></div><figcaption>{esc(sh["names"][n])}<small>{esc(sh["kinds"][n])}</small></figcaption></figure>'
+        for n, (cr_, fn) in enumerate(WORKS))
     charms = "".join(
         f'<div class="charm rv" style="--i:{i};--len:{(i * 37) % 5 * 14 + 8}px;--dl:-{i * 1.3:.1f}s"><div class="orb">{craft_icon(k)}</div><span>{esc(nm)}</span></div>'
         for i, (k, nm) in enumerate(zip(CRAFT_ICONS, cr["items"])))
+    wchips = "".join(f'<button type="button" class="{"on" if k == "all" else ""}" data-f="{k}" aria-pressed="{"true" if k == "all" else "false"}">{esc(v)}</button>' for k, v in sh["chips"].items())
     yours = "".join(f'<div class="yitem rv" style="--i:{i}"><span class="yn">{icon(ic)}</span><div><h3>{esc(a_)}</h3><p>{esc(b_)}</p></div></div>' for i, (ic, a_, b_) in enumerate(cr["yi"]))
     steps = "".join(f'<div class="card step rv" style="--i:{i}"><div class="n">{i + 1}</div><h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (a, b) in enumerate(t["steps"]))
     feats = "".join(f'<div class="card feat rv" style="--i:{i % 3}">{icon(ic)}<h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (ic, a, b) in enumerate(t["features"]))
@@ -875,6 +890,7 @@ def render(code):
 </div></section>
 <section class="showcase"><div class="wrap">
   <div class="shtop"><span class="kick rv">{esc(sh["kick"])}</span><h2 class="rv">{esc(sh["title"])}</h2><p class="lead2 rv">{esc(sh["lead"])}</p></div>
+  <div class="wchips rv" role="group">{wchips}</div>
   <div class="works">{works}</div>
   <p class="shnote rv">{esc(sh["note"])}</p>
 </div></section>
