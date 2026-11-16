@@ -215,15 +215,17 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .showcase{text-align:center}
 .showcase h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
 .showcase .lead2{margin-left:auto;margin-right:auto}
-.works{display:grid;gap:36px;margin-top:48px;justify-items:center}
-.work{margin:0;width:min(320px,100%)}
-.work .arch{aspect-ratio:3/4;border-radius:999px 999px 26px 26px;overflow:hidden;border:1px solid color-mix(in srgb,var(--ochre) 55%,var(--line));box-shadow:0 0 0 6px var(--bg),0 0 0 7px color-mix(in srgb,var(--ochre) 40%,transparent),0 24px 50px rgba(90,60,30,.25);transition:transform .5s,box-shadow .5s}
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 14px;margin-top:48px}
+.work{margin:0;width:100%}
+.work:nth-child(even){margin-top:34px}
+.work .arch{aspect-ratio:3/4;border-radius:999px 999px 22px 22px;overflow:hidden;border:1px solid color-mix(in srgb,var(--ochre) 55%,var(--line));box-shadow:0 0 0 5px var(--bg),0 0 0 6px color-mix(in srgb,var(--ochre) 40%,transparent),0 20px 44px rgba(90,60,30,.25);transition:transform .5s,box-shadow .5s}
 .work img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
 .work:hover .arch{transform:translateY(-8px)}
 .work:hover img{transform:scale(1.06)}
-.work figcaption{margin-top:22px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:26px;color:var(--clay)}
-.shnote{margin-top:34px;font-size:14px;color:var(--ink2)}
-@media (min-width:860px){.works{grid-template-columns:repeat(3,1fr);align-items:start}.work:nth-child(2){margin-top:56px}}
+.work figcaption{margin-top:20px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(18px,2.4vw,24px);line-height:1.15;color:var(--clay)}
+.work figcaption small{display:block;margin-top:4px;font-family:'Nunito',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.shnote{margin-top:38px;font-size:14px;color:var(--ink2)}
+@media (min-width:860px){.works{grid-template-columns:repeat(4,1fr);gap:44px 22px}.work:nth-child(even){margin-top:56px}}
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
   .js .rv.in{opacity:1;transform:none}
@@ -271,7 +273,7 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 </div></section>
 <section class="showcase"><div class="wrap">
   <div class="shtop"><span class="kick rv">примеры работ</span><h2 class="rv">Красота, у которой есть честная цена</h2><p class="lead2 rv">Такие изделия собираются из десятков материалов. Melaymade помнит каждый и считает, сколько стоит всё вместе.</p></div>
-  <div class="works"><figure class="work rv" style="--i:0"><div class="arch"><img src="/img/work1.jpg" width="800" height="1067" loading="lazy" alt="Съёмная прядь с брошью из лабрадорита"></div><figcaption>Лунный камень</figcaption></figure><figure class="work rv" style="--i:1"><div class="arch"><img src="/img/work2.jpg" width="800" height="1067" loading="lazy" alt="Коса с хрусталём и розовым кварцем"></div><figcaption>Розовый кварц</figcaption></figure><figure class="work rv" style="--i:2"><div class="arch"><img src="/img/work3.jpg" width="800" height="1067" loading="lazy" alt="Коса-омбре с золотом и лабрадоритом"></div><figcaption>Золотой лабрадорит</figcaption></figure></div>
+  <div class="works"><figure class="work rv" style="--i:0"><div class="arch"><img src="/img/work1.jpg" width="800" height="1067" loading="lazy" alt="Заколка: Лесной оберег"></div><figcaption>Лесной оберег<small>Заколка</small></figcaption></figure><figure class="work rv" style="--i:1"><div class="arch"><img src="/img/work2.jpg" width="800" height="1067" loading="lazy" alt="Заколка: Янтарная луна"></div><figcaption>Янтарная луна<small>Заколка</small></figcaption></figure><figure class="work rv" style="--i:2"><div class="arch"><img src="/img/work3.jpg" width="800" height="1067" loading="lazy" alt="Съёмная прядь: Лунный камень"></div><figcaption>Лунный камень<small>Съёмная прядь</small></figcaption></figure><figure class="work rv" style="--i:3"><div class="arch"><img src="/img/work4.jpg" width="800" height="1067" loading="lazy" alt="Тика: Древо жизни"></div><figcaption>Древо жизни<small>Тика</small></figcaption></figure><figure class="work rv" style="--i:0"><div class="arch"><img src="/img/work5.jpg" width="800" height="1067" loading="lazy" alt="Коса с украшениями: Золотой лабрадорит"></div><figcaption>Золотой лабрадорит<small>Коса с украшениями</small></figcaption></figure><figure class="work rv" style="--i:1"><div class="arch"><img src="/img/work6.jpg" width="800" height="1067" loading="lazy" alt="Косы на карабинах: Пепел, медь и ночь"></div><figcaption>Пепел, медь и ночь<small>Косы на карабинах</small></figcaption></figure><figure class="work rv" style="--i:2"><div class="arch"><img src="/img/work7.jpg" width="800" height="1067" loading="lazy" alt="Коса с кристаллами: Розовый кварц"></div><figcaption>Розовый кварц<small>Коса с кристаллами</small></figcaption></figure><figure class="work rv" style="--i:3"><div class="arch"><img src="/img/work8.jpg" width="800" height="1067" loading="lazy" alt="Афро-резинки: Осенний лес"></div><figcaption>Осенний лес<small>Афро-резинки</small></figcaption></figure></div>
   <p class="shnote rv">Примеры изделий.</p>
 </div></section>
 <section id="how"><div class="wrap">

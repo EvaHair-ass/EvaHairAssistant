@@ -479,9 +479,15 @@ for _c, _x in CRAFTS.items():
 
 
 SHOW = {
-    "ru": {"kick": "примеры работ", "title": "Красота, у которой есть честная цена", "lead": "Такие изделия собираются из десятков материалов. Melaymade помнит каждый и считает, сколько стоит всё вместе.", "names": ["Лунный камень", "Розовый кварц", "Золотой лабрадорит"], "alts": ["Съёмная прядь с брошью из лабрадорита", "Коса с хрусталём и розовым кварцем", "Коса-омбре с золотом и лабрадоритом"], "note": "Примеры изделий."},
-    "tr": {"kick": "örnek çalışmalar", "title": "Dürüst fiyatı olan güzellik", "lead": "Böyle ürünler onlarca malzemeden oluşur. Melaymade hepsini hatırlar ve toplamının maliyetini hesaplar.", "names": ["Ay Taşı", "Gül Kuvarsı", "Altın Labradorit"], "alts": ["Labradorit broşlu saç parçası", "Kristal ve gül kuvarslı saç örgüsü", "Altın ve labradoritli ombre örgü"], "note": "Örnek ürünler."},
-    "en": {"kick": "example pieces", "title": "Beauty with an honest price", "lead": "Pieces like these are built from dozens of materials. Melaymade remembers every one and works out what it all costs together.", "names": ["Moonstone", "Rose quartz", "Golden labradorite"], "alts": ["Hair piece with a labradorite brooch", "Braid with crystals and rose quartz", "Ombre braid with gold and labradorite"], "note": "Example pieces."},
+    "ru": {"kick": "примеры работ", "title": "Красота, у которой есть честная цена", "lead": "Такие изделия собираются из десятков материалов. Melaymade помнит каждый и считает, сколько стоит всё вместе.",
+           "names": ["Лесной оберег", "Янтарная луна", "Лунный камень", "Древо жизни", "Золотой лабрадорит", "Пепел, медь и ночь", "Розовый кварц", "Осенний лес"],
+           "kinds": ["Заколка", "Заколка", "Съёмная прядь", "Тика", "Коса с украшениями", "Косы на карабинах", "Коса с кристаллами", "Афро-резинки"], "note": "Примеры изделий."},
+    "tr": {"kick": "örnek çalışmalar", "title": "Dürüst fiyatı olan güzellik", "lead": "Böyle ürünler onlarca malzemeden oluşur. Melaymade hepsini hatırlar ve toplamının maliyetini hesaplar.",
+           "names": ["Orman Muskası", "Kehribar Ay", "Ay Taşı", "Hayat Ağacı", "Altın Labradorit", "Kül, Bakır ve Gece", "Gül Kuvarsı", "Sonbahar Ormanı"],
+           "kinds": ["Toka", "Toka", "Saç parçası", "Tika", "Süslü örgü", "Karabinalı örgüler", "Kristalli örgü", "Afro lastik"], "note": "Örnek ürünler."},
+    "en": {"kick": "example pieces", "title": "Beauty with an honest price", "lead": "Pieces like these are built from dozens of materials. Melaymade remembers every one and works out what it all costs together.",
+           "names": ["Forest Amulet", "Amber Moon", "Moonstone", "Tree of Life", "Golden Labradorite", "Ash, Copper and Night", "Rose Quartz", "Autumn Forest"],
+           "kinds": ["Hair slide", "Hair slide", "Hair piece", "Tikka headpiece", "Jeweled braid", "Braids on carabiners", "Crystal braid", "Afro hair ties"], "note": "Example pieces."},
 }
 for _c, _x in SHOW.items():
     TEXTS[_c]["sh"] = _x
@@ -731,15 +737,17 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .showcase{text-align:center}
 .showcase h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
 .showcase .lead2{margin-left:auto;margin-right:auto}
-.works{display:grid;gap:36px;margin-top:48px;justify-items:center}
-.work{margin:0;width:min(320px,100%)}
-.work .arch{aspect-ratio:3/4;border-radius:999px 999px 26px 26px;overflow:hidden;border:1px solid color-mix(in srgb,var(--ochre) 55%,var(--line));box-shadow:0 0 0 6px var(--bg),0 0 0 7px color-mix(in srgb,var(--ochre) 40%,transparent),0 24px 50px rgba(90,60,30,.25);transition:transform .5s,box-shadow .5s}
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 14px;margin-top:48px}
+.work{margin:0;width:100%}
+.work:nth-child(even){margin-top:34px}
+.work .arch{aspect-ratio:3/4;border-radius:999px 999px 22px 22px;overflow:hidden;border:1px solid color-mix(in srgb,var(--ochre) 55%,var(--line));box-shadow:0 0 0 5px var(--bg),0 0 0 6px color-mix(in srgb,var(--ochre) 40%,transparent),0 20px 44px rgba(90,60,30,.25);transition:transform .5s,box-shadow .5s}
 .work img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
 .work:hover .arch{transform:translateY(-8px)}
 .work:hover img{transform:scale(1.06)}
-.work figcaption{margin-top:22px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:26px;color:var(--clay)}
-.shnote{margin-top:34px;font-size:14px;color:var(--ink2)}
-@media (min-width:860px){.works{grid-template-columns:repeat(3,1fr);align-items:start}.work:nth-child(2){margin-top:56px}}
+.work figcaption{margin-top:20px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(18px,2.4vw,24px);line-height:1.15;color:var(--clay)}
+.work figcaption small{display:block;margin-top:4px;font-family:'Nunito',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.shnote{margin-top:38px;font-size:14px;color:var(--ink2)}
+@media (min-width:860px){.works{grid-template-columns:repeat(4,1fr);gap:44px 22px}.work:nth-child(even){margin-top:56px}}
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
   .js .rv.in{opacity:1;transform:none}
@@ -797,8 +805,8 @@ def render(code):
     cr = t["cr"]
     sh = t["sh"]
     works = "".join(
-        f'<figure class="work rv" style="--i:{i}"><div class="arch"><img src="/img/work{i + 1}.jpg" width="800" height="1067" loading="lazy" alt="{esc(sh["alts"][i])}"></div><figcaption>{esc(sh["names"][i])}</figcaption></figure>'
-        for i in range(3))
+        f'<figure class="work rv" style="--i:{i % 4}"><div class="arch"><img src="/img/work{i + 1}.jpg" width="800" height="1067" loading="lazy" alt="{esc(sh["kinds"][i])}: {esc(sh["names"][i])}"></div><figcaption>{esc(sh["names"][i])}<small>{esc(sh["kinds"][i])}</small></figcaption></figure>'
+        for i in range(8))
     charms = "".join(
         f'<div class="charm rv" style="--i:{i};--len:{(i * 37) % 5 * 14 + 8}px;--dl:-{i * 1.3:.1f}s"><div class="orb">{craft_icon(k)}</div><span>{esc(nm)}</span></div>'
         for i, (k, nm) in enumerate(zip(CRAFT_ICONS, cr["items"])))

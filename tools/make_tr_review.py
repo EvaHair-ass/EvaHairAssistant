@@ -12,7 +12,7 @@ L = ["# Melaymade: турецкие тексты посадочной стран
  f"## {t['how_title']}"]
 L += [f"{i}. **{x}**. {y}" for i, (x, y) in enumerate(t["steps"], 1)]
 c = t["cr"]; h = t["sh"]
-L += ["", f"## {h['title']} (yeni bölüm)", f"- Üst yazı: {h['kick']}\n- Giriş: {h['lead']}\n- Başlıklar: " + " | ".join(h["names"]) + f"\n- Not: {h['note']}\n", f"## {c['title']} (yeni bölüm)", f"- Üst yazı: {c['kick']}\n- Giriş: {c['lead']}\n- Etiketler: " + " | ".join(c["items"]) + f"\n- Alt not: {c['foot']}\n", f"## {c['yt']} (yeni bölüm)", f"- Üst yazı: {c['yk']}\n- Giriş: {c['yl']}"]
+L += ["", f"## {h['title']} (yeni bölüm)", f"- Üst yazı: {h['kick']}\n- Giriş: {h['lead']}\n- Başlıklar: " + " | ".join(f"{n} ({k})" for n, k in zip(h["names"], h["kinds"])) + f"\n- Not: {h['note']}\n", f"## {c['title']} (yeni bölüm)", f"- Üst yazı: {c['kick']}\n- Giriş: {c['lead']}\n- Etiketler: " + " | ".join(c["items"]) + f"\n- Alt not: {c['foot']}\n", f"## {c['yt']} (yeni bölüm)", f"- Üst yazı: {c['yk']}\n- Giriş: {c['yl']}"]
 L += [f"- **{x}**. {y}" for _, x, y in c["yi"]]
 L += ["", "## Akademi (yeni bölüm)",
  f"- Rozet: {a['ac_badge']}\n- Ana başlık: **{a['ac_big']}**\n- Alt başlık: {a['ac_h']}\n- Giriş: {a['ac_lead']}\n- Düğme: {a['ac_cta']}\n", f"### {a['pain_title']}"]
