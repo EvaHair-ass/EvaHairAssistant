@@ -340,6 +340,7 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 .try{display:flex;flex-direction:column;gap:8px}
 .try button{display:flex;gap:12px;text-align:left;padding:11px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:18px;align-items:flex-start;transition:transform .2s,border-color .2s}
 .try button:hover{border-color:var(--clay);transform:translateX(3px)}
+.try.tips>div{display:flex;gap:12px;text-align:left;padding:11px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:18px;align-items:flex-start}
 .try .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--clay-soft);color:var(--clay);font-size:12px;font-weight:800;display:grid;place-items:center}
 .try b{display:block;font-size:13.5px;font-weight:800}
 .try span.t{font-size:12.5px;color:var(--ink2)}
@@ -748,15 +749,15 @@ function buildSeed() {
   /* Академия (демо) */
   const AC0 = st.academy;
   AC0.courses = [
-    {id: 'c1', title: 'Браслет из натуральных камней', price: 1490, status: 'pub', kind: 'bracelet', hex: '#5f8794', photo: ph('c_c1', null), desc: 'Плетёный браслет с нуля: от выбора камней до фото для продажи. Подойдёт новичкам.', lessons: [
-      {id: 'l1', title: 'Знакомство и материалы', min: 8, free: true, video: '', desc: 'Какие камни и нити нужны, где их брать и как не переплатить.', bom: []},
-      {id: 'l2', title: 'Подготовка нити и бусин', min: 14, free: false, video: '', desc: 'Раскладываем камни по цвету и размеру, готовим нить.', bom: []},
-      {id: 'l3', title: 'Плетение основы', min: 22, free: false, video: '', desc: 'Пошаговое плетение браслета. Материалы урока можно сразу перенести в свою работу.', bom: [{id: 'm_lab', qty: 16}, {id: 'm_ring', qty: 12}, {id: 'm_thread', qty: 2}, {id: 'm_glue', qty: 1}, {id: 'm_tw', qty: 2}]},
-      {id: 'l4', title: 'Застёжка и финиш', min: 17, free: false, video: '', desc: 'Крепим застёжку и проверяем прочность.', bom: []},
+    {id: 'c1', title: 'Заколка «Янтарная луна»', price: 1490, status: 'pub', kind: 'clip', hex: '#d39a2f', photo: ph('n3', null), desc: 'Собираем авторскую заколку с лунами, янтарём и подвесками: от выбора основы до фото для продажи. Подойдёт новичкам.', lessons: [
+      {id: 'l1', title: 'Знакомство и материалы', min: 8, free: true, video: '', desc: 'Какие основы, камни и кристаллы нужны, где их брать и как не переплатить.', bom: []},
+      {id: 'l2', title: 'Подготовка основы', min: 14, free: false, video: '', desc: 'Раскладываем кристаллы по размеру и цвету, готовим основу под сборку.', bom: []},
+      {id: 'l3', title: 'Сборка украшения', min: 22, free: false, video: '', desc: 'Пошаговая сборка заколки. Материалы урока можно сразу перенести в свою работу.', bom: [{id: 'm_clip', qty: 1}, {id: 'm_xir29', qty: 6}, {id: 'm_ss16', qty: 12}, {id: 'm_glue', qty: 2}, {id: 'm_tw', qty: 2}]},
+      {id: 'l4', title: 'Финиш и проверка прочности', min: 17, free: false, video: '', desc: 'Фиксируем детали и проверяем, что украшение держится надёжно.', bom: []},
       {id: 'l5', title: 'Считаем цену и снимаем фото', min: 12, free: false, video: '', desc: 'Как посчитать себестоимость и красиво сфотографировать изделие.', bom: []}]},
-    {id: 'c2', title: 'Заколка с кристаллами', price: 990, status: 'pub', kind: 'clip', hex: '#8fc4e6', photo: ph('c_c2', null), desc: 'Клеим кристаллы на заколку так, чтобы они держались годами.', lessons: [
+    {id: 'c2', title: 'Прядь с кристаллами', price: 990, status: 'pub', kind: 'clip', hex: '#8fc4e6', photo: ph('c_c2', null), desc: 'Украшаем съёмную прядь брошью и кристаллами так, чтобы всё держалось годами.', lessons: [
       {id: 'l6', title: 'Какие кристаллы выбрать', min: 9, free: true, video: '', desc: 'Hotfix и No Hotfix: в чём разница.', bom: []},
-      {id: 'l7', title: 'Клеим и собираем', min: 25, free: false, video: '', desc: 'Раскладка, клей, выдержка.', bom: [{id: 'm_clip', qty: 1}, {id: 'm_ss16', qty: 20}, {id: 'm_glue', qty: 3}, {id: 'm_tw', qty: 3}]},
+      {id: 'l7', title: 'Клеим и собираем', min: 25, free: false, video: '', desc: 'Раскладка, клей, выдержка.', bom: [{id: 'm_braid', qty: 1}, {id: 'm_ss16', qty: 20}, {id: 'm_glue', qty: 3}, {id: 'm_tw', qty: 3}]},
       {id: 'l8', title: 'Упаковка', min: 7, free: false, video: '', desc: 'Красивая подача для подарка.', bom: []}]},
     {id: 'c3', title: 'Съёмные косы: основы', price: 1990, status: 'draft', kind: 'hair', hex: '#d9b77e', photo: ph('c_c3', null), desc: 'Черновик нового курса.', lessons: [
       {id: 'l9', title: 'Материалы и подготовка', min: 11, free: true, video: '', desc: 'Канекалон и крепления.', bom: [{id: 'm_braid', qty: 2}]}]}];
@@ -770,9 +771,9 @@ function buildSeed() {
   const hrs = h => Date.now() - h * 3600000;
   AC0.chats = {
     c1: [{id: 'x1', from: 't', text: 'Добро пожаловать в чат курса! Задавайте вопросы под любым уроком, я отвечаю каждый день.', ts: hrs(200)},
-      {id: 'x2', from: 's1', text: 'Подскажите, можно заменить леску на шёлковую нить?', ts: hrs(60)},
-      {id: 'x3', from: 't', text: 'Да, шёлковая нить даёт более мягкую посадку. Только узлы делайте чуть плотнее.', ts: hrs(58)},
-      {id: 'x4', from: 's5', text: 'Урок про плетение основы очень понравился, всё получилось с первого раза!', ts: hrs(5)}],
+      {id: 'x2', from: 's1', text: 'Подскажите, можно взять другой клей, если основа из металла?', ts: hrs(60)},
+      {id: 'x3', from: 't', text: 'Да, главное, чтобы клей держал и металл, и камень. Лучше прозрачный ювелирный и дать ему выдержку сутки.', ts: hrs(58)},
+      {id: 'x4', from: 's5', text: 'Урок про сборку очень понравился, всё получилось с первого раза!', ts: hrs(5)}],
     c2: [{id: 'x5', from: 't', text: 'Здесь обсуждаем заколки с кристаллами. Фото своих работ выкладывайте сюда.', ts: hrs(120)},
       {id: 'x6', from: 's3', text: 'Какой клей лучше держит на металле?', ts: hrs(30)}],
     c3: []};
@@ -1260,6 +1261,12 @@ const GUIDE = [
   {k: 'backup', t: 'Копия данных', d: 'Как сохранить всё и вернуть обратно.'}];
 function guideHTML() { return `<div class="try">${GUIDE.map((g, i) => `<button data-act="tryIt" data-k="${g.k}"><span class="n">${i + 1}</span><span><b>${g.t}</b><span class="t">${g.d}</span></span></button>`).join('')}</div>`; }
 function sideHTML() {
+  if (window.__PWA__) return `<svg class="art sideart" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><h1><em>Melaymade</em></h1><p class="lead">Склад материалов, расчёт цены и твоя личная Академия в одном приложении.</p>
+    <div class="try tips">
+      <div><span class="n">1</span><span><b>Установи приложение</b><span class="t">В Chrome нажми значок установки в адресной строке. На телефоне: меню браузера, «Добавить на главный экран».</span></span></div>
+      <div><span class="n">2</span><span><b>Работает без интернета</b><span class="t">Изменения сохраняются на устройстве и отправляются в облако, когда появится связь.</span></span></div>
+      <div><span class="n">3</span><span><b>Твои данные только твои</b><span class="t">У каждой мастерицы свой склад, другие его не видят. Копию можно сохранить в любой момент в разделе «Ещё».</span></span></div>
+    </div>`;
   return `<svg class="art sideart" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><h1>Моя<br><em>мастерская</em></h1><p class="lead">Фото-склад, производство по факту и своя академия. Нажимай всё: считает по-настоящему.</p>${guideHTML()}<p class="fine">Прототип по ТЗ «Фото-склад + производство по факту». Данные остаются в браузере, картинки нарисованы для примера.</p>`;
 }
 
