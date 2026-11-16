@@ -533,6 +533,8 @@ function placeholder(name) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#e6d8bf"/><text x="60" y="76" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="52" fill="#a58f6e">${esc(t)}</text></svg>`;
   return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 }
+const ph = (id, fb) => (window.DEMO_PH && window.DEMO_PH[id]) || fb;
+const loadDemoPh = () => window.DEMO_PH ? Promise.resolve() : new Promise(r => { try { const sc = document.createElement('script'); sc.src = 'demo-photos.js'; sc.onload = sc.onerror = () => r(); document.head.appendChild(sc); } catch (e) { r(); } });
 const photoOf = m => (m && m.photo) || placeholder(m && m.name);
 const KIND_ART = {'Серьги': 'earrings', 'Браслет': 'bracelet', 'Колье': 'necklace', 'Заколка': 'clip', 'Ободок': 'band', 'Съёмная коса': 'hair', 'Сумочка': 'box', 'Другое': 'flower'};
 
@@ -704,21 +706,21 @@ function buildSeed() {
   const M = o => { const m = makeMat(o); st.materials.push(m); return m; };
   const init = (m, qty, avg) => { m.qty = qty; m.avg = avg; st.movements.push({id: uid('mv'), date: ago(60), materialId: m.id, delta: qty, unitCost: avg, reason: 'Начальный остаток', ref: null}); };
   const C = CAT;
-  M({id: 'm_ss16', name: 'Стразы Swarovski SS16', category: C[0], subcategory: 'Hotfix', brand: 'Swarovski', size: 'SS16 (4 мм)', color: 'Crystal AB', sku: '2038-SS16-AB', location: 'Коробка A1', min: 30, photo: art('gem', '#8fc4e6')});
-  M({id: 'm_xir29', name: 'Шатоны Swarovski SS29', category: C[0], subcategory: 'No Hotfix', brand: 'Swarovski', size: 'SS29 (6,2 мм)', color: 'Sapphire', sku: '1088-SS29-SAP', location: 'Коробка A2', min: 24, photo: art('gem', '#2f5fb8')});
+  M({id: 'm_ss16', name: 'Стразы Swarovski SS16', category: C[0], subcategory: 'Hotfix', brand: 'Swarovski', size: 'SS16 (4 мм)', color: 'Crystal AB', sku: '2038-SS16-AB', location: 'Коробка A1', min: 30, photo: ph('m_ss16', art('gem', '#8fc4e6'))});
+  M({id: 'm_xir29', name: 'Шатоны Swarovski SS29', category: C[0], subcategory: 'No Hotfix', brand: 'Swarovski', size: 'SS29 (6,2 мм)', color: 'Sapphire', sku: '1088-SS29-SAP', location: 'Коробка A2', min: 24, photo: ph('m_xir29', art('gem', '#2f5fb8'))});
   M({id: 'm_ame', name: 'Аметист, бусины', category: C[1], subcategory: 'Бусины', size: '8 мм', color: 'Фиолетовый', sku: 'AME-08', location: 'Лоток B1', min: 20, photo: art('cab', '#8a5bc4')});
-  M({id: 'm_lab', name: 'Лабрадорит, бусины', category: C[1], subcategory: 'Бусины', size: '6 мм', color: 'Серо-голубой', sku: 'LAB-06', location: 'Лоток B1', min: 20, photo: art('cab', '#5f8794')});
+  M({id: 'm_lab', name: 'Лабрадорит, бусины', category: C[1], subcategory: 'Бусины', size: '6 мм', color: 'Серо-голубой', sku: 'LAB-06', location: 'Лоток B1', min: 20, photo: ph('m_lab', art('cab', '#5f8794'))});
   M({id: 'm_chain', name: 'Цепочка позолоченная', category: C[3], subcategory: 'Цепочки', size: '2 мм', color: 'Золото', sku: 'CH-GL-2', unit: 'м', location: 'Катушка C1', min: 2, photo: art('chain', '#d4a63a')});
   M({id: 'm_ring', name: 'Колечки соединительные', category: C[3], subcategory: 'Фурнитура', size: '4 мм', color: 'Золото', sku: 'JR-GL-4', location: 'Пакет C2', min: 60, photo: art('rings', '#d4a63a')});
   M({id: 'm_thread', name: 'Леска прозрачная', category: C[2], subcategory: 'Леска', size: '0,3 мм', color: 'Прозрачный', sku: 'LS-03', unit: 'м', location: 'Катушка D1', min: 10, photo: art('spool', '#8fb8c4')});
   M({id: 'm_silk', name: 'Нить шёлковая для бусин', category: C[2], subcategory: 'Швейные нити', size: '0,5 мм', color: 'Бордо', sku: 'SK-05', unit: 'м', location: 'Катушка D2', min: 8, photo: art('spool', '#a8325e')});
   M({id: 'm_glue', name: 'Клей ювелирный прозрачный', category: C[4], subcategory: 'Клей', size: 'туба 15 мл', color: 'Прозрачный', sku: 'GL-15', unit: 'мл', location: 'Ящик E1', min: 15, photo: art('tube', '#d8d3b4')});
-  M({id: 'm_tw', name: 'Пинцет ювелирный', category: C[4], subcategory: 'Инструменты', size: '', color: 'Сталь', sku: 'TW-01', mode: 'tool', useCost: 12, location: 'Ящик E2', min: 1, photo: art('tool', '#6b7280')});
+  M({id: 'm_tw', name: 'Пинцет ювелирный', category: C[4], subcategory: 'Инструменты', size: '', color: 'Сталь', sku: 'TW-01', mode: 'tool', useCost: 12, location: 'Ящик E2', min: 1, photo: ph('m_tw', art('tool', '#6b7280'))});
   M({id: 'm_pl', name: 'Круглогубцы', category: C[4], subcategory: 'Инструменты', size: '', color: 'Сталь', sku: 'PL-02', mode: 'tool', useCost: 8, location: 'Ящик E2', min: 1, photo: art('tool', '#46506a')});
   M({id: 'm_clip', name: 'Заколка-автомат 6 см', category: C[5], subcategory: 'Основы для заколок', size: '6 см', color: 'Золото', sku: 'CL-60', location: 'Коробка F1', min: 5, photo: art('clip', '#d4a63a')});
   M({id: 'm_band', name: 'Ободок металлический', category: C[5], subcategory: 'Ободки', size: '5 мм', color: 'Серебро', sku: 'BD-05', location: 'Коробка F2', min: 3, photo: art('band', '#aeb4c4')});
   M({id: 'm_ribbon', name: 'Тесьма атласная', category: C[5], subcategory: 'Тесьма', size: '6 мм', color: 'Пудровый', sku: 'RB-06', unit: 'м', location: 'Коробка F3', min: 5, photo: art('ribbon', '#e3a6b5')});
-  M({id: 'm_braid', name: 'Канекалон для кос, 60 см', category: C[6], subcategory: 'Накладные пряди', size: '60 см', color: 'Блонд', sku: 'KN-60-BL', location: 'Пакет G1', min: 3, photo: art('hair', '#d9b77e')});
+  M({id: 'm_braid', name: 'Канекалон для кос, 60 см', category: C[6], subcategory: 'Накладные пряди', size: '60 см', color: 'Блонд', sku: 'KN-60-BL', location: 'Пакет G1', min: 3, photo: ph('m_braid', art('hair', '#d9b77e'))});
   M({id: 'm_box', name: 'Коробочка подарочная', category: C[7], subcategory: 'Коробки', size: '7×7 см', color: 'Пудровый', sku: 'BX-77', location: 'Полка H1', min: 10, photo: art('box', '#c9a7a0')});
   const g = id => mat(st, id);
   init(g('m_thread'), 50, 0.6); init(g('m_silk'), 30, 1.2); init(g('m_glue'), 90, 6.4); init(g('m_tw'), 2, 180); init(g('m_pl'), 1, 260);
@@ -729,40 +731,40 @@ function buildSeed() {
   commitPurchase(st, {date: ago(18), supplier: 'Gold Chain Supply (USD)', currency: 'USD', fx: 41.5, delivery: 0, lines: [
     {materialId: 'm_chain', packs: 1, upp: 12, pricePack: 24}, {materialId: 'm_ring', packs: 3, upp: 100, pricePack: 1}]});
   st.products = [
-    {id: 'pr_clip', name: 'Заколка «Рассвет»', category: 'Заколка', photo: art('clip', '#8fc4e6'), bom: [{id: 'm_clip', qty: 1}, {id: 'm_ss16', qty: 20}, {id: 'm_glue', qty: 3}, {id: 'm_tw', qty: 3}]},
-    {id: 'pr_ear', name: 'Серьги «Аметист»', category: 'Серьги', photo: art('earrings', '#8a5bc4'), bom: [{id: 'm_ame', qty: 10}, {id: 'm_chain', qty: 0.5}, {id: 'm_ring', qty: 6}, {id: 'm_tw', qty: 1}]},
-    {id: 'pr_brc', name: 'Браслет «Лабрадор»', category: 'Браслет', photo: art('bracelet', '#5f8794'), bom: [{id: 'm_lab', qty: 16}, {id: 'm_ring', qty: 12}, {id: 'm_thread', qty: 2}, {id: 'm_glue', qty: 1}, {id: 'm_tw', qty: 2}]}];
+    {id: 'pr_clip', name: 'Заколка «Рассвет»', category: 'Заколка', photo: ph('pr_clip', art('clip', '#8fc4e6')), bom: [{id: 'm_clip', qty: 1}, {id: 'm_ss16', qty: 20}, {id: 'm_glue', qty: 3}, {id: 'm_tw', qty: 3}]},
+    {id: 'pr_ear', name: 'Прядь «Аметист»', category: 'Съёмная коса', photo: ph('w_lav', art('earrings', '#8a5bc4')), bom: [{id: 'm_ame', qty: 10}, {id: 'm_chain', qty: 0.5}, {id: 'm_ring', qty: 6}, {id: 'm_tw', qty: 1}]},
+    {id: 'pr_brc', name: 'Коса «Лабрадор»', category: 'Съёмная коса', photo: ph('w_gold', art('bracelet', '#5f8794')), bom: [{id: 'm_lab', qty: 16}, {id: 'm_ring', qty: 12}, {id: 'm_thread', qty: 2}, {id: 'm_glue', qty: 1}, {id: 'm_tw', qty: 2}]}];
   const mk = (name, kind, parts, o) => Object.assign(newDraft(st, {name, kind}), o, {parts});
   const buyers = [['Elif Y.', 'Анкара, Турция', 'Instagram'], ['Мария С.', 'Тбилиси, Грузия', 'Telegram'], ['Zeynep K.', 'Стамбул, Турция', 'Лично'], ['Анна П.', 'Берлин, Германия', 'Instagram'], ['Айгуль Н.', 'Алматы, Казахстан', 'WhatsApp'], ['Дарья В.', 'Лимасол, Кипр', 'Instagram']];
   let bi = 0;
   const sale = (daysBack, price) => { const f = st.finished[0]; const b = buyers[bi++ % buyers.length]; f.status = 'sold'; f.soldPrice = price; f.soldDate = ago(Math.max(0, daysBack - 2));
     f.sale = {buyer: b[0], phone: '+90 5•• ••• •• ' + String(10 + bi * 7).slice(-2), dest: b[1], address: '', channel: b[2], note: ''}; };
-  const quick = (name, kind, back, parts, min, factor, hex) => {
+  const quick = (name, kind, back, parts, min, factor, key) => {
     const d = mk(name, kind, parts, {manualMinutes: min, other: 5}); st.drafts.push(d);
-    const res = finalizeDraft(st, d, {date: ago(back), photo: art(KIND_ART[kind], hex)});
+    const res = finalizeDraft(st, d, {date: ago(back), photo: ph(key, art(KIND_ART[kind], '#d9b77e'))});
     sale(back, Math.round(res.run.costTotal * factor / 10) * 10);
   };
   const rp = (a, b, c) => [{id: 'm_ring', used: a, scrap: 0}, {id: 'm_ribbon', used: b, scrap: 0}, {id: 'm_box', used: c, scrap: 0}];
-  quick('Серьги «Лента»', 'Серьги', 430, rp(6, 0.5, 1), 35, 2.4, '#d69a8b');
-  quick('Браслет «Пудра»', 'Браслет', 400, rp(8, 0.75, 1), 50, 2.2, '#e3a6b5');
-  quick('Колье «Нить»', 'Колье', 290, rp(10, 1.25, 1), 70, 2.5, '#d4a63a');
-  quick('Заколка «Лён»', 'Заколка', 215, rp(4, 0.5, 1), 30, 2.3, '#c9a7a0');
-  quick('Ободок «Роса»', 'Ободок', 170, rp(6, 1, 1), 45, 2.6, '#a9bd92');
-  quick('Серьги «Капля»', 'Серьги', 130, rp(6, 0.25, 1), 40, 2.4, '#8a5bc4');
-  quick('Браслет «Охра»', 'Браслет', 95, rp(10, 1, 1), 55, 2.3, '#d39a2f');
-  quick('Колье «Мох»', 'Колье', 70, rp(8, 1.5, 1), 80, 2.7, '#5f7a52');
-  quick('Заколка «Песок»', 'Заколка', 55, rp(4, 0.5, 1), 30, 2.2, '#e0cba0');
-  quick('Серьги «Лес»', 'Серьги', 40, rp(6, 0.5, 1), 40, 2.5, '#6f8a5c');
-  quick('Браслет «Закат»', 'Браслет', 26, rp(12, 1, 1), 60, 2.4, '#c2693f');
-  quick('Ободок «Жемчуг»', 'Ободок', 15, rp(6, 1, 1), 45, 2.5, '#efe3cf');
-  const r1 = mk('Браслет «Лабрадор»', 'Браслет', [{id: 'm_lab', used: 16, scrap: 2}, {id: 'm_ring', used: 12, scrap: 1}, {id: 'm_thread', used: 2, scrap: 0}, {id: 'm_glue', used: 1, scrap: 0}, {id: 'm_tw', used: 2, scrap: 0}], {manualMinutes: 55, other: 15, sale: 890});
+  quick('Прядь «Лавандовый туман»', 'Съёмная коса', 430, rp(6, 0.5, 1), 35, 2.4, 'q03');
+  quick('Коса «Золотой час»', 'Съёмная коса', 400, rp(8, 0.75, 1), 50, 2.2, 'q09');
+  quick('Заколка «Лунный камень»', 'Заколка', 290, rp(10, 1.25, 1), 70, 2.5, 'q02');
+  quick('Прядь «Белый шёлк»', 'Съёмная коса', 215, rp(4, 0.5, 1), 30, 2.3, 'q10');
+  quick('Коса «Розовый кварц»', 'Съёмная коса', 170, rp(6, 1, 1), 45, 2.6, 'q06');
+  quick('Подвеска «Капля росы»', 'Другое', 130, rp(6, 0.25, 1), 40, 2.4, 'q04');
+  quick('Заколка «Серебряный лист»', 'Заколка', 95, rp(10, 1, 1), 55, 2.3, 'q01');
+  quick('Коса «Медовый шёлк»', 'Съёмная коса', 70, rp(8, 1.5, 1), 80, 2.7, 'q05');
+  quick('Прядь «Утренний иней»', 'Съёмная коса', 55, rp(4, 0.5, 1), 30, 2.2, 'q07');
+  quick('Заколка «Лабрадор»', 'Заколка', 40, rp(6, 0.5, 1), 40, 2.5, 'q12');
+  quick('Коса «Карамель»', 'Съёмная коса', 26, rp(12, 1, 1), 60, 2.4, 'q08');
+  quick('Подвеска «Хрусталь»', 'Другое', 15, rp(6, 1, 1), 45, 2.5, 'q11');
+  const r1 = mk('Коса «Лабрадор»', 'Съёмная коса', [{id: 'm_lab', used: 16, scrap: 2}, {id: 'm_ring', used: 12, scrap: 1}, {id: 'm_thread', used: 2, scrap: 0}, {id: 'm_glue', used: 1, scrap: 0}, {id: 'm_tw', used: 2, scrap: 0}], {manualMinutes: 55, other: 15, sale: 890});
   st.drafts.push(r1);
-  finalizeDraft(st, r1, {date: ago(12), photo: art('bracelet', '#5f8794'), note: 'Заказ для подруги, застёжка на карабине.'});
+  finalizeDraft(st, r1, {date: ago(12), photo: ph('w_gold', art('bracelet', '#5f8794')), note: 'Заказ для подруги, застёжка на карабине.'});
   sale(9, 890);
-  quick('Серьги «Дымка»', 'Серьги', 8, rp(6, 0.5, 1), 40, 2.6, '#9aa8b8');
-  const r2d = mk('Серьги «Аметист»', 'Серьги', [{id: 'm_ame', used: 10, scrap: 1}, {id: 'm_chain', used: 0.5, scrap: 0}, {id: 'm_ring', used: 6, scrap: 0}, {id: 'm_tw', used: 1, scrap: 0}], {manualMinutes: 40, other: 10});
+  quick('Коса «Лунный свет»', 'Съёмная коса', 8, rp(6, 0.5, 1), 40, 2.6, 'w_rose');
+  const r2d = mk('Прядь «Аметист»', 'Съёмная коса', [{id: 'm_ame', used: 10, scrap: 1}, {id: 'm_chain', used: 0.5, scrap: 0}, {id: 'm_ring', used: 6, scrap: 0}, {id: 'm_tw', used: 1, scrap: 0}], {manualMinutes: 40, other: 10});
   st.drafts.push(r2d);
-  finalizeDraft(st, r2d, {date: ago(5), photo: art('earrings', '#8a5bc4'), note: 'Одна бусина треснула при сверлении, пошла в брак.'});
+  finalizeDraft(st, r2d, {date: ago(5), photo: ph('w_lav', art('earrings', '#8a5bc4')), note: 'Одна бусина треснула при сверлении, пошла в брак.'});
   const d1 = mk('Заколка «Рассвет»', 'Заколка', [{id: 'm_clip', used: 1, scrap: 0}, {id: 'm_ss16', used: 20, scrap: 1}, {id: 'm_glue', used: 3, scrap: 0}, {id: 'm_tw', used: 3, scrap: 0}], {productId: 'pr_clip', elapsedMs: 3600000, created: Date.now() - 86400000});
   const d2 = mk('Ободок «Аврора»', 'Ободок', [{id: 'm_band', used: 1, scrap: 0}, {id: 'm_xir29', used: 12, scrap: 1}, {id: 'm_ame', used: 4, scrap: 0}, {id: 'm_glue', used: 2, scrap: 0}, {id: 'm_tw', used: 2, scrap: 0}], {created: Date.now() - 3600000});
   st.drafts.push(d1, d2);
@@ -770,17 +772,17 @@ function buildSeed() {
   /* Академия (демо) */
   const AC0 = st.academy;
   AC0.courses = [
-    {id: 'c1', title: 'Браслет из натуральных камней', price: 1490, status: 'pub', kind: 'bracelet', hex: '#5f8794', desc: 'Плетёный браслет с нуля: от выбора камней до фото для продажи. Подойдёт новичкам.', lessons: [
+    {id: 'c1', title: 'Браслет из натуральных камней', price: 1490, status: 'pub', kind: 'bracelet', hex: '#5f8794', photo: ph('c_c1', null), desc: 'Плетёный браслет с нуля: от выбора камней до фото для продажи. Подойдёт новичкам.', lessons: [
       {id: 'l1', title: 'Знакомство и материалы', min: 8, free: true, video: '', desc: 'Какие камни и нити нужны, где их брать и как не переплатить.', bom: []},
       {id: 'l2', title: 'Подготовка нити и бусин', min: 14, free: false, video: '', desc: 'Раскладываем камни по цвету и размеру, готовим нить.', bom: []},
       {id: 'l3', title: 'Плетение основы', min: 22, free: false, video: '', desc: 'Пошаговое плетение браслета. Материалы урока можно сразу перенести в свою работу.', bom: [{id: 'm_lab', qty: 16}, {id: 'm_ring', qty: 12}, {id: 'm_thread', qty: 2}, {id: 'm_glue', qty: 1}, {id: 'm_tw', qty: 2}]},
       {id: 'l4', title: 'Застёжка и финиш', min: 17, free: false, video: '', desc: 'Крепим застёжку и проверяем прочность.', bom: []},
       {id: 'l5', title: 'Считаем цену и снимаем фото', min: 12, free: false, video: '', desc: 'Как посчитать себестоимость и красиво сфотографировать изделие.', bom: []}]},
-    {id: 'c2', title: 'Заколка с кристаллами', price: 990, status: 'pub', kind: 'clip', hex: '#8fc4e6', desc: 'Клеим кристаллы на заколку так, чтобы они держались годами.', lessons: [
+    {id: 'c2', title: 'Заколка с кристаллами', price: 990, status: 'pub', kind: 'clip', hex: '#8fc4e6', photo: ph('c_c2', null), desc: 'Клеим кристаллы на заколку так, чтобы они держались годами.', lessons: [
       {id: 'l6', title: 'Какие кристаллы выбрать', min: 9, free: true, video: '', desc: 'Hotfix и No Hotfix: в чём разница.', bom: []},
       {id: 'l7', title: 'Клеим и собираем', min: 25, free: false, video: '', desc: 'Раскладка, клей, выдержка.', bom: [{id: 'm_clip', qty: 1}, {id: 'm_ss16', qty: 20}, {id: 'm_glue', qty: 3}, {id: 'm_tw', qty: 3}]},
       {id: 'l8', title: 'Упаковка', min: 7, free: false, video: '', desc: 'Красивая подача для подарка.', bom: []}]},
-    {id: 'c3', title: 'Съёмные косы: основы', price: 1990, status: 'draft', kind: 'hair', hex: '#d9b77e', desc: 'Черновик нового курса.', lessons: [
+    {id: 'c3', title: 'Съёмные косы: основы', price: 1990, status: 'draft', kind: 'hair', hex: '#d9b77e', photo: ph('c_c3', null), desc: 'Черновик нового курса.', lessons: [
       {id: 'l9', title: 'Материалы и подготовка', min: 11, free: true, video: '', desc: 'Канекалон и крепления.', bom: [{id: 'm_braid', qty: 2}]}]}];
   AC0.students = [
     {id: 's1', name: 'Мария Соколова', contact: '@maria_s', joined: ago(70), enrolls: [{courseId: 'c1', paid: 1490, date: ago(70), done: ['l1', 'l2', 'l3', 'l4', 'l5']}]},
@@ -1299,7 +1301,7 @@ function coursesScreen() {
       <div class="card"><div class="row" style="justify-content:space-between;align-items:flex-start"><div><div class="lbl">Доход от курсов, ${MONF[m - 1].toLowerCase()}</div><div class="big2 num">${money(incomeIn(y, m))}</div></div><div style="text-align:right"><div class="lbl">За ${y} год</div><b class="num">${money(incomeIn(y, null))}</b></div></div>
         <p class="hint" style="margin-top:8px">Оплату ты принимаешь на своей платформе. Здесь отмечаешь, кто купил и открыт ли доступ.</p></div>
       <button class="btn pri block" data-act="newCourse">${ic('plus')} Новый курс</button>
-      ${cs.map((c, i) => `<button class="lcard" style="--i:${i}" data-act="openCourse" data-id="${c.id}"><img class="thumb lg" src="${art(c.kind, c.hex)}" alt="">
+      ${cs.map((c, i) => `<button class="lcard" style="--i:${i}" data-act="openCourse" data-id="${c.id}"><img class="thumb lg" src="${c.photo || art(c.kind, c.hex)}" alt="">
         <div class="grow"><div class="t">${esc(c.title)}</div><div class="s">${c.lessons.length} ${pl(c.lessons.length, ['урок','урока','уроков'])} · ${studentsOf(c.id).length} ${pl(studentsOf(c.id).length, ['ученица','ученицы','учениц'])}</div><div style="margin-top:6px"><span class="pill ${c.status === 'pub' ? 'good' : ''}">${c.status === 'pub' ? 'опубликован' : 'черновик'}</span></div></div>
         <div class="r"><div class="t num">${money(c.price)}</div></div></button>`).join('')}
     </div>`;
@@ -1322,7 +1324,7 @@ function pageCourse(c) {
   const sts = studentsOf(c.id);
   return `<div class="page-top px"><button class="ibtn" data-act="back" aria-label="Назад">${ic('back')}</button><div class="pt-title"><input class="title-in" data-m="C.title" value="${esc(c.title)}" aria-label="Название курса"><span class="sub">${c.status === 'pub' ? 'опубликован' : 'черновик'} · ${c.lessons.length} ${pl(c.lessons.length, ['урок','урока','уроков'])}</span></div><button class="ibtn" data-act="courseDel" aria-label="Удалить курс">${ic('trash')}</button></div>
     <div class="page-body px"><div class="stack">
-      <div class="cover"><img src="${art(c.kind, c.hex)}" alt=""></div>
+      <div class="cover"><img src="${c.photo || art(c.kind, c.hex)}" alt=""></div>
       <div class="two"><div class="fld"><label class="lbl" for="c_p">Цена, ${sym()}</label><input id="c_p" class="in" inputmode="decimal" data-m="C.price" data-num value="${nv(c.price)}"></div>
         <div class="fld"><span class="lbl">Статус</span><div class="seg"><button class="${c.status === 'draft' ? 'on' : ''}" data-act="courseStatus" data-v="draft">Черновик</button><button class="${c.status === 'pub' ? 'on' : ''}" data-act="courseStatus" data-v="pub">Открыт</button></div></div></div>
       <div class="fld"><label class="lbl" for="c_d">О курсе</label><textarea id="c_d" class="in ta" data-m="C.desc">${esc(c.desc)}</textarea></div>
@@ -1926,7 +1928,7 @@ A.impDo = () => {
     S = migrate(o); save(); ui.sheets = []; ui.pages = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast(`Загружено материалов: ${S.materials.length}`);
   } catch (e) { toast('Не похоже на сохранённые данные «Моей мастерской»'); }
 };
-A.resetOpen = () => ask(window.__PWA__ ? 'Загрузить учебные примеры?' : 'Сбросить демо-данные?', window.__PWA__ ? 'Все твои данные будут заменены учебными примерами. Сначала сохрани копию, если она нужна.' : 'Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023.', window.__PWA__ ? 'Заменить' : 'Сбросить', true, () => { S = buildSeed(); if (window.__PWA__) S.flags.order2023 = true; else applyImports(); save(); ui.pf = null; ui.pages = []; ui.sheets = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast('Демо-данные восстановлены'); });
+A.resetOpen = () => ask(window.__PWA__ ? 'Загрузить учебные примеры?' : 'Сбросить демо-данные?', window.__PWA__ ? 'Все твои данные будут заменены учебными примерами. Сначала сохрани копию, если она нужна.' : 'Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023.', window.__PWA__ ? 'Заменить' : 'Сбросить', true, () => { loadDemoPh().then(() => { S = buildSeed(); if (window.__PWA__) S.flags.order2023 = true; else applyImports(); save(); ui.pf = null; ui.pages = []; ui.sheets = []; ui.cat = 'all'; ui.sub = 'all'; ui.q = ''; render(); toast('Демо-данные восстановлены'); });  });
 A.tryIt = el => {
   const k = el.dataset.k; ui.sheets = []; ui.pages = [];
   const dr = () => S.drafts.find(d => d.name.includes('Рассвет')) || S.drafts[0];
@@ -2254,6 +2256,7 @@ setInterval(() => {
 $('#bg').innerHTML = BG;
 $('#side').innerHTML = sideHTML();
 (async function boot() {
+  if (!window.__PWA__) await loadDemoPh();
   S = await loadState(); await metaLoad();
   if (SBCFG()) await initCloud();
   applyImports(); render(); renderGate(); flushSave();

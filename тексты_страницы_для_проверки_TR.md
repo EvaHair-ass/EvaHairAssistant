@@ -20,6 +20,12 @@
 2. **Ürününüzü oluşturun**. Galeriden malzemeleri seçin. Uygulama malzemeleri ayırır; fireyi, süreyi ve aletleri hesaba katar.
 3. **Fiyatı öğrenin**. Pazar yeri komisyonunu, kargoyu ve istediğiniz kârı hesaba katan maliyeti ve önerilen fiyatı görün.
 
+## Dürüst fiyatı olan güzellik (yeni bölüm)
+- Üst yazı: örnek çalışmalar
+- Giriş: Böyle ürünler onlarca malzemeden oluşur. Melaymade hepsini hatırlar ve toplamının maliyetini hesaplar.
+- Başlıklar: Ay Taşı | Gül Kuvarsı | Altın Labradorit
+- Not: Örnek ürünler.
+
 ## Sayabildiğiniz her el işi için (yeni bölüm)
 - Üst yazı: her el işi için
 - Giriş: Ürününüz malzemelerden oluşuyorsa Melaymade onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.

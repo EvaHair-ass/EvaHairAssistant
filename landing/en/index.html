@@ -211,6 +211,19 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 @media (min-width:1000px){.garland{grid-template-columns:repeat(9,1fr);gap:36px 6px}}
 @media (min-width:860px){.ygrid{grid-template-columns:repeat(2,1fr)}.ygrid .yitem:last-child{grid-column:1/-1}}
 @media (max-width:560px){.garland{grid-template-columns:repeat(3,1fr);gap:30px 6px}.orb{width:74px;height:74px}.orb svg{width:40px;height:40px}.charm span{font-size:13px}section{padding:72px 0}}
+
+.showcase{text-align:center}
+.showcase h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
+.showcase .lead2{margin-left:auto;margin-right:auto}
+.works{display:grid;gap:36px;margin-top:48px;justify-items:center}
+.work{margin:0;width:min(320px,100%)}
+.work .arch{aspect-ratio:3/4;border-radius:999px 999px 26px 26px;overflow:hidden;border:1px solid color-mix(in srgb,var(--ochre) 55%,var(--line));box-shadow:0 0 0 6px var(--bg),0 0 0 7px color-mix(in srgb,var(--ochre) 40%,transparent),0 24px 50px rgba(90,60,30,.25);transition:transform .5s,box-shadow .5s}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.work:hover .arch{transform:translateY(-8px)}
+.work:hover img{transform:scale(1.06)}
+.work figcaption{margin-top:22px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:26px;color:var(--clay)}
+.shnote{margin-top:34px;font-size:14px;color:var(--ink2)}
+@media (min-width:860px){.works{grid-template-columns:repeat(3,1fr);align-items:start}.work:nth-child(2){margin-top:56px}}
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
   .js .rv.in{opacity:1;transform:none}
@@ -246,6 +259,11 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
   <p class="lead2 rv">If your piece is built from materials, Melaymade can price it: pieces, metres, grams, millilitres. It does not matter what you make.</p>
   <div class="garland"><div class="charm rv" style="--i:0;--len:8px;--dl:-0.0s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 14C10 36 38 36 43 14"/><circle cx="7" cy="20" r="3"/><circle cx="12.3" cy="26.4" r="3"/><circle cx="24" cy="30.5" r="3.4"/><circle cx="35.7" cy="26.4" r="3"/><circle cx="41" cy="20" r="3"/><path d="M24 34v3.5"/><path d="M24 37.5c3 3 3 5.5 0 7.5-3-2-3-4.5 0-7.5z"/></svg></div><span>Beadwork</span></div><div class="charm rv" style="--i:1;--len:36px;--dl:-1.3s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h20l8 10-18 22L6 18z"/><path d="M6 18h36M18 8l-4 10 10 22M30 8l4 10-10 22"/></svg></div><span>Natural-stone jewelry</span></div><div class="charm rv" style="--i:2;--len:64px;--dl:-2.6s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="27" r="14"/><path d="M9 21c8 3 20 3 28-2M8 29c9 3 21 2 28-4M12 38c6-3 14-4 22-2M16 14c5 8 5 18 2 26M26 13c3 8 3 18-1 27"/><path d="M31 9l14 23"/><circle cx="30" cy="7.5" r="1.6"/></svg></div><span>Knitting and crochet</span></div><div class="charm rv" style="--i:3;--len:22px;--dl:-3.9s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 41 36 11"/><ellipse cx="38" cy="9" rx="1.1" ry="3.3" transform="rotate(40 38 9)"/><path d="M39 11c8 5-8 14-15 9-8-6-15 4-9 11 4 5-2 10-8 7"/></svg></div><span>Sewing</span></div><div class="charm rv" style="--i:4;--len:50px;--dl:-5.2s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 6h12M20 6c0 4-1 6-4 10-6 6-6 18 2 24h12c8-6 8-18 2-24-3-4-4-6-4-10"/><path d="M12 25c8 4 16 4 24 0M14 18c6 3 14 3 20 0"/></svg></div><span>Clay and ceramics</span></div><div class="charm rv" style="--i:5;--len:8px;--dl:-6.5s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c-9 5-9 9 0 14s9 9 0 14-9 9 0 12"/><path d="M24 4c9 5 9 9 0 14s-9 9 0 14 9 9 0 12"/><path d="M24 40l-6 5M24 40l6 5"/></svg></div><span>Hair work</span></div><div class="charm rv" style="--i:6;--len:36px;--dl:-7.8s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 8h38"/><path d="M12 8v32M18 8v10M24 8v32M30 8v10M36 8v32"/><path d="M18 18l6 8M30 18l-6 8M12 26l6-8M36 26l-6-8"/><path d="M10 40l2 4 2-4M22 40l2 4 2-4M34 40l2 4 2-4"/></svg></div><span>Macramé</span></div><div class="charm rv" style="--i:7;--len:64px;--dl:-9.1s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="21" width="20" height="22" rx="2"/><path d="M24 21v-4M14 29h20"/><path d="M24 5c5 4 5 8 0 11-5-3-5-7 0-11z"/></svg></div><span>Candles and soap</span></div><div class="charm rv" style="--i:8;--len:22px;--dl:-10.4s"><div class="orb"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="14.5"/><path d="M24 6V3M24 31v-9"/><path d="M24 22c-5-1-6-6-2-8M24 22c5-1 6-6 2-8M24 19c-1-4 1-6 3-7M24 27c-4 0-8 2-9 6M24 27c4 0 8 2 9 6"/></svg></div><span>Embroidery</span></div></div>
   <p class="foot2 rv">…and anything else your hands make.</p>
+</div></section>
+<section class="showcase"><div class="wrap">
+  <div class="shtop"><span class="kick rv">example pieces</span><h2 class="rv">Beauty with an honest price</h2><p class="lead2 rv">Pieces like these are built from dozens of materials. Melaymade remembers every one and works out what it all costs together.</p></div>
+  <div class="works"><figure class="work rv" style="--i:0"><div class="arch"><img src="/img/work1.jpg" width="800" height="1067" loading="lazy" alt="Hair piece with a labradorite brooch"></div><figcaption>Moonstone</figcaption></figure><figure class="work rv" style="--i:1"><div class="arch"><img src="/img/work2.jpg" width="800" height="1067" loading="lazy" alt="Braid with crystals and rose quartz"></div><figcaption>Rose quartz</figcaption></figure><figure class="work rv" style="--i:2"><div class="arch"><img src="/img/work3.jpg" width="800" height="1067" loading="lazy" alt="Ombre braid with gold and labradorite"></div><figcaption>Golden labradorite</figcaption></figure></div>
+  <p class="shnote rv">Example pieces.</p>
 </div></section>
 <section id="how"><div class="wrap">
   <h2 class="rv">From a handful of beads to an honest price: three steps</h2>

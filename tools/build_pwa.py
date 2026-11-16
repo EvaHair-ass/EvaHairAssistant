@@ -134,6 +134,9 @@ addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__i
     html = ("<!doctype html>\n<html lang=\"ru\">\n<head>\n" + extra_head + head_part + extra_css +
             "</head>\n<body>\n" + pwa_js + body_part.rstrip() + "\n" + sw_js + "</body>\n</html>\n")
     (OUT / "index.html").write_text(html, encoding="utf-8")
+    demo = ROOT / "prototype" / "demo-photos.js"
+    if demo.exists():
+        (OUT / "demo-photos.js").write_bytes(demo.read_bytes())
 
     manifest = {
         "id": "./", "name": NAME, "short_name": SHORT, "lang": "ru", "dir": "ltr",
