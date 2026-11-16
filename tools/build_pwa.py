@@ -14,7 +14,7 @@ VENDOR = ROOT / "tools" / "vendor"
 OUT = ROOT / "docs"
 ICONS = OUT / "icons"
 
-NAME = "Моя мастерская"
+NAME = "Melaymade | Моя мастерская"
 SHORT = "Мастерская"
 BG_LIGHT = "#F1E8D6"
 BG_DARK = "#17120D"

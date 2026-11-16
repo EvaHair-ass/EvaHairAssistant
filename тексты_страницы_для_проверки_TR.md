@@ -5,7 +5,7 @@
 Особенно важно проверить: заголовки (они смелые и образные) и раздел «Akademi».
 
 ## Başlık ve giriş
-- Sayfa başlığı: Atölyem, Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi
+- Sayfa başlığı: Melaymade | Atölyem: El işi ustaları için stok, fiyat ve kişisel Akademi
 - Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda. Her el işi için: boncuk, taş, örgü, dikiş, kil, saç ürünleri.
 - Menü: El işleri | Nasıl çalışır? | Akademi | Özellikler | Sık sorulanlar | Giriş Yap
 - Etiket: Yeni · dersleriniz için kişisel Akademi

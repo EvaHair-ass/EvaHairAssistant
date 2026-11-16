@@ -87,7 +87,7 @@ def icon(name):
 TEXTS = {
     "ru": {
         "path": "/", "label": "RU", "locale": "ru_RU",
-        "title": "Моя мастерская от Melaymade: склад, закупки и себестоимость для мастериц handmade",
+        "title": "Melaymade | Моя мастерская: склад, закупки и себестоимость для мастериц handmade",
         "desc": "Фото-склад материалов, расчёт себестоимости с учётом брака и времени, рекомендуемая цена и архив работ. На телефоне и компьютере, даже без интернета.",
         "nav": ["Как это работает", "Возможности", "Вопросы"], "login": "Войти",
         "kicker": "приложение от Melaymade",
@@ -134,7 +134,7 @@ TEXTS = {
     },
     "tr": {
         "path": "/tr/", "label": "TR", "locale": "tr_TR",
-        "title": "Atölyem, Melaymade: El işi ustaları için stok, alışveriş ve maliyet hesabı",
+        "title": "Melaymade | Atölyem: El işi ustaları için stok, alışveriş ve maliyet hesabı",
         "desc": "Fotoğraflı malzeme stoku, fire ve süreyi hesaba katan maliyet hesabı, önerilen fiyat ve iş arşivi. Telefonda ve bilgisayarda, internet olmadan da çalışır.",
         "nav": ["Nasıl çalışır?", "Özellikler", "Sık sorulanlar"], "login": "Giriş Yap",
         "kicker": "Melaymade uygulaması",
@@ -181,7 +181,7 @@ TEXTS = {
     },
     "en": {
         "path": "/en/", "label": "EN", "locale": "en_US",
-        "title": "My Workshop by Melaymade: stock, purchases and pricing for handmade makers",
+        "title": "Melaymade | My Workshop: stock, purchases and pricing for handmade makers",
         "desc": "Photo inventory of your materials, cost calculation including waste and time, a recommended price and an archive of your work. On phone and computer, even offline.",
         "nav": ["How it works", "Features", "FAQ"], "login": "Log in",
         "kicker": "an app by Melaymade",
@@ -231,7 +231,7 @@ TEXTS = {
 # ------------------------------------------------- Академия (дополнения к текстам)
 ACADEMY = {
     "ru": {
-        "title": "Моя мастерская от Melaymade: склад, цена и личная Академия для мастериц handmade",
+        "title": "Melaymade | Моя мастерская: склад, цена и личная Академия для мастериц handmade",
         "desc": "Фото-склад материалов, расчёт себестоимости и цены, а ещё личная Академия: курсы, уроки и ученицы в одном приложении. На телефоне и компьютере.",
         "sub": "«Моя мастерская» ведёт склад материалов с фото, считает себестоимость и цену, на которой ты зарабатываешь, а ещё хранит твою личную Академию: уроки, ученицы и материалы в одном месте.",
         "nav": ["Как это работает", "Академия", "Возможности", "Вопросы"],
@@ -269,7 +269,7 @@ ACADEMY = {
         "final_text": "Создай аккаунт за минуту: посчитай своё первое изделие и собери первый курс в своей Академии.",
     },
     "tr": {
-        "title": "Atölyem, Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi",
+        "title": "Melaymade | Atölyem: El işi ustaları için stok, fiyat ve kişisel Akademi",
         "desc": "Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda.",
         "sub": "Atölyem malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.",
         "nav": ["Nasıl çalışır?", "Akademi", "Özellikler", "Sık sorulanlar"],
@@ -307,7 +307,7 @@ ACADEMY = {
         "final_text": "Bir dakikada hesap oluşturun: ilk ürününüzün maliyetini hesaplayın ve Akademinizde ilk kursunuzu oluşturun.",
     },
     "en": {
-        "title": "My Workshop by Melaymade: stock, pricing and a personal Academy for handmade makers",
+        "title": "Melaymade | My Workshop: stock, pricing and a personal Academy for handmade makers",
         "desc": "Photo inventory, cost and price calculation, plus a personal Academy: courses, lessons and students in one app. On phone and computer.",
         "sub": "My Workshop keeps a photo inventory of your materials, calculates your cost and a price that earns you money, and hosts your personal Academy: lessons, students and materials in one place.",
         "nav": ["How it works", "Academy", "Features", "FAQ"],
@@ -726,8 +726,11 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .charm{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:var(--len);transform-origin:50% -34px}
 .charm.in{animation:swing 6.5s var(--dl) ease-in-out infinite alternate}
 .charm::before{content:"";position:absolute;top:-14px;left:50%;width:1px;height:calc(var(--len) + 14px);background:linear-gradient(180deg,var(--ochre),color-mix(in srgb,var(--ochre) 40%,transparent))}
-.orb{position:relative;width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 28%,color-mix(in srgb,var(--surface) 70%,#fff),var(--surface));border:1px solid color-mix(in srgb,var(--ochre) 60%,var(--line));box-shadow:0 0 0 5px var(--bg),0 0 0 6px color-mix(in srgb,var(--ochre) 38%,transparent),0 14px 28px rgba(120,86,50,.18);transition:transform .35s,box-shadow .35s}
-.orb svg{width:54px;height:54px;fill:none;stroke:var(--clay);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.orb{position:relative;overflow:visible;width:108px;height:108px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 28%,color-mix(in srgb,var(--surface) 70%,#fff),var(--surface));border:1px solid color-mix(in srgb,var(--ochre) 60%,var(--line));box-shadow:0 0 0 5px var(--bg),0 0 0 6px color-mix(in srgb,var(--ochre) 38%,transparent),0 14px 28px rgba(120,86,50,.18);transition:transform .35s,box-shadow .35s}
+.orb img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;transition:transform .6s ease}
+.charm:hover .orb img{transform:scale(1.12)}
+.orb{padding:0}
+.orb::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),inset 0 -10px 18px rgba(60,35,15,.12);pointer-events:none}
 .charm:hover .orb{transform:translateY(-4px) scale(1.06);box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--ochre),0 0 34px rgba(232,184,95,.55)}
 .charm span{font-weight:800;font-size:15px;line-height:1.25;max-width:9em}
 .foot2{margin-top:44px;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(22px,3.4vw,30px);color:var(--clay)}
@@ -740,7 +743,7 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .yitem p{color:var(--ink2);font-size:16px}
 @media (min-width:1000px){.garland{grid-template-columns:repeat(9,1fr);gap:36px 6px}}
 @media (min-width:860px){.ygrid{grid-template-columns:repeat(2,1fr)}.ygrid .yitem:last-child{grid-column:1/-1}}
-@media (max-width:560px){.garland{grid-template-columns:repeat(3,1fr);gap:30px 6px}.orb{width:74px;height:74px}.orb svg{width:40px;height:40px}.charm span{font-size:13px}section{padding:72px 0}}
+@media (max-width:560px){.garland{grid-template-columns:repeat(3,1fr);gap:30px 6px}.orb{width:86px;height:86px}.charm span{font-size:13px}section{padding:72px 0}}
 
 .showcase{text-align:center}
 .showcase h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
@@ -824,7 +827,7 @@ def render(code):
         f'<figure class="work rv" data-c="{cr_}" style="--i:{n % 4}"><div class="arch"><img src="/img/{fn}.jpg" width="800" height="1067" loading="lazy" alt="{esc(sh["kinds"][n])}: {esc(sh["names"][n])}"></div><figcaption>{esc(sh["names"][n])}<small>{esc(sh["kinds"][n])}</small></figcaption></figure>'
         for n, (cr_, fn) in enumerate(WORKS))
     charms = "".join(
-        f'<div class="charm rv" style="--i:{i};--len:{(i * 37) % 5 * 14 + 8}px;--dl:-{i * 1.3:.1f}s"><div class="orb">{craft_icon(k)}</div><span>{esc(nm)}</span></div>'
+        f'<div class="charm rv" style="--i:{i};--len:{(i * 37) % 5 * 14 + 8}px;--dl:-{i * 1.3:.1f}s"><div class="orb"><img src="/img/craft_{k}.jpg" width="240" height="240" loading="lazy" alt=""></div><span>{esc(nm)}</span></div>'
         for i, (k, nm) in enumerate(zip(CRAFT_ICONS, cr["items"])))
     wchips = "".join(f'<button type="button" class="{"on" if k == "all" else ""}" data-f="{k}" aria-pressed="{"true" if k == "all" else "false"}">{esc(v)}</button>' for k, v in sh["chips"].items())
     yours = "".join(f'<div class="yitem rv" style="--i:{i}"><span class="yn">{icon(ic)}</span><div><h3>{esc(a_)}</h3><p>{esc(b_)}</p></div></div>' for i, (ic, a_, b_) in enumerate(cr["yi"]))
