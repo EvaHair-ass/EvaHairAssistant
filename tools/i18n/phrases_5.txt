@@ -1,0 +1,50 @@
+{0} ({1}) ⇒ {0} ({1}) ⇒ {0} ({1})
+В этой работе {0}, в других {1}. Когда завершишь эту работу, на складе останется {2} (резерв других работ ещё не списан). ⇒ Bu işte {0}, diğer işlerde {1}. Bu işi tamamladığınızda stokta {2} kalacak (diğer işlerin ayırdığı malzeme henüz düşülmedi). ⇒ This project uses {0}, other projects {1}. When you finish this project, {2} will be left in stock (reserves of other projects are not yet written off).
+В этой работе {0}, в других {1}. Когда завершишь эту работу, на складе останется {2}. ⇒ Bu işte {0}, diğer işlerde {1}. Bu işi tamamladığınızda stokta {2} kalacak. ⇒ This project uses {0}, other projects {1}. When you finish this project, {2} will be left in stock.
+{0} примен. · поломок {1} ⇒ {0} kullanım · {1} kırılma ⇒ {0} uses · {1} broken
+в изделии {0} · брак {1} ⇒ üründe {0} · fire {1} ⇒ in the piece {0} · waste {1}
+{0} применений × {1} ⇒ {0} kullanım × {1} ⇒ {0} uses × {1}
+исправных {0} × {1} ⇒ sağlam {0} × {1} ⇒ good {0} × {1}
+из них брак {0} ⇒ bunun {0} kadarı fire ⇒ of which waste {0}
+брак ⇒ fire ⇒ waste
+брак {0} ⇒ fire {0} ⇒ waste {0}
+Подгруппы ⇒ Alt gruplar ⇒ Subgroups
+Перенести в «{0}» ⇒ «{0}» kategorisine taşı ⇒ Move to “{0}”
+Это твоя основная валюта, курс не нужен. ⇒ Bu sizin ana para biriminiz, kur gerekmez. ⇒ This is your main currency, no rate is needed.
+Заполнить пример из ТЗ: 100 камней, доставка 30 ⇒ Örneği doldur: 100 taş, 30 kargo ⇒ Fill in the example: 100 stones, 30 shipping
+Тип ⇒ Tür ⇒ Type
+Инструмент ⇒ Alet ⇒ Tool
+Цена упаковки, ⇒ Paket fiyatı, ⇒ Pack price,
+Взять сумму из закупки: {0} ⇒ Tutarı alımdan al: {0} ⇒ Take the amount from the purchase: {0}
+Перевести в ⇒ Şuna çevir ⇒ Convert to
+В одной {0} сколько ⇒ Bir {0} içinde kaç ⇒ How many in one {0}
+Пересчитать количество и цену ⇒ Miktarı ve fiyatı yeniden hesapla ⇒ Recalculate quantity and price
+Например, было 2 {0}, а в каждой по 90 г: выбери «г» и впиши 90. Станет 180 г, цена за грамм посчитается сама. ⇒ Örneğin 2 {0} vardı ve her birinde 90 g: «g»yi seçin ve 90 yazın. 180 g olur, gram fiyatı kendiliğinden hesaplanır. ⇒ For example, you had 2 {0} and each holds 90 g: choose “g” and enter 90. It becomes 180 g and the price per gram is calculated for you.
+Движения ⇒ Hareketler ⇒ Movements
+Закупка: {0} ⇒ Alım: {0} ⇒ Purchase: {0}
+«{0}» исчезнет со склада. Завершённые работы и закупки в архиве останутся как есть. ⇒ «{0}» stoktan silinecek. Arşivdeki tamamlanmış işler ve alımlar olduğu gibi kalır. ⇒ “{0}” will disappear from stock. Finished projects and purchases in the archive stay as they are.
+{0} по рецепту ⇒ tarifte {0} ⇒ {0} in the recipe
+Вид изделия ⇒ Ürün türü ⇒ Type of piece
+Инструмент (применения) ⇒ Alet (kullanım) ⇒ Tool (uses)
+Остатки сверены, всё хватает. ⇒ Stoklar kontrol edildi, her şey yeterli. ⇒ Balances checked, everything is enough.
+Загрузи фото готового изделия ⇒ Hazır ürünün fotoğrafını yükleyin ⇒ Upload a photo of the finished piece
+Потом сможешь подвинуть кадр и приблизить. Фото можно добавить и позже. ⇒ Sonra kadrajı kaydırıp yakınlaştırabilirsiniz. Fotoğrafı daha sonra da ekleyebilirsiniz. ⇒ Later you can move and zoom the frame. You can also add the photo later.
+Загрузить фото ⇒ Fotoğraf yükle ⇒ Upload a photo
+Если ты вошла в аккаунт, твои данные уже хранятся в облаке и синхронизируются между устройствами. Копия в виде текста нужна как запасной вариант: «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно. ⇒ Hesabınıza giriş yaptıysanız verileriniz zaten bulutta saklanır ve cihazlar arasında eşitlenir. Metin yedeği yedek bir yol olarak gereklidir: «Kaydet» her şeyi tek bir metne çevirir, «Geri yükle» onu geri getirir. ⇒ If you are logged in, your data is already stored in the cloud and synced between devices. A text backup is a fallback: “Save” turns everything into one text, “Restore” brings it back.
+Приложение ставится без магазинов, как обычное, и работает без интернета. ⇒ Uygulama mağaza olmadan, normal bir uygulama gibi yüklenir ve internetsiz çalışır. ⇒ The app installs without app stores, like a regular app, and works without internet.
+«Поделиться» → «На экран Домой». ⇒ «Paylaş» → «Ana Ekrana Ekle». ⇒ “Share” → “Add to Home Screen”.
+меню ⋮ → «Установить приложение». ⇒ menü ⋮ → «Uygulamayı yükle». ⇒ menu ⋮ → “Install app”.
+Компьютер (Chrome, Edge): ⇒ Bilgisayar (Chrome, Edge): ⇒ Computer (Chrome, Edge):
+значок установки справа в адресной строке. ⇒ adres çubuğunun sağındaki yükleme simgesi. ⇒ the install icon on the right of the address bar.
+Установить ⇒ Yükle ⇒ Install
+Написать в чат курса ⇒ Kurs sohbetine yaz ⇒ Write in the course chat
+Брак / потери, ⇒ Fire / kayıp, ⇒ Waste / loss,
+Оплачено, ⇒ Ödendi, ⇒ Paid,
+Заплачено за весь остаток, ⇒ Kalan tüm miktar için ödenen, ⇒ Paid for the whole remainder,
+{0} · материалов: {1} ⇒ {0} · malzeme: {1} ⇒ {0} · materials: {1}
+доставка в цене: {0} ⇒ fiyata dahil kargo: {0} ⇒ shipping included in the price: {0}
+{0} за {1} без доставки · строка {2} ⇒ {1} başına {0}, kargosuz · satır {2} ⇒ {0} per {1} without shipping · line {2}
+{0}/{1} с доставкой ⇒ {0}/{1} kargo dahil ⇒ {0}/{1} with shipping
+за {0} ⇒ {0} başına ⇒ per {0}
+Доставка (делится поровну) ⇒ Kargo (eşit bölünür) ⇒ Shipping (split equally)
+Доставка (делится пропорционально сумме строк) ⇒ Kargo (kalem tutarlarına oranla bölünür) ⇒ Shipping (split in proportion to line totals)

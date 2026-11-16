@@ -1,0 +1,298 @@
+Категория удалена, материалы ({0}) перенесены ⇒ Kategori silindi, malzemeler ({0}) taşındı ⇒ Category deleted, materials ({0}) moved
+Катушка C1 ⇒ Makara C1 ⇒ Spool C1
+Катушка D1 ⇒ Makara D1 ⇒ Spool D1
+Катушка D2 ⇒ Makara D2 ⇒ Spool D2
+Киргизский сом ⇒ Kırgız somu ⇒ Kyrgyzstani som
+Китайский юань ⇒ Çin yuanı ⇒ Chinese yuan
+Клеи ⇒ Yapıştırıcılar ⇒ Glues
+Клеи и инструменты ⇒ Yapıştırıcılar ve aletler ⇒ Glues and tools
+Клеим и собираем ⇒ Yapıştırıp birleştiriyoruz ⇒ Gluing and assembling
+Клей ⇒ Yapıştırıcı ⇒ Glue
+Клей ювелирный прозрачный ⇒ Şeffaf takı yapıştırıcısı ⇒ Clear jewelry glue
+Когда завершишь эту работу, на складе останется {0} {1}{2}. ⇒ Bu işi tamamladığınızda stokta {0} {1}{2} kalacak. ⇒ When you finish this project, {0} {1}{2} will be left in stock.
+Код или название ⇒ Kod veya ad ⇒ Code or name
+Колечки соединительные ⇒ Bağlantı halkaları ⇒ Jump rings
+Количество ⇒ Miktar ⇒ Quantity
+Количество и цена ⇒ Miktar ve fiyat ⇒ Quantity and price
+Количество не изменилось ⇒ Miktar değişmedi ⇒ The quantity did not change
+Количество не может быть отрицательным ⇒ Miktar negatif olamaz ⇒ The quantity cannot be negative
+Колье ⇒ Kolye ⇒ Necklace
+Комиссия + желаемая прибыль ≥ 99%: цену посчитать нельзя. ⇒ Komisyon + istenen kâr ≥ %99: fiyat hesaplanamaz. ⇒ Fee + desired profit ≥ 99%: the price cannot be calculated.
+Комиссия, % ⇒ Komisyon, % ⇒ Fee, %
+Комментарий (по желанию) ⇒ Yorum (isteğe bağlı) ⇒ Comment (optional)
+Контакт (Telegram, почта, телефон) ⇒ İletişim (Telegram, e-posta, telefon) ⇒ Contact (Telegram, email, phone)
+Копия данных ⇒ Veri yedeği ⇒ Data backup
+Корейская вона ⇒ Güney Kore wonu ⇒ South Korean won
+Коробка A1 ⇒ Kutu A1 ⇒ Box A1
+Коробка A2 ⇒ Kutu A2 ⇒ Box A2
+Коробка F1 ⇒ Kutu F1 ⇒ Box F1
+Коробка F2 ⇒ Kutu F2 ⇒ Box F2
+Коробка F3 ⇒ Kutu F3 ⇒ Box F3
+Коробки ⇒ Kutular ⇒ Boxes
+Коробочка подарочная ⇒ Hediye kutusu ⇒ Gift box
+Корректировка количества ⇒ Miktar düzeltme ⇒ Quantity adjustment
+Корректировка: ⇒ Düzeltme: ⇒ Adjustment:
+Коса «Золотой час» ⇒ Örgü «Altın Saat» ⇒ Braid “Golden Hour”
+Коса «Лабрадор» ⇒ Örgü «Labradorit» ⇒ Braid “Labradorite”
+Коса «Лунный свет» ⇒ Örgü «Ay Işığı» ⇒ Braid “Moonlight”
+Коса «Розовый кварц» ⇒ Örgü «Gül Kuvarsı» ⇒ Braid “Rose Quartz”
+Косы на карабинах «Пепел, медь и ночь» ⇒ Karabinalı örgüler «Kül, Bakır ve Gece» ⇒ Braids on carabiners “Ash, Copper and Night”
+Красивая подача для подарка. ⇒ Hediye için şık bir sunum. ⇒ A beautiful presentation for a gift.
+Кремово-бежевый (M27) ⇒ Krem bej (M27) ⇒ Cream beige (M27)
+Кристаллы ⇒ Kristaller ⇒ Crystals
+Кристаллы Swarovski ⇒ Swarovski kristalleri ⇒ Swarovski crystals
+Круглогубцы ⇒ Yuvarlak maşa ⇒ Round-nose pliers
+Куда уехало (страна, город) ⇒ Nereye gitti (ülke, şehir) ⇒ Where it went (country, city)
+Курс ⇒ Kur ⇒ Rate
+Курс открыт для продажи ⇒ Kurs satışa açıldı ⇒ The course is open for sale
+Курс скрыт ⇒ Kurs gizlendi ⇒ The course is hidden
+Курс создан как черновик ⇒ Kurs taslak olarak oluşturuldu ⇒ The course was created as a draft
+Курс удалён ⇒ Kurs silindi ⇒ Course deleted
+Курс, его уроки и чат будут удалены. Ученицы останутся в списке. ⇒ Kurs, dersleri ve sohbeti silinecek. Öğrenciler listede kalır. ⇒ The course, its lessons and chat will be deleted. Students stay on the list.
+Курсы ⇒ Kurslar ⇒ Courses
+Курсы, видео-уроки, чат и ученицы. Переключатель сверху. ⇒ Kurslar, video dersler, sohbet ve öğrenciler. Üstteki düğmeden geçiş yapın. ⇒ Courses, video lessons, chat and students. Use the switch at the top.
+Лабрадорит, бусины ⇒ Labradorit, boncuklar ⇒ Labradorite, beads
+Леска ⇒ Misina ⇒ Fishing line
+Леска прозрачная ⇒ Şeffaf misina ⇒ Clear stringing line
+Лимасол, Кипр ⇒ Limasol, Kıbrıs ⇒ Limassol, Cyprus
+Листай месяцы и годы, смотри выручку и что покупают чаще. ⇒ Ayları ve yılları kaydırın, cirodan ve en çok neyin alındığından haberdar olun. ⇒ Flip through months and years and see revenue and what sells most.
+Лично ⇒ Yüz yüze ⇒ In person
+Личные сообщения ученицам не нужны на старте: общий чат курса проще вести и модерировать. ⇒ Başlangıçta öğrencilere özel mesaj gerekmez: ortak kurs sohbetini yönetmek ve denetlemek daha kolaydır. ⇒ Private messages to students are not needed at the start: a shared course chat is easier to run and moderate.
+Лоток B1 ⇒ Tepsi B1 ⇒ Tray B1
+Магазин или рынок ⇒ Mağaza veya pazar ⇒ Shop or market
+Малайзийский ринггит ⇒ Malezya ringgiti ⇒ Malaysian ringgit
+Мария С. ⇒ Maria S. ⇒ Maria S.
+Мария Соколова ⇒ Maria Sokolova ⇒ Maria Sokolova
+Маркетплейс ⇒ Pazar yeri ⇒ Marketplace
+Марокканский дирхам ⇒ Fas dirhemi ⇒ Moroccan dirham
+Мастерская ⇒ Atölye ⇒ Workshop
+Масштаб ⇒ Yakınlaştırma ⇒ Zoom
+Материал ⇒ Malzeme ⇒ Material
+Материал заменён ⇒ Malzeme değiştirildi ⇒ Material replaced
+Материал со склада ⇒ Stoktan malzeme ⇒ Material from stock
+Материал удалён ⇒ Malzeme silindi ⇒ Material deleted
+Материал удалён из каталога. ⇒ Malzeme katalogdan silindi. ⇒ The material was removed from the catalog.
+Материалы ⇒ Malzemeler ⇒ Materials
+Материалы + инструмент ⇒ Malzemeler + alet ⇒ Materials + tools
+Материалы в изделии ⇒ Üründeki malzemeler ⇒ Materials in the piece
+Материалы и подготовка ⇒ Malzemeler ve hazırlık ⇒ Materials and preparation
+Материалы появляются здесь после закупки. ⇒ Malzemeler alım yapıldıktan sonra burada görünür. ⇒ Materials appear here after a purchase.
+Материалы урока ⇒ Ders malzemeleri ⇒ Lesson materials
+Материалы урока перенесены в твою работу ⇒ Ders malzemeleri işinize aktarıldı ⇒ The lesson materials were moved into your project
+Мексиканское песо ⇒ Meksika pesosu ⇒ Mexican peso
+Меньше ⇒ Daha az ⇒ Less
+Месяц ⇒ Ay ⇒ Month
+Металл и фурнитура ⇒ Metal ve aksesuar ⇒ Metal and findings
+Минимум на складе ⇒ Stokta asgari miktar ⇒ Minimum in stock
+Многоразовый инструмент ⇒ Tekrar kullanılabilir alet ⇒ Reusable tool
+Молдавский лей ⇒ Moldova leyi ⇒ Moldovan leu
+Моя ⇒ Benim ⇒ My
+Моя валюта ⇒ Para birimim ⇒ My currency
+Моя мастерская ⇒ Atölyem ⇒ My Workshop
+Мы отправили письмо со ссылкой. Открой его на этом устройстве. ⇒ Bağlantı içeren bir e-posta gönderdik. Bu cihazda açın. ⇒ We sent an email with a link. Open it on this device.
+Мы отправили письмо. Подтверди почту по ссылке, потом вернись и войди. ⇒ E-posta gönderdik. Bağlantıdan e-postanızı doğrulayın, sonra dönüp giriş yapın. ⇒ We sent an email. Confirm your address via the link, then come back and log in.
+Назад ⇒ Geri ⇒ Back
+Назад ко входу ⇒ Girişe dön ⇒ Back to login
+Название ⇒ Ad ⇒ Name
+Название категории ⇒ Kategori adı ⇒ Category name
+Название курса ⇒ Kurs adı ⇒ Course name
+Название не может быть пустым ⇒ Ad boş olamaz ⇒ The name cannot be empty
+Название работы ⇒ İş adı ⇒ Project name
+Название урока ⇒ Ders adı ⇒ Lesson name
+Название, бренд, артикул, цвет, размер ⇒ Ad, marka, ürün kodu, renk, boyut ⇒ Name, brand, SKU, color, size
+Найди камни по запросу SS16, потом добавь AB. ⇒ Taşları «SS16» ile arayın, sonra «AB» ekleyin. ⇒ Search for stones with “SS16”, then add “AB”.
+Накладные пряди ⇒ Takma saç ⇒ Hair extensions
+Напиши первое сообщение курсу. ⇒ Kursa ilk mesajı yazın. ⇒ Write the first message to the course.
+Например, Анкара, Турция ⇒ Örneğin Ankara, Türkiye ⇒ For example, Ankara, Türkiye
+Например, Елена К. ⇒ Örneğin Elena K. ⇒ For example, Elena K.
+Например, Серьги «Утро» ⇒ Örneğin «Sabah» küpeleri ⇒ For example, “Morning” earrings
+Например, Серьги с нуля ⇒ Örneğin Sıfırdan küpe yapımı ⇒ For example, Earrings from scratch
+Например, Стразы SS16 ⇒ Örneğin Strass SS16 ⇒ For example, Rhinestones SS16
+Натуральные камни ⇒ Doğal taşlar ⇒ Natural stones
+Находка ⇒ Buluntu ⇒ Found
+Начальный остаток ⇒ Açılış bakiyesi ⇒ Opening balance
+Начать работу ⇒ İşe başla ⇒ Start a project
+Начать с чистого листа ⇒ Temiz bir sayfayla başla ⇒ Start from a clean slate
+Начнём с чистого листа ⇒ Temiz bir sayfayla başlayalım ⇒ Let's start with a clean slate
+Не все изменения отправлены ⇒ Tüm değişiklikler gönderilmedi ⇒ Not all changes have been sent
+Не загрузилась часть приложения. Обнови страницу при включённом интернете. ⇒ Uygulamanın bir kısmı yüklenemedi. İnternet açıkken sayfayı yenileyin. ⇒ Part of the app did not load. Refresh the page while online.
+Не нашла такую валюту ⇒ Böyle bir para birimi bulunamadı ⇒ That currency was not found
+Не получилось: ⇒ Olmadı: ⇒ Failed:
+Не похоже на сохранённые данные «Моей мастерской» ⇒ «Atölyem» uygulamasının kaydedilmiş verilerine benzemiyor ⇒ This does not look like saved data from “My Workshop”
+Не удалось загрузить фото: {0}. Попробуй синхронизировать ещё раз. ⇒ Fotoğraf yüklenemedi: {0}. Yeniden eşitlemeyi deneyin. ⇒ Could not upload photo: {0}. Try syncing again.
+Не удалось открыть фото ⇒ Fotoğraf açılamadı ⇒ Could not open the photo
+Не удалось прочитать фото ⇒ Fotoğraf okunamadı ⇒ Could not read the photo
+Не удалось сохранить: память браузера заполнена. Сохрани копию данных в «Ещё». ⇒ Kaydedilemedi: tarayıcı belleği dolu. «Daha» bölümünden veri yedeği alın. ⇒ Could not save: browser storage is full. Save a data backup in “More”.
+Неверная почта или пароль. ⇒ E-posta veya şifre hatalı. ⇒ Wrong email or password.
+Нельзя меньше резерва: {0} {1} занято в работах ⇒ Ayrılan miktarın altına inilemez: {0} {1} işlerde kullanımda ⇒ Cannot go below the reserve: {0} {1} is held by projects
+Нет интернета: работаем офлайн, изменения отправятся потом. ⇒ İnternet yok: çevrimdışı çalışıyoruz, değişiklikler sonra gönderilecek. ⇒ No internet: working offline, changes will be sent later.
+Нет связи с интернетом. Для входа нужен интернет. ⇒ İnternet bağlantısı yok. Giriş için internet gerekir. ⇒ No internet connection. Logging in requires internet.
+Нитки и шнуры ⇒ İplik ve kordon ⇒ Threads and cords
+Нить шёлковая для бусин ⇒ Boncuk için ipek iplik ⇒ Silk thread for beads
+Ничего не нашла ⇒ Hiçbir şey bulunamadı ⇒ Nothing found
+Новая закупка ⇒ Yeni alım ⇒ New purchase
+Новая категория ⇒ Yeni kategori ⇒ New category
+Новая позиция ⇒ Yeni kalem ⇒ New item
+Новая работа ⇒ Yeni iş ⇒ New project
+Новая работа собрана из архива ⇒ Yeni iş arşivden oluşturuldu ⇒ A new project was created from the archive
+Новый курс ⇒ Yeni kurs ⇒ New course
+Новый пароль ⇒ Yeni şifre ⇒ New password
+Новый урок ⇒ Yeni ders ⇒ New lesson
+Норвежская крона ⇒ Norveç kronu ⇒ Norwegian krone
+О курсе ⇒ Kurs hakkında ⇒ About the course
+Ободки ⇒ Taçlar ⇒ Headbands
+Ободок ⇒ Saç bandı ⇒ Headband
+Ободок «Аврора» ⇒ Saç bandı «Şafak» ⇒ Headband “Aurora”
+Ободок металлический ⇒ Metal saç bandı ⇒ Metal headband
+Один общий чат на каждый курс ⇒ Her kurs için tek bir ortak sohbet ⇒ One shared chat per course
+Одна бусина треснула при сверлении, пошла в брак. ⇒ Bir boncuk delerken çatladı, fire oldu. ⇒ One bead cracked during drilling and was written off as waste.
+Одно применение, ⇒ Bir kullanım, ⇒ One use,
+Ожидается: {3} ⇒ Beklenen: {3} ⇒ Expected: {3}
+Он будет убран из работ: {0}. ⇒ Şu işlerden çıkarılacak: {0}. ⇒ It will be removed from these projects: {0}.
+Описание ⇒ Açıklama ⇒ Description
+Оплату ты получаешь на своей платформе. Здесь ученица получает доступ и попадает в чат курса. ⇒ Ödemeyi kendi platformunuzdan alırsınız. Burada öğrenci erişim kazanır ve kurs sohbetine katılır. ⇒ You receive payment on your own platform. Here the student gets access and joins the course chat.
+Оплату ты принимаешь на своей платформе. Здесь отмечаешь, кто купил и открыт ли доступ. ⇒ Ödemeyi kendi platformunuzdan alırsınız. Burada kimin satın aldığını ve erişimin açık olup olmadığını işaretlersiniz. ⇒ You take payment on your own platform. Here you mark who bought and whether access is open.
+Оплачено, ⇒ Ödendi, ⇒ Paid,
+Основная валюта: {0}. Старые суммы не пересчитаны ⇒ Ana para birimi: {0}. Eski tutarlar yeniden hesaplanmadı ⇒ Main currency: {0}. Old amounts were not recalculated
+Основы для заколок ⇒ Toka aparatları ⇒ Hair slide bases
+Основы и ткани ⇒ Aparatlar ve kumaşlar ⇒ Bases and fabrics
+Оставить эти ⇒ Bunları koru ⇒ Keep these
+Остаток обновлён ⇒ Kalan miktar güncellendi ⇒ Balance updated
+Открой «Заколку Рассвет»: у каждого материала видно склад, резерв и свободно. ⇒ «Şafak tokası»nı açın: her malzemede stok, ayrılan ve serbest miktar görünür. ⇒ Open the “Dawn” hair slide: every material shows stock, reserved and free.
+Открой меню браузера и выбери «Установить приложение» (iPhone: Поделиться → На экран Домой) ⇒ Tarayıcı menüsünü açın ve «Uygulamayı yükle»yi seçin (iPhone: Paylaş → Ana Ekrana Ekle) ⇒ Open the browser menu and choose “Install app” (iPhone: Share → Add to Home Screen)
+Открыт ⇒ Açık ⇒ Open
+Открыть чат курса ⇒ Kurs sohbetini aç ⇒ Open the course chat
+Отмена ⇒ İptal ⇒ Cancel
+Отменить продажу ⇒ Satışı iptal et ⇒ Cancel the sale
+Отменить продажу? ⇒ Satış iptal edilsin mi? ⇒ Cancel the sale?
+Отменить работу ⇒ İşi iptal et ⇒ Cancel the project
+Отменить работу? ⇒ İş iptal edilsin mi? ⇒ Cancel the project?
+Отметить продажу ⇒ Satışı işaretle ⇒ Mark as sold
+Отметь изделие проданным: имя, телефон, куда уехало. ⇒ Ürünü satıldı olarak işaretleyin: ad, telefon, nereye gitti. ⇒ Mark a piece as sold: name, phone, where it went.
+Отметь, что принимаешь условия. ⇒ Koşulları kabul ettiğinizi işaretleyin. ⇒ Tick that you accept the terms.
+Отметь, что убрать, и создай своё заново. Настройки (валюта, ставка, комиссия) останутся. ⇒ Neyi kaldıracağınızı işaretleyin ve kendinizinkini baştan oluşturun. Ayarlar (para birimi, saat ücreti, komisyon) kalır. ⇒ Tick what to remove and create your own from scratch. Settings (currency, rate, fee) stay.
+Отметь, что удалить ⇒ Neyi sileceğinizi işaretleyin ⇒ Tick what to delete
+Отправить ⇒ Gönder ⇒ Send
+Отправить ссылку ⇒ Bağlantı gönder ⇒ Send the link
+Оформи первую закупку ⇒ İlk alımınızı kaydedin ⇒ Record your first purchase
+Оформить закупку ⇒ Alımı kaydet ⇒ Record the purchase
+Очистить ⇒ Temizle ⇒ Clear
+Очистить и начать заново ⇒ Temizle ve baştan başla ⇒ Clear and start over
+Пакет C2 ⇒ Paket C2 ⇒ Bag C2
+Пакет G1 ⇒ Paket G1 ⇒ Bag G1
+Папки для материалов: бусины, нитки, ткани. Можно выбрать готовые. ⇒ Malzeme klasörleri: boncuk, iplik, kumaş. Hazır olanlardan seçebilirsiniz. ⇒ Folders for materials: beads, threads, fabrics. You can pick ready-made ones.
+Пароль ⇒ Şifre ⇒ Password
+Пароль не короче 8 символов. ⇒ Şifre en az 8 karakter olmalı. ⇒ The password must be at least 8 characters.
+Пароль слишком короткий: нужно не меньше 8 символов. ⇒ Şifre çok kısa: en az 8 karakter gerekir. ⇒ The password is too short: at least 8 characters are needed.
+Пауза ⇒ Duraklat ⇒ Pause
+Перед выходом данные отправятся в облако, и с этого устройства они удалятся. Войдёшь снова, и всё вернётся. ⇒ Çıkmadan önce veriler buluta gönderilir ve bu cihazdan silinir. Tekrar giriş yaptığınızda her şey geri gelir. ⇒ Before logging out your data is sent to the cloud and removed from this device. Log in again and everything comes back.
+Пересчитать ⇒ Yeniden hesapla ⇒ Recalculate
+Пересчитать единицы? ⇒ Birimler yeniden hesaplansın mı? ⇒ Recalculate the units?
+Пинцет ⇒ Cımbız ⇒ Tweezers
+Пинцет ювелирный ⇒ Takı cımbızı ⇒ Jewelry tweezers
+Платиновый блонд (27+613) ⇒ Platin sarı (27+613) ⇒ Platinum blonde (27+613)
+Платиновый блонд (613#) ⇒ Platin sarı (613#) ⇒ Platinum blonde (613#)
+Платно ⇒ Ücretli ⇒ Paid
+По дизайну ⇒ Tasarıma göre ⇒ By design
+По дням ⇒ Günlere göre ⇒ By day
+По месяцам ⇒ Aylara göre ⇒ By month
+По центру ⇒ Ortala ⇒ Center
+Повторить работу ⇒ İşi tekrarla ⇒ Repeat the project
+Повторная закупка дороже ⇒ Daha pahalı tekrar alım ⇒ A repeat purchase at a higher price
+Подарок ⇒ Hediye ⇒ Gift
+Подвеска «Хрусталь» ⇒ Kolye ucu «Kristal» ⇒ Pendant “Crystal”
+Подготовка основы ⇒ Aparatın hazırlanması ⇒ Preparing the base
+Подгруппа ⇒ Alt grup ⇒ Subgroup
+Подожди… ⇒ Bekleyin… ⇒ Please wait…
+Подписка до {0} ⇒ Abonelik: {0} tarihine kadar ⇒ Subscription until {0}
+Подскажите, можно взять другой клей, если основа из металла? ⇒ Taban metal ise başka bir yapıştırıcı kullanabilir miyim? ⇒ Can I use a different glue if the base is metal?
+Подтвердить и списать ⇒ Onayla ve stoktan düş ⇒ Confirm and write off
+Подтвердить приход ⇒ Alımı onayla ⇒ Confirm the purchase
+Позиции ⇒ Kalemler ⇒ Items
+Позиция закупки ⇒ Alım kalemi ⇒ Purchase item
+Поиск по коду и цвету ⇒ Koda ve renge göre arama ⇒ Search by code and color
+Поиск по складу ⇒ Stokta ara ⇒ Search stock
+Пока данные на каждом устройстве свои: телефон и компьютер не синхронизируются. ⇒ Şimdilik her cihazın verisi ayrı: telefon ve bilgisayar eşitlenmiyor. ⇒ For now each device keeps its own data: phone and computer do not sync.
+Пока никто не купил. ⇒ Henüz kimse satın almadı. ⇒ No one has bought yet.
+Показать на складе ⇒ Stokta göster ⇒ Show in stock
+Полка H1 ⇒ Raf H1 ⇒ Shelf H1
+Поломка инструмента: ⇒ Alet kırılması: ⇒ Tool breakage:
+Поломка, шт ⇒ Kırılma, adet ⇒ Breakage, pcs
+Получилось: {4} ⇒ Sonuç: {4} ⇒ Result: {4}
+Польский злотый ⇒ Polonya zlotisi ⇒ Polish zloty
+Попробуй другой запрос: название, бренд, артикул, цвет или размер. ⇒ Başka bir arama deneyin: ad, marka, ürün kodu, renk veya boyut. ⇒ Try another search: name, brand, SKU, color or size.
+После завершения ⇒ Tamamlandıktan sonra ⇒ After finishing
+Поставщик ⇒ Tedarikçi ⇒ Supplier
+Потеря ⇒ Kayıp ⇒ Loss
+Почта ⇒ E-posta ⇒ Email
+Почта не подтверждена. Открой письмо от нас и нажми на ссылку. ⇒ E-posta doğrulanmadı. Bizden gelen e-postayı açıp bağlantıya tıklayın. ⇒ Your email is not confirmed. Open our email and click the link.
+Пошаговая сборка заколки. Материалы урока можно сразу перенести в свою работу. ⇒ Tokanın adım adım montajı. Ders malzemelerini hemen kendi işinize aktarabilirsiniz. ⇒ Step-by-step assembly of the hair slide. You can move the lesson materials straight into your own project.
+Прибыль ⇒ Kâr ⇒ Profit
+Прибыль = цена продажи минус себестоимость изделия. Комиссии площадок и доставку закладывай в цену. ⇒ Kâr = satış fiyatı eksi ürün maliyeti. Pazar yeri komisyonlarını ve kargoyu fiyata ekleyin. ⇒ Profit = selling price minus the cost of the piece. Build marketplace fees and shipping into the price.
+Прибыль после комиссии и доставки ⇒ Komisyon ve kargo sonrası kâr ⇒ Profit after fees and shipping
+Прибыль, % ⇒ Kâr, % ⇒ Profit, %
+Придумай новый пароль, не короче 8 символов. ⇒ Yeni bir şifre belirleyin, en az 8 karakter. ⇒ Choose a new password, at least 8 characters.
+Применений ⇒ Kullanım sayısı ⇒ Number of uses
+Применить корректировку ⇒ Düzeltmeyi uygula ⇒ Apply the adjustment
+Пример добавлен: проверь итог 3,30 за штуку ⇒ Örnek eklendi: adet başına toplamın 3,30 olduğunu kontrol edin ⇒ Example added: check the total of 3.30 per piece
+Пример: 1 упаковка × 90 г или 1 × 1440 камней. Цена делится на граммы или штуки внутри упаковки, а не на упаковки. ⇒ Örnek: 1 paket × 90 g veya 1 × 1440 taş. Fiyat paket sayısına değil, paketin içindeki gram veya adede bölünür. ⇒ Example: 1 pack × 90 g or 1 × 1440 stones. The price is divided by the grams or pieces inside the pack, not by the packs.
+Примечание (можно дополнять позже) ⇒ Not (sonra eklenebilir) ⇒ Note (you can add to it later)
+Приход оформлен, склад пополнен ⇒ Alım kaydedildi, stok güncellendi ⇒ Purchase recorded, stock replenished
+Приход: {0} {1} ⇒ Alım: {0} {1} ⇒ Purchase: {0} {1}
+Причина ⇒ Neden ⇒ Reason
+Пробный период до {0} ⇒ Deneme süresi: {0} tarihine kadar ⇒ Trial until {0}
+Проверь код или название. ⇒ Kodu veya adı kontrol edin. ⇒ Check the code or name.
+Проверь почту: похоже, в адресе ошибка. ⇒ E-postayı kontrol edin: adreste hata var gibi. ⇒ Check your email: the address seems to have a typo.
+Проверяем доступ… ⇒ Erişim kontrol ediliyor… ⇒ Checking access…
+Продажа отмечена ⇒ Satış işaretlendi ⇒ Sale marked
+Продажа с покупателем ⇒ Alıcılı satış ⇒ Sale with a buyer
+Продажи ⇒ Satışlar ⇒ Sales
+Продано ⇒ Satıldı ⇒ Sold
+Прозрачный ⇒ Şeffaf ⇒ Clear
+Прочее ⇒ Diğer ⇒ Other
+Прочие расходы ⇒ Diğer giderler ⇒ Other expenses
+Прочие расходы, {2} ⇒ Diğer giderler, {2} ⇒ Other expenses, {2}
+Прочие расходы, {6} ⇒ Diğer giderler, {6} ⇒ Other expenses, {6}
+Прядь «Аметист» ⇒ Saç parçası «Ametist» ⇒ Hair piece “Amethyst”
+Прядь «Белый шёлк» ⇒ Saç parçası «Beyaz İpek» ⇒ Hair piece “White Silk”
+Прядь «Лавандовый туман» ⇒ Saç parçası «Lavanta Sisi» ⇒ Hair piece “Lavender Mist”
+Прядь «Утренний иней» ⇒ Saç parçası «Sabah Ayazı» ⇒ Hair piece “Morning Frost”
+Прядь с кристаллами ⇒ Kristalli saç parçası ⇒ Hair piece with crystals
+Пудровый ⇒ Pudra ⇒ Powder pink
+Работа отменена, резерв снят ⇒ İş iptal edildi, ayırma kaldırıldı ⇒ The project was cancelled and the reserve released
+Работа по уроку ⇒ Dersin işi ⇒ Lesson project
+Работа: ⇒ İş: ⇒ Project:
+Работает без интернета ⇒ İnternetsiz çalışır ⇒ Works offline
+Работы ⇒ İşler ⇒ Projects
+Разделы ⇒ Bölümler ⇒ Sections
+Размер ⇒ Boyut ⇒ Size
+Раскладка, клей, выдержка. ⇒ Yerleşim, yapıştırıcı, kuruma süresi. ⇒ Layout, glue, curing time.
+Раскладываем кристаллы по размеру и цвету, готовим основу под сборку. ⇒ Kristalleri boyuta ve renge göre ayırıyor, aparatı montaja hazırlıyoruz. ⇒ We sort the crystals by size and color and prepare the base for assembly.
+Рассвет ⇒ Şafak ⇒ Dawn
+Расходник ⇒ Sarf malzeme ⇒ Consumable
+Реально на складе ⇒ Stokta fiilen var ⇒ Actually in stock
+Резерв без списания ⇒ Stoktan düşmeden ayırma ⇒ Reserve without writing off
+Рекомендуемая цена ⇒ Önerilen fiyat ⇒ Recommended price
+Рецепт загружен как план. Расход можно менять ⇒ Tarif plan olarak yüklendi. Kullanım miktarını değiştirebilirsiniz ⇒ The recipe was loaded as a plan. You can change the usage
+Рецепт — только план. Фактический расход в работе можно менять как угодно. ⇒ Tarif yalnızca bir plandır. İşteki gerçek kullanımı istediğiniz gibi değiştirebilirsiniz. ⇒ A recipe is only a plan. You can change the actual usage in a project however you like.
+Розовый (1B+Pink) ⇒ Pembe (1B+Pink) ⇒ Pink (1B+Pink)
+Российский рубль ⇒ Rus rublesi ⇒ Russian ruble
+Румынский лей ⇒ Romen leyi ⇒ Romanian leu
+С нуля ⇒ Sıfırdan ⇒ From scratch
+Саудовский риял ⇒ Suudi riyali ⇒ Saudi riyal
+Сборка украшения ⇒ Takının montajı ⇒ Assembling the piece
+Сбросить ⇒ Sıfırla ⇒ Reset
+Сбросить демо-данные? ⇒ Demo verileri sıfırlansın mı? ⇒ Reset the demo data?
+Сбросить фильтры ⇒ Filtreleri sıfırla ⇒ Reset filters
+Свободно всего {0} {1}: больше зарезервировать нельзя ⇒ Toplam serbest olan {0} {1}: daha fazlası ayrılamaz ⇒ Only {0} {1} is free in total: you cannot reserve more
+Свободно только {0} шт ⇒ Yalnızca {0} adet serbest ⇒ Only {0} pcs are free
+Своя цена продажи, {8} (необязательно) ⇒ Kendi satış fiyatınız, {8} (isteğe bağlı) ⇒ Your own selling price, {8} (optional)
+Себестоимость ⇒ Maliyet ⇒ Cost
+Себестоимость {2} ⇒ Maliyet {2} ⇒ Cost {2}
+Сербский динар ⇒ Sırp dinarı ⇒ Serbian dinar
+Серебристо-бежевый (Silver) ⇒ Gümüş bej (Silver) ⇒ Silver beige (Silver)
+Серебро ⇒ Gümüş ⇒ Silver
+Серо-голубой ⇒ Gri mavi ⇒ Grey-blue
+Серьги ⇒ Küpe ⇒ Earrings
+Сингапурский доллар ⇒ Singapur doları ⇒ Singapore dollar
+Синхронизация… ⇒ Eşitleniyor… ⇒ Syncing…

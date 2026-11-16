@@ -1,0 +1,276 @@
+(делится поровну) ⇒ (eşit bölünür) ⇒ (split equally)
+(делится пропорционально сумме строк) ⇒ (kalem tutarlarına oranla bölünür) ⇒ (split in proportion to line totals)
+(резерв других работ ещё не списан) ⇒ (diğer işlerin ayırdığı malzeme henüz düşülmedi) ⇒ (reserved by other projects, not yet written off)
+(рекомендуемая) ⇒ (önerilen) ⇒ (recommended)
+(себестоимость + доставка) ÷ (1 − комиссия − прибыль) ⇒ (maliyet + kargo) ÷ (1 − komisyon − kâr) ⇒ (cost + shipping) ÷ (1 − fee − profit)
+(твоя) ⇒ (sizin) ⇒ (yours)
++{0}, остаток 2 шт; с поломкой +{1} и остаток 1 шт ⇒ +{0}, 2 adet kaldı; kırılmayla +{1} ve 1 adet kaldı ⇒ +{0}, 2 pcs left; with breakage +{1} and 1 pc left
+/прим. ⇒ /uyg. ⇒ /use
+60 минут при ставке 250 в час ⇒ Saatlik 250 ücretle 60 dakika ⇒ 60 minutes at a rate of 250 per hour
+100 шт, {0} ⇒ 100 adet, {0} ⇒ 100 pcs, {0}
+{0} · в наличии {1} ⇒ {0} · stokta {1} ⇒ {0} · in stock {1}
+{0} · на {1}{2} ⇒ {0} · değeri {1}{2} ⇒ {0} · worth {1}{2}
+{0} · приход сам попадает на склад ⇒ {0} · alım otomatik olarak stoka eklenir ⇒ {0} · purchase goes to stock automatically
+{0} · с {1} ⇒ {0} · {1} ile ⇒ {0} · with {1}
+{0} в процессе · правки сохраняются сами ⇒ {0} devam ediyor · değişiklikler otomatik kaydedilir ⇒ {0} in progress · changes save automatically
+{0} купили курсы ⇒ {0} kursları satın aldı ⇒ {0} bought courses
+{0} убран, остаток снова свободен ⇒ {0} kaldırıldı, kalan miktar yine serbest ⇒ {0} removed, the remainder is free again
+{0} шт ⇒ {0} adet ⇒ {0} pcs
+{0} шт, {1} ⇒ {0} adet, {1} ⇒ {0} pcs, {1}
+{0} шт, в архиве {1} ⇒ {0} adet, arşivde {1} ⇒ {0} pcs, in the archive {1}
+{0}, с поломкой {1}, остаток {2} шт ⇒ {0}, kırılmayla {1}, {2} adet kaldı ⇒ {0}, with breakage {1}, {2} pcs left
+{0}: на складе нет ни одной единицы инструмента. ⇒ {0}: stokta hiç alet yok. ⇒ {0}: there is not a single unit of this tool in stock.
+{0}: нужно {1} {2}, а свободно {3} (в других работах {4}). ⇒ {0}: {1} {2} gerekiyor, serbest olan {3} (diğer işlerde {4}). ⇒ {0}: {1} {2} needed, but only {3} is free ({4} in other projects).
+{0}: поломок {1}, а свободно {2}. ⇒ {0}: {1} kırılma var, serbest olan {2}. ⇒ {0}: {1} breakages, but only {2} is free.
+{1} · черновик сохраняется сам ⇒ {1} · taslak otomatik kaydedilir ⇒ {1} · the draft saves automatically
+{1} КБ ⇒ {1} KB ⇒ {1} KB
+{2} · строка {3} ⇒ {2} · satır {3} ⇒ {2} · line {3}
+{3} уп. × {4} = {5} {6} ⇒ {3} pkt × {4} = {5} {6} ⇒ {3} pk × {4} = {5} {6}
+«{0}» исчезнет со склада. ⇒ «{0}» stoktan silinecek. ⇒ “{0}” will disappear from stock.
+· материалов: ⇒ · malzeme: ⇒ · materials:
+Австралийский доллар ⇒ Avustralya doları ⇒ Australian dollar
+Адрес доставки (если есть) ⇒ Teslimat adresi (varsa) ⇒ Delivery address (if any)
+Азербайджанский манат ⇒ Azerbaycan manatı ⇒ Azerbaijani manat
+Айгуль Н. ⇒ Aygül N. ⇒ Aigul N.
+Айгуль Нурлан ⇒ Aygül Nurlan ⇒ Aigul Nurlan
+Академия ⇒ Akademi ⇒ Academy
+Аккаунт ⇒ Hesap ⇒ Account
+Активных работ нет ⇒ Aktif iş yok ⇒ No active projects
+Алматы, Казахстан ⇒ Almatı, Kazakistan ⇒ Almaty, Kazakhstan
+Аметист, кристаллы в оправе ⇒ Ametist, çerçeveli kristaller ⇒ Amethyst, set crystals
+Анкара, Турция ⇒ Ankara, Türkiye ⇒ Ankara, Türkiye
+Анна П. ⇒ Anna P. ⇒ Anna P.
+Анна Петрова ⇒ Anna Petrova ⇒ Anna Petrova
+Армянский драм ⇒ Ermeni dramı ⇒ Armenian dram
+Артикул ⇒ Ürün kodu ⇒ SKU
+Архив ⇒ Arşiv ⇒ Archive
+Архив пуст ⇒ Arşiv boş ⇒ The archive is empty
+Архив, готовые изделия и продажи ⇒ Arşiv, hazır ürünler ve satışlar ⇒ Archive, finished pieces and sales
+Афро-резинки «Осенний лес» ⇒ Afro lastikler «Sonbahar Ormanı» ⇒ Afro hair ties “Autumn Forest”
+Без курса приход посчитать нельзя. ⇒ Kur olmadan alım hesaplanamaz. ⇒ The purchase cannot be calculated without an exchange rate.
+Без поставщика ⇒ Tedarikçisiz ⇒ No supplier
+Белорусский рубль ⇒ Belarus rublesi ⇒ Belarusian ruble
+Берлин, Германия ⇒ Berlin, Almanya ⇒ Berlin, Germany
+Бесплатно ⇒ Ücretsiz ⇒ Free
+Блонд ⇒ Sarı ⇒ Blonde
+Болгарский лев ⇒ Bulgar levası ⇒ Bulgarian lev
+Больше ⇒ Daha fazla ⇒ More
+Бордо ⇒ Bordo ⇒ Burgundy
+Бразильский реал ⇒ Brezilya reali ⇒ Brazilian real
+Брак ⇒ Fire ⇒ Waste
+Брак / потери, ⇒ Fire / kayıp, ⇒ Waste / loss,
+Брак и потери (отдельно) ⇒ Fire ve kayıplar (ayrı) ⇒ Waste and losses (separate)
+Браслет ⇒ Bileklik ⇒ Bracelet
+Бренд ⇒ Marka ⇒ Brand
+Бусины ⇒ Boncuklar ⇒ Beads
+Бусины и камни ⇒ Boncuk ve taşlar ⇒ Beads and stones
+Было {0} {1}, станет {2} {3}. Цена за {4}: {5} (сейчас {6} за {7}). Резервы в работах, рецепты и история пересчитаются так же. Завершённые работы в архиве не меняются. ⇒ Şu an {0} {1}, olacak {2} {3}. {4} fiyatı: {5} (şu an {7} için {6}). İşlerdeki ayırmalar, tarifler ve geçmiş de aynı şekilde yeniden hesaplanır. Arşivdeki tamamlanmış işler değişmez. ⇒ Was {0} {1}, will become {2} {3}. Price per {4}: {5} (now {6} per {7}). Reserves in projects, recipes and history are recalculated the same way. Finished projects in the archive do not change.
+В Chrome нажми значок установки в адресной строке. На телефоне: меню браузера, «Добавить на главный экран». ⇒ Chrome'da adres çubuğundaki yükleme simgesine tıklayın. Telefonda: tarayıcı menüsü, «Ana ekrana ekle». ⇒ In Chrome, click the install icon in the address bar. On a phone: browser menu, “Add to Home screen”.
+В изделии ⇒ Üründe ⇒ In the piece
+В изделии, ⇒ Üründe, ⇒ In the piece,
+В категории «{0}» {1}. Что с ними сделать? ⇒ «{0}» kategorisinde {1} var. Onlarla ne yapılsın? ⇒ The category “{0}” has {1}. What should happen to them?
+В ней считаются склад, цены и статистика. Выбери один раз: при смене старые суммы не пересчитываются. ⇒ Stok, fiyatlar ve istatistikler bu para biriminde hesaplanır. Bir kez seçin: değiştirirseniz eski tutarlar yeniden hesaplanmaz. ⇒ Stock, prices and statistics are calculated in it. Choose it once: if you change it, old amounts are not recalculated.
+В облаке теперь данные этого устройства ⇒ Buluttaki veriler artık bu cihazın verileri ⇒ The cloud now holds this device's data
+В облаке уже есть данные, и на этом устройстве тоже. Выбери, какие оставить. Вторые будут заменены. ⇒ Bulutta zaten veri var, bu cihazda da var. Hangilerinin kalacağını seçin. Diğerleri değiştirilecek. ⇒ There is already data in the cloud, and on this device too. Choose which to keep. The other will be replaced.
+В одной ⇒ Bir pakette ⇒ In one
+В упаковке, ⇒ Pakette, ⇒ In a pack,
+В этой категории пока пусто. Материалы появятся после закупки. ⇒ Bu kategori henüz boş. Malzemeler alım yapıldıktan sonra burada görünür. ⇒ This category is empty for now. Materials will appear after a purchase.
+Валюта закупки ⇒ Alım para birimi ⇒ Purchase currency
+Валюта, настройки, копия данных и проверка расчётов ⇒ Para birimi, ayarlar ve veri yedeği ⇒ Currency, settings and data backup
+Введи почту, и мы пришлём ссылку для нового пароля. ⇒ E-postanızı girin, yeni şifre için bağlantı gönderelim. ⇒ Enter your email and we will send a link for a new password.
+Венгерский форинт ⇒ Macar forinti ⇒ Hungarian forint
+Вернуть демо-данные ⇒ Demo verilerini geri yükle ⇒ Restore demo data
+Взяты данные из облака ⇒ Bulut verileri alındı ⇒ Cloud data loaded
+Взять из облака ⇒ Buluttan al ⇒ Use the cloud's data
+Видео подключено по ссылке ⇒ Video bağlantıyla eklendi ⇒ Video linked by URL
+Видео хранится на видеосервисе, который ты выбрала сама (YouTube, Vimeo, Google Диск), а здесь лежит только ссылка.{6} ⇒ Video, kendi seçtiğiniz video servisinde (YouTube, Vimeo, Google Drive) durur; burada yalnızca bağlantısı saklanır.{6} ⇒ The video stays on the video service you chose (YouTube, Vimeo, Google Drive); only the link is stored here.{6}
+Войти ⇒ Giriş Yap ⇒ Log in
+Волосы и плетения ⇒ Saç ve örgüler ⇒ Hair and braiding
+Восстановить ⇒ Geri yükle ⇒ Restore
+Восстановить данные ⇒ Verileri geri yükle ⇒ Restore data
+Вперёд ⇒ İleri ⇒ Next
+Впиши 60 минут вручную и смотри, как пересчитается цена. ⇒ 60 dakikayı elle girin ve fiyatın nasıl yeniden hesaplandığına bakın. ⇒ Enter 60 minutes by hand and watch the price recalculate.
+Впиши минуты в поле «Вручную» ⇒ «Elle» alanına dakikaları yazın ⇒ Enter minutes in the “By hand” field
+Впиши название категории ⇒ Kategori adını yazın ⇒ Enter a category name
+Впиши, сколько новых единиц в одной старой ⇒ Eski birimin kaç yeni birim ettiğini yazın ⇒ Enter how many new units are in one old unit
+Время и цена ⇒ Süre ve fiyat ⇒ Time and price
+Время работы ⇒ Çalışma süresi ⇒ Working time
+Вручную, мин ⇒ Elle, dk ⇒ By hand, min
+Все ⇒ Tümü ⇒ All
+Все введённые позиции пропадут. На склад ничего не добавлялось. ⇒ Girilen tüm kalemler silinecek. Stoka hiçbir şey eklenmemişti. ⇒ All entered lines will be lost. Nothing has been added to stock.
+Все созданные категории. Те, в которых остались материалы, сохранятся. ⇒ Oluşturulan tüm kategoriler. İçinde malzeme kalanlar korunur. ⇒ All created categories. Those that still contain materials will stay.
+Все твои данные будут заменены учебными примерами. Сначала сохрани копию, если она нужна. ⇒ Tüm verileriniz örnek verilerle değiştirilecek. Gerekirse önce bir yedek alın. ⇒ All your data will be replaced by sample data. Save a backup first if you need it.
+Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023. ⇒ Prototipteki tüm değişiklikleriniz silinecek, başlangıç örnekleri ve 2023 numaralı sipariş geri gelecek. ⇒ All your edits in the prototype will disappear and the starting examples and order #2023 will return.
+Вставь сохранённый текст или выбери файл. Текущие данные будут заменены. Данные старой версии читаются без потерь. ⇒ Kaydettiğiniz metni yapıştırın veya dosya seçin. Mevcut veriler değiştirilecek. Eski sürümün verileri kayıpsız okunur. ⇒ Paste the saved text or choose a file. Current data will be replaced. Data from an older version is read without loss.
+Вставь сюда ⇒ Buraya yapıştırın ⇒ Paste here
+Всё сохраняется само, можно вернуться позже ⇒ Her şey otomatik kaydedilir, sonra devam edebilirsiniz ⇒ Everything saves automatically, you can come back later
+Всё, что ты ввела, сохранено. Можно вернуться к закупке и продолжить позже. ⇒ Girdiğiniz her şey kaydedildi. Alıma daha sonra dönüp devam edebilirsiniz. ⇒ Everything you entered is saved. You can return to the purchase and continue later.
+Вход ⇒ Giriş ⇒ Log in
+Выбери другую единицу ⇒ Başka bir birim seçin ⇒ Choose a different unit
+Выбери материал со склада ⇒ Stoktan malzeme seçin ⇒ Choose a material from stock
+Выбери материалы со склада, и приложение посчитает себестоимость и цену. ⇒ Stoktan malzemeleri seçin, uygulama maliyeti ve fiyatı hesaplasın. ⇒ Choose materials from stock and the app will calculate the cost and price.
+Выбрать ⇒ Seç ⇒ Choose
+Выбрать материал ⇒ Malzeme seç ⇒ Choose material
+Выбрать файл ⇒ Dosya seç ⇒ Choose file
+Выйти ⇒ Çıkış Yap ⇒ Log out
+Выйти всё равно ⇒ Yine de çık ⇒ Log out anyway
+Выйти из аккаунта? ⇒ Hesaptan çıkılsın mı? ⇒ Log out of your account?
+Выполнить ⇒ Uygula ⇒ Apply
+Выручка ⇒ Ciro ⇒ Revenue
+Выручка по периодам ⇒ Döneme göre ciro ⇒ Revenue by period
+Вьетнамский донг ⇒ Vietnam dongu ⇒ Vietnamese dong
+Где лежит ⇒ Nerede duruyor ⇒ Where it is kept
+Где продано ⇒ Nereye satıldı ⇒ Where it was sold
+Год ⇒ Yıl ⇒ Year
+Готово ⇒ Tamam ⇒ Done
+Готово: можно начинать с чистого листа ⇒ Hazır: temiz bir sayfayla başlayabilirsiniz ⇒ Done: you can start from a clean slate
+Готово: склад списан, цены зафиксированы ⇒ Tamam: stok düşüldü, fiyatlar sabitlendi ⇒ Done: stock written off, prices frozen
+Готовые ⇒ Hazır ⇒ Finished
+Готовых изделий нет ⇒ Hazır ürün yok ⇒ No finished pieces
+Грузинский лари ⇒ Gürcü larisi ⇒ Georgian lari
+Группа ⇒ Grup ⇒ Group
+Да, главное, чтобы клей держал и металл, и камень. Лучше прозрачный ювелирный и дать ему выдержку сутки. ⇒ Evet, önemli olan yapıştırıcının hem metali hem taşı tutması. Şeffaf takı yapıştırıcısı daha iyi, bir gün kuruması için bekletin. ⇒ Yes, the main thing is that the glue holds both metal and stone. A clear jewelry glue is best; let it cure for a day.
+Да, удалить ⇒ Evet, sil ⇒ Yes, delete
+Дай курсу название ⇒ Kursa bir ad verin ⇒ Give the course a name
+Дай материалу название ⇒ Malzemeye bir ad verin ⇒ Give the material a name
+Дай позиции название ⇒ Kaleme bir ad verin ⇒ Give the line a name
+Дай работе название ⇒ İşe bir ad verin ⇒ Give the project a name
+Дай уроку название ⇒ Derse bir ad verin ⇒ Give the lesson a name
+Данные на двух устройствах ⇒ İki cihazda veri var ⇒ Data on two devices
+Данные обновлены с другого устройства ⇒ Veriler başka bir cihazdan güncellendi ⇒ Data updated from another device
+Данные покупателей хранятся только на этом устройстве. В настоящем приложении понадобится согласие покупателей и защита персональных данных по законам твоих стран. ⇒ Alıcı bilgileri yalnızca bu cihazda saklanır. Gerçek kullanımda alıcıların rızası ve ülkenizin yasalarına göre kişisel verilerin korunması gerekir. ⇒ Buyer details are stored only on this device. In real use you will need buyers' consent and personal data protection under the laws of your countries.
+Данные продажи ⇒ Satış bilgileri ⇒ Sale details
+Данные продажи сохранены ⇒ Satış bilgileri kaydedildi ⇒ Sale details saved
+Дарья В. ⇒ Darya V. ⇒ Darya V.
+Дарья Волкова ⇒ Darya Volkova ⇒ Darya Volkova
+Дата ⇒ Tarih ⇒ Date
+Дата продажи ⇒ Satış tarihi ⇒ Sale date
+Датская крона ⇒ Danimarka kronu ⇒ Danish krone
+Двигай фото пальцем или мышью. Приближай ползунком, щипком или колёсиком. ⇒ Fotoğrafı parmağınızla veya fareyle kaydırın. Kaydırıcıyla, iki parmakla veya fare tekerleğiyle yakınlaştırın. ⇒ Move the photo with your finger or mouse. Zoom with the slider, a pinch or the wheel.
+Действие ⇒ İşlem ⇒ Action
+Демо-данные восстановлены ⇒ Demo verileri geri yüklendi ⇒ Demo data restored
+Дирхам ОАЭ ⇒ BAE dirhemi ⇒ UAE dirham
+Длительность, мин ⇒ Süre, dk ⇒ Duration, min
+Для кого, что получилось, что улучшить ⇒ Kimin için, nasıl oldu, neyi iyileştirmeli ⇒ Who it is for, how it turned out, what to improve
+Для новых работ ⇒ Yeni işler için ⇒ For new projects
+Добавить ⇒ Ekle ⇒ Add
+Добавить материалы ⇒ Malzeme ekle ⇒ Add materials
+Добавить ученицу ⇒ Öğrenci ekle ⇒ Add a student
+Добавлено: {0} ⇒ Eklendi: {0} ⇒ Added: {0}
+Добавь материалы со склада, и ученицы увидят, что нужно купить. ⇒ Stoktan malzeme ekleyin, öğrenciler neyi satın alacaklarını görsün. ⇒ Add materials from stock so students can see what to buy.
+Добавь фото, название и количество. Можно выбрать уже знакомый SKU. ⇒ Fotoğraf, ad ve miktar ekleyin. Tanıdık bir ürün kodunu da seçebilirsiniz. ⇒ Add a photo, a name and a quantity. You can also pick a SKU you already know.
+Добавь хотя бы один материал. ⇒ En az bir malzeme ekleyin. ⇒ Add at least one material.
+Добавь хотя бы одну позицию ⇒ En az bir kalem ekleyin ⇒ Add at least one line
+Добро пожаловать в чат курса! Задавайте вопросы под любым уроком, я отвечаю каждый день. ⇒ Kurs sohbetine hoş geldiniz! Herhangi bir dersin altında soru sorabilirsiniz, her gün yanıtlıyorum. ⇒ Welcome to the course chat! Ask questions under any lesson, I reply every day.
+Доллар США ⇒ ABD doları ⇒ US dollar
+Доставка ⇒ Kargo ⇒ Shipping
+Доставка не может быть отрицательной ⇒ Kargo ücreti negatif olamaz ⇒ Shipping cannot be negative
+Доставка, ⇒ Kargo, ⇒ Shipping,
+Доставка, {10} ⇒ Kargo, {10} ⇒ Shipping, {10}
+Доставка, {6} ⇒ Kargo, {6} ⇒ Shipping, {6}
+Доставка{1} ⇒ Kargo{1} ⇒ Shipping{1}
+Доступ ⇒ Erişim ⇒ Access
+Доступ закончился ⇒ Erişim süresi doldu ⇒ Access has ended
+Доступ закончился{0} ⇒ Erişim süresi doldu{0} ⇒ Access has ended{0}
+Доступ закрыт ⇒ Erişim kapalı ⇒ Access is closed
+Доступ к записи закрыт: подписка не активна. ⇒ Kayda erişim kapalı: abonelik etkin değil. ⇒ Saving is closed: the subscription is not active.
+Доступ пока не активен. Если ты оплатила, подожди и проверь ещё раз. ⇒ Erişim henüz etkin değil. Ödeme yaptıysanız biraz bekleyip tekrar kontrol edin. ⇒ Access is not active yet. If you have paid, wait a little and check again.
+Доход от курсов, {2} ⇒ Kurs geliri, {2} ⇒ Course income, {2}
+Другое ⇒ Diğer ⇒ Other
+Евро ⇒ Euro ⇒ Euro
+Египетский фунт ⇒ Mısır lirası ⇒ Egyptian pound
+Единица учёта ⇒ Sayım birimi ⇒ Unit of count
+Единицы пересчитаны: ×{0} ({1}) ⇒ Birimler yeniden hesaplandı: ×{0} ({1}) ⇒ Units converted: ×{0} ({1})
+Если в категории есть материалы, перед удалением можно перенести их в другую или удалить вместе с ней. ⇒ Kategoride malzeme varsa, silmeden önce başka bir kategoriye taşıyabilir veya birlikte silebilirsiniz. ⇒ If the category contains materials, you can move them elsewhere before deleting, or delete them together with it.
+Если время указано вручную, считаем его. Оно главнее таймера. ⇒ Süre elle girildiyse onu kullanırız. Sayaçtan önceliklidir. ⇒ If the time is entered by hand, we use it. It takes priority over the timer.
+Есть данные, которые не попали в облако. Если выйти сейчас, они пропадут. Лучше сначала сохрани копию данных. ⇒ Buluta ulaşmamış veriler var. Şimdi çıkarsanız kaybolur. Önce bir veri yedeği almanız iyi olur. ⇒ Some data has not reached the cloud. If you log out now it will be lost. It is better to save a backup first.
+Есть изменения, они скоро отправятся. ⇒ Değişiklikler var, yakında gönderilecek. ⇒ There are changes, they will be sent soon.
+Ещё ⇒ Daha ⇒ More
+Ещё не синхронизировано ⇒ Henüz eşitlenmedi ⇒ Not synced yet
+За {4} год ⇒ {4} yılı için ⇒ For {4}
+Забыла пароль ⇒ Şifremi unuttum ⇒ Forgot password
+Завершай работу: загрузи фото, подвинь и приблизь кадр. ⇒ İşi tamamlayın: fotoğraf yükleyin, kadrajı kaydırıp yakınlaştırın. ⇒ Finish a project: upload a photo, then move and zoom the frame.
+Завершение ⇒ Tamamlama ⇒ Finishing
+Завершить работу ⇒ İşi tamamla ⇒ Finish the project
+Завершённые работы и закупки в архиве останутся как есть. ⇒ Arşivdeki tamamlanmış işler ve alımlar olduğu gibi kalır. ⇒ Finished projects and purchases in the archive stay as they are.
+Завершённые работы появятся здесь с составом, ценами и фото. ⇒ Tamamlanan işler burada içeriği, fiyatları ve fotoğraflarıyla görünür. ⇒ Finished projects will appear here with their materials, prices and photos.
+Загружено материалов: {0} ⇒ Yüklenen malzeme: {0} ⇒ Materials loaded: {0}
+Загрузить учебные примеры ⇒ Örnek verileri yükle ⇒ Load sample data
+Загрузить учебные примеры? ⇒ Örnek veriler yüklensin mi? ⇒ Load sample data?
+Заказ для подруги, застёжка на карабине. ⇒ Arkadaşım için sipariş, karabina kopçalı. ⇒ An order for a friend, carabiner clasp.
+Заказ №2023 ⇒ Sipariş No. 2023 ⇒ Order #2023
+Заказ №2023, 5 ноября 2026 ⇒ Sipariş No. 2023, 5 Kasım 2026 ⇒ Order #2023, 5 November 2026
+Заколка ⇒ Toka ⇒ Hair slide
+Заколка «Лесной оберег» ⇒ Toka «Orman Muskası» ⇒ Hair slide “Forest Amulet”
+Заколка «Лунный камень» ⇒ Toka «Ay Taşı» ⇒ Hair slide “Moonstone”
+Заколка «Рассвет» ⇒ Toka «Şafak» ⇒ Hair slide “Dawn”
+Заколка «Янтарная луна» ⇒ Toka «Kehribar Ay» ⇒ Hair slide “Amber Moon”
+Заколка-автомат 6 см ⇒ Otomatik toka 6 cm ⇒ Barrette 6 cm
+Закрыть ⇒ Kapat ⇒ Close
+Закупка 100 камней по 3 + доставка 30 ⇒ 3'ten 100 taş alımı + 30 kargo ⇒ Purchase of 100 stones at 3 + 30 shipping
+Закупка с доставкой ⇒ Kargolu alım ⇒ Purchase with shipping
+Закупка сохранена, продолжить можно из «Закупок» ⇒ Alım kaydedildi, «Alımlar» bölümünden devam edebilirsiniz ⇒ The purchase is saved, you can continue from “Purchases”
+Закупка: ⇒ Alım: ⇒ Purchase:
+Закупки ⇒ Alımlar ⇒ Purchases
+Заменить ⇒ Değiştir ⇒ Replace
+Заменить данные ⇒ Verileri değiştir ⇒ Replace data
+Заменить материал ⇒ Malzemeyi değiştir ⇒ Replace material
+Заменить фото ⇒ Fotoğrafı değiştir ⇒ Replace photo
+Заметка ⇒ Not ⇒ Note
+Заметка к работе ⇒ İş notu ⇒ Project note
+Заметки ⇒ Notlar ⇒ Notes
+Заметки к работе ⇒ İş notları ⇒ Project notes
+Занято {0} МБ из {1} МБ памяти браузера. ⇒ Tarayıcı belleğinin {1} MB'ından {0} MB'ı kullanılıyor. ⇒ {0} MB of {1} MB of browser storage is used.
+Заплачено за весь остаток, ⇒ Kalan tüm miktar için ödenen, ⇒ Paid for the whole remainder,
+Заполни пример: 100 камней по 3 + доставка 30. Нажми «Назад»: данные не пропадут. ⇒ Örneği doldurun: 3'ten 100 taş + 30 kargo. «Geri»ye basın: veriler kaybolmaz. ⇒ Fill in the example: 100 stones at 3 + 30 shipping. Press “Back”: the data will not be lost.
+Затраты на брак ⇒ Fire maliyeti ⇒ Waste cost
+Затраты на брак (отдельно) ⇒ Fire maliyeti (ayrı) ⇒ Waste cost (separate)
+Здесь будет видео урока ⇒ Dersin videosu burada olacak ⇒ The lesson video will be here
+Здесь единица меняется без пересчёта. Чтобы пересчитать количество и цену, используй блок «Цена и единицы» ниже. ⇒ Burada birim yeniden hesaplanmadan değişir. Miktarı ve fiyatı yeniden hesaplamak için aşağıdaki «Fiyat ve birimler» bölümünü kullanın. ⇒ Here the unit changes without recalculation. To recalculate the quantity and price, use the “Price and units” block below.
+Здесь обсуждаем заколки с кристаллами. Фото своих работ выкладывайте сюда. ⇒ Burada kristalli tokaları konuşuyoruz. Çalışmalarınızın fotoğraflarını buraya yükleyin. ⇒ Here we talk about hair slides with crystals. Post photos of your work here.
+Здесь пока тихо ⇒ Burası şimdilik sessiz ⇒ It is quiet here for now
+Знакомство и материалы ⇒ Tanışma ve malzemeler ⇒ Introduction and materials
+Золото ⇒ Altın ⇒ Gold
+И из сохранённых дизайнов: {0}. ⇒ Ve kayıtlı tasarımlardan: {0}. ⇒ And from saved designs: {0}.
+Из склада ⇒ Stoktan ⇒ From stock
+Из склада (SKU) ⇒ Stoktan (ürün kodu) ⇒ From stock (SKU)
+Изделие вернётся в «в наличии», данные покупателя будут стёрты. ⇒ Ürün tekrar «stokta» olacak, alıcı bilgileri silinecek. ⇒ The piece will go back to “in stock” and the buyer's details will be erased.
+Изделие снова в наличии ⇒ Ürün yeniden stokta ⇒ The piece is back in stock
+Изменения сохраняются на устройстве и отправляются в облако, когда появится связь. ⇒ Değişiklikler cihazınıza kaydedilir ve bağlantı geldiğinde buluta gönderilir. ⇒ Changes are saved on your device and sent to the cloud when you are back online.
+Измени запрос или категорию. ⇒ Aramayı veya kategoriyi değiştirin. ⇒ Change the search or the category.
+Изменить ⇒ Düzenle ⇒ Edit
+Израильский шекель ⇒ İsrail şekeli ⇒ Israeli shekel
+Имя ⇒ Ad ⇒ Name
+Имя покупателя ⇒ Alıcının adı ⇒ Buyer's name
+Инвентаризация ⇒ Sayım ⇒ Stocktaking
+Индийская рупия ⇒ Hindistan rupisi ⇒ Indian rupee
+Индонезийская рупия ⇒ Endonezya rupisi ⇒ Indonesian rupiah
+Инструмент: 3 применения по 12, затем поломка 1 шт ⇒ Alet: 12'den 3 kullanım, ardından 1 adet kırılma ⇒ Tool: 3 uses at 12, then 1 piece breaks
+Инструменты ⇒ Aletler ⇒ Tools
+Инструменты считаются в штуках, их пересчитывать не нужно ⇒ Aletler adetle sayılır, yeniden hesaplamak gerekmez ⇒ Tools are counted in pieces, no conversion is needed
+Исправление ошибки ⇒ Hata düzeltme ⇒ Error correction
+Итого ⇒ Toplam ⇒ Total
+Кадр фото ⇒ Fotoğraf kadrajı ⇒ Photo frame
+Казахстанский тенге ⇒ Kazak tengesi ⇒ Kazakhstani tenge
+Как посчитать себестоимость и красиво сфотографировать изделие. ⇒ Maliyet nasıl hesaplanır ve ürün nasıl güzel fotoğraflanır. ⇒ How to calculate the cost and photograph a piece beautifully.
+Как сохранить всё и вернуть обратно. ⇒ Her şeyi nasıl kaydeder ve geri yüklersiniz. ⇒ How to save everything and bring it back.
+Как считать: цена инструмента ÷ на сколько применений его хватит. Например, 180 ÷ 15 = 12 за одно применение. ⇒ Nasıl hesaplanır: aletin fiyatı ÷ kaç kullanıma yeteceği. Örneğin 180 ÷ 15 = kullanım başına 12. ⇒ How to calculate: the tool's price ÷ how many uses it will last. For example, 180 ÷ 15 = 12 per use.
+Какие кристаллы выбрать ⇒ Hangi kristalleri seçmeli ⇒ Which crystals to choose
+Какие основы, камни и кристаллы нужны, где их брать и как не переплатить. ⇒ Hangi aparatlar, taşlar ve kristaller gerekir, nereden alınır ve fazla ödememek için ne yapılır. ⇒ Which bases, stones and crystals you need, where to get them and how not to overpay.
+Какой клей лучше держит на металле? ⇒ Metalde hangi yapıştırıcı daha iyi tutar? ⇒ Which glue holds best on metal?
+Каменный базар, Мерсин ⇒ Taş pazarı, Mersin ⇒ Stone bazaar, Mersin
+Камни ⇒ Taşlar ⇒ Stones
+Камни для проверки ⇒ Deneme taşları ⇒ Stones for testing
+Канадский доллар ⇒ Kanada doları ⇒ Canadian dollar
+Канекалон 100 г ⇒ Kanekalon 100 g ⇒ Kanekalon 100 g
+Канекалон Easy Braid ⇒ Kanekalon Easy Braid ⇒ Kanekalon Easy Braid
+Канекалон для кос, 60 см ⇒ Örgü kanekalonu, 60 cm ⇒ Kanekalon for braids, 60 cm
+Канекалон и крепления. ⇒ Kanekalon ve bağlantılar. ⇒ Kanekalon and fasteners.
+Карточка ⇒ Kart ⇒ Card
+Карточка создаётся при завершении работы. ⇒ Kart, iş tamamlandığında oluşturulur. ⇒ The card is created when you finish a project.
+Карточка сохранена ⇒ Kart kaydedildi ⇒ Card saved
+Категории ⇒ Kategoriler ⇒ Categories
+Категория добавлена ⇒ Kategori eklendi ⇒ Category added
+Категория и материалы ({0}) удалены ⇒ Kategori ve malzemeler ({0}) silindi ⇒ Category and materials ({0}) deleted
+Категория переименована ⇒ Kategori yeniden adlandırıldı ⇒ Category renamed
+Категория удалена ⇒ Kategori silindi ⇒ Category deleted

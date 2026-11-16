@@ -355,6 +355,7 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 .try{display:flex;flex-direction:column;gap:8px}
 .try button{display:flex;gap:12px;text-align:left;padding:11px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:18px;align-items:flex-start;transition:transform .2s,border-color .2s}
 .try button:hover{border-color:var(--clay);transform:translateX(3px)}
+.gate-lang{margin:14px auto 0;max-width:300px}
 .try.tips>div{display:flex;gap:12px;text-align:left;padding:11px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:18px;align-items:flex-start}
 .try .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--clay-soft);color:var(--clay);font-size:12px;font-weight:800;display:grid;place-items:center}
 .try b{display:block;font-size:13.5px;font-weight:800}
@@ -459,29 +460,128 @@ const uid = p => p + '_' + Math.random().toString(36).slice(2, 8) + Date.now().t
 const r2 = n => Math.round((n + Number.EPSILON) * 100) / 100;
 const nz = v => { const n = parseFloat(String(v).replace(',', '.')); return isFinite(n) ? n : 0; };
 const QUICK_CATS = ['Бусины и камни', 'Нитки и шнуры', 'Фурнитура', 'Ткани и основы', 'Инструменты', 'Клеи', 'Упаковка', 'Другое'];
-const ruCmp = (a, b) => a.localeCompare(b, 'ru');
+const ruCmp = (a, b) => a.localeCompare(b, LANG);
+
+/* ============================================================
+   ЯЗЫК ИНТЕРФЕЙСА (ru / tr / en)
+   Исходные тексты русские. Для tr и en экран переводится на лету по словарю
+   (i18n-tr.js / i18n-en.js). Данные пользователя не переводятся.
+============================================================ */
+const LANGS = ['ru', 'tr', 'en'];
+const detectLang = () => {
+  try { const q = new URLSearchParams(location.search).get('lang'); if (LANGS.includes(q)) { localStorage.setItem('mm-app-lang', q); return q; } } catch (e) {}
+  try { const v = localStorage.getItem('mm-app-lang'); if (LANGS.includes(v)) return v; } catch (e) {}
+  const l = (navigator.language || '').slice(0, 2).toLowerCase();
+  return l === 'tr' ? 'tr' : (!l || ['ru', 'uk', 'be', 'kk', 'ky', 'uz', 'tg', 'hy', 'az', 'ka'].includes(l)) ? 'ru' : 'en';
+};
+const LANG = detectLang();
+const LOC = {ru: 'ru-RU', tr: 'tr-TR', en: 'en-US'}[LANG];
+const DEC = LANG === 'en' ? '.' : ',';
+const CYR = /[А-Яа-яЁё]/;
+const TD = {exact: Object.create(null), pats: [], pls: [], rules: []};
+function initDict(d) {
+  if (!d) return;
+  const pats = [];
+  Object.keys(d.t || {}).forEach(k => {
+    if (/\{\d+\}/.test(k)) {
+      const parts = k.split(/\{\d+\}/), stat = parts.join('').length;
+      pats.push({re: new RegExp('^' + parts.map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('(.*?)') + '$'), out: d.t[k], stat, ids: (k.match(/\{\d+\}/g) || []).map(x => +x.slice(1, -1))});
+    } else TD.exact[k] = d.t[k];
+  });
+  TD.pats = pats.sort((a, b) => b.stat - a.stat);
+  TD.pls = (d.pl || []).map(([forms, out]) => ({re: new RegExp('(\\d[\\d.,\\u00a0\\u202f]*)\\s+(' + forms.join('|') + ')(?![А-Яа-яЁё])', 'g'), out}));
+  TD.rules = (d.rules || []).map(([a, b]) => [new RegExp(a, 'g'), b]);
+  TD.on = true;
+}
+function prePl(x) {
+  TD.pls.forEach(g => { x = x.replace(g.re, (m, n) => { const k = parseInt(String(n).replace(/\D/g, ''), 10); const o = Array.isArray(g.out) ? (k === 1 && !/[.,]/.test(n) ? g.out[0] : g.out[1]) : g.out; return n + ' ' + o; }); });
+  TD.rules.forEach(([re, b]) => { x = x.replace(re, b); });
+  return x;
+}
+function patTr(x) {
+  for (const p of TD.pats) {
+    const m = p.re.exec(x); if (!m) continue;
+    if (p.stat <= 6 && !m.slice(1).every(v => /\d/.test(v))) continue;
+    return p.out.replace(/\{(\d+)\}/g, (_, i) => { const v = m[p.ids.indexOf(+i) + 1]; return v != null && CYR.test(v) ? tr(v) : v; });
+  }
+  return null;
+}
+const SEGS = [' · ', ', ', ': ', ' — ', ' / '];
+function trCore(c, depth = 0) {
+  let e = TD.exact[c]; if (e != null) return e;
+  let r = patTr(c); if (r != null) return r;
+  const x = prePl(c);
+  if (!CYR.test(x)) return x;
+  e = TD.exact[x]; if (e != null) return e;
+  r = patTr(x); if (r != null) return r;
+  // «Название (₺)»  и  «Подпись, ₺»
+  let m0 = /^(.+?) \((.{1,8})\)$/.exec(x);
+  if (m0 && TD.exact[m0[1]] != null) return TD.exact[m0[1]] + ' (' + m0[2] + ')';
+  m0 = /^(.+?),\s?(\S{1,6})$/.exec(x);
+  if (m0 && TD.exact[m0[1] + ','] != null) return TD.exact[m0[1] + ','] + ' ' + m0[2];
+  // число рядом со словом: «свободно 84», «брак 4,80 ₺», «60 cm · ...»
+  let m = /^(.+?)\s+(-?[\d., ]+(?:\s?\S{1,3})?)$/.exec(x);
+  if (m && TD.exact[m[1]] != null) return TD.exact[m[1]] + ' ' + m[2];
+  m = /^(-?[\d., ]+\S{0,3})\s+(.+)$/.exec(x);
+  if (m && CYR.test(m[2]) && depth < 3) { const t = trCore(m[2], depth + 1); if (t !== m[2]) return m[1] + ' ' + t; }
+  if (depth < 3) for (const sp of SEGS) {
+    if (x.indexOf(sp) < 1) continue;
+    const parts = x.split(sp); if (parts.length < 2) continue;
+    const out = parts.map(t => CYR.test(t) ? trCore(t.trim(), depth + 1) : t);
+    if (out.some((t, i) => t !== parts[i])) return out.join(sp);
+  }
+  return x;
+}
+function tr(s) {
+  if (!TD.on || !s || !CYR.test(s)) return s;
+  const core = s.trim(); if (!core) return s;
+  const lead = s.slice(0, s.indexOf(core)), trail = s.slice(s.indexOf(core) + core.length);
+  return lead + trCore(core) + trail;
+}
+const SKIPT = new Set(['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'NOSCRIPT']);
+const TRATTR = ['placeholder', 'aria-label', 'title', 'alt'];
+function trAttrs(el) { if (!el.getAttribute) return; TRATTR.forEach(a => { const v = el.getAttribute(a); if (v && CYR.test(v)) { const t = tr(v); if (t !== v) el.setAttribute(a, t); } }); }
+function trNode(n) { const v = n.nodeValue; if (v && CYR.test(v) && !(n.parentNode && SKIPT.has(n.parentNode.tagName))) { const t = tr(v); if (t !== v) n.nodeValue = t; } }
+function trTree(root) {
+  if (root.nodeType === 3) return trNode(root);
+  if (root.nodeType !== 1 || SKIPT.has(root.tagName)) return;
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), nodes = [];
+  while (w.nextNode()) nodes.push(w.currentNode);
+  nodes.forEach(trNode); trAttrs(root); root.querySelectorAll('[placeholder],[aria-label],[title],[alt]').forEach(trAttrs);
+}
+function startTranslator() {
+  if (!TD.on) return;
+  document.documentElement.lang = LANG;
+  document.title = tr(document.title);
+  trTree(document.body);
+  new MutationObserver(ms => { for (const m of ms) { if (m.type === 'childList') m.addedNodes.forEach(trTree); else if (m.type === 'characterData') trNode(m.target); else trAttrs(m.target); } })
+    .observe(document.body, {childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: TRATTR});
+}
+const loadScriptOnce = src => new Promise(r => { try { const sc = document.createElement('script'); sc.src = src; sc.onload = sc.onerror = () => r(); document.head.appendChild(sc); } catch (e) { r(); } });
+async function loadLang() { if (LANG === 'ru') return; await loadScriptOnce('i18n-' + LANG + '.js'); initDict(window.I18N_DICT); }
+const LH = {ru: ['ч', 'мин'], tr: ['sa', 'dk'], en: ['h', 'min']}[LANG];
 
 /* валюты: можно выбрать любую из списка (в прототипе список короткий, в продукте будет полный ISO 4217) */
 const CURS = [['TRY','₺','Турецкая лира'],['USD','$','Доллар США'],['EUR','€','Евро'],['RUB','₽','Российский рубль'],['UAH','₴','Украинская гривна'],['KZT','₸','Казахстанский тенге'],['BYN','Br','Белорусский рубль'],['GEL','₾','Грузинский лари'],['AMD','֏','Армянский драм'],['AZN','₼','Азербайджанский манат'],['UZS','soʻm','Узбекский сум'],['KGS','с','Киргизский сом'],['MDL','L','Молдавский лей'],['PLN','zł','Польский злотый'],['CZK','Kč','Чешская крона'],['HUF','Ft','Венгерский форинт'],['RON','lei','Румынский лей'],['BGN','лв','Болгарский лев'],['RSD','дин','Сербский динар'],['GBP','£','Фунт стерлингов'],['CHF','CHF','Швейцарский франк'],['SEK','kr','Шведская крона'],['NOK','kr','Норвежская крона'],['DKK','kr','Датская крона'],['AED','AED','Дирхам ОАЭ'],['SAR','SAR','Саудовский риял'],['ILS','₪','Израильский шекель'],['EGP','E£','Египетский фунт'],['MAD','MAD','Марокканский дирхам'],['ZAR','R','Южноафриканский рэнд'],['INR','₹','Индийская рупия'],['CNY','¥','Китайский юань'],['JPY','¥','Японская иена'],['KRW','₩','Корейская вона'],['THB','฿','Тайский бат'],['VND','₫','Вьетнамский донг'],['IDR','Rp','Индонезийская рупия'],['MYR','RM','Малайзийский ринггит'],['SGD','S$','Сингапурский доллар'],['AUD','A$','Австралийский доллар'],['CAD','C$','Канадский доллар'],['MXN','Mex$','Мексиканское песо'],['BRL','R$','Бразильский реал']];
 const curInfo = c => CURS.find(x => x[0] === c) || [c, c, c];
 const base = () => (typeof S !== 'undefined' && S && S.settings && S.settings.base) || 'TRY';
 const sym = () => curInfo(base())[1];
-const money = n => (isFinite(n) ? r2(n) : 0).toLocaleString('ru-RU', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ' + sym();
-const moneyU = n => { const v = isFinite(n) ? n : 0, d = Math.abs(v * 100 - Math.round(v * 100)) > 1e-6 && Math.abs(v) < 100 ? 3 : 2; return v.toLocaleString('ru-RU', {minimumFractionDigits: 2, maximumFractionDigits: d}) + ' ' + sym(); };
-const num = n => Number(r2(n)).toLocaleString('ru-RU', {maximumFractionDigits: 2});
-const nv = v => (v ? String(v).replace('.', ',') : '');
-const MON = ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
-const MONF = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+const money = n => (isFinite(n) ? r2(n) : 0).toLocaleString(LOC, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' ' + sym();
+const moneyU = n => { const v = isFinite(n) ? n : 0, d = Math.abs(v * 100 - Math.round(v * 100)) > 1e-6 && Math.abs(v) < 100 ? 3 : 2; return v.toLocaleString(LOC, {minimumFractionDigits: 2, maximumFractionDigits: d}) + ' ' + sym(); };
+const num = n => Number(r2(n)).toLocaleString(LOC, {maximumFractionDigits: 2});
+const nv = v => (v ? String(v).replace('.', DEC) : '');
+const MON = {ru: ['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'], tr: ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'], en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']}[LANG];
+const MONF = {ru: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], tr: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'], en: ['January','February','March','April','May','June','July','August','September','October','November','December']}[LANG];
 const todayISO = () => new Date().toISOString().slice(0, 10);
 const ago = n => { const d = new Date(); d.setDate(d.getDate() - n); return d.toISOString().slice(0, 10); };
 const fmtDate = iso => { const [y, m, d] = String(iso).split('-'); return `${+d} ${MON[+m - 1]} ${y}`; };
-const fmtMin = m => { m = Math.round(m); const h = Math.floor(m / 60), mm = m % 60; return h ? `${h} ч ${String(mm).padStart(2, '0')} мин` : `${mm} мин`; };
+const fmtMin = m => { m = Math.round(m); const h = Math.floor(m / 60), mm = m % 60; return h ? `${h} ${LH[0]} ${String(mm).padStart(2, '0')} ${LH[1]}` : `${mm} ${LH[1]}`; };
 const fmtClock = ms => { const s = Math.max(0, Math.floor(ms / 1000)); return [Math.floor(s / 3600), Math.floor(s % 3600 / 60), s % 60].map(v => String(v).padStart(2, '0')).join(':'); };
-const fmtTime = ts => new Date(ts).toLocaleTimeString('ru-RU', {hour: '2-digit', minute: '2-digit'});
+const fmtTime = ts => new Date(ts).toLocaleTimeString(LOC, {hour: '2-digit', minute: '2-digit'});
 const pl = (n, f) => { n = Math.abs(n) % 100; const k = n % 10; return n > 10 && n < 20 ? f[2] : k > 1 && k < 5 ? f[1] : k === 1 ? f[0] : f[2]; };
 const ic = (n, c = '') => `<svg class="ic ${c}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
-const short = v => v >= 10000 ? Math.round(v / 1000) + 'k' : v >= 1000 ? (v / 1000).toFixed(1).replace('.', ',') + 'k' : String(Math.round(v));
-const fmtInput = v => String(r2(v)).replace('.', ',');
+const short = v => v >= 10000 ? Math.round(v / 1000) + 'k' : v >= 1000 ? (v / 1000).toFixed(1).replace('.', DEC) + 'k' : String(Math.round(v));
+const fmtInput = v => String(r2(v)).replace('.', DEC);
 
 const CAT = ['Кристаллы Swarovski','Натуральные камни','Нитки и шнуры','Металл и фурнитура','Клеи и инструменты','Основы и ткани','Волосы и плетения','Упаковка','Другое'];
 const KINDS = ['Серьги','Браслет','Колье','Заколка','Ободок','Съёмная коса','Сумочка','Другое'];
@@ -1239,14 +1339,19 @@ function installCardHTML() {
     <p class="hint" style="font-size:13px">Приложение ставится без магазинов, как обычное, и работает без интернета.</p>
     <p class="hint"><b>iPhone (Safari):</b> «Поделиться» → «На экран Домой».<br><b>Android (Chrome):</b> меню ⋮ → «Установить приложение».<br><b>Компьютер (Chrome, Edge):</b> значок установки справа в адресной строке.</p>
     <button class="btn pri" data-act="installApp">Установить</button>`}
-    <p class="hint">Пока данные на каждом устройстве свои: телефон и компьютер не синхронизируются. Облако и вход по почте будут на следующем этапе.</p></div>`;
+    ${CLOUD.on ? '' : '<p class="hint">Пока данные на каждом устройстве свои: телефон и компьютер не синхронизируются.</p>'}</div>`;
 }
 function fillStorage() { if (navigator.storage && navigator.storage.estimate) navigator.storage.estimate().then(e => { const el = $('#storUse'); if (el && e.quota) el.textContent = `Занято ${(e.usage / 1048576).toFixed(1)} МБ из ${Math.round(e.quota / 1048576)} МБ памяти браузера.`; }).catch(() => {}); }
+function langSwitchHTML(cls = '') {
+  const nm = {ru: 'Русский', tr: 'Türkçe', en: 'English'};
+  return `<div class="seg ${cls}" role="group" aria-label="Language">${LANGS.map(l => `<button class="${l === LANG ? 'on' : ''}" data-act="setLang" data-v="${l}" lang="${l}">${nm[l]}</button>`).join('')}</div>`;
+}
 function moreScreen() {
   setTimeout(fillStorage, 0);
   const s = S.settings, checks = runChecks(), bi = curInfo(s.base);
   return `<header class="top px"><div><span class="kick">настрой под себя</span><h1>Ещё</h1><p class="sub">Валюта, настройки, копия данных и проверка расчётов</p></div></header>
     <div class="px stack">
+      <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Язык</h2></div>${langSwitchHTML()}</div>
       <div class="card stack" style="gap:12px"><div class="sect" style="padding-top:0"><h2>Для новых работ</h2></div>
         <div class="fld"><span class="lbl">Моя валюта</span><button class="in" style="display:flex;align-items:center;gap:8px;text-align:left;font-weight:700" data-act="curBase"><span class="pill acc">${esc(bi[0])}</span><span class="grow">${esc(bi[2])} (${esc(bi[1])})</span>${ic('chev', 'sm')}</button>
           <span class="hint">В ней считаются склад, цены и статистика. Выбери один раз: при смене старые суммы не пересчитываются.</span></div>
@@ -1256,20 +1361,20 @@ function moreScreen() {
           <div class="fld"><label class="lbl" for="s_m">Прибыль, %</label><input id="s_m" class="in" inputmode="decimal" data-m="S.settings.margin" data-num value="${nv(s.margin)}"></div>
           <div class="fld"><label class="lbl" for="s_s">Доставка, ${sym()}</label><input id="s_s" class="in" inputmode="decimal" data-m="S.settings.shipping" data-num value="${nv(s.shipping)}"></div></div></div>
       <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Копия данных</h2></div>
-        <p class="hint" style="font-size:13px">Зачем это нужно. Сейчас все твои данные лежат только в этом браузере или телефоне. Если очистить браузер или сменить телефон, склад, закупки и архив пропадут. «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно. Так же можно перенести данные на другое устройство.</p>
-        <p class="hint">В настоящем приложении копия будет делаться сама, в облаке. Эта кнопка нужна на время прототипа.</p>
+        ${window.__PWA__ ? `<p class="hint" style="font-size:13px">Если ты вошла в аккаунт, твои данные уже хранятся в облаке и синхронизируются между устройствами. Копия в виде текста нужна как запасной вариант: «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно.</p>` : `<p class="hint" style="font-size:13px">Зачем это нужно. Сейчас все твои данные лежат только в этом браузере или телефоне. Если очистить браузер или сменить телефон, склад, закупки и архив пропадут. «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно. Так же можно перенести данные на другое устройство.</p>
+        <p class="hint">В настоящем приложении копия будет делаться сама, в облаке. Эта кнопка нужна на время прототипа.</p>`}
         <div class="two"><button class="btn" data-act="expOpen">${ic('upload')} Сохранить</button><button class="btn" data-act="impOpen">${ic('copy')} Восстановить</button></div>
         <p class="hint num" id="storUse"></p></div>
       ${CLOUD.on && CLOUD.user ? `<div class="card stack" id="cloudCard" style="gap:10px">${cloudCardInner()}</div>` : ''}
       ${window.__PWA__ ? installCardHTML() : ''}
-      <div class="card"><div class="sect" style="padding-top:0"><h2>Проверка по ТЗ</h2></div>
+      ${window.__PWA__ ? '' : `<div class="card"><div class="sect" style="padding-top:0"><h2>Проверка по ТЗ</h2></div>
         <p class="hint" style="margin-bottom:6px">Эти сценарии из раздела 6 считаются прямо сейчас на отдельном пустом складе.</p>
         ${checks.map(c => `<div class="check"><span class="ok ${c.ok ? '' : 'no'}">${ic(c.ok ? 'check' : 'x')}</span><div><b>Тест ${c.n}. ${esc(c.t)}</b><span>Ожидается: ${esc(c.exp)}<br>Получилось: ${esc(c.got)}</span></div></div>`).join('')}</div>
-      <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Что попробовать</h2></div>${guideHTML()}</div>
+      <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Что попробовать</h2></div>${guideHTML()}</div>`}
       <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Начать с чистого листа</h2></div>
         <p class="hint" style="font-size:13px">Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.</p>
         <button class="btn dng" data-act="wipeOpen">${ic('trash')} Очистить и начать заново</button></div>
-      <div class="card flat stack" style="gap:10px"><p class="hint">Это кликабельный прототип. Данные хранятся только в этом браузере. Картинки материалов нарисованы для примера, а свои фото загружаются файлом.</p>
+      <div class="card flat stack" style="gap:10px"><p class="hint">${window.__PWA__ ? 'Учебные примеры помогают посмотреть, как всё работает: склад, работы, продажи и Академия. Они заменят твои данные, поэтому сначала сохрани копию.' : 'Это кликабельный прототип. Данные хранятся только в этом браузере. Картинки материалов нарисованы для примера, а свои фото загружаются файлом.'}</p>
         <button class="btn sm dng" data-act="resetOpen">${window.__PWA__ ? 'Загрузить учебные примеры' : 'Вернуть демо-данные'}</button></div>
     </div>`;
 }
@@ -1305,7 +1410,7 @@ function coursesScreen() {
   const cs = AC().courses, y = nowD.getFullYear(), m = nowD.getMonth() + 1;
   return `<header class="top px"><div><span class="kick">делимся мастерством</span><h1>Академия</h1><p class="sub">${cs.length} ${pl(cs.length, ['курс','курса','курсов'])} · ${AC().students.length} ${pl(AC().students.length, ['ученица','ученицы','учениц'])}</p></div></header>
     <div class="px stack">
-      <div class="card"><div class="row" style="justify-content:space-between;align-items:flex-start"><div><div class="lbl">Доход от курсов, ${MONF[m - 1].toLowerCase()}</div><div class="big2 num">${money(incomeIn(y, m))}</div></div><div style="text-align:right"><div class="lbl">За ${y} год</div><b class="num">${money(incomeIn(y, null))}</b></div></div>
+      <div class="card"><div class="row" style="justify-content:space-between;align-items:flex-start"><div><div class="lbl">Доход от курсов, ${MONF[m - 1].toLocaleLowerCase(LOC)}</div><div class="big2 num">${money(incomeIn(y, m))}</div></div><div style="text-align:right"><div class="lbl">За ${y} год</div><b class="num">${money(incomeIn(y, null))}</b></div></div>
         <p class="hint" style="margin-top:8px">Оплату ты принимаешь на своей платформе. Здесь отмечаешь, кто купил и открыт ли доступ.</p></div>
       <button class="btn pri block" data-act="newCourse">${ic('plus')} Новый курс</button>
       ${cs.map((c, i) => `<button class="lcard" style="--i:${i}" data-act="openCourse" data-id="${c.id}"><img class="thumb lg" src="${c.photo || art(c.kind, c.hex)}" alt="">
@@ -1951,6 +2056,7 @@ A.tryIt = el => {
 
 
 /* облако: действия */
+A.setLang = el => { try { localStorage.setItem('mm-app-lang', el.dataset.v); } catch (e) {} flushSave(); setTimeout(() => location.reload(), 50); };
 A.gateMode = el => { ui.gate.mode = el.dataset.v; ui.gate.err = ''; ui.gate.msg = ''; renderGate(); };
 A.gateRecheck = async () => { ui.gate.err = ''; try { await checkAccess(); if (CLOUD.access.ok) { renderGate(); cloudSync(); } else { ui.gate.err = 'Доступ пока не активен. Если ты оплатила, подожди и проверь ещё раз.'; renderGate(); } } catch (e) { ui.gate.err = errRu(e); renderGate(); } };
 A.gateGo = async () => {
@@ -2173,7 +2279,7 @@ function renderCloudBits() { const c = $('#cloudCard'); if (c && CLOUD.user) c.i
 /* экран входа и экран «доступ закончился» */
 const gfld = (label, id, key, type, ac) => `<div class="fld"><label class="lbl" for="${id}">${label}</label><input id="${id}" class="in" type="${type}" data-m="ui.gate.${key}" value="${esc(ui.gate[key] || '')}" autocomplete="${ac}" ${type === 'email' ? 'inputmode="email" autocapitalize="off"' : ''}></div>`;
 function gateHTML() {
-  const g = ui.gate, wrap = inner => `<div class="bg" aria-hidden="true">${BG}</div><div class="gate-in px"><svg class="art gate-catcher" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><div class="brand">Моя мастерская</div><p class="lead">Склад, закупки и себестоимость для мастериц handmade</p><div class="card stack" style="gap:12px">${inner}</div></div>`;
+  const g = ui.gate, wrap = inner => `<div class="bg" aria-hidden="true">${BG}</div><div class="gate-in px"><svg class="art gate-catcher" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><div class="brand">Моя мастерская</div><p class="lead">Склад, закупки и себестоимость для мастериц handmade</p><div class="card stack" style="gap:12px">${inner}</div>${langSwitchHTML("gate-lang")}</div>`;
   const alerts = `${g.err ? `<div class="alert bad">${ic('alert')}<div>${esc(g.err)}</div></div>` : ''}${g.msg ? `<div class="alert good">${ic('check')}<div>${esc(g.msg)}</div></div>` : ''}`;
   if (CLOUD.recovery) return wrap(`<h2>Новый пароль</h2><p class="hint">Придумай новый пароль, не короче 8 символов.</p>${gfld('Новый пароль', 'g_pw', 'pw', 'password', 'new-password')}${alerts}<button class="btn pri block" data-act="gateGo" ${g.busy ? 'disabled' : ''}>Сохранить пароль</button>`);
   if (!CLOUD.user) {
@@ -2270,6 +2376,7 @@ setInterval(() => {
 $('#bg').innerHTML = BG;
 $('#side').innerHTML = sideHTML();
 (async function boot() {
+  await loadLang(); startTranslator();
   if (!window.__PWA__) await loadDemoPh();
   S = await loadState(); await metaLoad();
   if (SBCFG()) await initCloud();

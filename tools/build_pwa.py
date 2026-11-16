@@ -134,6 +134,9 @@ addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__i
     html = ("<!doctype html>\n<html lang=\"ru\">\n<head>\n" + extra_head + head_part + extra_css +
             "</head>\n<body>\n" + pwa_js + body_part.rstrip() + "\n" + sw_js + "</body>\n</html>\n")
     (OUT / "index.html").write_text(html, encoding="utf-8")
+    for lg in ("tr", "en"):
+        f = ROOT / "prototype" / f"i18n-{lg}.js"
+        if f.exists(): (OUT / f.name).write_bytes(f.read_bytes())
     demo = ROOT / "prototype" / "demo-photos.js"
     if demo.exists():
         (OUT / "demo-photos.js").write_bytes(demo.read_bytes())
@@ -153,7 +156,8 @@ addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__i
 
     cfg_txt = (OUT / "config.js").read_text(encoding="utf-8") if (OUT / "config.js").exists() else ""
     demo_txt = (ROOT / "prototype" / "demo-photos.js").read_text(encoding="utf-8") if (ROOT / "prototype" / "demo-photos.js").exists() else ""
-    version = hashlib.sha1((html + cfg_txt + demo_txt).encode("utf-8")).hexdigest()[:10]
+    i18n_txt = "".join((ROOT / "prototype" / f"i18n-{lg}.js").read_text(encoding="utf-8") for lg in ("tr", "en") if (ROOT / "prototype" / f"i18n-{lg}.js").exists())
+    version = hashlib.sha1((html + cfg_txt + demo_txt + i18n_txt).encode("utf-8")).hexdigest()[:10]
     shell_extra = ", './config.js', './vendor/supabase.js'" if cfg_txt else ""
     sw = f"""/* Service worker: офлайн-режим. Версия кэша меняется при каждой сборке, чтобы обновления доходили до пользователя. */
 const CACHE = 'mm-{version}';
