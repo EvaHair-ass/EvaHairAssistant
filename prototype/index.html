@@ -318,7 +318,7 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 .lesson{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:11px 12px;background:var(--surface);border:1.5px solid var(--line);border-radius:20px;transition:transform .2s}
 .lesson:active{transform:scale(.98)}
 .lesson .n{width:32px;height:32px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
-.video{aspect-ratio:16/9;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--btn));display:grid;place-items:center;color:#fff;position:relative;overflow:hidden}
+.video{flex:none;aspect-ratio:16/9;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--btn));display:grid;place-items:center;color:#fff;position:relative;overflow:hidden}
 .video .pbtn{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;backdrop-filter:blur(4px);animation:pulse2 2.4s infinite}
 .video .pbtn .ic{width:28px;height:28px}
 .video small{position:absolute;left:12px;bottom:10px;font-weight:700;opacity:.9}
@@ -1475,11 +1475,11 @@ const SHEETS = {
   lesson() {
     const ls = ui.ls;
     return shell(ls.isNew ? 'Новый урок' : 'Урок', `
-      <div class="video"><span class="pbtn">${ic('play')}</span><small>${esc(ls.video ? 'Видео подключено по ссылке' : 'Здесь будет видео урока')}</small></div>
+      <div class="video" ${ls.video && (AC().courses.find(c => c.id === ls.courseId) || {}).photo ? `style="background:linear-gradient(rgba(30,20,10,.28),rgba(30,20,10,.5)),url('${(AC().courses.find(c => c.id === ls.courseId)).photo}') center/cover"` : ''}><span class="pbtn">${ic('play')}</span><small>${esc(ls.video ? 'Видео подключено по ссылке' : 'Здесь будет видео урока')}</small></div>
       ${fld('Название урока', 'ls_t', 'ui.ls.title', ls.title)}
       <div class="two">${fld('Длительность, мин', 'ls_m', 'ui.ls.min', ls.min, {num: 1})}<div class="fld"><span class="lbl">Доступ</span><div class="seg"><button class="${!ls.free ? 'on' : ''}" data-act="lsFree" data-v="0">Платно</button><button class="${ls.free ? 'on' : ''}" data-act="lsFree" data-v="1">Бесплатно</button></div></div></div>
       ${fld('Ссылка на видео', 'ls_v', 'ui.ls.video', ls.video, {ph: 'https://…'})}
-      <p class="hint">Видео хранится на видеосервисе (твой выбор), здесь лежит только ссылка. В прототипе проигрывателя нет.${ls.video && /^https?:\/\//.test(ls.video) ? ` <a href="${esc(ls.video)}" target="_blank" rel="noopener">Открыть видео</a>` : ''}</p>
+      <p class="hint">Видео хранится на видеосервисе, который ты выбрала сама (YouTube, Vimeo, Google Диск), а здесь лежит только ссылка.${ls.video && /^https?:\/\//.test(ls.video) ? ` <a href="${esc(ls.video)}" target="_blank" rel="noopener">Открыть видео</a>` : ''}</p>
       <div class="fld"><label class="lbl" for="ls_d">Описание</label><textarea id="ls_d" class="in ta" data-m="ui.ls.desc">${esc(ls.desc)}</textarea></div>
       <div class="sect" style="padding-top:0"><h2>Материалы урока</h2></div>
       ${ls.bom.length ? `<div class="card">${ls.bom.map((b, i) => { const m = mat(S, b.id); return m ? `<div class="rl"><img class="thumb" src="${photoOf(m)}" alt=""><div class="a"><b>${esc(m.name)}</b><span>${esc(m.unit)}</span></div><input class="in" style="width:76px;height:38px;text-align:center" inputmode="decimal" data-bom="${i}" value="${fmtInput(b.qty)}" aria-label="Количество"><button class="ibtn sm" data-act="bomDel" data-i="${i}" aria-label="Убрать">${ic('trash', 'sm')}</button></div>` : ''; }).join('')}</div>` : '<p class="hint">Добавь материалы со склада, и ученицы увидят, что нужно купить.</p>'}
@@ -1983,6 +1983,13 @@ A.courseStatus = el => { const c = curCourse(); c.status = el.dataset.v; save();
 A.courseDel = () => { const c = curCourse(); ask('Удалить курс?', 'Курс, его уроки и чат будут удалены. Ученицы останутся в списке.', 'Удалить', true, () => { AC().courses = AC().courses.filter(x => x.id !== c.id); delete AC().chats[c.id]; AC().students.forEach(s => s.enrolls = s.enrolls.filter(e => e.courseId !== c.id)); save(); ui.pages = []; render(); toast('Курс удалён'); }); };
 A.addLesson = () => { ui.ls = {isNew: true, courseId: curCourse().id, id: uid('l'), title: '', min: 10, free: false, video: '', desc: '', bom: []}; pushSheet({type: 'lesson'}); };
 A.openLesson = el => { const c = curCourse(), l = c.lessons.find(x => x.id === el.dataset.id); ui.ls = {isNew: false, courseId: c.id, id: l.id, title: l.title, min: l.min, free: l.free, video: l.video, desc: l.desc, bom: l.bom.map(b => ({...b}))}; pushSheet({type: 'lesson'}); };
+document.addEventListener('input', e => {
+  if (!e.target || e.target.id !== 'ls_v' || !ui.ls) return;
+  const v = document.querySelector('.sheet-b .video'); if (!v) return;
+  const c = AC().courses.find(x => x.id === ui.ls.courseId), has = !!e.target.value.trim();
+  v.style.background = has && c && c.photo ? `linear-gradient(rgba(30,20,10,.28),rgba(30,20,10,.5)),url('${c.photo}') center/cover` : '';
+  const sm = v.querySelector('small'); if (sm) sm.textContent = has ? 'Видео подключено по ссылке' : 'Здесь будет видео урока';
+});
 A.lsFree = el => { ui.ls.free = el.dataset.v === '1'; renderSheets(); };
 A.bomAdd = () => { ui.pk = {mode: 'lesson', q: '', cat: 'all'}; pushSheet({type: 'pick'}); };
 A.bomDel = el => { ui.ls.bom.splice(+el.dataset.i, 1); renderSheets(); };

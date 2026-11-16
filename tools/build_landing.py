@@ -247,7 +247,7 @@ ACADEMY = {
         ],
         "ac_cta": "Собрать свою академию",
         "ac_cards": [
-            ("book", "Курсы и уроки по полочкам", "Создавай курсы, добавляй уроки с описанием и публикуй, когда готово.", "ok"),
+            ("book", "Курсы и уроки по полочкам", "Создавай курсы, добавляй уроки с видео по ссылке и описанием, публикуй, когда готово. Видео остаётся на твоём видеосервисе.", "ok"),
             ("layers", "Материалы прямо в уроке", "Прикрепи материалы со склада. Одним нажатием собери свою работу по уроку: резерв, расчёт и цена уже готовы.", "ok"),
             ("users", "Ученицы и их прогресс", "Веди список учениц, доступ к курсам и пройденные уроки. Всё вносишь ты.", "ok"),
             ("chart", "Доход от курсов", "Видно, сколько приносят курсы. Оплату от учениц ты принимаешь как сейчас, а в приложении отмечаешь покупку.", "ok"),
@@ -285,7 +285,7 @@ ACADEMY = {
         ],
         "ac_cta": "Akademinizi Kurun",
         "ac_cards": [
-            ("book", "Kurslar ve dersler düzenli", "Kurs oluşturun, açıklamalı dersler ekleyin, hazır olunca yayınlayın.", "ok"),
+            ("book", "Kurslar ve dersler düzenli", "Kurs oluşturun, bağlantıyla video ve açıklama içeren dersler ekleyin, hazır olunca yayınlayın. Videolar kendi video servisinizde kalır.", "ok"),
             ("layers", "Malzemeler dersin içinde", "Derse stoktan malzeme ekleyin. Tek dokunuşla dersteki işinizi oluşturun: ayırma, hesap ve fiyat hazır.", "ok"),
             ("users", "Öğrenciler ve ilerlemeleri", "Öğrenci listesini, kurslara erişimi ve tamamlanan dersleri tutun. Hepsini siz girersiniz.", "ok"),
             ("chart", "Kurs geliri", "Kursların ne kazandırdığını görün. Öğrencilerden ödemeyi şimdiki gibi siz alırsınız, uygulamada satın alımı işaretlersiniz.", "ok"),
@@ -323,7 +323,7 @@ ACADEMY = {
         ],
         "ac_cta": "Build your academy",
         "ac_cards": [
-            ("book", "Courses and lessons, neatly shelved", "Create courses, add lessons with descriptions and publish when ready.", "ok"),
+            ("book", "Courses and lessons, neatly shelved", "Create courses, add lessons with a video link and a description, and publish when ready. Videos stay on your own video service.", "ok"),
             ("layers", "Materials right in the lesson", "Attach materials from your stock. Build your own piece from a lesson in one tap: reserve, cost and price are ready.", "ok"),
             ("users", "Students and their progress", "Keep a list of students, their course access and completed lessons. You enter everything yourself.", "ok"),
             ("chart", "Course income", "See what your courses earn. You collect payments from students as you do now and mark the purchase in the app.", "ok"),
@@ -357,8 +357,8 @@ for _c, _a in ACADEMY.items():
 BOLD = {
     "ru": {
         "h1": "Ты создаёшь магию. *Мы считаем, сколько она стоит.*",
-        "how_title": "От горсти бусин до честной цены: три шага",
-        "feat_title": "Каждая бусина на счету",
+        "how_title": "От идеи до честной цены: три шага",
+        "feat_title": "Каждая мелочь на счету",
         "gal_title": "Загляни внутрь",
         "faq_title": "Остались вопросы?",
         "final_title": "Пора превратить рукоделие в своё дело",
@@ -367,8 +367,8 @@ BOLD = {
     },
     "tr": {
         "h1": "Siz büyüyü yaratın. *Ne kadar ettiğini biz hesaplayalım.*",
-        "how_title": "Bir avuç boncuktan dürüst fiyata: üç adım",
-        "feat_title": "Her boncuk hesapta",
+        "how_title": "Fikirden dürüst fiyata: üç adım",
+        "feat_title": "Her ayrıntı hesapta",
         "gal_title": "İçeri bir göz atın",
         "faq_title": "Aklınıza takılanlar",
         "final_title": "El emeğinizi kendi işinize dönüştürme zamanı",
@@ -377,8 +377,8 @@ BOLD = {
     },
     "en": {
         "h1": "You make the magic. *We work out what it's worth.*",
-        "how_title": "From a handful of beads to an honest price: three steps",
-        "feat_title": "Every bead counted",
+        "how_title": "From idea to honest price: three steps",
+        "feat_title": "Every detail counted",
         "gal_title": "Take a look inside",
         "faq_title": "Still wondering?",
         "final_title": "Time to turn your craft into your business",
@@ -414,9 +414,9 @@ CRAFTS = {
         "kick": "для любого рукоделия",
         "title": "Любое рукоделие, которое можно посчитать",
         "lead": "Если твоё изделие собирается из материалов, «Моя мастерская» его посчитает: штуки, метры, граммы, миллилитры. Неважно, чем ты занимаешься.",
-        "items": ["Бисероплетение", "Украшения из камней", "Вязание", "Шитьё", "Изделия из глины", "Изделия из волос", "Макраме", "Свечи и мыло", "Вышивка"],
+        "items": ["Бисероплетение", "Украшения из камней", "Вязание", "Шитьё", "Изделия из глины", "Украшения для волос", "Макраме", "Свечи и мыло", "Вышивка"],
         "foot": "…и всё остальное, что рождается у тебя в руках.",
-        "desc_add": "Для любого рукоделия: бисер, камни, вязание, шитьё, глина, изделия из волос.",
+        "desc_add": "Для любого рукоделия: бисер, камни, вязание, шитьё, глина, украшения для волос.",
         "yk": "Твоя мастерская",
         "yt": "Твои правила. Приложение подстраивается под тебя.",
         "yl": "Ты не подгоняешь своё ремесло под программу. Это программа подстраивается под твоё ремесло.",
@@ -434,9 +434,9 @@ CRAFTS = {
         "kick": "her el işi için",
         "title": "Sayabildiğiniz her el işi için",
         "lead": "Ürününüz malzemelerden oluşuyorsa Atölyem onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.",
-        "items": ["Boncuk işi", "Doğal taş takılar", "Örgü", "Dikiş", "Seramik ve kil", "Saç ürünleri", "Makrome", "Mum ve sabun", "Nakış"],
+        "items": ["Boncuk işi", "Doğal taş takılar", "Örgü", "Dikiş", "Seramik ve kil", "Saç aksesuarları", "Makrome", "Mum ve sabun", "Nakış"],
         "foot": "…ve ellerinizle yarattığınız her şey.",
-        "desc_add": "Her el işi için: boncuk, taş, örgü, dikiş, kil, saç ürünleri.",
+        "desc_add": "Her el işi için: boncuk, taş, örgü, dikiş, kil, saç aksesuarları.",
         "yk": "Sizin atölyeniz",
         "yt": "Kurallar sizin. Uygulama size uyum sağlar.",
         "yl": "El işinizi programa uydurmazsınız. Program sizin el işinize uyum sağlar.",
@@ -454,9 +454,9 @@ CRAFTS = {
         "kick": "for every craft",
         "title": "Any craft you can count",
         "lead": "If your piece is built from materials, My Workshop can price it: pieces, metres, grams, millilitres. It does not matter what you make.",
-        "items": ["Beadwork", "Natural-stone jewelry", "Knitting and crochet", "Sewing", "Clay and ceramics", "Hair work", "Macramé", "Candles and soap", "Embroidery"],
+        "items": ["Beadwork", "Natural-stone jewelry", "Knitting and crochet", "Sewing", "Clay and ceramics", "Hair accessories", "Macramé", "Candles and soap", "Embroidery"],
         "foot": "…and anything else your hands make.",
-        "desc_add": "For every craft: beads, stones, knitting, sewing, clay, hair work.",
+        "desc_add": "For every craft: beads, stones, knitting, sewing, clay, hair accessories.",
         "yk": "Your workshop",
         "yt": "Your rules. The app adapts to you.",
         "yl": "You do not bend your craft to fit a program. The program bends to fit your craft.",
@@ -485,7 +485,7 @@ WORKS = [("hair", "work1"), ("macrame", "w_macrame"), ("hair", "work2"), ("stone
          ("sewing", "w_sewing"), ("hair", "work6"), ("hair", "work7"), ("hair", "work8")]
 SHOW = {
     "ru": {"kick": "примеры работ", "title": "Красота, у которой есть честная цена", "lead": "Такие изделия собираются из десятков материалов. «Моя мастерская» помнит каждый и считает, сколько стоит всё вместе.",
-           "chips": {"all": "Все", "beads": "Бисер", "stones": "Камни", "knit": "Вязание", "sewing": "Шитьё", "clay": "Глина", "hair": "Волосы", "macrame": "Макраме", "candles": "Свечи и мыло", "embroid": "Вышивка"},
+           "chips": {"all": "Все", "beads": "Бисер", "stones": "Камни", "knit": "Вязание", "sewing": "Шитьё", "clay": "Глина", "hair": "Для волос", "macrame": "Макраме", "candles": "Свечи и мыло", "embroid": "Вышивка"},
            "names": ["Лесной оберег", "Дыхание ветра", "Янтарная луна", "Аметистовый сад", "Луговые травы", "Лунный камень", "Лаванда и апельсин", "Древо жизни", "Овсяное облако", "Песок и терракота", "Золотой лабрадорит", "Розовое золото", "Льняной шёпот", "Пепел, медь и ночь", "Розовый кварц", "Осенний лес"],
            "kinds": ["Заколка", "Макраме-панно", "Заколка", "Колье и браслет из камней", "Вышивка", "Съёмная прядь", "Свеча и мыло", "Тика", "Вязаный шарф", "Керамика", "Коса с украшениями", "Жгут из бисера", "Мешочек с вышивкой", "Косы на карабинах", "Коса с кристаллами", "Афро-резинки"], "note": "Примеры изделий."},
     "tr": {"kick": "örnek çalışmalar", "title": "Dürüst fiyatı olan güzellik", "lead": "Böyle ürünler onlarca malzemeden oluşur. Atölyem hepsini hatırlar ve toplamının maliyetini hesaplar.",
@@ -624,8 +624,10 @@ footer{padding:32px 0 48px;color:var(--ink2);font-size:14px;text-align:center;bo
 .acad h2.big{font-size:clamp(34px,6.4vw,54px);line-height:1.04}
 .acad .lead{font-size:19px;color:var(--ink2);margin-top:6px;max-width:34em}
 .acad .vis{display:flex;gap:16px;justify-content:center;align-items:flex-start}
-.acad .vis .phone{width:min(210px,42vw)}
-.acad .vis .phone+.phone{margin-top:48px}
+.acad .vis{gap:12px}
+.acad .vis .phone{width:min(168px,29vw);border-width:5px;border-radius:28px}
+.acad .vis .phone+.phone{margin-top:40px}
+.acad .vis .phone:nth-child(3){margin-top:12px}
 .acad h3.sec{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(26px,4.4vw,34px);margin:56px 0 0;color:var(--clay)}
 .pains .card{border-style:dashed;background:var(--surface)}
 .pains q{display:block;quotes:none;font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:23px;line-height:1.2;color:var(--clay);margin-bottom:10px}
@@ -912,7 +914,7 @@ def render(code):
       <p class="lead">{esc(a["ac_lead"])}</p>
       <div class="cta"><a class="btn pri" href="{APP}">{esc(a["ac_cta"])}</a></div>
     </div>
-    <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
+    <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/video.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][0][1])}"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
   </div>
   <h3 class="sec rv">{esc(a["pain_title"])}</h3>
   <div class="grid three pains">{pains}</div>

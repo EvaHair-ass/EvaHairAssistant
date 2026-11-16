@@ -6,7 +6,7 @@
 
 ## Başlık ve giriş
 - Sayfa başlığı: Melaymade | Atölyem: El işi ustaları için stok, fiyat ve kişisel Akademi
-- Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda. Her el işi için: boncuk, taş, örgü, dikiş, kil, saç ürünleri.
+- Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda. Her el işi için: boncuk, taş, örgü, dikiş, kil, saç aksesuarları.
 - Menü: El işleri | Nasıl çalışır? | Akademi | Özellikler | Sık sorulanlar | Giriş Yap
 - Etiket: Yeni · dersleriniz için kişisel Akademi
 - Üst yazı: Melaymade uygulaması
@@ -15,7 +15,7 @@
 - Düğmeler: Ücretsiz Deneyin | Nasıl çalışır?
 - Not: Banka kartı gerekmez. Telefonda ve bilgisayarda çalışır, internet olmadan da.
 
-## Bir avuç boncuktan dürüst fiyata: üç adım
+## Fikirden dürüst fiyata: üç adım
 1. **Malzemeleri ekleyin**. Fotoğraf çekin, miktarı ve fiyatı girin. Malzemeler stoka kendiliğinden eklenir, kargo ücreti kalemlere dağıtılır.
 2. **Ürününüzü oluşturun**. Galeriden malzemeleri seçin. Uygulama malzemeleri ayırır; fireyi, süreyi ve aletleri hesaba katar.
 3. **Fiyatı öğrenin**. Pazar yeri komisyonunu, kargoyu ve istediğiniz kârı hesaba katan maliyeti ve önerilen fiyatı görün.
@@ -29,7 +29,7 @@
 ## Sayabildiğiniz her el işi için (yeni bölüm)
 - Üst yazı: her el işi için
 - Giriş: Ürününüz malzemelerden oluşuyorsa Atölyem onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.
-- Etiketler: Boncuk işi | Doğal taş takılar | Örgü | Dikiş | Seramik ve kil | Saç ürünleri | Makrome | Mum ve sabun | Nakış
+- Etiketler: Boncuk işi | Doğal taş takılar | Örgü | Dikiş | Seramik ve kil | Saç aksesuarları | Makrome | Mum ve sabun | Nakış
 - Alt not: …ve ellerinizle yarattığınız her şey.
 
 ## Kurallar sizin. Uygulama size uyum sağlar. (yeni bölüm)
@@ -57,7 +57,7 @@
   Derslerinizi el işi ustalarının platformlarına tek dokunuşla yüklemek için çalışıyoruz. Henüz geliştirme aşamasında, ama yön tam olarak bu.
 
 ### Akademi özellikleri
-- [Hazır] **Kurslar ve dersler düzenli**. Kurs oluşturun, açıklamalı dersler ekleyin, hazır olunca yayınlayın.
+- [Hazır] **Kurslar ve dersler düzenli**. Kurs oluşturun, bağlantıyla video ve açıklama içeren dersler ekleyin, hazır olunca yayınlayın. Videolar kendi video servisinizde kalır.
 - [Hazır] **Malzemeler dersin içinde**. Derse stoktan malzeme ekleyin. Tek dokunuşla dersteki işinizi oluşturun: ayırma, hesap ve fiyat hazır.
 - [Hazır] **Öğrenciler ve ilerlemeleri**. Öğrenci listesini, kurslara erişimi ve tamamlanan dersleri tutun. Hepsini siz girersiniz.
 - [Hazır] **Kurs geliri**. Kursların ne kazandırdığını görün. Öğrencilerden ödemeyi şimdiki gibi siz alırsınız, uygulamada satın alımı işaretlersiniz.
@@ -69,7 +69,7 @@
   Dersi bir kez hazırlarsınız; biz de satış yapmak istediğiniz el işi platformlarına göndeririz. Yeniden yazmak ve tekrar yüklemek yok. Şu anda geliştirme aşamasında, tarihi kesinleşince duyuracağız. Hangi platformları istediğinizi birlikte belirleriz.
 - Dürüst not: Dürüst olalım: şu anda Akademi'de kursları, dersleri, öğrencileri ve geliri siz yönetirsiniz; öğrenciler henüz uygulamaya giriş yapmaz. «Yakında» işaretli her şey geliştirme aşamasındadır.
 
-## Her boncuk hesapta
+## Her ayrıntı hesapta
 - **Fotoğraflı Malzeme Stoku**. Malzemeler şık kartlar halinde. Ada, renge, boyuta ve ürün koduna göre arama.
 - **Her para biriminde alışveriş**. 40'tan fazla para birimi. Kargo kalemlere dağıtılır, ortalama fiyat otomatik hesaplanır.
 - **Stoktan düşmeden ayırma**. Malzeme işte ayrılır ama stoktan ancak iş tamamlanınca düşer. Aynı anda birden fazla iş yürütebilirsiniz.
