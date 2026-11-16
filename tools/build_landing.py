@@ -479,21 +479,23 @@ for _c, _x in CRAFTS.items():
 
 
 # порядок работ в галерее: (ремесло, файл)
-WORKS = [("hair", "work1"), ("macrame", "w_macrame"), ("hair", "work2"), ("embroid", "w_embroid"), ("hair", "work3"), ("candles", "w_candles"),
-         ("hair", "work4"), ("clay", "w_clay"), ("hair", "work5"), ("sewing", "w_sewing"), ("hair", "work6"), ("hair", "work7"), ("hair", "work8")]
+WORKS = [("hair", "work1"), ("macrame", "w_macrame"), ("hair", "work2"), ("stones", "w_stones"),
+         ("embroid", "w_embroid"), ("hair", "work3"), ("candles", "w_candles"), ("hair", "work4"),
+         ("knit", "w_knit"), ("clay", "w_clay"), ("hair", "work5"), ("beads", "w_beads"),
+         ("sewing", "w_sewing"), ("hair", "work6"), ("hair", "work7"), ("hair", "work8")]
 SHOW = {
     "ru": {"kick": "примеры работ", "title": "Красота, у которой есть честная цена", "lead": "Такие изделия собираются из десятков материалов. Melaymade помнит каждый и считает, сколько стоит всё вместе.",
-           "chips": {"all": "Все", "hair": "Волосы", "embroid": "Вышивка", "macrame": "Макраме", "candles": "Свечи и мыло", "clay": "Глина", "sewing": "Шитьё"},
-           "names": ["Лесной оберег", "Дыхание ветра", "Янтарная луна", "Луговые травы", "Лунный камень", "Лаванда и апельсин", "Древо жизни", "Песок и терракота", "Золотой лабрадорит", "Льняной шёпот", "Пепел, медь и ночь", "Розовый кварц", "Осенний лес"],
-           "kinds": ["Заколка", "Макраме-панно", "Заколка", "Вышивка", "Съёмная прядь", "Свеча и мыло", "Тика", "Керамика", "Коса с украшениями", "Мешочек с вышивкой", "Косы на карабинах", "Коса с кристаллами", "Афро-резинки"], "note": "Примеры изделий."},
+           "chips": {"all": "Все", "beads": "Бисер", "stones": "Камни", "knit": "Вязание", "sewing": "Шитьё", "clay": "Глина", "hair": "Волосы", "macrame": "Макраме", "candles": "Свечи и мыло", "embroid": "Вышивка"},
+           "names": ["Лесной оберег", "Дыхание ветра", "Янтарная луна", "Аметистовый сад", "Луговые травы", "Лунный камень", "Лаванда и апельсин", "Древо жизни", "Овсяное облако", "Песок и терракота", "Золотой лабрадорит", "Розовое золото", "Льняной шёпот", "Пепел, медь и ночь", "Розовый кварц", "Осенний лес"],
+           "kinds": ["Заколка", "Макраме-панно", "Заколка", "Колье и браслет из камней", "Вышивка", "Съёмная прядь", "Свеча и мыло", "Тика", "Вязаный шарф", "Керамика", "Коса с украшениями", "Жгут из бисера", "Мешочек с вышивкой", "Косы на карабинах", "Коса с кристаллами", "Афро-резинки"], "note": "Примеры изделий."},
     "tr": {"kick": "örnek çalışmalar", "title": "Dürüst fiyatı olan güzellik", "lead": "Böyle ürünler onlarca malzemeden oluşur. Melaymade hepsini hatırlar ve toplamının maliyetini hesaplar.",
-           "chips": {"all": "Tümü", "hair": "Saç", "embroid": "Nakış", "macrame": "Makrome", "candles": "Mum ve sabun", "clay": "Kil", "sewing": "Dikiş"},
-           "names": ["Orman Muskası", "Rüzgârın Nefesi", "Kehribar Ay", "Kır Otları", "Ay Taşı", "Lavanta ve Portakal", "Hayat Ağacı", "Kum ve Terakota", "Altın Labradorit", "Keten Fısıltısı", "Kül, Bakır ve Gece", "Gül Kuvarsı", "Sonbahar Ormanı"],
-           "kinds": ["Toka", "Makrome pano", "Toka", "Nakış", "Saç parçası", "Mum ve sabun", "Tika", "Seramik", "Süslü örgü", "Nakışlı keseler", "Karabinalı örgüler", "Kristalli örgü", "Afro lastik"], "note": "Örnek ürünler."},
+           "chips": {"all": "Tümü", "beads": "Boncuk", "stones": "Taş", "knit": "Örgü", "sewing": "Dikiş", "clay": "Kil", "hair": "Saç", "macrame": "Makrome", "candles": "Mum ve sabun", "embroid": "Nakış"},
+           "names": ["Orman Muskası", "Rüzgârın Nefesi", "Kehribar Ay", "Ametist Bahçesi", "Kır Otları", "Ay Taşı", "Lavanta ve Portakal", "Hayat Ağacı", "Yulaf Bulutu", "Kum ve Terakota", "Altın Labradorit", "Gül Altın", "Keten Fısıltısı", "Kül, Bakır ve Gece", "Gül Kuvarsı", "Sonbahar Ormanı"],
+           "kinds": ["Toka", "Makrome pano", "Toka", "Taş kolye ve bileklik", "Nakış", "Saç parçası", "Mum ve sabun", "Tika", "Örgü atkı", "Seramik", "Süslü örgü", "Boncuk kolye", "Nakışlı keseler", "Karabinalı örgüler", "Kristalli örgü", "Afro lastik"], "note": "Örnek ürünler."},
     "en": {"kick": "example pieces", "title": "Beauty with an honest price", "lead": "Pieces like these are built from dozens of materials. Melaymade remembers every one and works out what it all costs together.",
-           "chips": {"all": "All", "hair": "Hair", "embroid": "Embroidery", "macrame": "Macramé", "candles": "Candles and soap", "clay": "Clay", "sewing": "Sewing"},
-           "names": ["Forest Amulet", "Breath of the Wind", "Amber Moon", "Meadow Herbs", "Moonstone", "Lavender and Orange", "Tree of Life", "Sand and Terracotta", "Golden Labradorite", "Linen Whisper", "Ash, Copper and Night", "Rose Quartz", "Autumn Forest"],
-           "kinds": ["Hair slide", "Macramé wall hanging", "Hair slide", "Hand embroidery", "Hair piece", "Candle and soap", "Tikka headpiece", "Ceramics", "Jeweled braid", "Embroidered pouch", "Braids on carabiners", "Crystal braid", "Afro hair ties"], "note": "Example pieces."},
+           "chips": {"all": "All", "beads": "Beads", "stones": "Stones", "knit": "Knitting", "sewing": "Sewing", "clay": "Clay", "hair": "Hair", "macrame": "Macramé", "candles": "Candles and soap", "embroid": "Embroidery"},
+           "names": ["Forest Amulet", "Breath of the Wind", "Amber Moon", "Amethyst Garden", "Meadow Herbs", "Moonstone", "Lavender and Orange", "Tree of Life", "Oatmeal Cloud", "Sand and Terracotta", "Golden Labradorite", "Rose Gold", "Linen Whisper", "Ash, Copper and Night", "Rose Quartz", "Autumn Forest"],
+           "kinds": ["Hair slide", "Macramé wall hanging", "Hair slide", "Stone necklace and bracelet", "Hand embroidery", "Hair piece", "Candle and soap", "Tikka headpiece", "Knitted scarf", "Ceramics", "Jeweled braid", "Beaded rope necklace", "Embroidered pouch", "Braids on carabiners", "Crystal braid", "Afro hair ties"], "note": "Example pieces."},
 }
 for _c, _x in SHOW.items():
     TEXTS[_c]["sh"] = _x
