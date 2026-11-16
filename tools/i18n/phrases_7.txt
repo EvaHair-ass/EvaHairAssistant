@@ -1,0 +1,23 @@
+{0}% к {1} ⇒ {0}% {1} göre ⇒ {0}% vs {1}
+Что покупают чаще ⇒ En çok neler alınıyor ⇒ What is bought most
+в наличии ⇒ stokta ⇒ in stock
+продано {0} ⇒ {0} karşılığında satıldı ⇒ sold for {0}
+{0}, сохранённые дизайны и активные работы ({1}) ⇒ {0}, kayıtlı tasarımlar ve aktif işler ({1}) ⇒ {0}, saved designs and active projects ({1})
+прошлому году ⇒ geçen yıla ⇒ last year
+Тбилиси ⇒ Tiflis ⇒ Tbilisi
+Грузия ⇒ Gürcistan ⇒ Georgia
+Анкара ⇒ Ankara ⇒ Ankara
+Турция ⇒ Türkiye ⇒ Türkiye
+Лимасол ⇒ Limasol ⇒ Limassol
+Кипр ⇒ Kıbrıs ⇒ Cyprus
+Алматы ⇒ Almatı ⇒ Almaty
+Казахстан ⇒ Kazakistan ⇒ Kazakhstan
+Берлин ⇒ Berlin ⇒ Berlin
+Германия ⇒ Almanya ⇒ Germany
+Стамбул ⇒ İstanbul ⇒ Istanbul
+Мерсин ⇒ Mersin ⇒ Mersin
+Мария С. ⇒ Maria S. ⇒ Maria S.
+Элиф ⇒ Elif ⇒ Elif
+Мария ⇒ Maria ⇒ Maria
+Я принимаю условия использования и политику конфиденциальности. ⇒ Kullanım koşullarını ve gizlilik politikasını kabul ediyorum. ⇒ I accept the terms of use and the privacy policy.
+Новым аккаунтам доступен пробный период. ⇒ Yeni hesaplar için deneme süresi vardır. ⇒ New accounts get a trial period.

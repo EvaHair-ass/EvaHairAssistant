@@ -1,0 +1,2694 @@
+# «Моя мастерская» (Atölyem): турецкие тексты приложения для проверки носителем
+
+Формат: русский оригинал → турецкий (→ английский для сравнения). Стиль: «siz». Фигурные скобки {0}, {1} — подставляемые значения (числа, названия), их менять не нужно.
+
+Особенно проверить: названия разделов (Stok, Alımlar, Atölye, Arşiv, Daha, Akademi), термины «fire» (брак), «maliyet», «ayırma» (резерв), короткие подписи кнопок.
+
+- (делится поровну)
+  - TR: (eşit bölünür)
+  - EN: (split equally)
+- (делится пропорционально сумме строк)
+  - TR: (kalem tutarlarına oranla bölünür)
+  - EN: (split in proportion to line totals)
+- (резерв других работ ещё не списан)
+  - TR: (diğer işlerin ayırdığı malzeme henüz düşülmedi)
+  - EN: (reserved by other projects, not yet written off)
+- (рекомендуемая)
+  - TR: (önerilen)
+  - EN: (recommended)
+- (себестоимость + доставка) ÷ (1 − комиссия − прибыль)
+  - TR: (maliyet + kargo) ÷ (1 − komisyon − kâr)
+  - EN: (cost + shipping) ÷ (1 − fee − profit)
+- (твоя)
+  - TR: (sizin)
+  - EN: (yours)
+- +{0}, остаток 2 шт; с поломкой +{1} и остаток 1 шт
+  - TR: +{0}, 2 adet kaldı; kırılmayla +{1} ve 1 adet kaldı
+  - EN: +{0}, 2 pcs left; with breakage +{1} and 1 pc left
+- /прим.
+  - TR: /uyg.
+  - EN: /use
+- 60 минут при ставке 250 в час
+  - TR: Saatlik 250 ücretle 60 dakika
+  - EN: 60 minutes at a rate of 250 per hour
+- 100 шт, {0}
+  - TR: 100 adet, {0}
+  - EN: 100 pcs, {0}
+- {0} · в наличии {1}
+  - TR: {0} · stokta {1}
+  - EN: {0} · in stock {1}
+- {0} · на {1}{2}
+  - TR: {0} · değeri {1}{2}
+  - EN: {0} · worth {1}{2}
+- {0} · приход сам попадает на склад
+  - TR: {0} · alım otomatik olarak stoka eklenir
+  - EN: {0} · purchase goes to stock automatically
+- {0} · с {1}
+  - TR: {0} · {1} ile
+  - EN: {0} · with {1}
+- {0} в процессе · правки сохраняются сами
+  - TR: {0} devam ediyor · değişiklikler otomatik kaydedilir
+  - EN: {0} in progress · changes save automatically
+- {0} купили курсы
+  - TR: {0} kursları satın aldı
+  - EN: {0} bought courses
+- {0} убран, остаток снова свободен
+  - TR: {0} kaldırıldı, kalan miktar yine serbest
+  - EN: {0} removed, the remainder is free again
+- {0} шт
+  - TR: {0} adet
+  - EN: {0} pcs
+- {0} шт, {1}
+  - TR: {0} adet, {1}
+  - EN: {0} pcs, {1}
+- {0} шт, в архиве {1}
+  - TR: {0} adet, arşivde {1}
+  - EN: {0} pcs, in the archive {1}
+- {0}, с поломкой {1}, остаток {2} шт
+  - TR: {0}, kırılmayla {1}, {2} adet kaldı
+  - EN: {0}, with breakage {1}, {2} pcs left
+- {0}: на складе нет ни одной единицы инструмента.
+  - TR: {0}: stokta hiç alet yok.
+  - EN: {0}: there is not a single unit of this tool in stock.
+- {0}: нужно {1} {2}, а свободно {3} (в других работах {4}).
+  - TR: {0}: {1} {2} gerekiyor, serbest olan {3} (diğer işlerde {4}).
+  - EN: {0}: {1} {2} needed, but only {3} is free ({4} in other projects).
+- {0}: поломок {1}, а свободно {2}.
+  - TR: {0}: {1} kırılma var, serbest olan {2}.
+  - EN: {0}: {1} breakages, but only {2} is free.
+- {1} · черновик сохраняется сам
+  - TR: {1} · taslak otomatik kaydedilir
+  - EN: {1} · the draft saves automatically
+- {1} КБ
+  - TR: {1} KB
+  - EN: {1} KB
+- {2} · строка {3}
+  - TR: {2} · satır {3}
+  - EN: {2} · line {3}
+- {3} уп. × {4} = {5} {6}
+  - TR: {3} pkt × {4} = {5} {6}
+  - EN: {3} pk × {4} = {5} {6}
+- «{0}» исчезнет со склада.
+  - TR: «{0}» stoktan silinecek.
+  - EN: “{0}” will disappear from stock.
+- · материалов:
+  - TR: · malzeme:
+  - EN: · materials:
+- Австралийский доллар
+  - TR: Avustralya doları
+  - EN: Australian dollar
+- Адрес доставки (если есть)
+  - TR: Teslimat adresi (varsa)
+  - EN: Delivery address (if any)
+- Азербайджанский манат
+  - TR: Azerbaycan manatı
+  - EN: Azerbaijani manat
+- Айгуль Н.
+  - TR: Aygül N.
+  - EN: Aigul N.
+- Айгуль Нурлан
+  - TR: Aygül Nurlan
+  - EN: Aigul Nurlan
+- Академия
+  - TR: Akademi
+  - EN: Academy
+- Аккаунт
+  - TR: Hesap
+  - EN: Account
+- Активных работ нет
+  - TR: Aktif iş yok
+  - EN: No active projects
+- Алматы, Казахстан
+  - TR: Almatı, Kazakistan
+  - EN: Almaty, Kazakhstan
+- Аметист, кристаллы в оправе
+  - TR: Ametist, çerçeveli kristaller
+  - EN: Amethyst, set crystals
+- Анкара, Турция
+  - TR: Ankara, Türkiye
+  - EN: Ankara, Türkiye
+- Анна П.
+  - TR: Anna P.
+  - EN: Anna P.
+- Анна Петрова
+  - TR: Anna Petrova
+  - EN: Anna Petrova
+- Армянский драм
+  - TR: Ermeni dramı
+  - EN: Armenian dram
+- Артикул
+  - TR: Ürün kodu
+  - EN: SKU
+- Архив
+  - TR: Arşiv
+  - EN: Archive
+- Архив пуст
+  - TR: Arşiv boş
+  - EN: The archive is empty
+- Архив, готовые изделия и продажи
+  - TR: Arşiv, hazır ürünler ve satışlar
+  - EN: Archive, finished pieces and sales
+- Афро-резинки «Осенний лес»
+  - TR: Afro lastikler «Sonbahar Ormanı»
+  - EN: Afro hair ties “Autumn Forest”
+- Без курса приход посчитать нельзя.
+  - TR: Kur olmadan alım hesaplanamaz.
+  - EN: The purchase cannot be calculated without an exchange rate.
+- Без поставщика
+  - TR: Tedarikçisiz
+  - EN: No supplier
+- Белорусский рубль
+  - TR: Belarus rublesi
+  - EN: Belarusian ruble
+- Берлин, Германия
+  - TR: Berlin, Almanya
+  - EN: Berlin, Germany
+- Бесплатно
+  - TR: Ücretsiz
+  - EN: Free
+- Блонд
+  - TR: Sarı
+  - EN: Blonde
+- Болгарский лев
+  - TR: Bulgar levası
+  - EN: Bulgarian lev
+- Больше
+  - TR: Daha fazla
+  - EN: More
+- Бордо
+  - TR: Bordo
+  - EN: Burgundy
+- Бразильский реал
+  - TR: Brezilya reali
+  - EN: Brazilian real
+- Брак
+  - TR: Fire
+  - EN: Waste
+- Брак / потери,
+  - TR: Fire / kayıp,
+  - EN: Waste / loss,
+- Брак и потери (отдельно)
+  - TR: Fire ve kayıplar (ayrı)
+  - EN: Waste and losses (separate)
+- Браслет
+  - TR: Bileklik
+  - EN: Bracelet
+- Бренд
+  - TR: Marka
+  - EN: Brand
+- Бусины
+  - TR: Boncuklar
+  - EN: Beads
+- Бусины и камни
+  - TR: Boncuk ve taşlar
+  - EN: Beads and stones
+- Было {0} {1}, станет {2} {3}. Цена за {4}: {5} (сейчас {6} за {7}). Резервы в работах, рецепты и история пересчитаются так же. Завершённые работы в архиве не меняются.
+  - TR: Şu an {0} {1}, olacak {2} {3}. {4} fiyatı: {5} (şu an {7} için {6}). İşlerdeki ayırmalar, tarifler ve geçmiş de aynı şekilde yeniden hesaplanır. Arşivdeki tamamlanmış işler değişmez.
+  - EN: Was {0} {1}, will become {2} {3}. Price per {4}: {5} (now {6} per {7}). Reserves in projects, recipes and history are recalculated the same way. Finished projects in the archive do not change.
+- В Chrome нажми значок установки в адресной строке. На телефоне: меню браузера, «Добавить на главный экран».
+  - TR: Chrome'da adres çubuğundaki yükleme simgesine tıklayın. Telefonda: tarayıcı menüsü, «Ana ekrana ekle».
+  - EN: In Chrome, click the install icon in the address bar. On a phone: browser menu, “Add to Home screen”.
+- В изделии
+  - TR: Üründe
+  - EN: In the piece
+- В изделии,
+  - TR: Üründe,
+  - EN: In the piece,
+- В категории «{0}» {1}. Что с ними сделать?
+  - TR: «{0}» kategorisinde {1} var. Onlarla ne yapılsın?
+  - EN: The category “{0}” has {1}. What should happen to them?
+- В ней считаются склад, цены и статистика. Выбери один раз: при смене старые суммы не пересчитываются.
+  - TR: Stok, fiyatlar ve istatistikler bu para biriminde hesaplanır. Bir kez seçin: değiştirirseniz eski tutarlar yeniden hesaplanmaz.
+  - EN: Stock, prices and statistics are calculated in it. Choose it once: if you change it, old amounts are not recalculated.
+- В облаке теперь данные этого устройства
+  - TR: Buluttaki veriler artık bu cihazın verileri
+  - EN: The cloud now holds this device's data
+- В облаке уже есть данные, и на этом устройстве тоже. Выбери, какие оставить. Вторые будут заменены.
+  - TR: Bulutta zaten veri var, bu cihazda da var. Hangilerinin kalacağını seçin. Diğerleri değiştirilecek.
+  - EN: There is already data in the cloud, and on this device too. Choose which to keep. The other will be replaced.
+- В одной
+  - TR: Bir pakette
+  - EN: In one
+- В упаковке,
+  - TR: Pakette,
+  - EN: In a pack,
+- В этой категории пока пусто. Материалы появятся после закупки.
+  - TR: Bu kategori henüz boş. Malzemeler alım yapıldıktan sonra burada görünür.
+  - EN: This category is empty for now. Materials will appear after a purchase.
+- Валюта закупки
+  - TR: Alım para birimi
+  - EN: Purchase currency
+- Валюта, настройки, копия данных и проверка расчётов
+  - TR: Para birimi, ayarlar ve veri yedeği
+  - EN: Currency, settings and data backup
+- Введи почту, и мы пришлём ссылку для нового пароля.
+  - TR: E-postanızı girin, yeni şifre için bağlantı gönderelim.
+  - EN: Enter your email and we will send a link for a new password.
+- Венгерский форинт
+  - TR: Macar forinti
+  - EN: Hungarian forint
+- Вернуть демо-данные
+  - TR: Demo verilerini geri yükle
+  - EN: Restore demo data
+- Взяты данные из облака
+  - TR: Bulut verileri alındı
+  - EN: Cloud data loaded
+- Взять из облака
+  - TR: Buluttan al
+  - EN: Use the cloud's data
+- Видео подключено по ссылке
+  - TR: Video bağlantıyla eklendi
+  - EN: Video linked by URL
+- Видео хранится на видеосервисе, который ты выбрала сама (YouTube, Vimeo, Google Диск), а здесь лежит только ссылка.{6}
+  - TR: Video, kendi seçtiğiniz video servisinde (YouTube, Vimeo, Google Drive) durur; burada yalnızca bağlantısı saklanır.{6}
+  - EN: The video stays on the video service you chose (YouTube, Vimeo, Google Drive); only the link is stored here.{6}
+- Войти
+  - TR: Giriş Yap
+  - EN: Log in
+- Волосы и плетения
+  - TR: Saç ve örgüler
+  - EN: Hair and braiding
+- Восстановить
+  - TR: Geri yükle
+  - EN: Restore
+- Восстановить данные
+  - TR: Verileri geri yükle
+  - EN: Restore data
+- Вперёд
+  - TR: İleri
+  - EN: Next
+- Впиши 60 минут вручную и смотри, как пересчитается цена.
+  - TR: 60 dakikayı elle girin ve fiyatın nasıl yeniden hesaplandığına bakın.
+  - EN: Enter 60 minutes by hand and watch the price recalculate.
+- Впиши минуты в поле «Вручную»
+  - TR: «Elle» alanına dakikaları yazın
+  - EN: Enter minutes in the “By hand” field
+- Впиши название категории
+  - TR: Kategori adını yazın
+  - EN: Enter a category name
+- Впиши, сколько новых единиц в одной старой
+  - TR: Eski birimin kaç yeni birim ettiğini yazın
+  - EN: Enter how many new units are in one old unit
+- Время и цена
+  - TR: Süre ve fiyat
+  - EN: Time and price
+- Время работы
+  - TR: Çalışma süresi
+  - EN: Working time
+- Вручную, мин
+  - TR: Elle, dk
+  - EN: By hand, min
+- Все
+  - TR: Tümü
+  - EN: All
+- Все введённые позиции пропадут. На склад ничего не добавлялось.
+  - TR: Girilen tüm kalemler silinecek. Stoka hiçbir şey eklenmemişti.
+  - EN: All entered lines will be lost. Nothing has been added to stock.
+- Все созданные категории. Те, в которых остались материалы, сохранятся.
+  - TR: Oluşturulan tüm kategoriler. İçinde malzeme kalanlar korunur.
+  - EN: All created categories. Those that still contain materials will stay.
+- Все твои данные будут заменены учебными примерами. Сначала сохрани копию, если она нужна.
+  - TR: Tüm verileriniz örnek verilerle değiştirilecek. Gerekirse önce bir yedek alın.
+  - EN: All your data will be replaced by sample data. Save a backup first if you need it.
+- Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023.
+  - TR: Prototipteki tüm değişiklikleriniz silinecek, başlangıç örnekleri ve 2023 numaralı sipariş geri gelecek.
+  - EN: All your edits in the prototype will disappear and the starting examples and order #2023 will return.
+- Вставь сохранённый текст или выбери файл. Текущие данные будут заменены. Данные старой версии читаются без потерь.
+  - TR: Kaydettiğiniz metni yapıştırın veya dosya seçin. Mevcut veriler değiştirilecek. Eski sürümün verileri kayıpsız okunur.
+  - EN: Paste the saved text or choose a file. Current data will be replaced. Data from an older version is read without loss.
+- Вставь сюда
+  - TR: Buraya yapıştırın
+  - EN: Paste here
+- Всё сохраняется само, можно вернуться позже
+  - TR: Her şey otomatik kaydedilir, sonra devam edebilirsiniz
+  - EN: Everything saves automatically, you can come back later
+- Всё, что ты ввела, сохранено. Можно вернуться к закупке и продолжить позже.
+  - TR: Girdiğiniz her şey kaydedildi. Alıma daha sonra dönüp devam edebilirsiniz.
+  - EN: Everything you entered is saved. You can return to the purchase and continue later.
+- Вход
+  - TR: Giriş
+  - EN: Log in
+- Выбери другую единицу
+  - TR: Başka bir birim seçin
+  - EN: Choose a different unit
+- Выбери материал со склада
+  - TR: Stoktan malzeme seçin
+  - EN: Choose a material from stock
+- Выбери материалы со склада, и приложение посчитает себестоимость и цену.
+  - TR: Stoktan malzemeleri seçin, uygulama maliyeti ve fiyatı hesaplasın.
+  - EN: Choose materials from stock and the app will calculate the cost and price.
+- Выбрать
+  - TR: Seç
+  - EN: Choose
+- Выбрать материал
+  - TR: Malzeme seç
+  - EN: Choose material
+- Выбрать файл
+  - TR: Dosya seç
+  - EN: Choose file
+- Выйти
+  - TR: Çıkış Yap
+  - EN: Log out
+- Выйти всё равно
+  - TR: Yine de çık
+  - EN: Log out anyway
+- Выйти из аккаунта?
+  - TR: Hesaptan çıkılsın mı?
+  - EN: Log out of your account?
+- Выполнить
+  - TR: Uygula
+  - EN: Apply
+- Выручка
+  - TR: Ciro
+  - EN: Revenue
+- Выручка по периодам
+  - TR: Döneme göre ciro
+  - EN: Revenue by period
+- Вьетнамский донг
+  - TR: Vietnam dongu
+  - EN: Vietnamese dong
+- Где лежит
+  - TR: Nerede duruyor
+  - EN: Where it is kept
+- Где продано
+  - TR: Nereye satıldı
+  - EN: Where it was sold
+- Год
+  - TR: Yıl
+  - EN: Year
+- Готово
+  - TR: Tamam
+  - EN: Done
+- Готово: можно начинать с чистого листа
+  - TR: Hazır: temiz bir sayfayla başlayabilirsiniz
+  - EN: Done: you can start from a clean slate
+- Готово: склад списан, цены зафиксированы
+  - TR: Tamam: stok düşüldü, fiyatlar sabitlendi
+  - EN: Done: stock written off, prices frozen
+- Готовые
+  - TR: Hazır
+  - EN: Finished
+- Готовых изделий нет
+  - TR: Hazır ürün yok
+  - EN: No finished pieces
+- Грузинский лари
+  - TR: Gürcü larisi
+  - EN: Georgian lari
+- Группа
+  - TR: Grup
+  - EN: Group
+- Да, главное, чтобы клей держал и металл, и камень. Лучше прозрачный ювелирный и дать ему выдержку сутки.
+  - TR: Evet, önemli olan yapıştırıcının hem metali hem taşı tutması. Şeffaf takı yapıştırıcısı daha iyi, bir gün kuruması için bekletin.
+  - EN: Yes, the main thing is that the glue holds both metal and stone. A clear jewelry glue is best; let it cure for a day.
+- Да, удалить
+  - TR: Evet, sil
+  - EN: Yes, delete
+- Дай курсу название
+  - TR: Kursa bir ad verin
+  - EN: Give the course a name
+- Дай материалу название
+  - TR: Malzemeye bir ad verin
+  - EN: Give the material a name
+- Дай позиции название
+  - TR: Kaleme bir ad verin
+  - EN: Give the line a name
+- Дай работе название
+  - TR: İşe bir ad verin
+  - EN: Give the project a name
+- Дай уроку название
+  - TR: Derse bir ad verin
+  - EN: Give the lesson a name
+- Данные на двух устройствах
+  - TR: İki cihazda veri var
+  - EN: Data on two devices
+- Данные обновлены с другого устройства
+  - TR: Veriler başka bir cihazdan güncellendi
+  - EN: Data updated from another device
+- Данные покупателей хранятся только на этом устройстве. В настоящем приложении понадобится согласие покупателей и защита персональных данных по законам твоих стран.
+  - TR: Alıcı bilgileri yalnızca bu cihazda saklanır. Gerçek kullanımda alıcıların rızası ve ülkenizin yasalarına göre kişisel verilerin korunması gerekir.
+  - EN: Buyer details are stored only on this device. In real use you will need buyers' consent and personal data protection under the laws of your countries.
+- Данные продажи
+  - TR: Satış bilgileri
+  - EN: Sale details
+- Данные продажи сохранены
+  - TR: Satış bilgileri kaydedildi
+  - EN: Sale details saved
+- Дарья В.
+  - TR: Darya V.
+  - EN: Darya V.
+- Дарья Волкова
+  - TR: Darya Volkova
+  - EN: Darya Volkova
+- Дата
+  - TR: Tarih
+  - EN: Date
+- Дата продажи
+  - TR: Satış tarihi
+  - EN: Sale date
+- Датская крона
+  - TR: Danimarka kronu
+  - EN: Danish krone
+- Двигай фото пальцем или мышью. Приближай ползунком, щипком или колёсиком.
+  - TR: Fotoğrafı parmağınızla veya fareyle kaydırın. Kaydırıcıyla, iki parmakla veya fare tekerleğiyle yakınlaştırın.
+  - EN: Move the photo with your finger or mouse. Zoom with the slider, a pinch or the wheel.
+- Действие
+  - TR: İşlem
+  - EN: Action
+- Демо-данные восстановлены
+  - TR: Demo verileri geri yüklendi
+  - EN: Demo data restored
+- Дирхам ОАЭ
+  - TR: BAE dirhemi
+  - EN: UAE dirham
+- Длительность, мин
+  - TR: Süre, dk
+  - EN: Duration, min
+- Для кого, что получилось, что улучшить
+  - TR: Kimin için, nasıl oldu, neyi iyileştirmeli
+  - EN: Who it is for, how it turned out, what to improve
+- Для новых работ
+  - TR: Yeni işler için
+  - EN: For new projects
+- Добавить
+  - TR: Ekle
+  - EN: Add
+- Добавить материалы
+  - TR: Malzeme ekle
+  - EN: Add materials
+- Добавить ученицу
+  - TR: Öğrenci ekle
+  - EN: Add a student
+- Добавлено: {0}
+  - TR: Eklendi: {0}
+  - EN: Added: {0}
+- Добавь материалы со склада, и ученицы увидят, что нужно купить.
+  - TR: Stoktan malzeme ekleyin, öğrenciler neyi satın alacaklarını görsün.
+  - EN: Add materials from stock so students can see what to buy.
+- Добавь фото, название и количество. Можно выбрать уже знакомый SKU.
+  - TR: Fotoğraf, ad ve miktar ekleyin. Tanıdık bir ürün kodunu da seçebilirsiniz.
+  - EN: Add a photo, a name and a quantity. You can also pick a SKU you already know.
+- Добавь хотя бы один материал.
+  - TR: En az bir malzeme ekleyin.
+  - EN: Add at least one material.
+- Добавь хотя бы одну позицию
+  - TR: En az bir kalem ekleyin
+  - EN: Add at least one line
+- Добро пожаловать в чат курса! Задавайте вопросы под любым уроком, я отвечаю каждый день.
+  - TR: Kurs sohbetine hoş geldiniz! Herhangi bir dersin altında soru sorabilirsiniz, her gün yanıtlıyorum.
+  - EN: Welcome to the course chat! Ask questions under any lesson, I reply every day.
+- Доллар США
+  - TR: ABD doları
+  - EN: US dollar
+- Доставка
+  - TR: Kargo
+  - EN: Shipping
+- Доставка не может быть отрицательной
+  - TR: Kargo ücreti negatif olamaz
+  - EN: Shipping cannot be negative
+- Доставка,
+  - TR: Kargo,
+  - EN: Shipping,
+- Доставка, {10}
+  - TR: Kargo, {10}
+  - EN: Shipping, {10}
+- Доставка, {6}
+  - TR: Kargo, {6}
+  - EN: Shipping, {6}
+- Доставка{1}
+  - TR: Kargo{1}
+  - EN: Shipping{1}
+- Доступ
+  - TR: Erişim
+  - EN: Access
+- Доступ закончился
+  - TR: Erişim süresi doldu
+  - EN: Access has ended
+- Доступ закончился{0}
+  - TR: Erişim süresi doldu{0}
+  - EN: Access has ended{0}
+- Доступ закрыт
+  - TR: Erişim kapalı
+  - EN: Access is closed
+- Доступ к записи закрыт: подписка не активна.
+  - TR: Kayda erişim kapalı: abonelik etkin değil.
+  - EN: Saving is closed: the subscription is not active.
+- Доступ пока не активен. Если ты оплатила, подожди и проверь ещё раз.
+  - TR: Erişim henüz etkin değil. Ödeme yaptıysanız biraz bekleyip tekrar kontrol edin.
+  - EN: Access is not active yet. If you have paid, wait a little and check again.
+- Доход от курсов, {2}
+  - TR: Kurs geliri, {2}
+  - EN: Course income, {2}
+- Другое
+  - TR: Diğer
+  - EN: Other
+- Евро
+  - TR: Euro
+  - EN: Euro
+- Египетский фунт
+  - TR: Mısır lirası
+  - EN: Egyptian pound
+- Единица учёта
+  - TR: Sayım birimi
+  - EN: Unit of count
+- Единицы пересчитаны: ×{0} ({1})
+  - TR: Birimler yeniden hesaplandı: ×{0} ({1})
+  - EN: Units converted: ×{0} ({1})
+- Если в категории есть материалы, перед удалением можно перенести их в другую или удалить вместе с ней.
+  - TR: Kategoride malzeme varsa, silmeden önce başka bir kategoriye taşıyabilir veya birlikte silebilirsiniz.
+  - EN: If the category contains materials, you can move them elsewhere before deleting, or delete them together with it.
+- Если время указано вручную, считаем его. Оно главнее таймера.
+  - TR: Süre elle girildiyse onu kullanırız. Sayaçtan önceliklidir.
+  - EN: If the time is entered by hand, we use it. It takes priority over the timer.
+- Есть данные, которые не попали в облако. Если выйти сейчас, они пропадут. Лучше сначала сохрани копию данных.
+  - TR: Buluta ulaşmamış veriler var. Şimdi çıkarsanız kaybolur. Önce bir veri yedeği almanız iyi olur.
+  - EN: Some data has not reached the cloud. If you log out now it will be lost. It is better to save a backup first.
+- Есть изменения, они скоро отправятся.
+  - TR: Değişiklikler var, yakında gönderilecek.
+  - EN: There are changes, they will be sent soon.
+- Ещё
+  - TR: Daha
+  - EN: More
+- Ещё не синхронизировано
+  - TR: Henüz eşitlenmedi
+  - EN: Not synced yet
+- За {4} год
+  - TR: {4} yılı için
+  - EN: For {4}
+- Забыла пароль
+  - TR: Şifremi unuttum
+  - EN: Forgot password
+- Завершай работу: загрузи фото, подвинь и приблизь кадр.
+  - TR: İşi tamamlayın: fotoğraf yükleyin, kadrajı kaydırıp yakınlaştırın.
+  - EN: Finish a project: upload a photo, then move and zoom the frame.
+- Завершение
+  - TR: Tamamlama
+  - EN: Finishing
+- Завершить работу
+  - TR: İşi tamamla
+  - EN: Finish the project
+- Завершённые работы и закупки в архиве останутся как есть.
+  - TR: Arşivdeki tamamlanmış işler ve alımlar olduğu gibi kalır.
+  - EN: Finished projects and purchases in the archive stay as they are.
+- Завершённые работы появятся здесь с составом, ценами и фото.
+  - TR: Tamamlanan işler burada içeriği, fiyatları ve fotoğraflarıyla görünür.
+  - EN: Finished projects will appear here with their materials, prices and photos.
+- Загружено материалов: {0}
+  - TR: Yüklenen malzeme: {0}
+  - EN: Materials loaded: {0}
+- Загрузить учебные примеры
+  - TR: Örnek verileri yükle
+  - EN: Load sample data
+- Загрузить учебные примеры?
+  - TR: Örnek veriler yüklensin mi?
+  - EN: Load sample data?
+- Заказ для подруги, застёжка на карабине.
+  - TR: Arkadaşım için sipariş, karabina kopçalı.
+  - EN: An order for a friend, carabiner clasp.
+- Заказ №2023
+  - TR: Sipariş No. 2023
+  - EN: Order #2023
+- Заказ №2023, 5 ноября 2026
+  - TR: Sipariş No. 2023, 5 Kasım 2026
+  - EN: Order #2023, 5 November 2026
+- Заколка
+  - TR: Toka
+  - EN: Hair slide
+- Заколка «Лесной оберег»
+  - TR: Toka «Orman Muskası»
+  - EN: Hair slide “Forest Amulet”
+- Заколка «Лунный камень»
+  - TR: Toka «Ay Taşı»
+  - EN: Hair slide “Moonstone”
+- Заколка «Рассвет»
+  - TR: Toka «Şafak»
+  - EN: Hair slide “Dawn”
+- Заколка «Янтарная луна»
+  - TR: Toka «Kehribar Ay»
+  - EN: Hair slide “Amber Moon”
+- Заколка-автомат 6 см
+  - TR: Otomatik toka 6 cm
+  - EN: Barrette 6 cm
+- Закрыть
+  - TR: Kapat
+  - EN: Close
+- Закупка 100 камней по 3 + доставка 30
+  - TR: 3'ten 100 taş alımı + 30 kargo
+  - EN: Purchase of 100 stones at 3 + 30 shipping
+- Закупка с доставкой
+  - TR: Kargolu alım
+  - EN: Purchase with shipping
+- Закупка сохранена, продолжить можно из «Закупок»
+  - TR: Alım kaydedildi, «Alımlar» bölümünden devam edebilirsiniz
+  - EN: The purchase is saved, you can continue from “Purchases”
+- Закупка:
+  - TR: Alım:
+  - EN: Purchase:
+- Закупки
+  - TR: Alımlar
+  - EN: Purchases
+- Заменить
+  - TR: Değiştir
+  - EN: Replace
+- Заменить данные
+  - TR: Verileri değiştir
+  - EN: Replace data
+- Заменить материал
+  - TR: Malzemeyi değiştir
+  - EN: Replace material
+- Заменить фото
+  - TR: Fotoğrafı değiştir
+  - EN: Replace photo
+- Заметка
+  - TR: Not
+  - EN: Note
+- Заметка к работе
+  - TR: İş notu
+  - EN: Project note
+- Заметки
+  - TR: Notlar
+  - EN: Notes
+- Заметки к работе
+  - TR: İş notları
+  - EN: Project notes
+- Занято {0} МБ из {1} МБ памяти браузера.
+  - TR: Tarayıcı belleğinin {1} MB'ından {0} MB'ı kullanılıyor.
+  - EN: {0} MB of {1} MB of browser storage is used.
+- Заплачено за весь остаток,
+  - TR: Kalan tüm miktar için ödenen,
+  - EN: Paid for the whole remainder,
+- Заполни пример: 100 камней по 3 + доставка 30. Нажми «Назад»: данные не пропадут.
+  - TR: Örneği doldurun: 3'ten 100 taş + 30 kargo. «Geri»ye basın: veriler kaybolmaz.
+  - EN: Fill in the example: 100 stones at 3 + 30 shipping. Press “Back”: the data will not be lost.
+- Затраты на брак
+  - TR: Fire maliyeti
+  - EN: Waste cost
+- Затраты на брак (отдельно)
+  - TR: Fire maliyeti (ayrı)
+  - EN: Waste cost (separate)
+- Здесь будет видео урока
+  - TR: Dersin videosu burada olacak
+  - EN: The lesson video will be here
+- Здесь единица меняется без пересчёта. Чтобы пересчитать количество и цену, используй блок «Цена и единицы» ниже.
+  - TR: Burada birim yeniden hesaplanmadan değişir. Miktarı ve fiyatı yeniden hesaplamak için aşağıdaki «Fiyat ve birimler» bölümünü kullanın.
+  - EN: Here the unit changes without recalculation. To recalculate the quantity and price, use the “Price and units” block below.
+- Здесь обсуждаем заколки с кристаллами. Фото своих работ выкладывайте сюда.
+  - TR: Burada kristalli tokaları konuşuyoruz. Çalışmalarınızın fotoğraflarını buraya yükleyin.
+  - EN: Here we talk about hair slides with crystals. Post photos of your work here.
+- Здесь пока тихо
+  - TR: Burası şimdilik sessiz
+  - EN: It is quiet here for now
+- Знакомство и материалы
+  - TR: Tanışma ve malzemeler
+  - EN: Introduction and materials
+- Золото
+  - TR: Altın
+  - EN: Gold
+- И из сохранённых дизайнов: {0}.
+  - TR: Ve kayıtlı tasarımlardan: {0}.
+  - EN: And from saved designs: {0}.
+- Из склада
+  - TR: Stoktan
+  - EN: From stock
+- Из склада (SKU)
+  - TR: Stoktan (ürün kodu)
+  - EN: From stock (SKU)
+- Изделие вернётся в «в наличии», данные покупателя будут стёрты.
+  - TR: Ürün tekrar «stokta» olacak, alıcı bilgileri silinecek.
+  - EN: The piece will go back to “in stock” and the buyer's details will be erased.
+- Изделие снова в наличии
+  - TR: Ürün yeniden stokta
+  - EN: The piece is back in stock
+- Изменения сохраняются на устройстве и отправляются в облако, когда появится связь.
+  - TR: Değişiklikler cihazınıza kaydedilir ve bağlantı geldiğinde buluta gönderilir.
+  - EN: Changes are saved on your device and sent to the cloud when you are back online.
+- Измени запрос или категорию.
+  - TR: Aramayı veya kategoriyi değiştirin.
+  - EN: Change the search or the category.
+- Изменить
+  - TR: Düzenle
+  - EN: Edit
+- Израильский шекель
+  - TR: İsrail şekeli
+  - EN: Israeli shekel
+- Имя
+  - TR: Ad
+  - EN: Name
+- Имя покупателя
+  - TR: Alıcının adı
+  - EN: Buyer's name
+- Инвентаризация
+  - TR: Sayım
+  - EN: Stocktaking
+- Индийская рупия
+  - TR: Hindistan rupisi
+  - EN: Indian rupee
+- Индонезийская рупия
+  - TR: Endonezya rupisi
+  - EN: Indonesian rupiah
+- Инструмент: 3 применения по 12, затем поломка 1 шт
+  - TR: Alet: 12'den 3 kullanım, ardından 1 adet kırılma
+  - EN: Tool: 3 uses at 12, then 1 piece breaks
+- Инструменты
+  - TR: Aletler
+  - EN: Tools
+- Инструменты считаются в штуках, их пересчитывать не нужно
+  - TR: Aletler adetle sayılır, yeniden hesaplamak gerekmez
+  - EN: Tools are counted in pieces, no conversion is needed
+- Исправление ошибки
+  - TR: Hata düzeltme
+  - EN: Error correction
+- Итого
+  - TR: Toplam
+  - EN: Total
+- Кадр фото
+  - TR: Fotoğraf kadrajı
+  - EN: Photo frame
+- Казахстанский тенге
+  - TR: Kazak tengesi
+  - EN: Kazakhstani tenge
+- Как посчитать себестоимость и красиво сфотографировать изделие.
+  - TR: Maliyet nasıl hesaplanır ve ürün nasıl güzel fotoğraflanır.
+  - EN: How to calculate the cost and photograph a piece beautifully.
+- Как сохранить всё и вернуть обратно.
+  - TR: Her şeyi nasıl kaydeder ve geri yüklersiniz.
+  - EN: How to save everything and bring it back.
+- Как считать: цена инструмента ÷ на сколько применений его хватит. Например, 180 ÷ 15 = 12 за одно применение.
+  - TR: Nasıl hesaplanır: aletin fiyatı ÷ kaç kullanıma yeteceği. Örneğin 180 ÷ 15 = kullanım başına 12.
+  - EN: How to calculate: the tool's price ÷ how many uses it will last. For example, 180 ÷ 15 = 12 per use.
+- Какие кристаллы выбрать
+  - TR: Hangi kristalleri seçmeli
+  - EN: Which crystals to choose
+- Какие основы, камни и кристаллы нужны, где их брать и как не переплатить.
+  - TR: Hangi aparatlar, taşlar ve kristaller gerekir, nereden alınır ve fazla ödememek için ne yapılır.
+  - EN: Which bases, stones and crystals you need, where to get them and how not to overpay.
+- Какой клей лучше держит на металле?
+  - TR: Metalde hangi yapıştırıcı daha iyi tutar?
+  - EN: Which glue holds best on metal?
+- Каменный базар, Мерсин
+  - TR: Taş pazarı, Mersin
+  - EN: Stone bazaar, Mersin
+- Камни
+  - TR: Taşlar
+  - EN: Stones
+- Камни для проверки
+  - TR: Deneme taşları
+  - EN: Stones for testing
+- Канадский доллар
+  - TR: Kanada doları
+  - EN: Canadian dollar
+- Канекалон 100 г
+  - TR: Kanekalon 100 g
+  - EN: Kanekalon 100 g
+- Канекалон Easy Braid
+  - TR: Kanekalon Easy Braid
+  - EN: Kanekalon Easy Braid
+- Канекалон для кос, 60 см
+  - TR: Örgü kanekalonu, 60 cm
+  - EN: Kanekalon for braids, 60 cm
+- Канекалон и крепления.
+  - TR: Kanekalon ve bağlantılar.
+  - EN: Kanekalon and fasteners.
+- Карточка
+  - TR: Kart
+  - EN: Card
+- Карточка создаётся при завершении работы.
+  - TR: Kart, iş tamamlandığında oluşturulur.
+  - EN: The card is created when you finish a project.
+- Карточка сохранена
+  - TR: Kart kaydedildi
+  - EN: Card saved
+- Категории
+  - TR: Kategoriler
+  - EN: Categories
+- Категория добавлена
+  - TR: Kategori eklendi
+  - EN: Category added
+- Категория и материалы ({0}) удалены
+  - TR: Kategori ve malzemeler ({0}) silindi
+  - EN: Category and materials ({0}) deleted
+- Категория переименована
+  - TR: Kategori yeniden adlandırıldı
+  - EN: Category renamed
+- Категория удалена
+  - TR: Kategori silindi
+  - EN: Category deleted
+- Категория удалена, материалы ({0}) перенесены
+  - TR: Kategori silindi, malzemeler ({0}) taşındı
+  - EN: Category deleted, materials ({0}) moved
+- Катушка C1
+  - TR: Makara C1
+  - EN: Spool C1
+- Катушка D1
+  - TR: Makara D1
+  - EN: Spool D1
+- Катушка D2
+  - TR: Makara D2
+  - EN: Spool D2
+- Киргизский сом
+  - TR: Kırgız somu
+  - EN: Kyrgyzstani som
+- Китайский юань
+  - TR: Çin yuanı
+  - EN: Chinese yuan
+- Клеи
+  - TR: Yapıştırıcılar
+  - EN: Glues
+- Клеи и инструменты
+  - TR: Yapıştırıcılar ve aletler
+  - EN: Glues and tools
+- Клеим и собираем
+  - TR: Yapıştırıp birleştiriyoruz
+  - EN: Gluing and assembling
+- Клей
+  - TR: Yapıştırıcı
+  - EN: Glue
+- Клей ювелирный прозрачный
+  - TR: Şeffaf takı yapıştırıcısı
+  - EN: Clear jewelry glue
+- Когда завершишь эту работу, на складе останется {0} {1}{2}.
+  - TR: Bu işi tamamladığınızda stokta {0} {1}{2} kalacak.
+  - EN: When you finish this project, {0} {1}{2} will be left in stock.
+- Код или название
+  - TR: Kod veya ad
+  - EN: Code or name
+- Колечки соединительные
+  - TR: Bağlantı halkaları
+  - EN: Jump rings
+- Количество
+  - TR: Miktar
+  - EN: Quantity
+- Количество и цена
+  - TR: Miktar ve fiyat
+  - EN: Quantity and price
+- Количество не изменилось
+  - TR: Miktar değişmedi
+  - EN: The quantity did not change
+- Количество не может быть отрицательным
+  - TR: Miktar negatif olamaz
+  - EN: The quantity cannot be negative
+- Колье
+  - TR: Kolye
+  - EN: Necklace
+- Комиссия + желаемая прибыль ≥ 99%: цену посчитать нельзя.
+  - TR: Komisyon + istenen kâr ≥ %99: fiyat hesaplanamaz.
+  - EN: Fee + desired profit ≥ 99%: the price cannot be calculated.
+- Комиссия, %
+  - TR: Komisyon, %
+  - EN: Fee, %
+- Комментарий (по желанию)
+  - TR: Yorum (isteğe bağlı)
+  - EN: Comment (optional)
+- Контакт (Telegram, почта, телефон)
+  - TR: İletişim (Telegram, e-posta, telefon)
+  - EN: Contact (Telegram, email, phone)
+- Копия данных
+  - TR: Veri yedeği
+  - EN: Data backup
+- Корейская вона
+  - TR: Güney Kore wonu
+  - EN: South Korean won
+- Коробка A1
+  - TR: Kutu A1
+  - EN: Box A1
+- Коробка A2
+  - TR: Kutu A2
+  - EN: Box A2
+- Коробка F1
+  - TR: Kutu F1
+  - EN: Box F1
+- Коробка F2
+  - TR: Kutu F2
+  - EN: Box F2
+- Коробка F3
+  - TR: Kutu F3
+  - EN: Box F3
+- Коробки
+  - TR: Kutular
+  - EN: Boxes
+- Коробочка подарочная
+  - TR: Hediye kutusu
+  - EN: Gift box
+- Корректировка количества
+  - TR: Miktar düzeltme
+  - EN: Quantity adjustment
+- Корректировка:
+  - TR: Düzeltme:
+  - EN: Adjustment:
+- Коса «Золотой час»
+  - TR: Örgü «Altın Saat»
+  - EN: Braid “Golden Hour”
+- Коса «Лабрадор»
+  - TR: Örgü «Labradorit»
+  - EN: Braid “Labradorite”
+- Коса «Лунный свет»
+  - TR: Örgü «Ay Işığı»
+  - EN: Braid “Moonlight”
+- Коса «Розовый кварц»
+  - TR: Örgü «Gül Kuvarsı»
+  - EN: Braid “Rose Quartz”
+- Косы на карабинах «Пепел, медь и ночь»
+  - TR: Karabinalı örgüler «Kül, Bakır ve Gece»
+  - EN: Braids on carabiners “Ash, Copper and Night”
+- Красивая подача для подарка.
+  - TR: Hediye için şık bir sunum.
+  - EN: A beautiful presentation for a gift.
+- Кремово-бежевый (M27)
+  - TR: Krem bej (M27)
+  - EN: Cream beige (M27)
+- Кристаллы
+  - TR: Kristaller
+  - EN: Crystals
+- Кристаллы Swarovski
+  - TR: Swarovski kristalleri
+  - EN: Swarovski crystals
+- Круглогубцы
+  - TR: Yuvarlak maşa
+  - EN: Round-nose pliers
+- Куда уехало (страна, город)
+  - TR: Nereye gitti (ülke, şehir)
+  - EN: Where it went (country, city)
+- Курс
+  - TR: Kur
+  - EN: Rate
+- Курс открыт для продажи
+  - TR: Kurs satışa açıldı
+  - EN: The course is open for sale
+- Курс скрыт
+  - TR: Kurs gizlendi
+  - EN: The course is hidden
+- Курс создан как черновик
+  - TR: Kurs taslak olarak oluşturuldu
+  - EN: The course was created as a draft
+- Курс удалён
+  - TR: Kurs silindi
+  - EN: Course deleted
+- Курс, его уроки и чат будут удалены. Ученицы останутся в списке.
+  - TR: Kurs, dersleri ve sohbeti silinecek. Öğrenciler listede kalır.
+  - EN: The course, its lessons and chat will be deleted. Students stay on the list.
+- Курсы
+  - TR: Kurslar
+  - EN: Courses
+- Курсы, видео-уроки, чат и ученицы. Переключатель сверху.
+  - TR: Kurslar, video dersler, sohbet ve öğrenciler. Üstteki düğmeden geçiş yapın.
+  - EN: Courses, video lessons, chat and students. Use the switch at the top.
+- Лабрадорит, бусины
+  - TR: Labradorit, boncuklar
+  - EN: Labradorite, beads
+- Леска
+  - TR: Misina
+  - EN: Fishing line
+- Леска прозрачная
+  - TR: Şeffaf misina
+  - EN: Clear stringing line
+- Лимасол, Кипр
+  - TR: Limasol, Kıbrıs
+  - EN: Limassol, Cyprus
+- Листай месяцы и годы, смотри выручку и что покупают чаще.
+  - TR: Ayları ve yılları kaydırın, cirodan ve en çok neyin alındığından haberdar olun.
+  - EN: Flip through months and years and see revenue and what sells most.
+- Лично
+  - TR: Yüz yüze
+  - EN: In person
+- Личные сообщения ученицам не нужны на старте: общий чат курса проще вести и модерировать.
+  - TR: Başlangıçta öğrencilere özel mesaj gerekmez: ortak kurs sohbetini yönetmek ve denetlemek daha kolaydır.
+  - EN: Private messages to students are not needed at the start: a shared course chat is easier to run and moderate.
+- Лоток B1
+  - TR: Tepsi B1
+  - EN: Tray B1
+- Магазин или рынок
+  - TR: Mağaza veya pazar
+  - EN: Shop or market
+- Малайзийский ринггит
+  - TR: Malezya ringgiti
+  - EN: Malaysian ringgit
+- Мария С.
+  - TR: Maria S.
+  - EN: Maria S.
+- Мария Соколова
+  - TR: Maria Sokolova
+  - EN: Maria Sokolova
+- Маркетплейс
+  - TR: Pazar yeri
+  - EN: Marketplace
+- Марокканский дирхам
+  - TR: Fas dirhemi
+  - EN: Moroccan dirham
+- Мастерская
+  - TR: Atölye
+  - EN: Workshop
+- Масштаб
+  - TR: Yakınlaştırma
+  - EN: Zoom
+- Материал
+  - TR: Malzeme
+  - EN: Material
+- Материал заменён
+  - TR: Malzeme değiştirildi
+  - EN: Material replaced
+- Материал со склада
+  - TR: Stoktan malzeme
+  - EN: Material from stock
+- Материал удалён
+  - TR: Malzeme silindi
+  - EN: Material deleted
+- Материал удалён из каталога.
+  - TR: Malzeme katalogdan silindi.
+  - EN: The material was removed from the catalog.
+- Материалы
+  - TR: Malzemeler
+  - EN: Materials
+- Материалы + инструмент
+  - TR: Malzemeler + alet
+  - EN: Materials + tools
+- Материалы в изделии
+  - TR: Üründeki malzemeler
+  - EN: Materials in the piece
+- Материалы и подготовка
+  - TR: Malzemeler ve hazırlık
+  - EN: Materials and preparation
+- Материалы появляются здесь после закупки.
+  - TR: Malzemeler alım yapıldıktan sonra burada görünür.
+  - EN: Materials appear here after a purchase.
+- Материалы урока
+  - TR: Ders malzemeleri
+  - EN: Lesson materials
+- Материалы урока перенесены в твою работу
+  - TR: Ders malzemeleri işinize aktarıldı
+  - EN: The lesson materials were moved into your project
+- Мексиканское песо
+  - TR: Meksika pesosu
+  - EN: Mexican peso
+- Меньше
+  - TR: Daha az
+  - EN: Less
+- Месяц
+  - TR: Ay
+  - EN: Month
+- Металл и фурнитура
+  - TR: Metal ve aksesuar
+  - EN: Metal and findings
+- Минимум на складе
+  - TR: Stokta asgari miktar
+  - EN: Minimum in stock
+- Многоразовый инструмент
+  - TR: Tekrar kullanılabilir alet
+  - EN: Reusable tool
+- Молдавский лей
+  - TR: Moldova leyi
+  - EN: Moldovan leu
+- Моя
+  - TR: Benim
+  - EN: My
+- Моя валюта
+  - TR: Para birimim
+  - EN: My currency
+- Моя мастерская
+  - TR: Atölyem
+  - EN: My Workshop
+- Мы отправили письмо со ссылкой. Открой его на этом устройстве.
+  - TR: Bağlantı içeren bir e-posta gönderdik. Bu cihazda açın.
+  - EN: We sent an email with a link. Open it on this device.
+- Мы отправили письмо. Подтверди почту по ссылке, потом вернись и войди.
+  - TR: E-posta gönderdik. Bağlantıdan e-postanızı doğrulayın, sonra dönüp giriş yapın.
+  - EN: We sent an email. Confirm your address via the link, then come back and log in.
+- Назад
+  - TR: Geri
+  - EN: Back
+- Назад ко входу
+  - TR: Girişe dön
+  - EN: Back to login
+- Название
+  - TR: Ad
+  - EN: Name
+- Название категории
+  - TR: Kategori adı
+  - EN: Category name
+- Название курса
+  - TR: Kurs adı
+  - EN: Course name
+- Название не может быть пустым
+  - TR: Ad boş olamaz
+  - EN: The name cannot be empty
+- Название работы
+  - TR: İş adı
+  - EN: Project name
+- Название урока
+  - TR: Ders adı
+  - EN: Lesson name
+- Название, бренд, артикул, цвет, размер
+  - TR: Ad, marka, ürün kodu, renk, boyut
+  - EN: Name, brand, SKU, color, size
+- Найди камни по запросу SS16, потом добавь AB.
+  - TR: Taşları «SS16» ile arayın, sonra «AB» ekleyin.
+  - EN: Search for stones with “SS16”, then add “AB”.
+- Накладные пряди
+  - TR: Takma saç
+  - EN: Hair extensions
+- Напиши первое сообщение курсу.
+  - TR: Kursa ilk mesajı yazın.
+  - EN: Write the first message to the course.
+- Например, Анкара, Турция
+  - TR: Örneğin Ankara, Türkiye
+  - EN: For example, Ankara, Türkiye
+- Например, Елена К.
+  - TR: Örneğin Elena K.
+  - EN: For example, Elena K.
+- Например, Серьги «Утро»
+  - TR: Örneğin «Sabah» küpeleri
+  - EN: For example, “Morning” earrings
+- Например, Серьги с нуля
+  - TR: Örneğin Sıfırdan küpe yapımı
+  - EN: For example, Earrings from scratch
+- Например, Стразы SS16
+  - TR: Örneğin Strass SS16
+  - EN: For example, Rhinestones SS16
+- Натуральные камни
+  - TR: Doğal taşlar
+  - EN: Natural stones
+- Находка
+  - TR: Buluntu
+  - EN: Found
+- Начальный остаток
+  - TR: Açılış bakiyesi
+  - EN: Opening balance
+- Начать работу
+  - TR: İşe başla
+  - EN: Start a project
+- Начать с чистого листа
+  - TR: Temiz bir sayfayla başla
+  - EN: Start from a clean slate
+- Начнём с чистого листа
+  - TR: Temiz bir sayfayla başlayalım
+  - EN: Let's start with a clean slate
+- Не все изменения отправлены
+  - TR: Tüm değişiklikler gönderilmedi
+  - EN: Not all changes have been sent
+- Не загрузилась часть приложения. Обнови страницу при включённом интернете.
+  - TR: Uygulamanın bir kısmı yüklenemedi. İnternet açıkken sayfayı yenileyin.
+  - EN: Part of the app did not load. Refresh the page while online.
+- Не нашла такую валюту
+  - TR: Böyle bir para birimi bulunamadı
+  - EN: That currency was not found
+- Не получилось:
+  - TR: Olmadı:
+  - EN: Failed:
+- Не похоже на сохранённые данные «Моей мастерской»
+  - TR: «Atölyem» uygulamasının kaydedilmiş verilerine benzemiyor
+  - EN: This does not look like saved data from “My Workshop”
+- Не удалось загрузить фото: {0}. Попробуй синхронизировать ещё раз.
+  - TR: Fotoğraf yüklenemedi: {0}. Yeniden eşitlemeyi deneyin.
+  - EN: Could not upload photo: {0}. Try syncing again.
+- Не удалось открыть фото
+  - TR: Fotoğraf açılamadı
+  - EN: Could not open the photo
+- Не удалось прочитать фото
+  - TR: Fotoğraf okunamadı
+  - EN: Could not read the photo
+- Не удалось сохранить: память браузера заполнена. Сохрани копию данных в «Ещё».
+  - TR: Kaydedilemedi: tarayıcı belleği dolu. «Daha» bölümünden veri yedeği alın.
+  - EN: Could not save: browser storage is full. Save a data backup in “More”.
+- Неверная почта или пароль.
+  - TR: E-posta veya şifre hatalı.
+  - EN: Wrong email or password.
+- Нельзя меньше резерва: {0} {1} занято в работах
+  - TR: Ayrılan miktarın altına inilemez: {0} {1} işlerde kullanımda
+  - EN: Cannot go below the reserve: {0} {1} is held by projects
+- Нет интернета: работаем офлайн, изменения отправятся потом.
+  - TR: İnternet yok: çevrimdışı çalışıyoruz, değişiklikler sonra gönderilecek.
+  - EN: No internet: working offline, changes will be sent later.
+- Нет связи с интернетом. Для входа нужен интернет.
+  - TR: İnternet bağlantısı yok. Giriş için internet gerekir.
+  - EN: No internet connection. Logging in requires internet.
+- Нитки и шнуры
+  - TR: İplik ve kordon
+  - EN: Threads and cords
+- Нить шёлковая для бусин
+  - TR: Boncuk için ipek iplik
+  - EN: Silk thread for beads
+- Ничего не нашла
+  - TR: Hiçbir şey bulunamadı
+  - EN: Nothing found
+- Новая закупка
+  - TR: Yeni alım
+  - EN: New purchase
+- Новая категория
+  - TR: Yeni kategori
+  - EN: New category
+- Новая позиция
+  - TR: Yeni kalem
+  - EN: New item
+- Новая работа
+  - TR: Yeni iş
+  - EN: New project
+- Новая работа собрана из архива
+  - TR: Yeni iş arşivden oluşturuldu
+  - EN: A new project was created from the archive
+- Новый курс
+  - TR: Yeni kurs
+  - EN: New course
+- Новый пароль
+  - TR: Yeni şifre
+  - EN: New password
+- Новый урок
+  - TR: Yeni ders
+  - EN: New lesson
+- Норвежская крона
+  - TR: Norveç kronu
+  - EN: Norwegian krone
+- О курсе
+  - TR: Kurs hakkında
+  - EN: About the course
+- Ободки
+  - TR: Taçlar
+  - EN: Headbands
+- Ободок
+  - TR: Saç bandı
+  - EN: Headband
+- Ободок «Аврора»
+  - TR: Saç bandı «Şafak»
+  - EN: Headband “Aurora”
+- Ободок металлический
+  - TR: Metal saç bandı
+  - EN: Metal headband
+- Один общий чат на каждый курс
+  - TR: Her kurs için tek bir ortak sohbet
+  - EN: One shared chat per course
+- Одна бусина треснула при сверлении, пошла в брак.
+  - TR: Bir boncuk delerken çatladı, fire oldu.
+  - EN: One bead cracked during drilling and was written off as waste.
+- Одно применение,
+  - TR: Bir kullanım,
+  - EN: One use,
+- Ожидается: {3}
+  - TR: Beklenen: {3}
+  - EN: Expected: {3}
+- Он будет убран из работ: {0}.
+  - TR: Şu işlerden çıkarılacak: {0}.
+  - EN: It will be removed from these projects: {0}.
+- Описание
+  - TR: Açıklama
+  - EN: Description
+- Оплату ты получаешь на своей платформе. Здесь ученица получает доступ и попадает в чат курса.
+  - TR: Ödemeyi kendi platformunuzdan alırsınız. Burada öğrenci erişim kazanır ve kurs sohbetine katılır.
+  - EN: You receive payment on your own platform. Here the student gets access and joins the course chat.
+- Оплату ты принимаешь на своей платформе. Здесь отмечаешь, кто купил и открыт ли доступ.
+  - TR: Ödemeyi kendi platformunuzdan alırsınız. Burada kimin satın aldığını ve erişimin açık olup olmadığını işaretlersiniz.
+  - EN: You take payment on your own platform. Here you mark who bought and whether access is open.
+- Оплачено,
+  - TR: Ödendi,
+  - EN: Paid,
+- Основная валюта: {0}. Старые суммы не пересчитаны
+  - TR: Ana para birimi: {0}. Eski tutarlar yeniden hesaplanmadı
+  - EN: Main currency: {0}. Old amounts were not recalculated
+- Основы для заколок
+  - TR: Toka aparatları
+  - EN: Hair slide bases
+- Основы и ткани
+  - TR: Aparatlar ve kumaşlar
+  - EN: Bases and fabrics
+- Оставить эти
+  - TR: Bunları koru
+  - EN: Keep these
+- Остаток обновлён
+  - TR: Kalan miktar güncellendi
+  - EN: Balance updated
+- Открой «Заколку Рассвет»: у каждого материала видно склад, резерв и свободно.
+  - TR: «Şafak tokası»nı açın: her malzemede stok, ayrılan ve serbest miktar görünür.
+  - EN: Open the “Dawn” hair slide: every material shows stock, reserved and free.
+- Открой меню браузера и выбери «Установить приложение» (iPhone: Поделиться → На экран Домой)
+  - TR: Tarayıcı menüsünü açın ve «Uygulamayı yükle»yi seçin (iPhone: Paylaş → Ana Ekrana Ekle)
+  - EN: Open the browser menu and choose “Install app” (iPhone: Share → Add to Home Screen)
+- Открыт
+  - TR: Açık
+  - EN: Open
+- Открыть чат курса
+  - TR: Kurs sohbetini aç
+  - EN: Open the course chat
+- Отмена
+  - TR: İptal
+  - EN: Cancel
+- Отменить продажу
+  - TR: Satışı iptal et
+  - EN: Cancel the sale
+- Отменить продажу?
+  - TR: Satış iptal edilsin mi?
+  - EN: Cancel the sale?
+- Отменить работу
+  - TR: İşi iptal et
+  - EN: Cancel the project
+- Отменить работу?
+  - TR: İş iptal edilsin mi?
+  - EN: Cancel the project?
+- Отметить продажу
+  - TR: Satışı işaretle
+  - EN: Mark as sold
+- Отметь изделие проданным: имя, телефон, куда уехало.
+  - TR: Ürünü satıldı olarak işaretleyin: ad, telefon, nereye gitti.
+  - EN: Mark a piece as sold: name, phone, where it went.
+- Отметь, что принимаешь условия.
+  - TR: Koşulları kabul ettiğinizi işaretleyin.
+  - EN: Tick that you accept the terms.
+- Отметь, что убрать, и создай своё заново. Настройки (валюта, ставка, комиссия) останутся.
+  - TR: Neyi kaldıracağınızı işaretleyin ve kendinizinkini baştan oluşturun. Ayarlar (para birimi, saat ücreti, komisyon) kalır.
+  - EN: Tick what to remove and create your own from scratch. Settings (currency, rate, fee) stay.
+- Отметь, что удалить
+  - TR: Neyi sileceğinizi işaretleyin
+  - EN: Tick what to delete
+- Отправить
+  - TR: Gönder
+  - EN: Send
+- Отправить ссылку
+  - TR: Bağlantı gönder
+  - EN: Send the link
+- Оформи первую закупку
+  - TR: İlk alımınızı kaydedin
+  - EN: Record your first purchase
+- Оформить закупку
+  - TR: Alımı kaydet
+  - EN: Record the purchase
+- Очистить
+  - TR: Temizle
+  - EN: Clear
+- Очистить и начать заново
+  - TR: Temizle ve baştan başla
+  - EN: Clear and start over
+- Пакет C2
+  - TR: Paket C2
+  - EN: Bag C2
+- Пакет G1
+  - TR: Paket G1
+  - EN: Bag G1
+- Папки для материалов: бусины, нитки, ткани. Можно выбрать готовые.
+  - TR: Malzeme klasörleri: boncuk, iplik, kumaş. Hazır olanlardan seçebilirsiniz.
+  - EN: Folders for materials: beads, threads, fabrics. You can pick ready-made ones.
+- Пароль
+  - TR: Şifre
+  - EN: Password
+- Пароль не короче 8 символов.
+  - TR: Şifre en az 8 karakter olmalı.
+  - EN: The password must be at least 8 characters.
+- Пароль слишком короткий: нужно не меньше 8 символов.
+  - TR: Şifre çok kısa: en az 8 karakter gerekir.
+  - EN: The password is too short: at least 8 characters are needed.
+- Пауза
+  - TR: Duraklat
+  - EN: Pause
+- Перед выходом данные отправятся в облако, и с этого устройства они удалятся. Войдёшь снова, и всё вернётся.
+  - TR: Çıkmadan önce veriler buluta gönderilir ve bu cihazdan silinir. Tekrar giriş yaptığınızda her şey geri gelir.
+  - EN: Before logging out your data is sent to the cloud and removed from this device. Log in again and everything comes back.
+- Пересчитать
+  - TR: Yeniden hesapla
+  - EN: Recalculate
+- Пересчитать единицы?
+  - TR: Birimler yeniden hesaplansın mı?
+  - EN: Recalculate the units?
+- Пинцет
+  - TR: Cımbız
+  - EN: Tweezers
+- Пинцет ювелирный
+  - TR: Takı cımbızı
+  - EN: Jewelry tweezers
+- Платиновый блонд (27+613)
+  - TR: Platin sarı (27+613)
+  - EN: Platinum blonde (27+613)
+- Платиновый блонд (613#)
+  - TR: Platin sarı (613#)
+  - EN: Platinum blonde (613#)
+- Платно
+  - TR: Ücretli
+  - EN: Paid
+- По дизайну
+  - TR: Tasarıma göre
+  - EN: By design
+- По дням
+  - TR: Günlere göre
+  - EN: By day
+- По месяцам
+  - TR: Aylara göre
+  - EN: By month
+- По центру
+  - TR: Ortala
+  - EN: Center
+- Повторить работу
+  - TR: İşi tekrarla
+  - EN: Repeat the project
+- Повторная закупка дороже
+  - TR: Daha pahalı tekrar alım
+  - EN: A repeat purchase at a higher price
+- Подарок
+  - TR: Hediye
+  - EN: Gift
+- Подвеска «Хрусталь»
+  - TR: Kolye ucu «Kristal»
+  - EN: Pendant “Crystal”
+- Подготовка основы
+  - TR: Aparatın hazırlanması
+  - EN: Preparing the base
+- Подгруппа
+  - TR: Alt grup
+  - EN: Subgroup
+- Подожди…
+  - TR: Bekleyin…
+  - EN: Please wait…
+- Подписка до {0}
+  - TR: Abonelik: {0} tarihine kadar
+  - EN: Subscription until {0}
+- Подскажите, можно взять другой клей, если основа из металла?
+  - TR: Taban metal ise başka bir yapıştırıcı kullanabilir miyim?
+  - EN: Can I use a different glue if the base is metal?
+- Подтвердить и списать
+  - TR: Onayla ve stoktan düş
+  - EN: Confirm and write off
+- Подтвердить приход
+  - TR: Alımı onayla
+  - EN: Confirm the purchase
+- Позиции
+  - TR: Kalemler
+  - EN: Items
+- Позиция закупки
+  - TR: Alım kalemi
+  - EN: Purchase item
+- Поиск по коду и цвету
+  - TR: Koda ve renge göre arama
+  - EN: Search by code and color
+- Поиск по складу
+  - TR: Stokta ara
+  - EN: Search stock
+- Пока данные на каждом устройстве свои: телефон и компьютер не синхронизируются.
+  - TR: Şimdilik her cihazın verisi ayrı: telefon ve bilgisayar eşitlenmiyor.
+  - EN: For now each device keeps its own data: phone and computer do not sync.
+- Пока никто не купил.
+  - TR: Henüz kimse satın almadı.
+  - EN: No one has bought yet.
+- Показать на складе
+  - TR: Stokta göster
+  - EN: Show in stock
+- Полка H1
+  - TR: Raf H1
+  - EN: Shelf H1
+- Поломка инструмента:
+  - TR: Alet kırılması:
+  - EN: Tool breakage:
+- Поломка, шт
+  - TR: Kırılma, adet
+  - EN: Breakage, pcs
+- Получилось: {4}
+  - TR: Sonuç: {4}
+  - EN: Result: {4}
+- Польский злотый
+  - TR: Polonya zlotisi
+  - EN: Polish zloty
+- Попробуй другой запрос: название, бренд, артикул, цвет или размер.
+  - TR: Başka bir arama deneyin: ad, marka, ürün kodu, renk veya boyut.
+  - EN: Try another search: name, brand, SKU, color or size.
+- После завершения
+  - TR: Tamamlandıktan sonra
+  - EN: After finishing
+- Поставщик
+  - TR: Tedarikçi
+  - EN: Supplier
+- Потеря
+  - TR: Kayıp
+  - EN: Loss
+- Почта
+  - TR: E-posta
+  - EN: Email
+- Почта не подтверждена. Открой письмо от нас и нажми на ссылку.
+  - TR: E-posta doğrulanmadı. Bizden gelen e-postayı açıp bağlantıya tıklayın.
+  - EN: Your email is not confirmed. Open our email and click the link.
+- Пошаговая сборка заколки. Материалы урока можно сразу перенести в свою работу.
+  - TR: Tokanın adım adım montajı. Ders malzemelerini hemen kendi işinize aktarabilirsiniz.
+  - EN: Step-by-step assembly of the hair slide. You can move the lesson materials straight into your own project.
+- Прибыль
+  - TR: Kâr
+  - EN: Profit
+- Прибыль = цена продажи минус себестоимость изделия. Комиссии площадок и доставку закладывай в цену.
+  - TR: Kâr = satış fiyatı eksi ürün maliyeti. Pazar yeri komisyonlarını ve kargoyu fiyata ekleyin.
+  - EN: Profit = selling price minus the cost of the piece. Build marketplace fees and shipping into the price.
+- Прибыль после комиссии и доставки
+  - TR: Komisyon ve kargo sonrası kâr
+  - EN: Profit after fees and shipping
+- Прибыль, %
+  - TR: Kâr, %
+  - EN: Profit, %
+- Придумай новый пароль, не короче 8 символов.
+  - TR: Yeni bir şifre belirleyin, en az 8 karakter.
+  - EN: Choose a new password, at least 8 characters.
+- Применений
+  - TR: Kullanım sayısı
+  - EN: Number of uses
+- Применить корректировку
+  - TR: Düzeltmeyi uygula
+  - EN: Apply the adjustment
+- Пример добавлен: проверь итог 3,30 за штуку
+  - TR: Örnek eklendi: adet başına toplamın 3,30 olduğunu kontrol edin
+  - EN: Example added: check the total of 3.30 per piece
+- Пример: 1 упаковка × 90 г или 1 × 1440 камней. Цена делится на граммы или штуки внутри упаковки, а не на упаковки.
+  - TR: Örnek: 1 paket × 90 g veya 1 × 1440 taş. Fiyat paket sayısına değil, paketin içindeki gram veya adede bölünür.
+  - EN: Example: 1 pack × 90 g or 1 × 1440 stones. The price is divided by the grams or pieces inside the pack, not by the packs.
+- Примечание (можно дополнять позже)
+  - TR: Not (sonra eklenebilir)
+  - EN: Note (you can add to it later)
+- Приход оформлен, склад пополнен
+  - TR: Alım kaydedildi, stok güncellendi
+  - EN: Purchase recorded, stock replenished
+- Приход: {0} {1}
+  - TR: Alım: {0} {1}
+  - EN: Purchase: {0} {1}
+- Причина
+  - TR: Neden
+  - EN: Reason
+- Пробный период до {0}
+  - TR: Deneme süresi: {0} tarihine kadar
+  - EN: Trial until {0}
+- Проверь код или название.
+  - TR: Kodu veya adı kontrol edin.
+  - EN: Check the code or name.
+- Проверь почту: похоже, в адресе ошибка.
+  - TR: E-postayı kontrol edin: adreste hata var gibi.
+  - EN: Check your email: the address seems to have a typo.
+- Проверяем доступ…
+  - TR: Erişim kontrol ediliyor…
+  - EN: Checking access…
+- Продажа отмечена
+  - TR: Satış işaretlendi
+  - EN: Sale marked
+- Продажа с покупателем
+  - TR: Alıcılı satış
+  - EN: Sale with a buyer
+- Продажи
+  - TR: Satışlar
+  - EN: Sales
+- Продано
+  - TR: Satıldı
+  - EN: Sold
+- Прозрачный
+  - TR: Şeffaf
+  - EN: Clear
+- Прочее
+  - TR: Diğer
+  - EN: Other
+- Прочие расходы
+  - TR: Diğer giderler
+  - EN: Other expenses
+- Прочие расходы, {2}
+  - TR: Diğer giderler, {2}
+  - EN: Other expenses, {2}
+- Прочие расходы, {6}
+  - TR: Diğer giderler, {6}
+  - EN: Other expenses, {6}
+- Прядь «Аметист»
+  - TR: Saç parçası «Ametist»
+  - EN: Hair piece “Amethyst”
+- Прядь «Белый шёлк»
+  - TR: Saç parçası «Beyaz İpek»
+  - EN: Hair piece “White Silk”
+- Прядь «Лавандовый туман»
+  - TR: Saç parçası «Lavanta Sisi»
+  - EN: Hair piece “Lavender Mist”
+- Прядь «Утренний иней»
+  - TR: Saç parçası «Sabah Ayazı»
+  - EN: Hair piece “Morning Frost”
+- Прядь с кристаллами
+  - TR: Kristalli saç parçası
+  - EN: Hair piece with crystals
+- Пудровый
+  - TR: Pudra
+  - EN: Powder pink
+- Работа отменена, резерв снят
+  - TR: İş iptal edildi, ayırma kaldırıldı
+  - EN: The project was cancelled and the reserve released
+- Работа по уроку
+  - TR: Dersin işi
+  - EN: Lesson project
+- Работа:
+  - TR: İş:
+  - EN: Project:
+- Работает без интернета
+  - TR: İnternetsiz çalışır
+  - EN: Works offline
+- Работы
+  - TR: İşler
+  - EN: Projects
+- Разделы
+  - TR: Bölümler
+  - EN: Sections
+- Размер
+  - TR: Boyut
+  - EN: Size
+- Раскладка, клей, выдержка.
+  - TR: Yerleşim, yapıştırıcı, kuruma süresi.
+  - EN: Layout, glue, curing time.
+- Раскладываем кристаллы по размеру и цвету, готовим основу под сборку.
+  - TR: Kristalleri boyuta ve renge göre ayırıyor, aparatı montaja hazırlıyoruz.
+  - EN: We sort the crystals by size and color and prepare the base for assembly.
+- Рассвет
+  - TR: Şafak
+  - EN: Dawn
+- Расходник
+  - TR: Sarf malzeme
+  - EN: Consumable
+- Реально на складе
+  - TR: Stokta fiilen var
+  - EN: Actually in stock
+- Резерв без списания
+  - TR: Stoktan düşmeden ayırma
+  - EN: Reserve without writing off
+- Рекомендуемая цена
+  - TR: Önerilen fiyat
+  - EN: Recommended price
+- Рецепт загружен как план. Расход можно менять
+  - TR: Tarif plan olarak yüklendi. Kullanım miktarını değiştirebilirsiniz
+  - EN: The recipe was loaded as a plan. You can change the usage
+- Рецепт — только план. Фактический расход в работе можно менять как угодно.
+  - TR: Tarif yalnızca bir plandır. İşteki gerçek kullanımı istediğiniz gibi değiştirebilirsiniz.
+  - EN: A recipe is only a plan. You can change the actual usage in a project however you like.
+- Розовый (1B+Pink)
+  - TR: Pembe (1B+Pink)
+  - EN: Pink (1B+Pink)
+- Российский рубль
+  - TR: Rus rublesi
+  - EN: Russian ruble
+- Румынский лей
+  - TR: Romen leyi
+  - EN: Romanian leu
+- С нуля
+  - TR: Sıfırdan
+  - EN: From scratch
+- Саудовский риял
+  - TR: Suudi riyali
+  - EN: Saudi riyal
+- Сборка украшения
+  - TR: Takının montajı
+  - EN: Assembling the piece
+- Сбросить
+  - TR: Sıfırla
+  - EN: Reset
+- Сбросить демо-данные?
+  - TR: Demo verileri sıfırlansın mı?
+  - EN: Reset the demo data?
+- Сбросить фильтры
+  - TR: Filtreleri sıfırla
+  - EN: Reset filters
+- Свободно всего {0} {1}: больше зарезервировать нельзя
+  - TR: Toplam serbest olan {0} {1}: daha fazlası ayrılamaz
+  - EN: Only {0} {1} is free in total: you cannot reserve more
+- Свободно только {0} шт
+  - TR: Yalnızca {0} adet serbest
+  - EN: Only {0} pcs are free
+- Своя цена продажи, {8} (необязательно)
+  - TR: Kendi satış fiyatınız, {8} (isteğe bağlı)
+  - EN: Your own selling price, {8} (optional)
+- Себестоимость
+  - TR: Maliyet
+  - EN: Cost
+- Себестоимость {2}
+  - TR: Maliyet {2}
+  - EN: Cost {2}
+- Сербский динар
+  - TR: Sırp dinarı
+  - EN: Serbian dinar
+- Серебристо-бежевый (Silver)
+  - TR: Gümüş bej (Silver)
+  - EN: Silver beige (Silver)
+- Серебро
+  - TR: Gümüş
+  - EN: Silver
+- Серо-голубой
+  - TR: Gri mavi
+  - EN: Grey-blue
+- Серьги
+  - TR: Küpe
+  - EN: Earrings
+- Сингапурский доллар
+  - TR: Singapur doları
+  - EN: Singapore dollar
+- Синхронизация…
+  - TR: Eşitleniyor…
+  - EN: Syncing…
+- Синхронизировано в {0}
+  - TR: {0} saatinde eşitlendi
+  - EN: Synced at {0}
+- Синхронизировать
+  - TR: Eşitle
+  - EN: Sync
+- Склад
+  - TR: Stok
+  - EN: Stock
+- Склад и закупки
+  - TR: Stok ve alımlar
+  - EN: Stock and purchases
+- Склад материалов, расчёт цены и твоя личная Академия в одном приложении. Приложение от Melaymade.
+  - TR: Malzeme stoku, fiyat hesabı ve kişisel Akademiniz tek uygulamada. Melaymade uygulaması.
+  - EN: Materials stock, price calculation and your personal Academy in one app. An app by Melaymade.
+- Склад пока пуст
+  - TR: Stok şimdilik boş
+  - EN: Stock is empty for now
+- Склад, закупки и себестоимость для мастериц handmade
+  - TR: El işi ustaları için stok, alımlar ve maliyet
+  - EN: Stock, purchases and cost for handmade makers
+- Скопировано
+  - TR: Kopyalandı
+  - EN: Copied
+- Скопировать
+  - TR: Kopyala
+  - EN: Copy
+- Скопируй этот текст и сохрани в заметках или файле .json. Позже вставь его в «Восстановить» на любом устройстве.
+  - TR: Bu metni kopyalayıp notlarınıza veya bir .json dosyasına kaydedin. Daha sonra herhangi bir cihazda «Geri yükle»ye yapıştırın.
+  - EN: Copy this text and save it in your notes or a .json file. Later paste it into “Restore” on any device.
+- Слишком много попыток. Подожди несколько минут.
+  - TR: Çok fazla deneme yapıldı. Birkaç dakika bekleyin.
+  - EN: Too many attempts. Please wait a few minutes.
+- Слияния нет: остаются данные только одной стороны. Если не уверена, сначала сохрани копию того, что на этом устройстве.
+  - TR: Birleştirme yok: yalnızca bir tarafın verisi kalır. Emin değilseniz önce bu cihazdakilerin yedeğini alın.
+  - EN: There is no merge: only one side's data is kept. If you are not sure, save a backup of what is on this device first.
+- Сначала создай курс
+  - TR: Önce bir kurs oluşturun
+  - EN: Create a course first
+- Сначала сохранить копию данных
+  - TR: Önce veri yedeği al
+  - EN: Save a data backup first
+- Собери первую работу
+  - TR: İlk işinizi oluşturun
+  - EN: Build your first project
+- Собираем авторскую заколку с лунами, янтарём и подвесками: от выбора основы до фото для продажи. Подойдёт новичкам.
+  - TR: Aylı, kehribarlı ve sarkıtlı özel tasarım bir toka yapıyoruz: aparatın seçiminden satış fotoğrafına kadar. Yeni başlayanlar için uygundur.
+  - EN: We build an original hair slide with moons, amber and pendants: from choosing the base to the photo for sale. Suitable for beginners.
+- Создай категории
+  - TR: Kategorileri oluşturun
+  - EN: Create categories
+- Создать аккаунт
+  - TR: Hesap Oluştur
+  - EN: Create an account
+- Создать курс
+  - TR: Kurs oluştur
+  - EN: Create the course
+- Сообщение ученицам
+  - TR: Öğrencilere mesaj
+  - EN: Message to students
+- Сообщений пока нет
+  - TR: Henüz mesaj yok
+  - EN: No messages yet
+- Состав
+  - TR: İçerik
+  - EN: Materials
+- Сохранить
+  - TR: Kaydet
+  - EN: Save
+- Сохранить данные
+  - TR: Verileri kaydet
+  - EN: Save data
+- Сохранить карточку
+  - TR: Kartı kaydet
+  - EN: Save the card
+- Сохранить копию моих данных
+  - TR: Verilerimin yedeğini kaydet
+  - EN: Save a backup of my data
+- Сохранить копию этого устройства
+  - TR: Bu cihazın yedeğini kaydet
+  - EN: Save a backup of this device
+- Сохранить пароль
+  - TR: Şifreyi kaydet
+  - EN: Save the password
+- Сохранить позицию
+  - TR: Kalemi kaydet
+  - EN: Save the item
+- Сохранить урок
+  - TR: Dersi kaydet
+  - EN: Save the lesson
+- Сохранённые дизайны
+  - TR: Kayıtlı tasarımlar
+  - EN: Saved designs
+- Список всегда по алфавиту. Нажми на число, чтобы увидеть материалы категории на складе. Название меняется, когда уходишь из поля.
+  - TR: Liste her zaman alfabetiktir. Kategorinin stoktaki malzemelerini görmek için sayıya dokunun. Ad, alandan çıkınca değişir.
+  - EN: The list is always alphabetical. Tap the number to see the category's materials in stock. The name changes when you leave the field.
+- Спишется со склада
+  - TR: Stoktan düşülecek
+  - EN: Will be written off from stock
+- Средний чек
+  - TR: Ortalama satış
+  - EN: Average sale
+- Средняя цена
+  - TR: Ortalama fiyat
+  - EN: Average price
+- Ссылка на видео
+  - TR: Video bağlantısı
+  - EN: Video link
+- Ставка, {0}/час
+  - TR: Saat ücreti, {0}/saat
+  - EN: Hourly rate, {0}/hour
+- Ставка, {4}/час
+  - TR: Saat ücreti, {4}/saat
+  - EN: Hourly rate, {4}/hour
+- Сталь
+  - TR: Çelik
+  - EN: Steel
+- Стамбул, Турция
+  - TR: İstanbul, Türkiye
+  - EN: Istanbul, Türkiye
+- Старт
+  - TR: Başlat
+  - EN: Start
+- Статистика продаж
+  - TR: Satış istatistikleri
+  - EN: Sales statistics
+- Статус
+  - TR: Durum
+  - EN: Status
+- Стоимость в работе
+  - TR: İşteki maliyet
+  - EN: Cost in the project
+- Стоимость применения — это износ инструмента: цена ÷ на сколько раз его хватит. Ты задаёшь её сама в карточке инструмента.
+  - TR: Kullanım maliyeti aletin aşınmasıdır: fiyat ÷ kaç kez yeteceği. Bunu aletin kartında kendiniz belirlersiniz.
+  - EN: The cost per use is the tool's wear: price ÷ how many times it will last. You set it yourself in the tool's card.
+- Стразы Swarovski SS16
+  - TR: Swarovski strass SS16
+  - EN: Swarovski rhinestones SS16
+- Строк пока нет
+  - TR: Henüz satır yok
+  - EN: No lines yet
+- Сумма взята из закупки
+  - TR: Tutar alımdan alındı
+  - EN: The amount was taken from the purchase
+- Сумочка
+  - TR: Çanta
+  - EN: Bag
+- Считаем цену и снимаем фото
+  - TR: Fiyatı hesaplayıp fotoğraf çekiyoruz
+  - EN: Calculating the price and taking photos
+- Съёмная коса
+  - TR: Takma örgü
+  - EN: Clip-in braid
+- Съёмные косы: основы
+  - TR: Takma örgüler: temel bilgiler
+  - EN: Clip-in braids: the basics
+- Таймер запущен
+  - TR: Sayaç başlatıldı
+  - EN: Timer started
+- Таймер на паузе
+  - TR: Sayaç duraklatıldı
+  - EN: Timer paused
+- Тайский бат
+  - TR: Tayland bahtı
+  - EN: Thai baht
+- Такая категория уже есть
+  - TR: Böyle bir kategori zaten var
+  - EN: This category already exists
+- Тбилиси, Грузия
+  - TR: Tiflis, Gürcistan
+  - EN: Tbilisi, Georgia
+- Твои данные в сохранности. Чтобы продолжить работу, продли подписку. Пока доступ не активен, новые изменения не сохраняются в облако.
+  - TR: Verileriniz güvende. Devam etmek için aboneliğinizi yenileyin. Erişim etkin olana kadar yeni değişiklikler buluta kaydedilmez.
+  - EN: Your data is safe. To keep working, renew your subscription. While access is inactive, new changes are not saved to the cloud.
+- Твои данные только твои
+  - TR: Verileriniz yalnızca sizin
+  - EN: Your data is only yours
+- Текст выделен: скопируй его через меню
+  - TR: Metin seçildi: menüden kopyalayın
+  - EN: The text is selected: copy it from the menu
+- Телефон
+  - TR: Telefon
+  - EN: Phone
+- Теперь в {0}: на складе {1} {2}
+  - TR: Şimdi {0} içinde: stokta {1} {2}
+  - EN: Now in {0}: {1} {2} in stock
+- Тест
+  - TR: Test
+  - EN: Test
+- Тест 2
+  - TR: Test 2
+  - EN: Test 2
+- Тест {1}. {2}
+  - TR: Test {1}. {2}
+  - EN: Test {1}. {2}
+- Тесьма
+  - TR: Şerit
+  - EN: Ribbon
+- Тесьма атласная
+  - TR: Saten şerit
+  - EN: Satin ribbon
+- Тика «Древо жизни»
+  - TR: Tika «Hayat Ağacı»
+  - EN: Tikka “Tree of Life”
+- Тип материала
+  - TR: Malzeme türü
+  - EN: Material type
+- Ткани и основы
+  - TR: Kumaşlar ve aparatlar
+  - EN: Fabrics and bases
+- Товары
+  - TR: Ürünler
+  - EN: Items
+- Точно удалить?
+  - TR: Silmek istediğinize emin misiniz?
+  - EN: Really delete?
+- Трек-номер, пожелания
+  - TR: Takip numarası, istekler
+  - EN: Tracking number, requests
+- Труд, {3}
+  - TR: Emek, {3}
+  - EN: Labor, {3}
+- Труд: {1} × {2}/ч
+  - TR: Emek: {1} × {2}/sa
+  - EN: Labor: {1} × {2}/h
+- Турецкая лира
+  - TR: Türk lirası
+  - EN: Turkish lira
+- Ты
+  - TR: Siz
+  - EN: You
+- Тёмно-коричневый (4#)
+  - TR: Koyu kahverengi (4#)
+  - EN: Dark brown (4#)
+- У каждой мастерицы свой склад, другие его не видят. Копию можно сохранить в любой момент в разделе «Ещё».
+  - TR: Her ustanın kendi stoku vardır, başkaları göremez. Yedeği istediğiniz an «Daha» bölümünde kaydedebilirsiniz.
+  - EN: Every maker has their own stock that others cannot see. You can save a backup at any time in the “More” section.
+- Убрать
+  - TR: Kaldır
+  - EN: Remove
+- Убрать и вернуть в свободный остаток
+  - TR: Kaldır ve serbest stoka geri ver
+  - EN: Remove and return to free stock
+- Убрать материал
+  - TR: Malzemeyi kaldır
+  - EN: Remove material
+- Увеличить
+  - TR: Büyüt
+  - EN: Increase
+- Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.
+  - TR: Örnekleri ve 2023 numaralı siparişi silin, atölyenizi sıfırdan oluşturun: kendi kategorileriniz, malzemeleriniz ve alımlarınız. Hepsini birden veya yalnızca bir kısmını kaldırabilirsiniz.
+  - EN: Delete the examples and order #2023 to build your own workshop from scratch: your own categories, materials and purchases. You can remove everything at once or just part of it.
+- Удалить
+  - TR: Sil
+  - EN: Delete
+- Удалить вместе с категорией
+  - TR: Kategoriyle birlikte sil
+  - EN: Delete together with the category
+- Удалить выбранное
+  - TR: Seçilenleri sil
+  - EN: Delete selected
+- Удалить категорию
+  - TR: Kategoriyi sil
+  - EN: Delete category
+- Удалить курс
+  - TR: Kursu sil
+  - EN: Delete course
+- Удалить курс?
+  - TR: Kurs silinsin mi?
+  - EN: Delete the course?
+- Удалить материал
+  - TR: Malzemeyi sil
+  - EN: Delete material
+- Удалить материал?
+  - TR: Malzeme silinsin mi?
+  - EN: Delete the material?
+- Удалить незавершённую закупку?
+  - TR: Tamamlanmamış alım silinsin mi?
+  - EN: Delete the unfinished purchase?
+- Удалённые материалы убираются из активных работ и рецептов. Завершённые работы в архиве не меняются.
+  - TR: Silinen malzemeler aktif işlerden ve tariflerden çıkarılır. Arşivdeki tamamlanmış işler değişmez.
+  - EN: Deleted materials are removed from active projects and recipes. Finished projects in the archive do not change.
+- Уже в уроке
+  - TR: Zaten derste
+  - EN: Already in the lesson
+- Узбекский сум
+  - TR: Özbek somu
+  - EN: Uzbekistani som
+- Укажи имя ученицы
+  - TR: Öğrencinin adını yazın
+  - EN: Enter the student's name
+- Укажи курс валюты
+  - TR: Para biriminin kurunu yazın
+  - EN: Enter the exchange rate
+- Укажи курс на день покупки
+  - TR: Alım gününün kurunu yazın
+  - EN: Enter the rate on the day of purchase
+- Укажи упаковки и количество в упаковке
+  - TR: Paket sayısını ve paketteki miktarı yazın
+  - EN: Enter the packs and the quantity per pack
+- Укажи цену продажи
+  - TR: Satış fiyatını yazın
+  - EN: Enter the selling price
+- Украинская гривна
+  - TR: Ukrayna grivnası
+  - EN: Ukrainian hryvnia
+- Украшаем съёмную прядь брошью и кристаллами так, чтобы всё держалось годами.
+  - TR: Takma saç parçasını broş ve kristallerle yıllarca dayanacak şekilde süslüyoruz.
+  - EN: We decorate a clip-in hair piece with a brooch and crystals so that everything lasts for years.
+- Улица, дом, индекс или отделение службы доставки
+  - TR: Sokak, bina no, posta kodu veya kargo şubesi
+  - EN: Street, house number, postcode or a delivery branch
+- Уменьшить
+  - TR: Küçült
+  - EN: Decrease
+- Упаковка
+  - TR: Paket
+  - EN: Packaging
+- Упаковок
+  - TR: Paket sayısı
+  - EN: Number of packs
+- Урок
+  - TR: Ders
+  - EN: Lesson
+- Урок про сборку очень понравился, всё получилось с первого раза!
+  - TR: Montaj dersini çok beğendim, ilk seferde her şey oldu!
+  - EN: I loved the assembly lesson, everything worked the first time!
+- Урок сохранён
+  - TR: Ders kaydedildi
+  - EN: Lesson saved
+- Урок удалён
+  - TR: Ders silindi
+  - EN: Lesson deleted
+- Уроки
+  - TR: Dersler
+  - EN: Lessons
+- Установи приложение
+  - TR: Uygulamayı yükleyin
+  - EN: Install the app
+- Установить приложение
+  - TR: Uygulamayı yükle
+  - EN: Install the app
+- Учебные примеры помогают посмотреть, как всё работает: склад, работы, продажи и Академия. Они заменят твои данные, поэтому сначала сохрани копию.
+  - TR: Örnek veriler her şeyin nasıl çalıştığını görmenize yardım eder: stok, işler, satışlar ve Akademi. Verilerinizin yerine geçer, bu yüzden önce yedek alın.
+  - EN: Sample data helps you see how everything works: stock, projects, sales and the Academy. It will replace your data, so save a backup first.
+- Ученица
+  - TR: Öğrenci
+  - EN: Student
+- Ученица добавлена, доступ открыт
+  - TR: Öğrenci eklendi, erişim açıldı
+  - EN: Student added, access opened
+- Ученицы
+  - TR: Öğrenciler
+  - EN: Students
+- Фиксируем детали и проверяем, что украшение держится надёжно.
+  - TR: Parçaları sabitleyip takının sağlam durduğunu kontrol ediyoruz.
+  - EN: We fix the details and check that the piece holds securely.
+- Финиш и проверка прочности
+  - TR: Son rötuş ve dayanıklılık kontrolü
+  - EN: Finishing and strength check
+- Фиолетовый
+  - TR: Mor
+  - EN: Purple
+- Фото
+  - TR: Fotoğraf
+  - EN: Photo
+- Фото готового изделия
+  - TR: Hazır ürün fotoğrafı
+  - EN: Photo of the finished piece
+- Фото заменено
+  - TR: Fotoğraf değiştirildi
+  - EN: Photo replaced
+- Фото и кадрирование
+  - TR: Fotoğraf ve kadraj
+  - EN: Photo and framing
+- Фото материала
+  - TR: Malzeme fotoğrafı
+  - EN: Material photo
+- Фото результата
+  - TR: Sonuç fotoğrafı
+  - EN: Photo of the result
+- Фото сохранено. Стоимость не изменилась
+  - TR: Fotoğraf kaydedildi. Maliyet değişmedi
+  - EN: Photo saved. The cost did not change
+- Фото, название, количество и цена. Материал сам попадёт на склад.
+  - TR: Fotoğraf, ad, miktar ve fiyat. Malzeme kendiliğinden stoka eklenir.
+  - EN: Photo, name, quantity and price. The material goes to stock by itself.
+- Фото-склад
+  - TR: Fotoğraflı Stok
+  - EN: Photo Stock
+- Фото-склад, производство по факту и своя академия. Нажимай всё: считает по-настоящему.
+  - TR: Fotoğraflı stok, fiili tüketime göre üretim ve kendi akademiniz.
+  - EN: Photo stock, production by actual consumption and your own academy.
+- Фунт стерлингов
+  - TR: İngiliz sterlini
+  - EN: Pound sterling
+- Фурнитура
+  - TR: Aksesuar
+  - EN: Findings
+- Хватит на, применений
+  - TR: Yeteceği kullanım sayısı
+  - EN: Will last for, uses
+- Цвет
+  - TR: Renk
+  - EN: Color
+- Цена
+  - TR: Fiyat
+  - EN: Price
+- Цена за
+  - TR: Fiyat /
+  - EN: Price per
+- Цена за единицу = сколько заплатила ÷ количество. Исправь любое из двух полей, второе пересчитается. Завершённые работы не меняются.
+  - TR: Birim fiyat = ödediğiniz tutar ÷ miktar. İki alandan birini düzeltin, diğeri yeniden hesaplanır. Tamamlanmış işler değişmez.
+  - EN: Unit price = what you paid ÷ quantity. Correct either of the two fields and the other is recalculated. Finished projects do not change.
+- Цена за единицу уже включает свою долю доставки и считается по фактическим единицам, а не по упаковкам.
+  - TR: Birim fiyat kargo payını da içerir ve paketlere göre değil, fiili birimlere göre hesaplanır.
+  - EN: The unit price already includes its share of shipping and is counted per actual unit, not per pack.
+- Цена и единицы
+  - TR: Fiyat ve birimler
+  - EN: Price and units
+- Цена изделия
+  - TR: Ürün fiyatı
+  - EN: Price of the piece
+- Цена исправлена: {0} → {1} за {2}
+  - TR: Fiyat düzeltildi: {0} → {1} / {2}
+  - EN: Price corrected: {0} → {1} per {2}
+- Цена не может быть отрицательной
+  - TR: Fiyat negatif olamaz
+  - EN: The price cannot be negative
+- Цена продажи {0}
+  - TR: Satış fiyatı {0}
+  - EN: Selling price {0}
+- Цена продажи,
+  - TR: Satış fiyatı,
+  - EN: Selling price,
+- Цена упаковки,
+  - TR: Paket fiyatı,
+  - EN: Pack price,
+- Цена,
+  - TR: Fiyat,
+  - EN: Price,
+- Цена, {4}
+  - TR: Fiyat, {4}
+  - EN: Price, {4}
+- Цены зафиксированы на дату завершения. Новые закупки их не меняют.
+  - TR: Fiyatlar tamamlanma tarihinde sabitlenir. Yeni alımlar bunları değiştirmez.
+  - EN: Prices are frozen at the completion date. New purchases do not change them.
+- Цены расхода заморозятся и не изменятся задним числом.
+  - TR: Gider fiyatları sabitlenir ve geriye dönük olarak değişmez.
+  - EN: Usage prices are frozen and will not change retroactively.
+- Цепочка позолоченная
+  - TR: Altın kaplama zincir
+  - EN: Gold-plated chain
+- Цепочки
+  - TR: Zincirler
+  - EN: Chains
+- Чат появляется у каждого курса. Создай первый курс во вкладке «Курсы».
+  - TR: Her kursun bir sohbeti olur. İlk kursunuzu «Kurslar» sekmesinde oluşturun.
+  - EN: Every course gets a chat. Create your first course in the “Courses” tab.
+- Чатов пока нет
+  - TR: Henüz sohbet yok
+  - EN: No chats yet
+- Чаты
+  - TR: Sohbetler
+  - EN: Chats
+- Чаты курсов
+  - TR: Kurs sohbetleri
+  - EN: Course chats
+- Чем заменить
+  - TR: Neyle değiştirilsin
+  - EN: Replace with
+- Чему научатся ученицы
+  - TR: Öğrenciler neler öğrenecek
+  - EN: What students will learn
+- Черновик
+  - TR: Taslak
+  - EN: Draft
+- Черновик закупки удалён
+  - TR: Alım taslağı silindi
+  - EN: Purchase draft deleted
+- Черновик исчезнет, а зарезервированные материалы вернутся в свободный остаток. Со склада ничего не списывалось.
+  - TR: Taslak silinir, ayrılan malzemeler serbest stoka döner. Stoktan hiçbir şey düşülmemişti.
+  - EN: The draft disappears and the reserved materials return to free stock. Nothing had been written off from stock.
+- Черновик нового курса.
+  - TR: Yeni kursun taslağı.
+  - EN: A draft of a new course.
+- Черновик: 20 в изделии + 1 брак
+  - TR: Taslak: üründe 20 + 1 fire
+  - EN: Draft: 20 in the piece + 1 waste
+- Чешская крона
+  - TR: Çek kronu
+  - EN: Czech koruna
+- Число можно вписать руками, например 1,25.
+  - TR: Sayıyı elle yazabilirsiniz, örneğin 1,25.
+  - EN: You can type the number by hand, for example 1.25.
+- Что важно запомнить
+  - TR: Akılda tutulması gerekenler
+  - EN: Worth remembering
+- Шатоны Swarovski SS29
+  - TR: Swarovski şaton SS29
+  - EN: Swarovski chatons SS29
+- Шведская крона
+  - TR: İsveç kronu
+  - EN: Swedish krona
+- Швейные нити
+  - TR: Dikiş iplikleri
+  - EN: Sewing threads
+- Швейцарский франк
+  - TR: İsviçre frangı
+  - EN: Swiss franc
+- Эта почта уже зарегистрирована. Нажми «Вход».
+  - TR: Bu e-posta zaten kayıtlı. «Giriş»e basın.
+  - EN: This email is already registered. Press “Log in”.
+- Это кликабельный прототип. Данные хранятся только в этом браузере. Картинки материалов нарисованы для примера, а свои фото загружаются файлом.
+  - TR: Bu tıklanabilir bir prototiptir. Veriler yalnızca bu tarayıcıda saklanır.
+  - EN: This is a clickable prototype. Data is stored only in this browser.
+- Это нельзя отменить. Если не сохраняла копию данных, вернуть удалённое будет нельзя.
+  - TR: Bu işlem geri alınamaz. Veri yedeği almadıysanız silinenleri geri getiremezsiniz.
+  - EN: This cannot be undone. If you did not save a backup, the deleted data cannot be recovered.
+- Этот материал уже в работе
+  - TR: Bu malzeme zaten işte
+  - EN: This material is already in the project
+- Южноафриканский рэнд
+  - TR: Güney Afrika randı
+  - EN: South African rand
+- Я оплатила, проверить снова
+  - TR: Ödeme yaptım, tekrar kontrol et
+  - EN: I have paid, check again
+- Японская иена
+  - TR: Japon yeni
+  - EN: Japanese yen
+- Ящик E1
+  - TR: Çekmece E1
+  - EN: Drawer E1
+- Ящик E2
+  - TR: Çekmece E2
+  - EN: Drawer E2
+- архив остался {0}
+  - TR: arşiv {0} olarak kaldı
+  - EN: the archive stayed at {0}
+- без доставки
+  - TR: kargosuz
+  - EN: without shipping
+- без имени
+  - TR: adsız
+  - EN: no name
+- без поставщика
+  - TR: tedarikçisiz
+  - EN: no supplier
+- бесплатно
+  - TR: ücretsiz
+  - EN: free
+- в резерве
+  - TR: ayrılmış
+  - EN: reserved
+- в резерве всех работ
+  - TR: tüm işlerde ayrılmış
+  - EN: reserved in all projects
+- в себестоимость
+  - TR: maliyete
+  - EN: into the cost
+- время
+  - TR: süre
+  - EN: time
+- вручную
+  - TR: elle
+  - EN: by hand
+- делимся мастерством
+  - TR: ustalığı paylaşıyoruz
+  - EN: sharing the craft
+- идёт таймер
+  - TR: sayaç çalışıyor
+  - EN: timer running
+- инструмент
+  - TR: alet
+  - EN: tool
+- исправных / брак
+  - TR: sağlam / fire
+  - EN: good / waste
+- истории работ
+  - TR: işlerin geçmişi
+  - EN: project history
+- мало
+  - TR: az
+  - EN: low
+- мастерская
+  - TR: atölye
+  - EN: workshop
+- материалы {0} + труд {1} = {2}
+  - TR: malzemeler {0} + emek {1} = {2}
+  - EN: materials {0} + labor {1} = {2}
+- на складе
+  - TR: stokta
+  - EN: in stock
+- например, 15
+  - TR: örneğin 15
+  - EN: for example, 15
+- например, 60
+  - TR: örneğin 60
+  - EN: for example, 60
+- например, 90
+  - TR: örneğin 90
+  - EN: for example, 90
+- настрой под себя
+  - TR: kendinize göre ayarlayın
+  - EN: make it yours
+- новая
+  - TR: yeni
+  - EN: new
+- общаемся
+  - TR: sohbet ediyoruz
+  - EN: let's chat
+- опубликован
+  - TR: yayında
+  - EN: published
+- оставь пустой: возьмём рекомендуемую
+  - TR: boş bırakın: önerileni kullanırız
+  - EN: leave empty: we will use the recommended one
+- останется {1} {2}
+  - TR: kalacak: {1} {2}
+  - EN: will be left: {1} {2}
+- остаток не меняется
+  - TR: kalan miktar değişmiyor
+  - EN: the balance does not change
+- по таймеру
+  - TR: sayaçtan
+  - EN: from the timer
+- покупатель не указан
+  - TR: alıcı belirtilmedi
+  - EN: no buyer specified
+- применения
+  - TR: kullanım
+  - EN: uses
+- приход материалов
+  - TR: malzeme girişi
+  - EN: incoming materials
+- проверь остатки
+  - TR: stok miktarlarını kontrol edin
+  - EN: check the balances
+- прошлому году
+  - TR: geçen yıla
+  - EN: last year
+- прошлому месяцу
+  - TR: geçen aya
+  - EN: last month
+- резерв 21, свободно 79, склад 100
+  - TR: ayrılan 21, serbest 79, stok 100
+  - EN: reserved 21, free 79, stock 100
+- резерв {0}, свободно {1}, склад {2}
+  - TR: ayrılan {0}, serbest {1}, stok {2}
+  - EN: reserved {0}, free {1}, stock {2}
+- с доставкой
+  - TR: kargolu
+  - EN: with shipping
+- свободно
+  - TR: serbest
+  - EN: free
+- себестоимость
+  - TR: maliyet
+  - EN: cost
+- сколько
+  - TR: kaç
+  - EN: how many
+- средняя цена теперь {0}, архив {1}
+  - TR: ortalama fiyat artık {0}, arşiv {1}
+  - EN: the average price is now {0}, archive {1}
+- твои сокровища
+  - TR: hazineleriniz
+  - EN: your treasures
+- твои ученицы
+  - TR: öğrencileriniz
+  - EN: your students
+- творим
+  - TR: üretiyoruz
+  - EN: creating
+- туба 15 мл
+  - TR: 15 ml tüp
+  - EN: 15 ml tube
+- укажи количество
+  - TR: miktarı yazın
+  - EN: enter the quantity
+- укажи упаковки и количество в них
+  - TR: paketleri ve içlerindeki miktarı yazın
+  - EN: enter the packs and the quantity in them
+- физический остаток 79 шт
+  - TR: fiili kalan 79 adet
+  - EN: physical balance 79 pcs
+- цена {1}
+  - TR: fiyat {1}
+  - EN: price {1}
+- чат курса · {1}
+  - TR: kurs sohbeti · {1}
+  - EN: course chat · {1}
+- черновик
+  - TR: taslak
+  - EN: draft
+- 7×7 см
+  - TR: 7×7 cm
+  - EN: 7×7 cm
+- Crystal Atelier, Стамбул
+  - TR: Crystal Atelier, İstanbul
+  - EN: Crystal Atelier, Istanbul
+- Easy Braid Ombre, платиновый блонд
+  - TR: Easy Braid Ombre, platin sarı
+  - EN: Easy Braid Ombre, platinum blonde
+- Easy Braid Ombre, розовый
+  - TR: Easy Braid Ombre, pembe
+  - EN: Easy Braid Ombre, pink
+- Easy Braid однотонный, платиновый блонд
+  - TR: Easy Braid tek renk, platin sarı
+  - EN: Easy Braid solid, platinum blonde
+- Easy Braid однотонный, серебристо-бежевый
+  - TR: Easy Braid tek renk, gümüş bej
+  - EN: Easy Braid solid, silver beige
+- Easy Braid однотонный, тёмно-коричневый
+  - TR: Easy Braid tek renk, koyu kahverengi
+  - EN: Easy Braid solid, dark brown
+- Hotfix и No Hotfix: в чём разница.
+  - TR: Hotfix ve No Hotfix: fark nedir.
+  - EN: Hotfix and No Hotfix: what is the difference.
+- Hotfix, леска…
+  - TR: Hotfix, misina…
+  - EN: Hotfix, stringing line…
+- Hotfix, цепочки…
+  - TR: Hotfix, zincirler…
+  - EN: Hotfix, chains…
+- Ombre 100 г, кремово-бежевый
+  - TR: Ombre 100 g, krem bej
+  - EN: Ombre 100 g, cream beige
+- SS16 (4 мм)
+  - TR: SS16 (4 mm)
+  - EN: SS16 (4 mm)
+- SS29 (6,2 мм)
+  - TR: SS29 (6,2 mm)
+  - EN: SS29 (6.2 mm)
+- Язык
+  - TR: Dil
+  - EN: Language
+- {0} ({1})
+  - TR: {0} ({1})
+  - EN: {0} ({1})
+- В этой работе {0}, в других {1}. Когда завершишь эту работу, на складе останется {2} (резерв других работ ещё не списан).
+  - TR: Bu işte {0}, diğer işlerde {1}. Bu işi tamamladığınızda stokta {2} kalacak (diğer işlerin ayırdığı malzeme henüz düşülmedi).
+  - EN: This project uses {0}, other projects {1}. When you finish this project, {2} will be left in stock (reserves of other projects are not yet written off).
+- В этой работе {0}, в других {1}. Когда завершишь эту работу, на складе останется {2}.
+  - TR: Bu işte {0}, diğer işlerde {1}. Bu işi tamamladığınızda stokta {2} kalacak.
+  - EN: This project uses {0}, other projects {1}. When you finish this project, {2} will be left in stock.
+- {0} примен. · поломок {1}
+  - TR: {0} kullanım · {1} kırılma
+  - EN: {0} uses · {1} broken
+- в изделии {0} · брак {1}
+  - TR: üründe {0} · fire {1}
+  - EN: in the piece {0} · waste {1}
+- {0} применений × {1}
+  - TR: {0} kullanım × {1}
+  - EN: {0} uses × {1}
+- исправных {0} × {1}
+  - TR: sağlam {0} × {1}
+  - EN: good {0} × {1}
+- из них брак {0}
+  - TR: bunun {0} kadarı fire
+  - EN: of which waste {0}
+- брак
+  - TR: fire
+  - EN: waste
+- брак {0}
+  - TR: fire {0}
+  - EN: waste {0}
+- Подгруппы
+  - TR: Alt gruplar
+  - EN: Subgroups
+- Перенести в «{0}»
+  - TR: «{0}» kategorisine taşı
+  - EN: Move to “{0}”
+- Это твоя основная валюта, курс не нужен.
+  - TR: Bu sizin ana para biriminiz, kur gerekmez.
+  - EN: This is your main currency, no rate is needed.
+- Заполнить пример из ТЗ: 100 камней, доставка 30
+  - TR: Örneği doldur: 100 taş, 30 kargo
+  - EN: Fill in the example: 100 stones, 30 shipping
+- Тип
+  - TR: Tür
+  - EN: Type
+- Инструмент
+  - TR: Alet
+  - EN: Tool
+- Цена упаковки,
+  - TR: Paket fiyatı,
+  - EN: Pack price,
+- Взять сумму из закупки: {0}
+  - TR: Tutarı alımdan al: {0}
+  - EN: Take the amount from the purchase: {0}
+- Перевести в
+  - TR: Şuna çevir
+  - EN: Convert to
+- В одной {0} сколько
+  - TR: Bir {0} içinde kaç
+  - EN: How many in one {0}
+- Пересчитать количество и цену
+  - TR: Miktarı ve fiyatı yeniden hesapla
+  - EN: Recalculate quantity and price
+- Например, было 2 {0}, а в каждой по 90 г: выбери «г» и впиши 90. Станет 180 г, цена за грамм посчитается сама.
+  - TR: Örneğin 2 {0} vardı ve her birinde 90 g: «g»yi seçin ve 90 yazın. 180 g olur, gram fiyatı kendiliğinden hesaplanır.
+  - EN: For example, you had 2 {0} and each holds 90 g: choose “g” and enter 90. It becomes 180 g and the price per gram is calculated for you.
+- Движения
+  - TR: Hareketler
+  - EN: Movements
+- Закупка: {0}
+  - TR: Alım: {0}
+  - EN: Purchase: {0}
+- «{0}» исчезнет со склада. Завершённые работы и закупки в архиве останутся как есть.
+  - TR: «{0}» stoktan silinecek. Arşivdeki tamamlanmış işler ve alımlar olduğu gibi kalır.
+  - EN: “{0}” will disappear from stock. Finished projects and purchases in the archive stay as they are.
+- {0} по рецепту
+  - TR: tarifte {0}
+  - EN: {0} in the recipe
+- Вид изделия
+  - TR: Ürün türü
+  - EN: Type of piece
+- Инструмент (применения)
+  - TR: Alet (kullanım)
+  - EN: Tool (uses)
+- Остатки сверены, всё хватает.
+  - TR: Stoklar kontrol edildi, her şey yeterli.
+  - EN: Balances checked, everything is enough.
+- Загрузи фото готового изделия
+  - TR: Hazır ürünün fotoğrafını yükleyin
+  - EN: Upload a photo of the finished piece
+- Потом сможешь подвинуть кадр и приблизить. Фото можно добавить и позже.
+  - TR: Sonra kadrajı kaydırıp yakınlaştırabilirsiniz. Fotoğrafı daha sonra da ekleyebilirsiniz.
+  - EN: Later you can move and zoom the frame. You can also add the photo later.
+- Загрузить фото
+  - TR: Fotoğraf yükle
+  - EN: Upload a photo
+- Если ты вошла в аккаунт, твои данные уже хранятся в облаке и синхронизируются между устройствами. Копия в виде текста нужна как запасной вариант: «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно.
+  - TR: Hesabınıza giriş yaptıysanız verileriniz zaten bulutta saklanır ve cihazlar arasında eşitlenir. Metin yedeği yedek bir yol olarak gereklidir: «Kaydet» her şeyi tek bir metne çevirir, «Geri yükle» onu geri getirir.
+  - EN: If you are logged in, your data is already stored in the cloud and synced between devices. A text backup is a fallback: “Save” turns everything into one text, “Restore” brings it back.
+- Приложение ставится без магазинов, как обычное, и работает без интернета.
+  - TR: Uygulama mağaza olmadan, normal bir uygulama gibi yüklenir ve internetsiz çalışır.
+  - EN: The app installs without app stores, like a regular app, and works without internet.
+- «Поделиться» → «На экран Домой».
+  - TR: «Paylaş» → «Ana Ekrana Ekle».
+  - EN: “Share” → “Add to Home Screen”.
+- меню ⋮ → «Установить приложение».
+  - TR: menü ⋮ → «Uygulamayı yükle».
+  - EN: menu ⋮ → “Install app”.
+- Компьютер (Chrome, Edge):
+  - TR: Bilgisayar (Chrome, Edge):
+  - EN: Computer (Chrome, Edge):
+- значок установки справа в адресной строке.
+  - TR: adres çubuğunun sağındaki yükleme simgesi.
+  - EN: the install icon on the right of the address bar.
+- Установить
+  - TR: Yükle
+  - EN: Install
+- Написать в чат курса
+  - TR: Kurs sohbetine yaz
+  - EN: Write in the course chat
+- Брак / потери,
+  - TR: Fire / kayıp,
+  - EN: Waste / loss,
+- Оплачено,
+  - TR: Ödendi,
+  - EN: Paid,
+- Заплачено за весь остаток,
+  - TR: Kalan tüm miktar için ödenen,
+  - EN: Paid for the whole remainder,
+- {0} · материалов: {1}
+  - TR: {0} · malzeme: {1}
+  - EN: {0} · materials: {1}
+- доставка в цене: {0}
+  - TR: fiyata dahil kargo: {0}
+  - EN: shipping included in the price: {0}
+- {0} за {1} без доставки · строка {2}
+  - TR: {1} başına {0}, kargosuz · satır {2}
+  - EN: {0} per {1} without shipping · line {2}
+- {0}/{1} с доставкой
+  - TR: {0}/{1} kargo dahil
+  - EN: {0}/{1} with shipping
+- за {0}
+  - TR: {0} başına
+  - EN: per {0}
+- Доставка (делится поровну)
+  - TR: Kargo (eşit bölünür)
+  - EN: Shipping (split equally)
+- Доставка (делится пропорционально сумме строк)
+  - TR: Kargo (kalem tutarlarına oranla bölünür)
+  - EN: Shipping (split in proportion to line totals)
+- на {0}
+  - TR: değeri {0}
+  - EN: worth {0}
+- Цена за {0}, {1}
+  - TR: {0} başına fiyat, {1}
+  - EN: Price per {0}, {1}
+- за {0}
+  - TR: {0} başına
+  - EN: per {0}
+- {0}% к {1}
+  - TR: {0}% {1} göre
+  - EN: {0}% vs {1}
+- Что покупают чаще
+  - TR: En çok neler alınıyor
+  - EN: What is bought most
+- в наличии
+  - TR: stokta
+  - EN: in stock
+- продано {0}
+  - TR: {0} karşılığında satıldı
+  - EN: sold for {0}
+- {0}, сохранённые дизайны и активные работы ({1})
+  - TR: {0}, kayıtlı tasarımlar ve aktif işler ({1})
+  - EN: {0}, saved designs and active projects ({1})
+- прошлому году
+  - TR: geçen yıla
+  - EN: last year
+- Тбилиси
+  - TR: Tiflis
+  - EN: Tbilisi
+- Грузия
+  - TR: Gürcistan
+  - EN: Georgia
+- Анкара
+  - TR: Ankara
+  - EN: Ankara
+- Турция
+  - TR: Türkiye
+  - EN: Türkiye
+- Лимасол
+  - TR: Limasol
+  - EN: Limassol
+- Кипр
+  - TR: Kıbrıs
+  - EN: Cyprus
+- Алматы
+  - TR: Almatı
+  - EN: Almaty
+- Казахстан
+  - TR: Kazakistan
+  - EN: Kazakhstan
+- Берлин
+  - TR: Berlin
+  - EN: Berlin
+- Германия
+  - TR: Almanya
+  - EN: Germany
+- Стамбул
+  - TR: İstanbul
+  - EN: Istanbul
+- Мерсин
+  - TR: Mersin
+  - EN: Mersin
+- Мария С.
+  - TR: Maria S.
+  - EN: Maria S.
+- Элиф
+  - TR: Elif
+  - EN: Elif
+- Мария
+  - TR: Maria
+  - EN: Maria
+- Я принимаю условия использования и политику конфиденциальности.
+  - TR: Kullanım koşullarını ve gizlilik politikasını kabul ediyorum.
+  - EN: I accept the terms of use and the privacy policy.
+- Новым аккаунтам доступен пробный период.
+  - TR: Yeni hesaplar için deneme süresi vardır.
+  - EN: New accounts get a trial period.

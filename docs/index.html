@@ -355,7 +355,8 @@ input[type=range]{width:100%;accent-color:var(--clay);height:28px}
 .try{display:flex;flex-direction:column;gap:8px}
 .try button{display:flex;gap:12px;text-align:left;padding:11px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:18px;align-items:flex-start;transition:transform .2s,border-color .2s}
 .try button:hover{border-color:var(--clay);transform:translateX(3px)}
-.gate-lang{margin:14px auto 0;max-width:300px}
+.gate-lang{margin:14px auto 0;max-width:340px}
+.gate-lang button{padding:0 12px;white-space:nowrap}
 .try.tips>div{display:flex;gap:12px;text-align:left;padding:11px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:18px;align-items:flex-start}
 .try .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--clay-soft);color:var(--clay);font-size:12px;font-weight:800;display:grid;place-items:center}
 .try b{display:block;font-size:13.5px;font-weight:800}
@@ -501,7 +502,7 @@ function prePl(x) {
 function patTr(x) {
   for (const p of TD.pats) {
     const m = p.re.exec(x); if (!m) continue;
-    if (p.stat <= 6 && !m.slice(1).every(v => /\d/.test(v))) continue;
+    if (p.stat <= 6 && !m.slice(1).some(v => /\d/.test(v) || TD.exact[v.trim()] != null)) continue;
     return p.out.replace(/\{(\d+)\}/g, (_, i) => { const v = m[p.ids.indexOf(+i) + 1]; return v != null && CYR.test(v) ? tr(v) : v; });
   }
   return null;
@@ -525,10 +526,18 @@ function trCore(c, depth = 0) {
   m = /^(-?[\d., ]+\S{0,3})\s+(.+)$/.exec(x);
   if (m && CYR.test(m[2]) && depth < 3) { const t = trCore(m[2], depth + 1); if (t !== m[2]) return m[1] + ' ' + t; }
   if (depth < 3) for (const sp of SEGS) {
-    if (x.indexOf(sp) < 1) continue;
-    const parts = x.split(sp); if (parts.length < 2) continue;
-    const out = parts.map(t => CYR.test(t) ? trCore(t.trim(), depth + 1) : t);
-    if (out.some((t, i) => t !== parts[i])) return out.join(sp);
+    if (c.indexOf(sp) < 1) continue;
+    const parts = c.split(sp); if (parts.length < 2) continue;
+    const out = []; let i = 0, ch = false;
+    while (i < parts.length) {
+      let done = false;
+      for (let j = parts.length; j > i + 1 && !done; j--) {
+        const cand = parts.slice(i, j).join(sp), t = TD.exact[cand] != null ? TD.exact[cand] : patTr(cand);
+        if (t != null) { out.push(t); i = j; done = true; ch = true; }
+      }
+      if (!done) { const t = CYR.test(parts[i]) ? trCore(parts[i].trim(), depth + 1) : parts[i]; if (t !== parts[i]) ch = true; out.push(t); i++; }
+    }
+    if (ch) return out.join(sp);
   }
   return x;
 }

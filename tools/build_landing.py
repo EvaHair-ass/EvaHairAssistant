@@ -815,6 +815,7 @@ def esc(s):
 
 def render(code):
     t = TEXTS[code]
+    APPL = f"{APP}?lang={code}"
     langs = "".join(
         f'<a href="{TEXTS[c]["path"]}" hreflang="{c}" lang="{c}" class="{"on" if c == code else ""}" onclick="try{{localStorage.setItem(\'mm-lang\',\'{c}\')}}catch(e){{}}">{TEXTS[c]["label"]}</a>'
         for c in ("ru", "tr", "en"))
@@ -874,7 +875,7 @@ def render(code):
   <a class="brand" href="{t["path"]}">{brand_icon}MELAYMADE</a>
   <nav class="nav" aria-label="Menu">{nav}</nav><span class="sp"></span>
   <div class="lang" role="navigation" aria-label="Language">{langs}</div>
-  <a class="btn sm" href="{APP}">{esc(t["login"])}</a>
+  <a class="btn sm" href="{APPL}">{esc(t["login"])}</a>
 </div></header>
 <main>
 <section class="hero"><div class="sparks" data-sparks="22"></div>{feathers}<div class="wrap">
@@ -883,7 +884,7 @@ def render(code):
     <span class="kick">{esc(t["kicker"])}</span>
     <h1>{h1}</h1>
     <p class="sub">{esc(t["sub"])}</p>
-    <div class="cta"><a class="btn pri" href="{APP}">{esc(t["cta"])}</a><a class="btn" href="#how">{esc(t["cta2"])}</a></div>
+    <div class="cta"><a class="btn pri" href="{APPL}">{esc(t["cta"])}</a><a class="btn" href="#how">{esc(t["cta2"])}</a></div>
     <p class="note">{esc(t["note"])}</p>
   </div>
   <div class="herovis">{mandala_svg()}<div class="bob"><div class="phone"><img src="/img/stock.jpg" width="780" height="1688" alt="{esc(t["gal_alt"][0])}"></div></div></div>
@@ -912,7 +913,7 @@ def render(code):
       <h2 class="big">{esc(a["ac_big"])}</h2>
       <p class="ac-sub">{esc(a["ac_h"])}</p>
       <p class="lead">{esc(a["ac_lead"])}</p>
-      <div class="cta"><a class="btn pri" href="{APP}">{esc(a["ac_cta"])}</a></div>
+      <div class="cta"><a class="btn pri" href="{APPL}">{esc(a["ac_cta"])}</a></div>
     </div>
     <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/video.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][0][1])}"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
   </div>
@@ -943,7 +944,7 @@ def render(code):
 <section class="final"><div class="sparks" data-sparks="14"></div>{catcher_svg("hang")}<div class="wrap">
   <h2 class="rv">{esc(t["final_title"])}</h2>
   <p>{esc(t["final_text"])}</p>
-  <a class="btn pri" href="{APP}">{esc(t["final_cta"])}</a>
+  <a class="btn pri" href="{APPL}">{esc(t["final_cta"])}</a>
 </div></section>
 </main>
 <footer><div class="wrap">{esc(t["footer"])}</div></footer>
