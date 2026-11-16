@@ -1285,7 +1285,7 @@ const GUIDE = [
   {k: 'backup', t: 'Копия данных', d: 'Как сохранить всё и вернуть обратно.'}];
 function guideHTML() { return `<div class="try">${GUIDE.map((g, i) => `<button data-act="tryIt" data-k="${g.k}"><span class="n">${i + 1}</span><span><b>${g.t}</b><span class="t">${g.d}</span></span></button>`).join('')}</div>`; }
 function sideHTML() {
-  if (window.__PWA__) return `<svg class="art sideart" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><h1><em>Melaymade</em></h1><p class="lead">Склад материалов, расчёт цены и твоя личная Академия в одном приложении.</p>
+  if (window.__PWA__) return `<svg class="art sideart" viewBox="0 0 120 206" aria-hidden="true">${catcherInner()}</svg><h1>Моя<br><em>мастерская</em></h1><p class="lead">Склад материалов, расчёт цены и твоя личная Академия в одном приложении. Приложение от Melaymade.</p>
     <div class="try tips">
       <div><span class="n">1</span><span><b>Установи приложение</b><span class="t">В Chrome нажми значок установки в адресной строке. На телефоне: меню браузера, «Добавить на главный экран».</span></span></div>
       <div><span class="n">2</span><span><b>Работает без интернета</b><span class="t">Изменения сохраняются на устройстве и отправляются в облако, когда появится связь.</span></span></div>

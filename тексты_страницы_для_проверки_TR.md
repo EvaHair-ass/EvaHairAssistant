@@ -5,13 +5,13 @@
 Особенно важно проверить: заголовки (они смелые и образные) и раздел «Akademi».
 
 ## Başlık ve giriş
-- Sayfa başlığı: Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi
+- Sayfa başlığı: Atölyem, Melaymade: El işi ustaları için stok, fiyat ve kişisel Akademi
 - Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda. Her el işi için: boncuk, taş, örgü, dikiş, kil, saç ürünleri.
 - Menü: El işleri | Nasıl çalışır? | Akademi | Özellikler | Sık sorulanlar | Giriş Yap
 - Etiket: Yeni · dersleriniz için kişisel Akademi
-- Üst yazı: el işi ustaları için
+- Üst yazı: Melaymade uygulaması
 - Ana başlık: Siz büyüyü yaratın. Ne kadar ettiğini biz hesaplayalım.
-- Alt başlık: Melaymade malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.
+- Alt başlık: Atölyem malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.
 - Düğmeler: Ücretsiz Deneyin | Nasıl çalışır?
 - Not: Banka kartı gerekmez. Telefonda ve bilgisayarda çalışır, internet olmadan da.
 
@@ -22,13 +22,13 @@
 
 ## Dürüst fiyatı olan güzellik (yeni bölüm)
 - Üst yazı: örnek çalışmalar
-- Giriş: Böyle ürünler onlarca malzemeden oluşur. Melaymade hepsini hatırlar ve toplamının maliyetini hesaplar.
+- Giriş: Böyle ürünler onlarca malzemeden oluşur. Atölyem hepsini hatırlar ve toplamının maliyetini hesaplar.
 - Başlıklar: Orman Muskası (Toka) | Rüzgârın Nefesi (Makrome pano) | Kehribar Ay (Toka) | Ametist Bahçesi (Taş kolye ve bileklik) | Kır Otları (Nakış) | Ay Taşı (Saç parçası) | Lavanta ve Portakal (Mum ve sabun) | Hayat Ağacı (Tika) | Yulaf Bulutu (Örgü atkı) | Kum ve Terakota (Seramik) | Altın Labradorit (Süslü örgü) | Gül Altın (Boncuk kolye) | Keten Fısıltısı (Nakışlı keseler) | Kül, Bakır ve Gece (Karabinalı örgüler) | Gül Kuvarsı (Kristalli örgü) | Sonbahar Ormanı (Afro lastik)
 - Not: Örnek ürünler.
 
 ## Sayabildiğiniz her el işi için (yeni bölüm)
 - Üst yazı: her el işi için
-- Giriş: Ürününüz malzemelerden oluşuyorsa Melaymade onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.
+- Giriş: Ürününüz malzemelerden oluşuyorsa Atölyem onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.
 - Etiketler: Boncuk işi | Doğal taş takılar | Örgü | Dikiş | Seramik ve kil | Saç ürünleri | Makrome | Mum ve sabun | Nakış
 - Alt not: …ve ellerinizle yarattığınız her şey.
 
@@ -45,7 +45,7 @@
 - Rozet: Akademim · beta
 - Ana başlık: **Ellerinizin bildiğini başkaları da öğrenmek ister**
 - Alt başlık: El işi okulunuz tek uygulamada
-- Giriş: Bir ustanın okulu çoğu zaman beş ayrı yerde yaşar: sohbet, tablo, fotoğraf bulutu, notlar ve alışveriş defteri. Melaymade hepsini bir araya getirir: dersler, malzemeler, öğrenciler ve gelir; stokunuzun ve fiyat hesabının yanında.
+- Giriş: Bir ustanın okulu çoğu zaman beş ayrı yerde yaşar: sohbet, tablo, fotoğraf bulutu, notlar ve alışveriş defteri. Atölyem hepsini bir araya getirir: dersler, malzemeler, öğrenciler ve gelir; stokunuzun ve fiyat hesabının yanında.
 - Düğme: Akademinizi Kurun
 
 ### Tanıdık geliyor mu?
@@ -88,7 +88,7 @@
 - **Benim el işime uygun mu?**
   Evet, ürününüz sayılabilen malzemelerden oluşuyorsa: boncuk, taş, iplik, kumaş, kil, saç, balmumu ve daha fazlası. Emin değilseniz kendi malzemelerinizle ücretsiz deneyin.
 - **Akademi nedir?**
-  «Akademim» bölümü, Melaymade içindeki kişisel okulunuzdur: kurslar, stoktan malzemeli dersler, öğrenciler ve kurs geliri. Hepsi maliyet hesabının yanında.
+  «Akademim» bölümü, Atölyem içindeki kişisel okulunuzdur: kurslar, stoktan malzemeli dersler, öğrenciler ve kurs geliri. Hepsi maliyet hesabının yanında.
 - **Öğrenciler doğrudan uygulamada öğrenebilir mi?**
   Henüz değil: şu anda öğrencileri ve ilerlemelerini siz takip edersiniz. Öğrenci hesabı ve kurs sohbeti geliştirme aşamasında.
 - **Dersleri platformlara yükleyebilir miyim?**
