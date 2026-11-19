@@ -446,7 +446,15 @@ const ruCmp = (a, b) => a.localeCompare(b, LANG);
 ============================================================ */
 const LANGS = ['ru', 'tr', 'en'];
 const detectLang = () => {
-  try { const q = new URLSearchParams(location.search).get('lang'); if (LANGS.includes(q)) { localStorage.setItem('mm-app-lang', q); return q; } } catch (e) {}
+  try {
+    const u = new URL(location.href), q = u.searchParams.get('lang');
+    if (LANGS.includes(q)) {
+      try { localStorage.setItem('mm-app-lang', q); sessionStorage.setItem('mm-app-lang', q); } catch (e) {}
+      u.searchParams.delete('lang'); try { history.replaceState(null, '', u.pathname + u.search + u.hash); } catch (e) {}
+      return q;
+    }
+  } catch (e) {}
+  try { const v = sessionStorage.getItem('mm-app-lang'); if (LANGS.includes(v) && !localStorage.getItem('mm-app-lang')) return v; } catch (e) {}
   try { const v = localStorage.getItem('mm-app-lang'); if (LANGS.includes(v)) return v; } catch (e) {}
   const l = (navigator.language || '').slice(0, 2).toLowerCase();
   return l === 'tr' ? 'tr' : (!l || ['ru', 'uk', 'be', 'kk', 'ky', 'uz', 'tg', 'hy', 'az', 'ka'].includes(l)) ? 'ru' : 'en';
@@ -521,19 +529,24 @@ function tr(s) {
   if (!TD.on || !s || !CYR.test(s)) return s;
   const core = s.trim(); if (!core) return s;
   const lead = s.slice(0, s.indexOf(core)), trail = s.slice(s.indexOf(core) + core.length);
-  return lead + trCore(core) + trail;
+  let out = trCore(core);
+  if (out === core && /[.!…]$/.test(core)) { const b = core.slice(0, -1), o2 = trCore(b); if (o2 !== b) out = o2 + core.slice(-1); }
+  return lead + out + trail;
 }
 const SKIPT = new Set(['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'NOSCRIPT']);
 const TRATTR = ['placeholder', 'aria-label', 'title', 'alt'];
 function trAttrs(el) { if (!el.getAttribute) return; TRATTR.forEach(a => { const v = el.getAttribute(a); if (v && CYR.test(v)) { const t = tr(v); if (t !== v) el.setAttribute(a, t); } }); }
 function trNode(n) { const v = n.nodeValue; if (v && CYR.test(v) && !(n.parentNode && SKIPT.has(n.parentNode.tagName))) { const t = tr(v); if (t !== v) n.nodeValue = t; } }
+function trInputVal(el) { if (el.type === 'password' || el.type === 'email') return; const v = el.value; if (v && CYR.test(v)) { const e = TD.exact[v.trim()]; if (e != null && e !== v) el.value = e; } }
 function trTree(root) {
   if (root.nodeType === 3) return trNode(root);
   if (root.nodeType !== 1 || SKIPT.has(root.tagName)) return;
   const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), nodes = [];
   while (w.nextNode()) nodes.push(w.currentNode);
   nodes.forEach(trNode); trAttrs(root); root.querySelectorAll('[placeholder],[aria-label],[title],[alt]').forEach(trAttrs);
+  root.querySelectorAll('input.title-in, input.in, textarea').forEach(trInputVal);
 }
+window.__I18N_TEST = {tr: s => tr(s), on: () => !!TD.on};
 function startTranslator() {
   if (!TD.on) return;
   document.documentElement.lang = LANG;
@@ -1357,7 +1370,7 @@ function moreScreen() {
         ${checks.map(c => `<div class="check"><span class="ok ${c.ok ? '' : 'no'}">${ic(c.ok ? 'check' : 'x')}</span><div><b>Тест ${c.n}. ${esc(c.t)}</b><span>Ожидается: ${esc(c.exp)}<br>Получилось: ${esc(c.got)}</span></div></div>`).join('')}</div>
       <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Что попробовать</h2></div>${guideHTML()}</div>`}
       <div class="card stack" style="gap:10px"><div class="sect" style="padding-top:0"><h2>Начать с чистого листа</h2></div>
-        <p class="hint" style="font-size:13px">Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.</p>
+        <p class="hint" style="font-size:13px">${window.__PWA__ ? 'Удали учебные примеры, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.' : 'Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.'}</p>
         <button class="btn dng" data-act="wipeOpen">${ic('trash')} Очистить и начать заново</button></div>
       <div class="card flat stack" style="gap:10px"><p class="hint">${window.__PWA__ ? 'Учебные примеры помогают посмотреть, как всё работает: склад, работы, продажи и Академия. Они заменят твои данные, поэтому сначала сохрани копию.' : 'Это кликабельный прототип. Данные хранятся только в этом браузере. Картинки материалов нарисованы для примера, а свои фото загружаются файлом.'}</p>
         <button class="btn sm dng" data-act="resetOpen">${window.__PWA__ ? 'Загрузить учебные примеры' : 'Вернуть демо-данные'}</button></div>
@@ -2041,7 +2054,7 @@ A.tryIt = el => {
 
 
 /* облако: действия */
-A.setLang = el => { try { localStorage.setItem('mm-app-lang', el.dataset.v); } catch (e) {} flushSave(); setTimeout(() => location.reload(), 50); };
+A.setLang = el => { const l = el.dataset.v; try { localStorage.setItem('mm-app-lang', l); sessionStorage.setItem('mm-app-lang', l); } catch (e) {} flushSave(); setTimeout(() => location.replace(location.pathname + '?lang=' + l), 50); };
 A.gateMode = el => { ui.gate.mode = el.dataset.v; ui.gate.err = ''; ui.gate.msg = ''; renderGate(); };
 A.gateRecheck = async () => { ui.gate.err = ''; try { await checkAccess(); if (CLOUD.access.ok) { renderGate(); cloudSync(); } else { ui.gate.err = 'Доступ пока не активен. Если ты оплатила, подожди и проверь ещё раз.'; renderGate(); } } catch (e) { ui.gate.err = errRu(e); renderGate(); } };
 A.gateGo = async () => {
@@ -2361,6 +2374,7 @@ setInterval(() => {
 $('#bg').innerHTML = BG;
 $('#side').innerHTML = sideHTML();
 (async function boot() {
+  document.documentElement.lang = LANG;
   await loadLang(); startTranslator();
   if (!window.__PWA__) await loadDemoPh();
   S = await loadState(); await metaLoad();

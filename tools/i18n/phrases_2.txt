@@ -112,8 +112,8 @@
 Находка ⇒ Buluntu ⇒ Found
 Начальный остаток ⇒ Açılış bakiyesi ⇒ Opening balance
 Начать работу ⇒ İşe başla ⇒ Start a project
-Начать с чистого листа ⇒ Temiz bir sayfayla başla ⇒ Start from a clean slate
-Начнём с чистого листа ⇒ Temiz bir sayfayla başlayalım ⇒ Let's start with a clean slate
+Начать с чистого листа ⇒ Temiz bir sayfadan başla ⇒ Start from a clean slate
+Начнём с чистого листа ⇒ Temiz bir sayfadan başlayalım ⇒ Let's start with a clean slate
 Не все изменения отправлены ⇒ Tüm değişiklikler gönderilmedi ⇒ Not all changes have been sent
 Не загрузилась часть приложения. Обнови страницу при включённом интернете. ⇒ Uygulamanın bir kısmı yüklenemedi. İnternet açıkken sayfayı yenileyin. ⇒ Part of the app did not load. Refresh the page while online.
 Не нашла такую валюту ⇒ Böyle bir para birimi bulunamadı ⇒ That currency was not found

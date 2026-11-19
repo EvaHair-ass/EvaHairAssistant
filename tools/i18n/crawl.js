@@ -22,8 +22,8 @@ const collect = () => {
   await pg.goto(URL); await pg.waitForTimeout(1500);
   await pg.click('[data-t=more]'); await pg.waitForTimeout(300);
   rec(await pg.evaluate(collect), 'more');
-  await pg.click('[data-act=resetOpen]'); await pg.waitForTimeout(300); rec(await pg.evaluate(collect), 'confirm-demo');
-  await pg.click('[data-act=confirmOk]'); await pg.waitForTimeout(4000);
+  if (!process.env.EMPTY) { await pg.click('[data-act=resetOpen]'); await pg.waitForTimeout(300); rec(await pg.evaluate(collect), 'confirm-demo');
+  await pg.click('[data-act=confirmOk]'); await pg.waitForTimeout(4000); }
   await pg.close();
   const screens = [['stock', '[data-t=stock]'], ['buy', '[data-t=buy]'], ['work', '[data-t=work]'], ['arch', '[data-t=arch]'], ['more', '[data-t=more]'], ['acad', null]];
   for (const [name, sel] of screens) {
@@ -34,7 +34,7 @@ const collect = () => {
     const subs = name === 'arch' ? ['runs', 'fin', 'sold', 'stats'] : [];
     const acts = await pg.evaluate(() => [...new Set([...document.querySelectorAll('[data-act]')].map(e => e.dataset.act))]);
     await pg.close();
-    const skipAct = /^(confirmOk|wipeGo|logout|gateGo|catDelGo|saleCancelGo|delGo|impGo|resetOpen|wipeOpen)$/;
+    const skipAct = /^(setLang|confirmOk|wipeGo|logout|gateGo|catDelGo|saleCancelGo|delGo|impGo|resetOpen|wipeOpen)$/;
     for (const act of acts.filter(a => !skipAct.test(a))) {
       const p2 = await ctx.newPage(); p2.on('pageerror', e => errs.push(name + '/' + act + ': ' + e.message));
       try {

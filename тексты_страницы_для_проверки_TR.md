@@ -82,7 +82,7 @@
 
 ## İçeri bir göz atın
 - Altyazılar: Fotoğraflı Malzeme Stoku | Maliyet ve Fiyat | Satışlar ve İstatistik | İş Arşivi
-- Not: Arayüz şu anda Rusça. Türkçe ve İngilizce çok yakında.
+- Not: Uygulama Rusça, Türkçe ve İngilizce olarak çalışır.
 
 ## Aklınıza takılanlar
 - **Benim el işime uygun mu?**
@@ -100,7 +100,7 @@
 - **İnternet olmadan çalışır mı?**
   Evet. Değişiklikler cihazınıza kaydedilir ve bağlantı geldiğinde buluta gönderilir.
 - **Hangi dillerde?**
-  Şu anda Rusça. Türkçe ve İngilizce hazırlanıyor.
+  Rusça, Türkçe ve İngilizce. Dil, giriş ekranında ve «Daha» bölümünde seçilir.
 - **Ne kadar?**
   Önce deneme süresi, sonra abonelik. Fiyatları yakında duyuracağız.
 - **Abonelik biterse ne olur?**

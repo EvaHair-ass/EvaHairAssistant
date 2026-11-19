@@ -40,7 +40,7 @@ const SC = {
   await ctx.addInitScript(l => { window.__PWA__ = true; try { localStorage.setItem('mm-app-lang', l); } catch (e) {} }, lang);
   let pg = await ctx.newPage();
   await pg.goto(URL); await pg.waitForTimeout(1200);
-  await pg.click('[data-t=more]'); await pg.click('[data-act=resetOpen]'); await pg.click('[data-act=confirmOk]'); await pg.waitForTimeout(4000); await pg.close();
+  if (!process.env.EMPTY) { await pg.click('[data-t=more]'); await pg.click('[data-act=resetOpen]'); await pg.click('[data-act=confirmOk]'); await pg.waitForTimeout(4000); } await pg.close();
   const seen = new Map(), failed = [];
   for (const [name, steps] of Object.entries(SC)) {
     const p = await ctx.newPage();

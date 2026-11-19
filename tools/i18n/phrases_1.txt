@@ -123,7 +123,7 @@
 Где продано ⇒ Nereye satıldı ⇒ Where it was sold
 Год ⇒ Yıl ⇒ Year
 Готово ⇒ Tamam ⇒ Done
-Готово: можно начинать с чистого листа ⇒ Hazır: temiz bir sayfayla başlayabilirsiniz ⇒ Done: you can start from a clean slate
+Готово: можно начинать с чистого листа ⇒ Hazır: temiz bir sayfadan başlayabilirsiniz ⇒ Done: you can start from a clean slate
 Готово: склад списан, цены зафиксированы ⇒ Tamam: stok düşüldü, fiyatlar sabitlendi ⇒ Done: stock written off, prices frozen
 Готовые ⇒ Hazır ⇒ Finished
 Готовых изделий нет ⇒ Hazır ürün yok ⇒ No finished pieces

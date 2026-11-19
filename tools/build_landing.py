@@ -115,7 +115,7 @@ TEXTS = {
         "gal_title": "Так выглядит приложение",
         "gal": ["Фото-склад", "Себестоимость и цена", "Продажи и статистика", "Архив работ"],
         "gal_alt": ["Экран фото-склада", "Экран расчёта себестоимости и цены", "Экран статистики продаж", "Экран работы в архиве"],
-        "ui_note": "Интерфейс сейчас на русском. Турецкий и английский скоро.",
+        "ui_note": "Приложение работает на русском, турецком и английском.",
         "ac_kicker": "Скоро", "ac_title": "Академия: продавай свои уроки",
         "ac_text": "Курсы, ученицы и общий чат рядом с твоим складом. Сделай свою мастерскую ещё и школой.",
         "faq_title": "Частые вопросы",
@@ -123,7 +123,7 @@ TEXTS = {
             ("Нужно ли ставить из магазина приложений?", "Нет. Открой приложение в браузере и добавь на главный экран. Оно работает как обычное."),
             ("Мои данные в безопасности?", "У каждой пользовательницы свой отдельный склад, другие его не видят. Данные хранятся в защищённом облаке в Европе (Париж)."),
             ("Работает ли без интернета?", "Да. Изменения сохраняются на устройстве и отправляются в облако, когда появится связь."),
-            ("На каких языках?", "Сейчас на русском. Турецкий и английский готовим."),
+            ("На каких языках?", "На русском, турецком и английском. Язык выбирается на экране входа и в разделе «Ещё»."),
             ("Сколько это стоит?", "Сначала пробный период, потом подписка. Тарифы скоро объявим."),
             ("Что будет, когда закончится подписка?", "Твои данные останутся, а сохранить копию можно в любой момент."),
         ],
@@ -162,7 +162,7 @@ TEXTS = {
         "gal_title": "Uygulama böyle görünüyor",
         "gal": ["Fotoğraflı Malzeme Stoku", "Maliyet ve Fiyat", "Satışlar ve İstatistik", "İş Arşivi"],
         "gal_alt": ["Malzeme stoku ekranı", "Maliyet ve fiyat hesabı ekranı", "Satış istatistikleri ekranı", "Arşivdeki iş ekranı"],
-        "ui_note": "Arayüz şu anda Rusça. Türkçe ve İngilizce çok yakında.",
+        "ui_note": "Uygulama Rusça, Türkçe ve İngilizce olarak çalışır.",
         "ac_kicker": "Çok yakında", "ac_title": "Akademi: derslerinizi satın",
         "ac_text": "Kurslar, öğrenciler ve ortak sohbet, stokunuzun yanında. Atölyenizi bir okula da dönüştürün.",
         "faq_title": "Sık sorulan sorular",
@@ -170,7 +170,7 @@ TEXTS = {
             ("Mağazadan indirmem gerekiyor mu?", "Hayır. Uygulamayı tarayıcıda açın ve ana ekrana ekleyin. Normal bir uygulama gibi çalışır."),
             ("Verilerim güvende mi?", "Her kullanıcının kendine ait ayrı bir stoku vardır, başkaları göremez. Veriler Avrupa'daki (Paris) güvenli bir bulutta saklanır."),
             ("İnternet olmadan çalışır mı?", "Evet. Değişiklikler cihazınıza kaydedilir ve bağlantı geldiğinde buluta gönderilir."),
-            ("Hangi dillerde?", "Şu anda Rusça. Türkçe ve İngilizce hazırlanıyor."),
+            ("Hangi dillerde?", "Rusça, Türkçe ve İngilizce. Dil, giriş ekranında ve «Daha» bölümünde seçilir."),
             ("Ne kadar?", "Önce deneme süresi, sonra abonelik. Fiyatları yakında duyuracağız."),
             ("Abonelik biterse ne olur?", "Verileriniz saklanır, istediğiniz zaman yedeğini alabilirsiniz."),
         ],
@@ -209,7 +209,7 @@ TEXTS = {
         "gal_title": "This is how the app looks",
         "gal": ["Photo inventory", "Cost and price", "Sales and statistics", "Project archive"],
         "gal_alt": ["Photo inventory screen", "Cost and price calculation screen", "Sales statistics screen", "Archived project screen"],
-        "ui_note": "The interface is currently in Russian. Turkish and English are coming soon.",
+        "ui_note": "The app works in Russian, Turkish and English.",
         "ac_kicker": "Coming soon", "ac_title": "Academy: sell your own lessons",
         "ac_text": "Courses, students and a shared chat next to your stock. Turn your workshop into a school too.",
         "faq_title": "Frequently asked questions",
@@ -217,7 +217,7 @@ TEXTS = {
             ("Do I need to install it from an app store?", "No. Open the app in your browser and add it to your home screen. It works like a regular app."),
             ("Is my data safe?", "Every user has their own separate stock that nobody else can see. Data is stored in a secure cloud in Europe (Paris)."),
             ("Does it work offline?", "Yes. Changes are saved on your device and sent to the cloud when you are back online."),
-            ("Which languages are supported?", "Russian for now. Turkish and English are on the way."),
+            ("Which languages are supported?", "Russian, Turkish and English. You pick the language on the login screen and in the “More” section."),
             ("How much does it cost?", "A trial first, then a subscription. We will announce pricing soon."),
             ("What happens when my subscription ends?", "Your data stays safe and you can save a copy of it at any time."),
         ],
@@ -838,7 +838,7 @@ def render(code):
     feats = "".join(f'<div class="card feat rv" style="--i:{i % 3}">{icon(ic)}<h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for i, (ic, a, b) in enumerate(t["features"]))
     imgs = ["stock", "price", "stats", "archive"]
     gal = "".join(
-        f'<figure class="rv" style="--i:{i}"><div class="phone"><img src="/img/{n}.jpg" width="780" height="1688" loading="lazy" alt="{esc(t["gal_alt"][i])}"></div><figcaption>{esc(t["gal"][i])}</figcaption></figure>'
+        f'<figure class="rv" style="--i:{i}"><div class="phone"><img src="/img/{code}/{n}.jpg" width="780" height="1688" loading="lazy" alt="{esc(t["gal_alt"][i])}"></div><figcaption>{esc(t["gal"][i])}</figcaption></figure>'
         for i, n in enumerate(imgs))
     faq = "".join(f'<details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t["faq"])
     nav = "".join(f'<a href="#{h}">{esc(n)}</a>' for h, n in zip(("crafts", "how", "academy", "features", "faq"), t["nav"]))
@@ -887,7 +887,7 @@ def render(code):
     <div class="cta"><a class="btn pri" href="{APPL}">{esc(t["cta"])}</a><a class="btn" href="#how">{esc(t["cta2"])}</a></div>
     <p class="note">{esc(t["note"])}</p>
   </div>
-  <div class="herovis">{mandala_svg()}<div class="bob"><div class="phone"><img src="/img/stock.jpg" width="780" height="1688" alt="{esc(t["gal_alt"][0])}"></div></div></div>
+  <div class="herovis">{mandala_svg()}<div class="bob"><div class="phone"><img src="/img/{code}/stock.jpg" width="780" height="1688" alt="{esc(t["gal_alt"][0])}"></div></div></div>
 </div></section>
 <section id="crafts" class="crafts"><div class="wrap">
   <span class="kick rv">{esc(cr["kick"])}</span>
@@ -915,7 +915,7 @@ def render(code):
       <p class="lead">{esc(a["ac_lead"])}</p>
       <div class="cta"><a class="btn pri" href="{APPL}">{esc(a["ac_cta"])}</a></div>
     </div>
-    <div class="vis"><div class="phone"><img src="/img/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/video.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][0][1])}"></div><div class="phone"><img src="/img/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
+    <div class="vis"><div class="phone"><img src="/img/{code}/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/{code}/video.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][0][1])}"></div><div class="phone"><img src="/img/{code}/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
   </div>
   <h3 class="sec rv">{esc(a["pain_title"])}</h3>
   <div class="grid three pains">{pains}</div>

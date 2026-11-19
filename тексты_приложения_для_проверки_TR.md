@@ -1,8 +1,8 @@
 # «Моя мастерская» (Atölyem): турецкие тексты приложения для проверки носителем
 
-Формат: русский оригинал → турецкий (→ английский для сравнения). Стиль: «siz». Фигурные скобки {0}, {1} — подставляемые значения (числа, названия), их менять не нужно.
+Формат: русский оригинал, турецкий, английский для сравнения. Стиль: «siz». Фигурные скобки {0}, {1} — подставляемые значения (числа, названия), их менять не нужно.
 
-Особенно проверить: названия разделов (Stok, Alımlar, Atölye, Arşiv, Daha, Akademi), термины «fire» (брак), «maliyet», «ayırma» (резерв), короткие подписи кнопок.
+Особенно проверить: названия разделов (Stok, Alımlar, Atölye, Arşiv, Daha, Akademi), термины «fire» (брак), «ayırma» (резерв), короткие подписи кнопок.
 
 - (делится поровну)
   - TR: (eşit bölünür)
@@ -380,7 +380,7 @@
   - TR: Tamam
   - EN: Done
 - Готово: можно начинать с чистого листа
-  - TR: Hazır: temiz bir sayfayla başlayabilirsiniz
+  - TR: Hazır: temiz bir sayfadan başlayabilirsiniz
   - EN: Done: you can start from a clean slate
 - Готово: склад списан, цены зафиксированы
   - TR: Tamam: stok düşüldü, fiyatlar sabitlendi
@@ -1175,10 +1175,10 @@
   - TR: İşe başla
   - EN: Start a project
 - Начать с чистого листа
-  - TR: Temiz bir sayfayla başla
+  - TR: Temiz bir sayfadan başla
   - EN: Start from a clean slate
 - Начнём с чистого листа
-  - TR: Temiz bir sayfayla başlayalım
+  - TR: Temiz bir sayfadan başlayalım
   - EN: Let's start with a clean slate
 - Не все изменения отправлены
   - TR: Tüm değişiklikler gönderilmedi
@@ -2692,3 +2692,105 @@
 - Новым аккаунтам доступен пробный период.
   - TR: Yeni hesaplar için deneme süresi vardır.
   - EN: New accounts get a trial period.
+- · мало
+  - TR: · az
+  - EN: · low
+- · на складе
+  - TR: · stokta
+  - EN: · in stock
+- Быстро добавить
+  - TR: Hızlı ekle
+  - EN: Quick add
+- В этом периоде продаж нет
+  - TR: Bu dönemde satış yok
+  - EN: No sales in this period
+- Всё сохранено
+  - TR: Her şey kaydedildi
+  - EN: Everything is saved
+- Выбрать материал из галереи
+  - TR: Galeriden malzeme seç
+  - EN: Choose a material from the gallery
+- Выбрать материалы
+  - TR: Malzemeleri seç
+  - EN: Choose materials
+- Добавь материалы из фото-склада
+  - TR: Fotoğraflı stoktan malzeme ekleyin
+  - EN: Add materials from the photo stock
+- Добавь первую: фото, количество и цена. Склад пополнится автоматически
+  - TR: İlkini ekleyin: fotoğraf, miktar ve fiyat. Stok otomatik olarak dolar
+  - EN: Add the first one: photo, quantity and price. Stock is replenished automatically
+- Добавь первый: название, ссылка на видео и материалы
+  - TR: İlkini ekleyin: ad, video bağlantısı ve malzemeler
+  - EN: Add the first one: a name, a video link and materials
+- Другое фото
+  - TR: Başka fotoğraf
+  - EN: Another photo
+- Другой
+  - TR: Diğer
+  - EN: Other
+- Закупок ещё нет
+  - TR: Henüz alım yok
+  - EN: No purchases yet
+- Зарезервировано в работах
+  - TR: İşlerde ayrılmış
+  - EN: Reserved in projects
+- Изменить кадр
+  - TR: Kadrajı değiştir
+  - EN: Change the frame
+- К готовым изделиям
+  - TR: Hazır ürünlere git
+  - EN: Go to finished pieces
+- Комиссия + прибыль ≥ 99%. Уменьши проценты, иначе цену не посчитать
+  - TR: Komisyon + kâr ≥ %99. Yüzdeleri azaltın, aksi halde fiyat hesaplanamaz
+  - EN: Fee + profit ≥ 99%. Lower the percentages, otherwise the price cannot be calculated
+- Курс: 1 {0} = … {1}
+  - TR: Kur: 1 {0} = … {1}
+  - EN: Rate: 1 {0} = … {1}
+- Например, было 2 шт, а в каждой по 90 г: выбери «г» и впиши 90. Станет 180 г, цена за грамм посчитается сама
+  - TR: Örneğin 2 adet vardı ve her birinde 90 g: «g»yi seçin ve 90 yazın. 180 g olur, gram fiyatı kendiliğinden hesaplanır
+  - EN: For example, you had 2 pcs and each holds 90 g: choose “g” and enter 90. It becomes 180 g and the price per gram is calculated for you
+- Начни с нуля или возьми сохранённый дизайн
+  - TR: Sıfırdan başlayın veya kayıtlı bir tasarım seçin
+  - EN: Start from scratch or pick a saved design
+- Незавершённая закупка
+  - TR: Tamamlanmamış alım
+  - EN: Unfinished purchase
+- Нет активных работ
+  - TR: Aktif iş yok
+  - EN: No active projects
+- Открыть видео
+  - TR: Videoyu aç
+  - EN: Open the video
+- Отметь изделие проданным во вкладке «Готовые», и оно появится здесь
+  - TR: Ürünü «Hazır» sekmesinde satıldı olarak işaretleyin, burada görünür
+  - EN: Mark a piece as sold in the “Finished” tab and it will appear here
+- Пока пусто
+  - TR: Şimdilik boş
+  - EN: Empty for now
+- Приложение уже установлено на этом устройстве
+  - TR: Uygulama bu cihaza zaten yüklenmiş
+  - EN: The app is already installed on this device
+- Продлить доступ
+  - TR: Erişimi uzat
+  - EN: Renew access
+- Продолжить
+  - TR: Devam et
+  - EN: Continue
+- Собрать мою работу по этому уроку
+  - TR: Bu dersten kendi işimi oluştur
+  - EN: Build my own project from this lesson
+- Уроков пока нет
+  - TR: Henüz ders yok
+  - EN: No lessons yet
+- Прототип по ТЗ «Фото-склад + производство по факту». Данные остаются в браузере, картинки нарисованы для примера
+  - TR: Prototip: Fotoğraflı stok + fiili tüketime göre üretim. Veriler tarayıcıda kalır, resimler örnek olarak çizilmiştir
+  - EN: Prototype: photo stock + production by actual consumption. Data stays in the browser, pictures are drawn as examples
+- Удали учебные примеры, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть.
+  - TR: Örnek verileri silin, atölyenizi sıfırdan oluşturun: kendi kategorileriniz, malzemeleriniz ve alımlarınız. Hepsini birden veya yalnızca bir kısmını kaldırabilirsiniz.
+  - EN: Delete the sample data to build your own workshop from scratch: your own categories, materials and purchases. You can remove everything at once or just part of it.
+- курс
+  - TR: kur
+  - EN: rate
+- Зарезервировано в работах:
+  - TR: İşlerde ayrılmış:
+  - EN: Reserved in projects:

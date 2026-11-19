@@ -1,0 +1,3 @@
+Удали учебные примеры, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть. ⇒ Örnek verileri silin, atölyenizi sıfırdan oluşturun: kendi kategorileriniz, malzemeleriniz ve alımlarınız. Hepsini birden veya yalnızca bir kısmını kaldırabilirsiniz. ⇒ Delete the sample data to build your own workshop from scratch: your own categories, materials and purchases. You can remove everything at once or just part of it.
+курс ⇒ kur ⇒ rate
+Зарезервировано в работах: ⇒ İşlerde ayrılmış: ⇒ Reserved in projects:
