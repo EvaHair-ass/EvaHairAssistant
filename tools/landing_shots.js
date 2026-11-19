@@ -15,7 +15,7 @@ const lang = process.argv[2], out = process.argv[3];
   await pg.evaluate(() => { const x = document.querySelector('.pricebox'); if (x) x.scrollIntoView({ block: 'center' }); }); await shot('price');
   await pg.click('[data-act=back]'); await pg.click('[data-t=arch]'); await pg.click('[data-act=archSeg][data-v=stats]'); await pg.waitForTimeout(1500); await shot('stats');
   await pg.click('[data-act=archSeg][data-v=runs]'); await pg.waitForTimeout(500);
-  await pg.locator('[data-act=openRun]').filter({ hasText: /Лабрадор|Labradorit/i }).first().click(); await pg.waitForTimeout(1200); await shot('archive');
+  await pg.locator('[data-act=openRun]').filter({ hasText: /Лабрадор|Labrador/i }).first().click(); await pg.waitForTimeout(1200); await shot('archive');
   await pg.click('[data-act=back]').catch(() => {});
   await pg.click('[data-act=mode][data-v=acad]'); await pg.waitForTimeout(1200); await shot('academy');
   await pg.locator('[data-act=openCourse]').first().click(); await pg.waitForTimeout(900);

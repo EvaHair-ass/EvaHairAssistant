@@ -825,6 +825,15 @@ def _apply_tr_fixes():
         return o
     for k in list(TEXTS["tr"]):
         if k not in ("path", "label", "locale"): TEXTS["tr"][k] = walk(TEXTS["tr"][k])
+    post = {"Fotoğraflı stok takibi": "Fotoğraflı Malzeme Stoğu"}  # единое название функции (правило носителя)
+    def walk2(o):
+        if isinstance(o, str): return post.get(o, o)
+        if isinstance(o, dict): return {k: walk2(v) for k, v in o.items()}
+        if isinstance(o, list): return [walk2(x) for x in o]
+        if isinstance(o, tuple): return tuple(walk2(x) for x in o)
+        return o
+    for k in list(TEXTS["tr"]):
+        if k not in ("path", "label", "locale"): TEXTS["tr"][k] = walk2(TEXTS["tr"][k])
 _EMPH = {"Siz büyüyü yaratın. Ne kadar ettiğini biz hesaplayalım.": "Siz harikalar yaratın, *biz maliyetini hesaplayalım.*"}
 _apply_tr_fixes()
 

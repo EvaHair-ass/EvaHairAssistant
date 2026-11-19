@@ -15,23 +15,23 @@
 Тип ⇒ Tür ⇒ Type
 Инструмент ⇒ Alet ⇒ Tool
 Цена упаковки, ⇒ Paket fiyatı, ⇒ Pack price,
-Взять сумму из закупки: {0} ⇒ Tutarı alımdan al: {0} ⇒ Take the amount from the purchase: {0}
+Взять сумму из закупки: {0} ⇒ Alımdaki tutarı kullan: {0} ⇒ Take the amount from the purchase: {0}
 Перевести в ⇒ Şuna çevir ⇒ Convert to
-В одной {0} сколько ⇒ Bir {0} içinde kaç ⇒ How many in one {0}
+В одной {0} сколько ⇒ Bir {0} içinde kaç adet var? ⇒ How many in one {0}
 Пересчитать количество и цену ⇒ Miktarı ve fiyatı yeniden hesapla ⇒ Recalculate quantity and price
 Например, было 2 {0}, а в каждой по 90 г: выбери «г» и впиши 90. Станет 180 г, цена за грамм посчитается сама. ⇒ Örneğin 2 {0} vardı ve her birinde 90 g: «g»yi seçin ve 90 yazın. 180 g olur, gram fiyatı kendiliğinden hesaplanır. ⇒ For example, you had 2 {0} and each holds 90 g: choose “g” and enter 90. It becomes 180 g and the price per gram is calculated for you.
 Движения ⇒ Hareketler ⇒ Movements
 Закупка: {0} ⇒ Alım: {0} ⇒ Purchase: {0}
-«{0}» исчезнет со склада. Завершённые работы и закупки в архиве останутся как есть. ⇒ «{0}» stoktan silinecek. Arşivdeki tamamlanmış işler ve alımlar olduğu gibi kalır. ⇒ “{0}” will disappear from stock. Finished projects and purchases in the archive stay as they are.
+«{0}» исчезнет со склада. Завершённые работы и закупки в архиве останутся как есть. ⇒ “{0}” stoktan silinecek. Arşivdeki tamamlanmış işler ve alımlar değişmeyecek. ⇒ “{0}” will disappear from stock. Finished projects and purchases in the archive stay as they are.
 {0} по рецепту ⇒ tarifte {0} ⇒ {0} in the recipe
 Вид изделия ⇒ Ürün türü ⇒ Type of piece
 Инструмент (применения) ⇒ Alet (kullanım) ⇒ Tool (uses)
-Остатки сверены, всё хватает. ⇒ Stoklar kontrol edildi, her şey yeterli. ⇒ Balances checked, everything is enough.
+Остатки сверены, всё хватает. ⇒ Stok miktarları kontrol edildi; tüm malzemeler yeterli. ⇒ Balances checked, everything is enough.
 Загрузи фото готового изделия ⇒ Hazır ürünün fotoğrafını yükleyin ⇒ Upload a photo of the finished piece
 Потом сможешь подвинуть кадр и приблизить. Фото можно добавить и позже. ⇒ Sonra kadrajı kaydırıp yakınlaştırabilirsiniz. Fotoğrafı daha sonra da ekleyebilirsiniz. ⇒ Later you can move and zoom the frame. You can also add the photo later.
 Загрузить фото ⇒ Fotoğraf yükle ⇒ Upload a photo
-Если ты вошла в аккаунт, твои данные уже хранятся в облаке и синхронизируются между устройствами. Копия в виде текста нужна как запасной вариант: «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно. ⇒ Hesabınıza giriş yaptıysanız verileriniz zaten bulutta saklanır ve cihazlar arasında eşitlenir. Metin yedeği yedek bir yol olarak gereklidir: «Kaydet» her şeyi tek bir metne çevirir, «Geri yükle» onu geri getirir. ⇒ If you are logged in, your data is already stored in the cloud and synced between devices. A text backup is a fallback: “Save” turns everything into one text, “Restore” brings it back.
-Приложение ставится без магазинов, как обычное, и работает без интернета. ⇒ Uygulama mağaza olmadan, normal bir uygulama gibi yüklenir ve internetsiz çalışır. ⇒ The app installs without app stores, like a regular app, and works without internet.
+Если ты вошла в аккаунт, твои данные уже хранятся в облаке и синхронизируются между устройствами. Копия в виде текста нужна как запасной вариант: «Сохранить» превращает всё в один текст, «Восстановить» возвращает его обратно. ⇒ Hesabınıza giriş yaptıysanız verileriniz bulutta saklanır ve cihazlar arasında senkronize edilir. Metin olarak yedek almak ek bir güvence sağlar: “Kaydet” verilerinizi tek bir metne dönüştürür, “Geri yükle” ise bu metinden verileri geri getirir. ⇒ If you are logged in, your data is already stored in the cloud and synced between devices. A text backup is a fallback: “Save” turns everything into one text, “Restore” brings it back.
+Приложение ставится без магазинов, как обычное, и работает без интернета. ⇒ Uygulamayı mağazadan indirmeden ana ekranınıza ekleyebilir, internet olmadan da kullanabilirsiniz. ⇒ The app installs without app stores, like a regular app, and works without internet.
 «Поделиться» → «На экран Домой». ⇒ «Paylaş» → «Ana Ekrana Ekle». ⇒ “Share” → “Add to Home Screen”.
 меню ⋮ → «Установить приложение». ⇒ menü ⋮ → «Uygulamayı yükle». ⇒ menu ⋮ → “Install app”.
 Компьютер (Chrome, Edge): ⇒ Bilgisayar (Chrome, Edge): ⇒ Computer (Chrome, Edge):
@@ -43,7 +43,7 @@
 Заплачено за весь остаток, ⇒ Kalan tüm miktar için ödenen, ⇒ Paid for the whole remainder,
 {0} · материалов: {1} ⇒ {0} · malzeme: {1} ⇒ {0} · materials: {1}
 доставка в цене: {0} ⇒ fiyata dahil kargo: {0} ⇒ shipping included in the price: {0}
-{0} за {1} без доставки · строка {2} ⇒ {1} başına {0}, kargosuz · satır {2} ⇒ {0} per {1} without shipping · line {2}
+{0} за {1} без доставки · строка {2} ⇒ {1} başına {0}, kargo hariç · satır {2} ⇒ {0} per {1} without shipping · line {2}
 {0}/{1} с доставкой ⇒ {0}/{1} kargo dahil ⇒ {0}/{1} with shipping
 за {0} ⇒ {0} başına ⇒ per {0}
 Доставка (делится поровну) ⇒ Kargo (eşit bölünür) ⇒ Shipping (split equally)

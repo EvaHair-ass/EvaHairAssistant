@@ -1,10 +1,10 @@
 Синхронизировано в {0} ⇒ {0} saatinde eşitlendi ⇒ Synced at {0}
-Синхронизировать ⇒ Eşitle ⇒ Sync
+Синхронизировать ⇒ Senkronize et ⇒ Sync
 Склад ⇒ Stok ⇒ Stock
 Склад и закупки ⇒ Stok ve alımlar ⇒ Stock and purchases
-Склад материалов, расчёт цены и твоя личная Академия в одном приложении. Приложение от Melaymade. ⇒ Malzeme stoğu, fiyat hesabı ve kişisel Akademiniz tek uygulamada. Melaymade uygulaması. ⇒ Materials stock, price calculation and your personal Academy in one app. An app by Melaymade.
+Склад материалов, расчёт цены и твоя личная Академия в одном приложении. Приложение от Melaymade. ⇒ Malzeme stoğu, maliyet ve satış fiyatı hesabı, kişisel Akademiniz: hepsi tek uygulamada. Melaymade uygulaması. ⇒ Materials stock, price calculation and your personal Academy in one app. An app by Melaymade.
 Склад пока пуст ⇒ Stok şimdilik boş ⇒ Stock is empty for now
-Склад, закупки и себестоимость для мастериц handmade ⇒ El işi ustaları için stok, alımlar ve maliyet ⇒ Stock, purchases and cost for handmade makers
+Склад, закупки и себестоимость для мастериц handmade ⇒ El işi üreticileri için malzeme stoğu, alım takibi ve maliyet hesabı ⇒ Stock, purchases and cost for handmade makers
 Скопировано ⇒ Kopyalandı ⇒ Copied
 Скопировать ⇒ Kopyala ⇒ Copy
 Скопируй этот текст и сохрани в заметках или файле .json. Позже вставь его в «Восстановить» на любом устройстве. ⇒ Bu metni kopyalayıp notlarınıza veya bir .json dosyasına kaydedin. Daha sonra herhangi bir cihazda «Geri yükle»ye yapıştırın. ⇒ Copy this text and save it in your notes or a .json file. Later paste it into “Restore” on any device.
@@ -13,13 +13,13 @@
 Сначала создай курс ⇒ Önce bir kurs oluşturun ⇒ Create a course first
 Сначала сохранить копию данных ⇒ Önce veri yedeği al ⇒ Save a data backup first
 Собери первую работу ⇒ İlk işinizi oluşturun ⇒ Build your first project
-Собираем авторскую заколку с лунами, янтарём и подвесками: от выбора основы до фото для продажи. Подойдёт новичкам. ⇒ Aylı, kehribarlı ve sarkıtlı özel tasarım bir toka yapıyoruz: aparatın seçiminden satış fotoğrafına kadar. Yeni başlayanlar için uygundur. ⇒ We build an original hair slide with moons, amber and pendants: from choosing the base to the photo for sale. Suitable for beginners.
+Собираем авторскую заколку с лунами, янтарём и подвесками: от выбора основы до фото для продажи. Подойдёт новичкам. ⇒ Ay ve kehribar detaylarıyla, sallantılı süsleri olan özgün bir toka yapıyoruz: aparat seçiminden satış fotoğrafına kadar. Yeni başlayanlar için uygundur. ⇒ We build an original hair slide with moons, amber and pendants: from choosing the base to the photo for sale. Suitable for beginners.
 Создай категории ⇒ Kategorileri oluşturun ⇒ Create categories
 Создать аккаунт ⇒ Hesap Oluştur ⇒ Create an account
 Создать курс ⇒ Kurs oluştur ⇒ Create the course
 Сообщение ученицам ⇒ Öğrencilere mesaj ⇒ Message to students
 Сообщений пока нет ⇒ Henüz mesaj yok ⇒ No messages yet
-Состав ⇒ İçerik ⇒ Materials
+Состав ⇒ Malzeme listesi ⇒ Materials
 Сохранить ⇒ Kaydet ⇒ Save
 Сохранить данные ⇒ Verileri kaydet ⇒ Save data
 Сохранить карточку ⇒ Kartı kaydet ⇒ Save the card
@@ -31,7 +31,7 @@
 Сохранённые дизайны ⇒ Kayıtlı tasarımlar ⇒ Saved designs
 Список всегда по алфавиту. Нажми на число, чтобы увидеть материалы категории на складе. Название меняется, когда уходишь из поля. ⇒ Liste her zaman alfabetiktir. Kategorinin stoktaki malzemelerini görmek için sayıya dokunun. Ad, alandan çıkınca değişir. ⇒ The list is always alphabetical. Tap the number to see the category's materials in stock. The name changes when you leave the field.
 Спишется со склада ⇒ Stoktan düşülecek ⇒ Will be written off from stock
-Средний чек ⇒ Ortalama satış ⇒ Average sale
+Средний чек ⇒ Ortalama sipariş tutarı ⇒ Average sale
 Средняя цена ⇒ Ortalama fiyat ⇒ Average price
 Ссылка на видео ⇒ Video bağlantısı ⇒ Video link
 Ставка, {0}/час ⇒ Saat ücreti, {0}/saat ⇒ Hourly rate, {0}/hour
@@ -41,9 +41,9 @@
 Старт ⇒ Başlat ⇒ Start
 Статистика продаж ⇒ Satış istatistikleri ⇒ Sales statistics
 Статус ⇒ Durum ⇒ Status
-Стоимость в работе ⇒ İşteki maliyet ⇒ Cost in the project
+Стоимость в работе ⇒ Bu işin maliyeti ⇒ Cost in the project
 Стоимость применения — это износ инструмента: цена ÷ на сколько раз его хватит. Ты задаёшь её сама в карточке инструмента. ⇒ Kullanım maliyeti aletin aşınmasıdır: fiyat ÷ kaç kez yeteceği. Bunu aletin kartında kendiniz belirlersiniz. ⇒ The cost per use is the tool's wear: price ÷ how many times it will last. You set it yourself in the tool's card.
-Стразы Swarovski SS16 ⇒ Swarovski strass SS16 ⇒ Swarovski rhinestones SS16
+Стразы Swarovski SS16 ⇒ Swarovski SS16 taşları ⇒ Swarovski rhinestones SS16
 Строк пока нет ⇒ Henüz satır yok ⇒ No lines yet
 Сумма взята из закупки ⇒ Tutar alımdan alındı ⇒ The amount was taken from the purchase
 Сумочка ⇒ Çanta ⇒ Bag
@@ -55,11 +55,11 @@
 Тайский бат ⇒ Tayland bahtı ⇒ Thai baht
 Такая категория уже есть ⇒ Böyle bir kategori zaten var ⇒ This category already exists
 Тбилиси, Грузия ⇒ Tiflis, Gürcistan ⇒ Tbilisi, Georgia
-Твои данные в сохранности. Чтобы продолжить работу, продли подписку. Пока доступ не активен, новые изменения не сохраняются в облако. ⇒ Verileriniz güvende. Devam etmek için aboneliğinizi yenileyin. Erişim etkin olana kadar yeni değişiklikler buluta kaydedilmez. ⇒ Your data is safe. To keep working, renew your subscription. While access is inactive, new changes are not saved to the cloud.
-Твои данные только твои ⇒ Verileriniz yalnızca sizin ⇒ Your data is only yours
+Твои данные в сохранности. Чтобы продолжить работу, продли подписку. Пока доступ не активен, новые изменения не сохраняются в облако. ⇒ Verileriniz güvende. Çalışmaya devam etmek için aboneliğinizi yenileyin. Erişiminiz aktif olana kadar yeni değişiklikler buluta kaydedilmez. ⇒ Your data is safe. To keep working, renew your subscription. While access is inactive, new changes are not saved to the cloud.
+Твои данные только твои ⇒ Verileriniz yalnızca size ait ⇒ Your data is only yours
 Текст выделен: скопируй его через меню ⇒ Metin seçildi: menüden kopyalayın ⇒ The text is selected: copy it from the menu
 Телефон ⇒ Telefon ⇒ Phone
-Теперь в {0}: на складе {1} {2} ⇒ Şimdi {0} içinde: stokta {1} {2} ⇒ Now in {0}: {1} {2} in stock
+Теперь в {0}: на складе {1} {2} ⇒ Artık {0} kategorisinde: stokta {1} {2} ⇒ Now in {0}: {1} {2} in stock
 Тест ⇒ Test ⇒ Test
 Тест 2 ⇒ Test 2 ⇒ Test 2
 Тест {1}. {2} ⇒ Test {1}. {2} ⇒ Test {1}. {2}
@@ -69,16 +69,16 @@
 Тип материала ⇒ Malzeme türü ⇒ Material type
 Ткани и основы ⇒ Kumaşlar ve aparatlar ⇒ Fabrics and bases
 Товары ⇒ Ürünler ⇒ Items
-Точно удалить? ⇒ Silmek istediğinize emin misiniz? ⇒ Really delete?
+Точно удалить? ⇒ Silmek istediğinizden emin misiniz? ⇒ Really delete?
 Трек-номер, пожелания ⇒ Takip numarası, istekler ⇒ Tracking number, requests
 Труд, {3} ⇒ İşçilik, {3} ⇒ Labor, {3}
-Труд: {1} × {2}/ч ⇒ İşçilik: {1} × {2}/sa ⇒ Labor: {1} × {2}/h
+Труд: {1} × {2}/ч ⇒ İşçilik: {1} × {2}/saat ⇒ Labor: {1} × {2}/h
 Турецкая лира ⇒ Türk lirası ⇒ Turkish lira
 Ты ⇒ Siz ⇒ You
 Тёмно-коричневый (4#) ⇒ Koyu kahverengi (4#) ⇒ Dark brown (4#)
 У каждой мастерицы свой склад, другие его не видят. Копию можно сохранить в любой момент в разделе «Ещё». ⇒ Her ustanın kendi stoğu vardır, başkaları göremez. Yedeği istediğiniz an «Diğer» bölümünde kaydedebilirsiniz. ⇒ Every maker has their own stock that others cannot see. You can save a backup at any time in the “More” section.
 Убрать ⇒ Kaldır ⇒ Remove
-Убрать и вернуть в свободный остаток ⇒ Kaldır ve serbest stoğa geri ver ⇒ Remove and return to free stock
+Убрать и вернуть в свободный остаток ⇒ Kaldır ve kullanılabilir stoğa geri ekle ⇒ Remove and return to free stock
 Убрать материал ⇒ Malzemeyi kaldır ⇒ Remove material
 Увеличить ⇒ Büyüt ⇒ Increase
 Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть. ⇒ Örnekleri ve 2023 numaralı siparişi silin, atölyenizi sıfırdan oluşturun: kendi kategorileriniz, malzemeleriniz ve alımlarınız. Hepsini birden veya yalnızca bir kısmını kaldırabilirsiniz. ⇒ Delete the examples and order #2023 to build your own workshop from scratch: your own categories, materials and purchases. You can remove everything at once or just part of it.
@@ -95,12 +95,12 @@
 Уже в уроке ⇒ Zaten derste ⇒ Already in the lesson
 Узбекский сум ⇒ Özbek somu ⇒ Uzbekistani som
 Укажи имя ученицы ⇒ Öğrencinin adını yazın ⇒ Enter the student's name
-Укажи курс валюты ⇒ Para biriminin kurunu yazın ⇒ Enter the exchange rate
-Укажи курс на день покупки ⇒ Alım gününün kurunu yazın ⇒ Enter the rate on the day of purchase
+Укажи курс валюты ⇒ Döviz kurunu girin ⇒ Enter the exchange rate
+Укажи курс на день покупки ⇒ Satın alma tarihindeki döviz kurunu girin ⇒ Enter the rate on the day of purchase
 Укажи упаковки и количество в упаковке ⇒ Paket sayısını ve paketteki miktarı yazın ⇒ Enter the packs and the quantity per pack
 Укажи цену продажи ⇒ Satış fiyatını yazın ⇒ Enter the selling price
 Украинская гривна ⇒ Ukrayna grivnası ⇒ Ukrainian hryvnia
-Украшаем съёмную прядь брошью и кристаллами так, чтобы всё держалось годами. ⇒ Takma saç parçasını broş ve kristallerle yıllarca dayanacak şekilde süslüyoruz. ⇒ We decorate a clip-in hair piece with a brooch and crystals so that everything lasts for years.
+Украшаем съёмную прядь брошью и кристаллами так, чтобы всё держалось годами. ⇒ Takma saç tutamını broş ve kristallerle uzun süre dayanacak şekilde süslüyoruz. ⇒ We decorate a clip-in hair piece with a brooch and crystals so that everything lasts for years.
 Улица, дом, индекс или отделение службы доставки ⇒ Sokak, bina no, posta kodu veya kargo şubesi ⇒ Street, house number, postcode or a delivery branch
 Уменьшить ⇒ Küçült ⇒ Decrease
 Упаковка ⇒ Paket ⇒ Packaging
@@ -127,14 +127,14 @@
 Фото результата ⇒ Sonuç fotoğrafı ⇒ Photo of the result
 Фото сохранено. Стоимость не изменилась ⇒ Fotoğraf kaydedildi. Maliyet değişmedi ⇒ Photo saved. The cost did not change
 Фото, название, количество и цена. Материал сам попадёт на склад. ⇒ Fotoğraf, ad, miktar ve fiyat. Malzeme kendiliğinden stoğa eklenir. ⇒ Photo, name, quantity and price. The material goes to stock by itself.
-Фото-склад ⇒ Fotoğraflı Stok ⇒ Photo Stock
-Фото-склад, производство по факту и своя академия. Нажимай всё: считает по-настоящему. ⇒ Fotoğraflı stok, fiili tüketime göre üretim ve kendi akademiniz. ⇒ Photo stock, production by actual consumption and your own academy.
+Фото-склад ⇒ Fotoğraflı Malzeme Stoğu ⇒ Photo Stock
+Фото-склад, производство по факту и своя академия. Нажимай всё: считает по-настоящему. ⇒ Fotoğraflı stok, gerçek malzeme tüketimine göre maliyet hesabı ve kişisel Akademiniz. Her bölümü deneyin: hesaplamalar gerçek verilerle yapılır. ⇒ Photo stock, production by actual consumption and your own academy.
 Фунт стерлингов ⇒ İngiliz sterlini ⇒ Pound sterling
-Фурнитура ⇒ Aksesuar ⇒ Findings
-Хватит на, применений ⇒ Yeteceği kullanım sayısı ⇒ Will last for, uses
+Фурнитура ⇒ Takı malzemeleri ⇒ Findings
+Хватит на, применений ⇒ Tahmini kullanım sayısı ⇒ Will last for, uses
 Цвет ⇒ Renk ⇒ Color
 Цена ⇒ Fiyat ⇒ Price
-Цена за ⇒ Fiyat / ⇒ Price per
+Цена за ⇒ Birim fiyat ⇒ Price per
 Цена за единицу = сколько заплатила ÷ количество. Исправь любое из двух полей, второе пересчитается. Завершённые работы не меняются. ⇒ Birim fiyat = ödediğiniz tutar ÷ miktar. İki alandan birini düzeltin, diğeri yeniden hesaplanır. Tamamlanmış işler değişmez. ⇒ Unit price = what you paid ÷ quantity. Correct either of the two fields and the other is recalculated. Finished projects do not change.
 Цена за единицу уже включает свою долю доставки и считается по фактическим единицам, а не по упаковкам. ⇒ Birim fiyat kargo payını da içerir ve paketlere göre değil, fiili birimlere göre hesaplanır. ⇒ The unit price already includes its share of shipping and is counted per actual unit, not per pack.
 Цена и единицы ⇒ Fiyat ve birimler ⇒ Price and units
@@ -147,14 +147,14 @@
 Цена, ⇒ Fiyat, ⇒ Price,
 Цена, {4} ⇒ Fiyat, {4} ⇒ Price, {4}
 Цены зафиксированы на дату завершения. Новые закупки их не меняют. ⇒ Fiyatlar tamamlanma tarihinde sabitlenir. Yeni alımlar bunları değiştirmez. ⇒ Prices are frozen at the completion date. New purchases do not change them.
-Цены расхода заморозятся и не изменятся задним числом. ⇒ Gider fiyatları sabitlenir ve geriye dönük olarak değişmez. ⇒ Usage prices are frozen and will not change retroactively.
+Цены расхода заморозятся и не изменятся задним числом. ⇒ Kullanılan malzemelerin maliyetleri sabitlenir; geçmiş kayıtlar sonradan değişmez. ⇒ Usage prices are frozen and will not change retroactively.
 Цепочка позолоченная ⇒ Altın kaplama zincir ⇒ Gold-plated chain
 Цепочки ⇒ Zincirler ⇒ Chains
 Чат появляется у каждого курса. Создай первый курс во вкладке «Курсы». ⇒ Her kursun bir sohbeti olur. İlk kursunuzu «Kurslar» sekmesinde oluşturun. ⇒ Every course gets a chat. Create your first course in the “Courses” tab.
 Чатов пока нет ⇒ Henüz sohbet yok ⇒ No chats yet
 Чаты ⇒ Sohbetler ⇒ Chats
 Чаты курсов ⇒ Kurs sohbetleri ⇒ Course chats
-Чем заменить ⇒ Neyle değiştirilsin ⇒ Replace with
+Чем заменить ⇒ Neyle değiştirilsin? ⇒ Replace with
 Чему научатся ученицы ⇒ Öğrenciler neler öğrenecek ⇒ What students will learn
 Черновик ⇒ Taslak ⇒ Draft
 Черновик закупки удалён ⇒ Alım taslağı silindi ⇒ Purchase draft deleted
@@ -168,7 +168,7 @@
 Шведская крона ⇒ İsveç kronu ⇒ Swedish krona
 Швейные нити ⇒ Dikiş iplikleri ⇒ Sewing threads
 Швейцарский франк ⇒ İsviçre frangı ⇒ Swiss franc
-Эта почта уже зарегистрирована. Нажми «Вход». ⇒ Bu e-posta zaten kayıtlı. «Giriş»e basın. ⇒ This email is already registered. Press “Log in”.
+Эта почта уже зарегистрирована. Нажми «Вход». ⇒ Bu e-posta adresiyle zaten hesap oluşturulmuş. “Giriş”e dokunun. ⇒ This email is already registered. Press “Log in”.
 Это кликабельный прототип. Данные хранятся только в этом браузере. Картинки материалов нарисованы для примера, а свои фото загружаются файлом. ⇒ Bu tıklanabilir bir prototiptir. Veriler yalnızca bu tarayıcıda saklanır. ⇒ This is a clickable prototype. Data is stored only in this browser.
 Это нельзя отменить. Если не сохраняла копию данных, вернуть удалённое будет нельзя. ⇒ Bu işlem geri alınamaz. Veri yedeği almadıysanız silinenleri geri getiremezsiniz. ⇒ This cannot be undone. If you did not save a backup, the deleted data cannot be recovered.
 Этот материал уже в работе ⇒ Bu malzeme zaten işte ⇒ This material is already in the project
@@ -177,7 +177,7 @@
 Японская иена ⇒ Japon yeni ⇒ Japanese yen
 Ящик E1 ⇒ Çekmece E1 ⇒ Drawer E1
 Ящик E2 ⇒ Çekmece E2 ⇒ Drawer E2
-архив остался {0} ⇒ arşiv {0} olarak kaldı ⇒ the archive stayed at {0}
+архив остался {0} ⇒ arşivde {0} kaldı ⇒ the archive stayed at {0}
 без доставки ⇒ kargosuz ⇒ without shipping
 без имени ⇒ adsız ⇒ no name
 без поставщика ⇒ tedarikçisiz ⇒ no supplier
@@ -204,22 +204,22 @@
 общаемся ⇒ sohbet ediyoruz ⇒ let's chat
 опубликован ⇒ yayında ⇒ published
 оставь пустой: возьмём рекомендуемую ⇒ boş bırakın: önerileni kullanırız ⇒ leave empty: we will use the recommended one
-останется {1} {2} ⇒ kalacak: {1} {2} ⇒ will be left: {1} {2}
+останется {1} {2} ⇒ {1} {2} kalacak ⇒ will be left: {1} {2}
 остаток не меняется ⇒ kalan miktar değişmiyor ⇒ the balance does not change
 по таймеру ⇒ zamanlayıcıdan ⇒ from the timer
 покупатель не указан ⇒ alıcı belirtilmedi ⇒ no buyer specified
 применения ⇒ kullanım ⇒ uses
-приход материалов ⇒ malzeme girişi ⇒ incoming materials
+приход материалов ⇒ malzeme stok girişi ⇒ incoming materials
 проверь остатки ⇒ stok miktarlarını kontrol edin ⇒ check the balances
 прошлому году ⇒ geçen yıla ⇒ last year
 прошлому месяцу ⇒ geçen aya ⇒ last month
-резерв 21, свободно 79, склад 100 ⇒ ayrılan 21, serbest 79, stok 100 ⇒ reserved 21, free 79, stock 100
-резерв {0}, свободно {1}, склад {2} ⇒ ayrılan {0}, serbest {1}, stok {2} ⇒ reserved {0}, free {1}, stock {2}
+резерв 21, свободно 79, склад 100 ⇒ ayrılan 21, kullanılabilir 79, stokta toplam 100 ⇒ reserved 21, free 79, stock 100
+резерв {0}, свободно {1}, склад {2} ⇒ ayrılan {0}, kullanılabilir {1}, stokta toplam {2} ⇒ reserved {0}, free {1}, stock {2}
 с доставкой ⇒ kargolu ⇒ with shipping
-свободно ⇒ serbest ⇒ free
+свободно ⇒ kullanılabilir ⇒ free
 себестоимость ⇒ maliyet ⇒ cost
 сколько ⇒ kaç ⇒ how many
-средняя цена теперь {0}, архив {1} ⇒ ortalama fiyat artık {0}, arşiv {1} ⇒ the average price is now {0}, archive {1}
+средняя цена теперь {0}, архив {1} ⇒ ortalama fiyat artık {0}, arşivdeki değer {1} ⇒ the average price is now {0}, archive {1}
 твои сокровища ⇒ hazineleriniz ⇒ your treasures
 твои ученицы ⇒ öğrencileriniz ⇒ your students
 творим ⇒ üretiyoruz ⇒ creating

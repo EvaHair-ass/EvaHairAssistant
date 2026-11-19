@@ -5,16 +5,16 @@
 Всё сохранено ⇒ Her şey kaydedildi ⇒ Everything is saved
 Выбрать материал из галереи ⇒ Galeriden malzeme seç ⇒ Choose a material from the gallery
 Выбрать материалы ⇒ Malzemeleri seç ⇒ Choose materials
-Добавь материалы из фото-склада ⇒ Fotoğraflı stoktan malzeme ekleyin ⇒ Add materials from the photo stock
-Добавь первую: фото, количество и цена. Склад пополнится автоматически ⇒ İlkini ekleyin: fotoğraf, miktar ve fiyat. Stok otomatik olarak dolar ⇒ Add the first one: photo, quantity and price. Stock is replenished automatically
+Добавь материалы из фото-склада ⇒ Fotoğraflı malzeme stoğundan malzeme ekleyin ⇒ Add materials from the photo stock
+Добавь первую: фото, количество и цена. Склад пополнится автоматически ⇒ İlk malzemeyi ekleyin: fotoğraf, miktar ve fiyat. Stok otomatik güncellenecek. ⇒ Add the first one: photo, quantity and price. Stock is replenished automatically
 Добавь первый: название, ссылка на видео и материалы ⇒ İlkini ekleyin: ad, video bağlantısı ve malzemeler ⇒ Add the first one: a name, a video link and materials
 Другое фото ⇒ Başka fotoğraf ⇒ Another photo
 Другой ⇒ Diğer ⇒ Other
-Закупок ещё нет ⇒ Henüz alım yok ⇒ No purchases yet
-Зарезервировано в работах ⇒ İşlerde ayrılmış ⇒ Reserved in projects
+Закупок ещё нет ⇒ Henüz alım kaydı yok ⇒ No purchases yet
+Зарезервировано в работах ⇒ İşler için ayrılan miktar ⇒ Reserved in projects
 Изменить кадр ⇒ Kadrajı değiştir ⇒ Change the frame
 К готовым изделиям ⇒ Hazır ürünlere git ⇒ Go to finished pieces
-Комиссия + прибыль ≥ 99%. Уменьши проценты, иначе цену не посчитать ⇒ Komisyon + kâr ≥ %99. Yüzdeleri azaltın, aksi halde fiyat hesaplanamaz ⇒ Fee + profit ≥ 99%. Lower the percentages, otherwise the price cannot be calculated
+Комиссия + прибыль ≥ 99%. Уменьши проценты, иначе цену не посчитать ⇒ Komisyon + hedeflenen kâr oranı ≥ %99. Oranları düşürün; aksi halde fiyat hesaplanamaz. ⇒ Fee + profit ≥ 99%. Lower the percentages, otherwise the price cannot be calculated
 Курс: 1 {0} = … {1} ⇒ Kur: 1 {0} = … {1} ⇒ Rate: 1 {0} = … {1}
 Например, было 2 шт, а в каждой по 90 г: выбери «г» и впиши 90. Станет 180 г, цена за грамм посчитается сама ⇒ Örneğin 2 adet vardı ve her birinde 90 g: «g»yi seçin ve 90 yazın. 180 g olur, gram fiyatı kendiliğinden hesaplanır ⇒ For example, you had 2 pcs and each holds 90 g: choose “g” and enter 90. It becomes 180 g and the price per gram is calculated for you
 Начни с нуля или возьми сохранённый дизайн ⇒ Sıfırdan başlayın veya kayıtlı bir tasarım seçin ⇒ Start from scratch or pick a saved design
