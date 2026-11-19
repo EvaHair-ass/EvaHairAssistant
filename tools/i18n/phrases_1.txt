@@ -10,7 +10,7 @@
 100 шт, {0} ⇒ 100 adet, {0} ⇒ 100 pcs, {0}
 {0} · в наличии {1} ⇒ {0} · stokta {1} ⇒ {0} · in stock {1}
 {0} · на {1}{2} ⇒ {0} · değeri {1}{2} ⇒ {0} · worth {1}{2}
-{0} · приход сам попадает на склад ⇒ {0} · alım otomatik olarak stoka eklenir ⇒ {0} · purchase goes to stock automatically
+{0} · приход сам попадает на склад ⇒ {0} · alım otomatik olarak stoğa eklenir ⇒ {0} · purchase goes to stock automatically
 {0} · с {1} ⇒ {0} · {1} ile ⇒ {0} · with {1}
 {0} в процессе · правки сохраняются сами ⇒ {0} devam ediyor · değişiklikler otomatik kaydedilir ⇒ {0} in progress · changes save automatically
 {0} купили курсы ⇒ {0} kursları satın aldı ⇒ {0} bought courses
@@ -97,7 +97,7 @@
 Время работы ⇒ Çalışma süresi ⇒ Working time
 Вручную, мин ⇒ Elle, dk ⇒ By hand, min
 Все ⇒ Tümü ⇒ All
-Все введённые позиции пропадут. На склад ничего не добавлялось. ⇒ Girilen tüm kalemler silinecek. Stoka hiçbir şey eklenmemişti. ⇒ All entered lines will be lost. Nothing has been added to stock.
+Все введённые позиции пропадут. На склад ничего не добавлялось. ⇒ Girilen tüm kalemler silinecek. Stoğa hiçbir şey eklenmemişti. ⇒ All entered lines will be lost. Nothing has been added to stock.
 Все созданные категории. Те, в которых остались материалы, сохранятся. ⇒ Oluşturulan tüm kategoriler. İçinde malzeme kalanlar korunur. ⇒ All created categories. Those that still contain materials will stay.
 Все твои данные будут заменены учебными примерами. Сначала сохрани копию, если она нужна. ⇒ Tüm verileriniz örnek verilerle değiştirilecek. Gerekirse önce bir yedek alın. ⇒ All your data will be replaced by sample data. Save a backup first if you need it.
 Все твои правки в прототипе исчезнут, вернутся стартовые примеры и заказ №2023. ⇒ Prototipteki tüm değişiklikleriniz silinecek, başlangıç örnekleri ve 2023 numaralı sipariş geri gelecek. ⇒ All your edits in the prototype will disappear and the starting examples and order #2023 will return.

@@ -2,7 +2,7 @@
 Синхронизировать ⇒ Eşitle ⇒ Sync
 Склад ⇒ Stok ⇒ Stock
 Склад и закупки ⇒ Stok ve alımlar ⇒ Stock and purchases
-Склад материалов, расчёт цены и твоя личная Академия в одном приложении. Приложение от Melaymade. ⇒ Malzeme stoku, fiyat hesabı ve kişisel Akademiniz tek uygulamada. Melaymade uygulaması. ⇒ Materials stock, price calculation and your personal Academy in one app. An app by Melaymade.
+Склад материалов, расчёт цены и твоя личная Академия в одном приложении. Приложение от Melaymade. ⇒ Malzeme stoğu, fiyat hesabı ve kişisel Akademiniz tek uygulamada. Melaymade uygulaması. ⇒ Materials stock, price calculation and your personal Academy in one app. An app by Melaymade.
 Склад пока пуст ⇒ Stok şimdilik boş ⇒ Stock is empty for now
 Склад, закупки и себестоимость для мастериц handmade ⇒ El işi ustaları için stok, alımlar ve maliyet ⇒ Stock, purchases and cost for handmade makers
 Скопировано ⇒ Kopyalandı ⇒ Copied
@@ -76,9 +76,9 @@
 Турецкая лира ⇒ Türk lirası ⇒ Turkish lira
 Ты ⇒ Siz ⇒ You
 Тёмно-коричневый (4#) ⇒ Koyu kahverengi (4#) ⇒ Dark brown (4#)
-У каждой мастерицы свой склад, другие его не видят. Копию можно сохранить в любой момент в разделе «Ещё». ⇒ Her ustanın kendi stoku vardır, başkaları göremez. Yedeği istediğiniz an «Diğer» bölümünde kaydedebilirsiniz. ⇒ Every maker has their own stock that others cannot see. You can save a backup at any time in the “More” section.
+У каждой мастерицы свой склад, другие его не видят. Копию можно сохранить в любой момент в разделе «Ещё». ⇒ Her ustanın kendi stoğu vardır, başkaları göremez. Yedeği istediğiniz an «Diğer» bölümünde kaydedebilirsiniz. ⇒ Every maker has their own stock that others cannot see. You can save a backup at any time in the “More” section.
 Убрать ⇒ Kaldır ⇒ Remove
-Убрать и вернуть в свободный остаток ⇒ Kaldır ve serbest stoka geri ver ⇒ Remove and return to free stock
+Убрать и вернуть в свободный остаток ⇒ Kaldır ve serbest stoğa geri ver ⇒ Remove and return to free stock
 Убрать материал ⇒ Malzemeyi kaldır ⇒ Remove material
 Увеличить ⇒ Büyüt ⇒ Increase
 Удали примеры и заказ №2023, чтобы создать свою мастерскую с нуля: свои категории, материалы и закупки. Можно убрать всё сразу или только часть. ⇒ Örnekleri ve 2023 numaralı siparişi silin, atölyenizi sıfırdan oluşturun: kendi kategorileriniz, malzemeleriniz ve alımlarınız. Hepsini birden veya yalnızca bir kısmını kaldırabilirsiniz. ⇒ Delete the examples and order #2023 to build your own workshop from scratch: your own categories, materials and purchases. You can remove everything at once or just part of it.
@@ -126,7 +126,7 @@
 Фото материала ⇒ Malzeme fotoğrafı ⇒ Material photo
 Фото результата ⇒ Sonuç fotoğrafı ⇒ Photo of the result
 Фото сохранено. Стоимость не изменилась ⇒ Fotoğraf kaydedildi. Maliyet değişmedi ⇒ Photo saved. The cost did not change
-Фото, название, количество и цена. Материал сам попадёт на склад. ⇒ Fotoğraf, ad, miktar ve fiyat. Malzeme kendiliğinden stoka eklenir. ⇒ Photo, name, quantity and price. The material goes to stock by itself.
+Фото, название, количество и цена. Материал сам попадёт на склад. ⇒ Fotoğraf, ad, miktar ve fiyat. Malzeme kendiliğinden stoğa eklenir. ⇒ Photo, name, quantity and price. The material goes to stock by itself.
 Фото-склад ⇒ Fotoğraflı Stok ⇒ Photo Stock
 Фото-склад, производство по факту и своя академия. Нажимай всё: считает по-настоящему. ⇒ Fotoğraflı stok, fiili tüketime göre üretim ve kendi akademiniz. ⇒ Photo stock, production by actual consumption and your own academy.
 Фунт стерлингов ⇒ İngiliz sterlini ⇒ Pound sterling
@@ -158,7 +158,7 @@
 Чему научатся ученицы ⇒ Öğrenciler neler öğrenecek ⇒ What students will learn
 Черновик ⇒ Taslak ⇒ Draft
 Черновик закупки удалён ⇒ Alım taslağı silindi ⇒ Purchase draft deleted
-Черновик исчезнет, а зарезервированные материалы вернутся в свободный остаток. Со склада ничего не списывалось. ⇒ Taslak silinir, ayrılan malzemeler serbest stoka döner. Stoktan hiçbir şey düşülmemişti. ⇒ The draft disappears and the reserved materials return to free stock. Nothing had been written off from stock.
+Черновик исчезнет, а зарезервированные материалы вернутся в свободный остаток. Со склада ничего не списывалось. ⇒ Taslak silinir, ayrılan malzemeler serbest stoğa döner. Stoktan hiçbir şey düşülmemişti. ⇒ The draft disappears and the reserved materials return to free stock. Nothing had been written off from stock.
 Черновик нового курса. ⇒ Yeni kursun taslağı. ⇒ A draft of a new course.
 Черновик: 20 в изделии + 1 брак ⇒ Taslak: üründe 20 + 1 fire ⇒ Draft: 20 in the piece + 1 waste
 Чешская крона ⇒ Çek kronu ⇒ Czech koruna
