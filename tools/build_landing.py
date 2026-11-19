@@ -806,6 +806,29 @@ hv.addEventListener('pointerleave',function(){hv.style.setProperty('--ry','0deg'
 })();
 </script>"""
 
+# ------------------------------------------------- правки носителя турецкого (файл Melaymade_TR_site_review.xlsx)
+def _apply_tr_fixes():
+    import json as _j
+    fx = _j.loads((Path(__file__).parent / "tr_site_fixes.json").read_text(encoding="utf-8"))
+    def walk(o):
+        if isinstance(o, str):
+            plain = o.replace("*", "")
+            if plain in fx:
+                new = fx[plain]
+                if "*" in o:  # выделенная часть заголовка
+                    new = _EMPH.get(plain, new)
+                return new
+            return o
+        if isinstance(o, dict): return {k: walk(v) for k, v in o.items()}
+        if isinstance(o, list): return [walk(x) for x in o]
+        if isinstance(o, tuple): return tuple(walk(x) for x in o)
+        return o
+    for k in list(TEXTS["tr"]):
+        if k not in ("path", "label", "locale"): TEXTS["tr"][k] = walk(TEXTS["tr"][k])
+_EMPH = {"Siz büyüyü yaratın. Ne kadar ettiğini biz hesaplayalım.": "Siz harikalar yaratın, *biz maliyetini hesaplayalım.*"}
+_apply_tr_fixes()
+
+
 FAV = '<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png"><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">'
 
 

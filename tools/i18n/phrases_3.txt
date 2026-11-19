@@ -50,8 +50,8 @@
 Считаем цену и снимаем фото ⇒ Fiyatı hesaplayıp fotoğraf çekiyoruz ⇒ Calculating the price and taking photos
 Съёмная коса ⇒ Takma örgü ⇒ Clip-in braid
 Съёмные косы: основы ⇒ Takma örgüler: temel bilgiler ⇒ Clip-in braids: the basics
-Таймер запущен ⇒ Sayaç başlatıldı ⇒ Timer started
-Таймер на паузе ⇒ Sayaç duraklatıldı ⇒ Timer paused
+Таймер запущен ⇒ Zamanlayıcı başlatıldı ⇒ Timer started
+Таймер на паузе ⇒ Zamanlayıcı duraklatıldı ⇒ Timer paused
 Тайский бат ⇒ Tayland bahtı ⇒ Thai baht
 Такая категория уже есть ⇒ Böyle bir kategori zaten var ⇒ This category already exists
 Тбилиси, Грузия ⇒ Tiflis, Gürcistan ⇒ Tbilisi, Georgia
@@ -71,12 +71,12 @@
 Товары ⇒ Ürünler ⇒ Items
 Точно удалить? ⇒ Silmek istediğinize emin misiniz? ⇒ Really delete?
 Трек-номер, пожелания ⇒ Takip numarası, istekler ⇒ Tracking number, requests
-Труд, {3} ⇒ Emek, {3} ⇒ Labor, {3}
-Труд: {1} × {2}/ч ⇒ Emek: {1} × {2}/sa ⇒ Labor: {1} × {2}/h
+Труд, {3} ⇒ İşçilik, {3} ⇒ Labor, {3}
+Труд: {1} × {2}/ч ⇒ İşçilik: {1} × {2}/sa ⇒ Labor: {1} × {2}/h
 Турецкая лира ⇒ Türk lirası ⇒ Turkish lira
 Ты ⇒ Siz ⇒ You
 Тёмно-коричневый (4#) ⇒ Koyu kahverengi (4#) ⇒ Dark brown (4#)
-У каждой мастерицы свой склад, другие его не видят. Копию можно сохранить в любой момент в разделе «Ещё». ⇒ Her ustanın kendi stoku vardır, başkaları göremez. Yedeği istediğiniz an «Daha» bölümünde kaydedebilirsiniz. ⇒ Every maker has their own stock that others cannot see. You can save a backup at any time in the “More” section.
+У каждой мастерицы свой склад, другие его не видят. Копию можно сохранить в любой момент в разделе «Ещё». ⇒ Her ustanın kendi stoku vardır, başkaları göremez. Yedeği istediğiniz an «Diğer» bölümünde kaydedebilirsiniz. ⇒ Every maker has their own stock that others cannot see. You can save a backup at any time in the “More” section.
 Убрать ⇒ Kaldır ⇒ Remove
 Убрать и вернуть в свободный остаток ⇒ Kaldır ve serbest stoka geri ver ⇒ Remove and return to free stock
 Убрать материал ⇒ Malzemeyi kaldır ⇒ Remove material
@@ -188,13 +188,13 @@
 время ⇒ süre ⇒ time
 вручную ⇒ elle ⇒ by hand
 делимся мастерством ⇒ ustalığı paylaşıyoruz ⇒ sharing the craft
-идёт таймер ⇒ sayaç çalışıyor ⇒ timer running
+идёт таймер ⇒ zamanlayıcı çalışıyor ⇒ timer running
 инструмент ⇒ alet ⇒ tool
 исправных / брак ⇒ sağlam / fire ⇒ good / waste
 истории работ ⇒ işlerin geçmişi ⇒ project history
 мало ⇒ az ⇒ low
 мастерская ⇒ atölye ⇒ workshop
-материалы {0} + труд {1} = {2} ⇒ malzemeler {0} + emek {1} = {2} ⇒ materials {0} + labor {1} = {2}
+материалы {0} + труд {1} = {2} ⇒ malzemeler {0} + işçilik {1} = {2} ⇒ materials {0} + labor {1} = {2}
 на складе ⇒ stokta ⇒ in stock
 например, 15 ⇒ örneğin 15 ⇒ for example, 15
 например, 60 ⇒ örneğin 60 ⇒ for example, 60
@@ -206,7 +206,7 @@
 оставь пустой: возьмём рекомендуемую ⇒ boş bırakın: önerileni kullanırız ⇒ leave empty: we will use the recommended one
 останется {1} {2} ⇒ kalacak: {1} {2} ⇒ will be left: {1} {2}
 остаток не меняется ⇒ kalan miktar değişmiyor ⇒ the balance does not change
-по таймеру ⇒ sayaçtan ⇒ from the timer
+по таймеру ⇒ zamanlayıcıdan ⇒ from the timer
 покупатель не указан ⇒ alıcı belirtilmedi ⇒ no buyer specified
 применения ⇒ kullanım ⇒ uses
 приход материалов ⇒ malzeme girişi ⇒ incoming materials

@@ -182,10 +182,10 @@
 Единица учёта ⇒ Sayım birimi ⇒ Unit of count
 Единицы пересчитаны: ×{0} ({1}) ⇒ Birimler yeniden hesaplandı: ×{0} ({1}) ⇒ Units converted: ×{0} ({1})
 Если в категории есть материалы, перед удалением можно перенести их в другую или удалить вместе с ней. ⇒ Kategoride malzeme varsa, silmeden önce başka bir kategoriye taşıyabilir veya birlikte silebilirsiniz. ⇒ If the category contains materials, you can move them elsewhere before deleting, or delete them together with it.
-Если время указано вручную, считаем его. Оно главнее таймера. ⇒ Süre elle girildiyse onu kullanırız. Sayaçtan önceliklidir. ⇒ If the time is entered by hand, we use it. It takes priority over the timer.
+Если время указано вручную, считаем его. Оно главнее таймера. ⇒ Süre elle girildiyse onu kullanırız. Zamanlayıcıdan önceliklidir. ⇒ If the time is entered by hand, we use it. It takes priority over the timer.
 Есть данные, которые не попали в облако. Если выйти сейчас, они пропадут. Лучше сначала сохрани копию данных. ⇒ Buluta ulaşmamış veriler var. Şimdi çıkarsanız kaybolur. Önce bir veri yedeği almanız iyi olur. ⇒ Some data has not reached the cloud. If you log out now it will be lost. It is better to save a backup first.
 Есть изменения, они скоро отправятся. ⇒ Değişiklikler var, yakında gönderilecek. ⇒ There are changes, they will be sent soon.
-Ещё ⇒ Daha ⇒ More
+Ещё ⇒ Diğer ⇒ More
 Ещё не синхронизировано ⇒ Henüz eşitlenmedi ⇒ Not synced yet
 За {4} год ⇒ {4} yılı için ⇒ For {4}
 Забыла пароль ⇒ Şifremi unuttum ⇒ Forgot password

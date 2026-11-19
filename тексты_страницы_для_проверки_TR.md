@@ -5,109 +5,109 @@
 Особенно важно проверить: заголовки (они смелые и образные) и раздел «Akademi».
 
 ## Başlık ve giriş
-- Sayfa başlığı: Melaymade | Atölyem: El işi ustaları için stok, fiyat ve kişisel Akademi
-- Açıklama: Fotoğraflı malzeme stoku, maliyet ve fiyat hesabı, ayrıca kişisel Akademi: kurslar, dersler ve öğrenciler tek uygulamada. Telefonda ve bilgisayarda. Her el işi için: boncuk, taş, örgü, dikiş, kil, saç aksesuarları.
-- Menü: El işleri | Nasıl çalışır? | Akademi | Özellikler | Sık sorulanlar | Giriş Yap
-- Etiket: Yeni · dersleriniz için kişisel Akademi
+- Sayfa başlığı: Melaymade | Atölyem: El işi üreticileri için stok takibi, maliyet hesabı ve kişisel Akademi
+- Açıklama: Fotoğraflı malzeme stoğu, maliyet ve satış fiyatı hesabı, üstelik kişisel Akademiniz: kurslar, dersler ve öğrenciler tek uygulamada. Telefonunuzda ve bilgisayarınızda. Boncuk işlerinden doğal taş takılara, örgüden dikişe, seramikten saç aksesuarlarına kadar her türlü el işi için.
+- Menü: El işleri | Nasıl çalışır? | Akademi | Özellikler | Sık Sorulan Sorular | Giriş Yap
+- Etiket: Yeni · Dersleriniz için kişisel Akademiniz
 - Üst yazı: Melaymade uygulaması
-- Ana başlık: Siz büyüyü yaratın. Ne kadar ettiğini biz hesaplayalım.
-- Alt başlık: Atölyem malzeme stokunuzu fotoğraflarla tutar, maliyeti ve kazanç sağlayacağınız fiyatı hesaplar; ayrıca kişisel Akademinizi barındırır: dersler, öğrenciler ve malzemeler tek yerde.
+- Ana başlık: Siz harikalar yaratın, biz maliyetini hesaplayalım.
+- Alt başlık: Atölyem ile malzemelerinizi fotoğraflı olarak takip edin, ürünlerinizin maliyetini ve kazandıracak satış fiyatını hesaplayın. Kurslarınızı, derslerinizi, öğrencilerinizi ve ders malzemelerinizi kişisel Akademinizde tek yerde yönetin.
 - Düğmeler: Ücretsiz Deneyin | Nasıl çalışır?
-- Not: Banka kartı gerekmez. Telefonda ve bilgisayarda çalışır, internet olmadan da.
+- Not: Banka kartı gerekmez. Telefonda ve bilgisayarda, internet bağlantısı olmadan da çalışır.
 
-## Fikirden dürüst fiyata: üç adım
-1. **Malzemeleri ekleyin**. Fotoğraf çekin, miktarı ve fiyatı girin. Malzemeler stoka kendiliğinden eklenir, kargo ücreti kalemlere dağıtılır.
-2. **Ürününüzü oluşturun**. Galeriden malzemeleri seçin. Uygulama malzemeleri ayırır; fireyi, süreyi ve aletleri hesaba katar.
-3. **Fiyatı öğrenin**. Pazar yeri komisyonunu, kargoyu ve istediğiniz kârı hesaba katan maliyeti ve önerilen fiyatı görün.
+## Fikirden doğru fiyatlandırmaya: 3 adım
+1. **Malzemeleri ekleyin**. Malzemenin fotoğrafını çekin, miktarını ve fiyatını girin. Malzemeler otomatik olarak stoğunuza eklenir; kargo maliyeti kalemlere dağıtılır.
+2. **Ürününüzü oluşturun**. Galeriden malzemeleri seçin. Uygulama bunları diğer işler için ayırır; fireyi, çalışma süresini ve alet kullanımını hesaba katar.
+3. **Satış fiyatınızı öğrenin**. Malzeme maliyetinizi ve pazar yeri komisyonu, kargo gideri ve hedeflediğiniz kârı dikkate alan önerilen satış fiyatını görün.
 
-## Dürüst fiyatı olan güzellik (yeni bölüm)
-- Üst yazı: örnek çalışmalar
-- Giriş: Böyle ürünler onlarca malzemeden oluşur. Atölyem hepsini hatırlar ve toplamının maliyetini hesaplar.
-- Başlıklar: Orman Muskası (Toka) | Rüzgârın Nefesi (Makrome pano) | Kehribar Ay (Toka) | Ametist Bahçesi (Taş kolye ve bileklik) | Kır Otları (Nakış) | Ay Taşı (Saç parçası) | Lavanta ve Portakal (Mum ve sabun) | Hayat Ağacı (Tika) | Yulaf Bulutu (Örgü atkı) | Kum ve Terakota (Seramik) | Altın Labradorit (Süslü örgü) | Gül Altın (Boncuk kolye) | Keten Fısıltısı (Nakışlı keseler) | Kül, Bakır ve Gece (Karabinalı örgüler) | Gül Kuvarsı (Kristalli örgü) | Sonbahar Ormanı (Afro lastik)
+## Emeğinizin değerini bilen fiyatlar (yeni bölüm)
+- Üst yazı: örnek ürünler
+- Giriş: Bu ürünlerde onlarca farklı malzeme kullanılabilir. Atölyem her birini kaydeder ve toplam maliyeti hesaplar.
+- Başlıklar: Orman Tılsımı (Toka) | Rüzgârın Nefesi (Makrome pano) | Kehribar Ay (Toka) | Ametist Bahçesi (Taş kolye ve bileklik) | Kır Otları (Nakış) | Ay Taşı (Takıp çıkarılabilir saç tutamı) | Lavanta ve Portakal (Mum ve sabun) | Hayat Ağacı (Alın takısı (tikka)) | Yulaf Bulutu (Örgü atkı) | Kum ve Terakota (Seramik) | Altın Labradorit (Aksesuarlı saç örgüsü) | Rose Altın (Boncuk örme kolye) | Keten Fısıltısı (Nakışlı kese) | Kül, Bakır ve Gece (Karabinalı saç örgüleri) | Gül Kuvarsı (Kristalli saç örgüsü) | Sonbahar Ormanı (Afro saç lastikleri)
 - Not: Örnek ürünler.
 
-## Sayabildiğiniz her el işi için (yeni bölüm)
+## Maliyeti hesaplanabilen her el işi için (yeni bölüm)
 - Üst yazı: her el işi için
-- Giriş: Ürününüz malzemelerden oluşuyorsa Atölyem onu hesaplar: adet, metre, gram, mililitre. Ne yaptığınız fark etmez.
-- Etiketler: Boncuk işi | Doğal taş takılar | Örgü | Dikiş | Seramik ve kil | Saç aksesuarları | Makrome | Mum ve sabun | Nakış
-- Alt not: …ve ellerinizle yarattığınız her şey.
+- Giriş: Ürününüz malzemelerden oluşuyorsa Atölyem maliyetini hesaplar: adet, metre, gram veya mililitre fark etmez. Hangi el işiyle uğraştığınız önemli değil.
+- Etiketler: Boncuk tasarımı | Doğal taş takılar | Örgü | Dikiş | Kil ve seramik ürünleri | Saç aksesuarları | Makrome | Mum ve sabun | Nakış
+- Alt not: …ve ellerinizden çıkan daha nice tasarım.
 
-## Kurallar sizin. Uygulama size uyum sağlar. (yeni bölüm)
+## Kurallar size ait. Uygulama size uyum sağlar. (yeni bölüm)
 - Üst yazı: Sizin atölyeniz
-- Giriş: El işinizi programa uydurmazsınız. Program sizin el işinize uyum sağlar.
-- **Kendi fotoğraflarınız**. Her malzeme ve her iş sizin fotoğrafınızla. İstediğiniz gibi kırpın ve yakınlaştırın.
-- **Kendi kategorileriniz**. El işinize göre bölümler oluşturun: «Boncuklar»dan «İplik», «Kil» ve «Saç»a kadar.
-- **Kendi birimleriniz**. Adet, metre, gram, mililitre ve aralarında dönüştürme.
-- **Kendi para biriminiz**. 40'tan fazla para birimi. İstediğinizle alışveriş yapın, rahat ettiğinizle hesaplayın.
-- **Kendi fiyat kurallarınız**. Pazar yeri komisyonu, istediğiniz kâr, saat ücretiniz ve aletlerin maliyeti.
+- Giriş: El işinizi uygulamaya uydurmak zorunda değilsiniz. Atölyem sizin çalışma biçiminize uyum sağlar.
+- **Kendi fotoğraflarınız**. Her malzemeye ve her işe kendi fotoğrafınızı ekleyin. Fotoğrafları dilediğiniz gibi kırpıp yakınlaştırın.
+- **Kendi kategorileriniz**. El işinize uygun kategoriler oluşturun: boncuk, iplik, kil veya saç malzemeleri…
+- **Kendi birimleriniz**. Adet, metre, gram, mililitre ve birimler arası dönüşüm.
+- **Kendi para biriminiz**. 40’tan fazla para birimiyle alışveriş yapın; hesaplamalarınızı tercih ettiğiniz para biriminde görün.
+- **Kendi fiyat kurallarınız**. Pazar yeri komisyonu, hedeflediğiniz kâr, saatlik işçilik ücretiniz ve alet kullanım maliyetiniz.
 
 ## Akademi (yeni bölüm)
 - Rozet: Akademim · beta
-- Ana başlık: **Ellerinizin bildiğini başkaları da öğrenmek ister**
+- Ana başlık: **Sizin ustalığınızı öğrenmek isteyenler var**
 - Alt başlık: El işi okulunuz tek uygulamada
-- Giriş: Bir ustanın okulu çoğu zaman beş ayrı yerde yaşar: sohbet, tablo, fotoğraf bulutu, notlar ve alışveriş defteri. Atölyem hepsini bir araya getirir: dersler, malzemeler, öğrenciler ve gelir; stokunuzun ve fiyat hesabının yanında.
+- Giriş: Bir el işi eğitmeninin kursları çoğu zaman farklı yerlerde dağınık durur: mesajlar, tablolar, fotoğraf klasörleri, notlar ve alışveriş listeleri. Atölyem dersleri, malzemeleri, öğrencileri ve kurs gelirlerini stok ve maliyet hesabınızla bir araya getirir.
 - Düğme: Akademinizi Kurun
 
 ### Tanıdık geliyor mu?
-- **«Ders için ne almalıyım?» yüzüncü kez**
-  Malzemeler doğrudan stokunuzdan derse eklenir. Liste her zaman elinizin altında, dersin maliyeti kendiliğinden hesaplanır.
-- **Kim ödedi, hangi derste kaldı?**
-  Öğrenciler, erişimleri ve ilerlemeleri tek listede. Tablolara ve dağınık notlara gerek yok.
-- **Bir ders, bir akşam uğraş**
-  Derslerinizi el işi ustalarının platformlarına tek dokunuşla yüklemek için çalışıyoruz. Henüz geliştirme aşamasında, ama yön tam olarak bu.
+- **“Ders için ne almalıyım?” sorusunu yüzüncü kez duymak**
+  Malzemeleri doğrudan stoğunuzdan derse ekleyin. Liste her zaman elinizin altında olsun; dersin maliyeti otomatik hesaplansın.
+- **Kim ödeme yaptı, kim hangi derste kaldı?**
+  Öğrencileriniz, kurs erişimleri ve ilerlemeleri tek listede. Ayrı tablolar ve dağınık notlarla uğraşmayın.
+- **Tek ders için saatlerce uğraşmak**
+  Dersleri el işi platformlarına tek dokunuşla yükleme özelliği üzerinde çalışıyoruz. Henüz geliştirme aşamasında.
 
 ### Akademi özellikleri
-- [Hazır] **Kurslar ve dersler düzenli**. Kurs oluşturun, bağlantıyla video ve açıklama içeren dersler ekleyin, hazır olunca yayınlayın. Videolar kendi video servisinizde kalır.
-- [Hazır] **Malzemeler dersin içinde**. Derse stoktan malzeme ekleyin. Tek dokunuşla dersteki işinizi oluşturun: ayırma, hesap ve fiyat hazır.
-- [Hazır] **Öğrenciler ve ilerlemeleri**. Öğrenci listesini, kurslara erişimi ve tamamlanan dersleri tutun. Hepsini siz girersiniz.
-- [Hazır] **Kurs geliri**. Kursların ne kazandırdığını görün. Öğrencilerden ödemeyi şimdiki gibi siz alırsınız, uygulamada satın alımı işaretlersiniz.
-- [Yakında] **Öğrenci hesabı**. Öğrenci kendisi giriş yapar, dersleri izler ve ilerlemesini işaretler.
-- [Yakında] **Kurs sohbeti**. Ders soruları ve öğrenci sohbeti malzemelerin yanında.
+- [Kullanıma hazır] **Kurslarınız ve dersleriniz düzen içinde**. Kurslar oluşturun; video bağlantıları ve açıklamalarla derslerinizi ekleyin, hazır olduğunuzda yayınlayın. Videolar kullandığınız video platformunda kalır.
+- [Kullanıma hazır] **Dersin malzemeleri tek yerde**. Stoğunuzdaki malzemeleri derse ekleyin. Tek dokunuşla derse ait bir iş oluşturun; malzeme rezervasyonu, maliyet ve fiyat hesabı hazır olsun.
+- [Kullanıma hazır] **Öğrenciler ve ilerlemeleri**. Öğrenci listenizi, kurs erişimlerini ve tamamlanan dersleri takip edin. Bilgileri şimdilik siz girersiniz.
+- [Kullanıma hazır] **Kurs geliri**. Kurslarınızın ne kadar gelir getirdiğini görün. Öğrencilerden ödemeleri mevcut yönteminizle alın; satın alma kaydını uygulamaya kendiniz ekleyin.
+- [Yakında] **Öğrenci paneli**. Öğrenci kendi hesabına giriş yapar, dersleri izler ve ilerlemesini işaretler.
+- [Yakında] **Kurs sohbeti**. Derslerle ilgili sorular ve öğrenciler arasındaki sohbet, ders malzemeleriyle aynı yerde.
 
-### Gelişmeye devam ediyoruz
-- **Sıradaki adım: dersler tek dokunuşla platformlara**
-  Dersi bir kez hazırlarsınız; biz de satış yapmak istediğiniz el işi platformlarına göndeririz. Yeniden yazmak ve tekrar yüklemek yok. Şu anda geliştirme aşamasında, tarihi kesinleşince duyuracağız. Hangi platformları istediğinizi birlikte belirleriz.
-- Dürüst not: Dürüst olalım: şu anda Akademi'de kursları, dersleri, öğrencileri ve geliri siz yönetirsiniz; öğrenciler henüz uygulamaya giriş yapmaz. «Yakında» işaretli her şey geliştirme aşamasındadır.
+### Geliştirmeye devam ediyoruz
+- **Sıradaki adım: derslerinizi tek dokunuşla platformlara yüklemek**
+  Dersinizi bir kez hazırlayın; satış yapmak istediğiniz el işi platformlarına tek dokunuşla aktarabilmeniz için çalışıyoruz. Aynı içeriği tekrar yazmanız veya yüklemeniz gerekmeyecek. Özellik geliştirme aşamasında; tarih netleştiğinde duyuracağız. Hangi platformların ekleneceğine birlikte karar vereceğiz.
+- Dürüst not: Şu anda Akademi bölümünde kursları, dersleri, öğrencileri ve gelirleri siz yönetiyorsunuz. Öğrenciler henüz uygulamaya giriş yapamıyor. “Yakında” olarak işaretlenen özellikler geliştirme aşamasında.
 
-## Her ayrıntı hesapta
-- **Fotoğraflı Malzeme Stoku**. Malzemeler şık kartlar halinde. Ada, renge, boyuta ve ürün koduna göre arama.
-- **Her para biriminde alışveriş**. 40'tan fazla para birimi. Kargo kalemlere dağıtılır, ortalama fiyat otomatik hesaplanır.
-- **Stoktan düşmeden ayırma**. Malzeme işte ayrılır ama stoktan ancak iş tamamlanınca düşer. Aynı anda birden fazla iş yürütebilirsiniz.
-- **Fire ve aletler**. Fire ayrı hesaplanır. Aletler için her kullanımın maliyeti eklenir.
-- **Sayaç ve emek**. Sayacı başlatın ya da süreyi girin. İşçilik, saat ücretinize göre hesaplanır.
-- **Önerilen fiyat**. Pazar yeri komisyonu, alıcıya kargo ve istediğiniz kâr hesaba katılır.
-- **Arşiv ve satışlar**. Her iş fotoğrafı ve içeriğiyle saklanır. Kime ve nereye satıldığı. Aylık ve yıllık istatistik.
-- **Her yerde, internetsiz de**. Telefon, tablet, bilgisayar. Veriler eşitlenir ve çevrimdışı da kullanılabilir.
-- **Kişisel Akademi**. Kurslar, malzemeli dersler ve öğrenciler stokunuzun yanında. Bölüm gelişmeye devam ediyor.
+## Her ayrıntı önemli
+- **Fotoğraflı stok takibi**. Malzemelerinizi fotoğraflı kartlarla görüntüleyin. Ada, renge, boyuta ve ürün koduna göre arayın.
+- **İstediğiniz para biriminde satın alma**. 40’tan fazla para birimi desteği. Kargo maliyeti kalemlere dağıtılır, ortalama birim maliyet otomatik hesaplanır.
+- **Stoktan düşmeden malzeme ayırma**. Malzeme bir iş için ayrılır ancak iş tamamlandığında stoktan düşülür. Aynı anda birden fazla iş üzerinde çalışabilirsiniz.
+- **Fire ve alet kullanımı**. Fire ayrı hesaplanır. Aletlerin her kullanımına ait maliyet de hesaba katılır.
+- **Zamanlayıcı ve işçilik**. Zamanlayıcıyı başlatın veya çalışma süresini elle girin. İşçilik maliyeti saatlik ücretinize göre hesaplanır.
+- **Önerilen satış fiyatı**. Pazar yeri komisyonu, müşteriye gönderim ücreti ve hedeflediğiniz kâr dikkate alınır.
+- **Arşiv ve satışlar**. Her işin fotoğrafı ve kullanılan malzemeleri saklanır. Kime, nereye satıldığını kaydedin; aylık ve yıllık istatistiklerinizi görün.
+- **Her yerde, çevrimdışı da**. Telefon, tablet veya bilgisayarda kullanın. Veriler senkronize edilir ve internet bağlantısı olmadan da erişilebilir.
+- **Kişisel Akademi**. Kurslarınız, ders malzemeleriniz ve öğrencileriniz stok takibinizle bir arada. Bu bölüm geliştirilmeye devam ediyor.
 
-## İçeri bir göz atın
-- Altyazılar: Fotoğraflı Malzeme Stoku | Maliyet ve Fiyat | Satışlar ve İstatistik | İş Arşivi
+## Uygulamaya göz atın
+- Altyazılar: Fotoğraflı stok takibi | Maliyet ve satış fiyatı | Satışlar ve istatistikler | İş arşivi
 - Not: Uygulama Rusça, Türkçe ve İngilizce olarak çalışır.
 
-## Aklınıza takılanlar
+## Sık Sorulan Sorular
 - **Benim el işime uygun mu?**
-  Evet, ürününüz sayılabilen malzemelerden oluşuyorsa: boncuk, taş, iplik, kumaş, kil, saç, balmumu ve daha fazlası. Emin değilseniz kendi malzemelerinizle ücretsiz deneyin.
+  Evet. Ürününüz boncuk, taş, iplik, kumaş, kil, saç malzemesi veya balmumu gibi miktarı ölçülebilen malzemelerden oluşuyorsa kullanabilirsiniz. Emin değilseniz kendi malzemelerinizle ücretsiz deneyin.
 - **Akademi nedir?**
-  «Akademim» bölümü, Atölyem içindeki kişisel okulunuzdur: kurslar, stoktan malzemeli dersler, öğrenciler ve kurs geliri. Hepsi maliyet hesabının yanında.
+  “Akademim”, Atölyem içindeki kişisel eğitim alanınızdır. Kurslarınızı, stoktaki malzemelerle hazırladığınız dersleri, öğrencilerinizi ve kurs gelirlerinizi maliyet hesaplarınızla birlikte yönetin.
 - **Öğrenciler doğrudan uygulamada öğrenebilir mi?**
-  Henüz değil: şu anda öğrencileri ve ilerlemelerini siz takip edersiniz. Öğrenci hesabı ve kurs sohbeti geliştirme aşamasında.
+  Henüz değil. Şu anda öğrencileri ve ilerlemelerini siz takip ediyorsunuz. Öğrenci paneli ve kurs sohbeti geliştirme aşamasında.
 - **Dersleri platformlara yükleyebilir miyim?**
-  Planlarımızda var: dersleri el işi ustalarının platformlarına tek dokunuşla yüklemek. Geliştirme aşamasında, kesin tarih vermiyoruz.
-- **Mağazadan indirmem gerekiyor mu?**
-  Hayır. Uygulamayı tarayıcıda açın ve ana ekrana ekleyin. Normal bir uygulama gibi çalışır.
+  Planlarımız arasında dersleri el işi platformlarına tek dokunuşla aktarmak var. Özellik geliştirme aşamasında; henüz kesin bir tarih veremiyoruz.
+- **Uygulama mağazasından indirmem gerekiyor mu?**
+  Hayır. Uygulamayı tarayıcınızda açıp ana ekranınıza ekleyin. Normal bir uygulama gibi kullanabilirsiniz.
 - **Verilerim güvende mi?**
-  Her kullanıcının kendine ait ayrı bir stoku vardır, başkaları göremez. Veriler Avrupa'daki (Paris) güvenli bir bulutta saklanır.
+  Her kullanıcının kendine ait ayrı bir stok alanı vardır; diğer kullanıcılar bu alana erişemez. Veriler Avrupa’da (Paris) güvenli bir bulut ortamında saklanır.
 - **İnternet olmadan çalışır mı?**
-  Evet. Değişiklikler cihazınıza kaydedilir ve bağlantı geldiğinde buluta gönderilir.
+  Evet. Değişiklikler cihazınızda saklanır ve internet bağlantısı kurulduğunda buluta aktarılır.
 - **Hangi dillerde?**
-  Rusça, Türkçe ve İngilizce. Dil, giriş ekranında ve «Daha» bölümünde seçilir.
-- **Ne kadar?**
-  Önce deneme süresi, sonra abonelik. Fiyatları yakında duyuracağız.
+  Rusça, Türkçe ve İngilizce. Dili giriş ekranından veya “Diğer” bölümünden seçebilirsiniz.
+- **Fiyatı ne kadar?**
+  Önce ücretsiz deneme süresi, ardından abonelik. Paket fiyatlarını yakında açıklayacağız.
 - **Abonelik biterse ne olur?**
-  Verileriniz saklanır, istediğiniz zaman yedeğini alabilirsiniz.
+  Verileriniz saklanmaya devam eder. İstediğiniz zaman yedeklerini alabilirsiniz.
 
 ## Son çağrı
-- **El emeğinizi kendi işinize dönüştürme zamanı**
-- Bir dakikada hesap oluşturun: ilk ürününüzün maliyetini hesaplayın ve Akademinizde ilk kursunuzu oluşturun.
+- **El emeğinizi kazanca dönüştürmenin zamanı geldi**
+- Bir dakikada hesap oluşturun; ilk ürününüzün maliyetini hesaplayın ve Akademinizde ilk kursunuzu hazırlayın.
 - Düğme: Hesap Oluştur
-- Alt bilgi: © 2026 Melaymade. El işi ustaları için sevgiyle yapıldı.
+- Alt bilgi: © 2026 Melaymade. El işi üretenler için sevgiyle hazırlandı.

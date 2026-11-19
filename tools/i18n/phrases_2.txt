@@ -122,7 +122,7 @@
 Не удалось загрузить фото: {0}. Попробуй синхронизировать ещё раз. ⇒ Fotoğraf yüklenemedi: {0}. Yeniden eşitlemeyi deneyin. ⇒ Could not upload photo: {0}. Try syncing again.
 Не удалось открыть фото ⇒ Fotoğraf açılamadı ⇒ Could not open the photo
 Не удалось прочитать фото ⇒ Fotoğraf okunamadı ⇒ Could not read the photo
-Не удалось сохранить: память браузера заполнена. Сохрани копию данных в «Ещё». ⇒ Kaydedilemedi: tarayıcı belleği dolu. «Daha» bölümünden veri yedeği alın. ⇒ Could not save: browser storage is full. Save a data backup in “More”.
+Не удалось сохранить: память браузера заполнена. Сохрани копию данных в «Ещё». ⇒ Kaydedilemedi: tarayıcı belleği dolu. «Diğer» bölümünden veri yedeği alın. ⇒ Could not save: browser storage is full. Save a data backup in “More”.
 Неверная почта или пароль. ⇒ E-posta veya şifre hatalı. ⇒ Wrong email or password.
 Нельзя меньше резерва: {0} {1} занято в работах ⇒ Ayrılan miktarın altına inilemez: {0} {1} işlerde kullanımda ⇒ Cannot go below the reserve: {0} {1} is held by projects
 Нет интернета: работаем офлайн, изменения отправятся потом. ⇒ İnternet yok: çevrimdışı çalışıyoruz, değişiklikler sonra gönderilecek. ⇒ No internet: working offline, changes will be sent later.
@@ -272,7 +272,7 @@
 Расходник ⇒ Sarf malzeme ⇒ Consumable
 Реально на складе ⇒ Stokta fiilen var ⇒ Actually in stock
 Резерв без списания ⇒ Stoktan düşmeden ayırma ⇒ Reserve without writing off
-Рекомендуемая цена ⇒ Önerilen fiyat ⇒ Recommended price
+Рекомендуемая цена ⇒ Önerilen satış fiyatı ⇒ Recommended price
 Рецепт загружен как план. Расход можно менять ⇒ Tarif plan olarak yüklendi. Kullanım miktarını değiştirebilirsiniz ⇒ The recipe was loaded as a plan. You can change the usage
 Рецепт — только план. Фактический расход в работе можно менять как угодно. ⇒ Tarif yalnızca bir plandır. İşteki gerçek kullanımı istediğiniz gibi değiştirebilirsiniz. ⇒ A recipe is only a plan. You can change the actual usage in a project however you like.
 Розовый (1B+Pink) ⇒ Pembe (1B+Pink) ⇒ Pink (1B+Pink)
