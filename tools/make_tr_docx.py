@@ -9,6 +9,7 @@ from docx.enum.section import WD_ORIENT
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
+MODE = sys.argv[1] if len(sys.argv) > 1 else "tr"
 R, T = B.TEXTS["ru"], B.TEXTS["tr"]
 def clean(s): return str(s).replace("*", "")
 
@@ -53,15 +54,20 @@ def shade(cell, hexcolor):
 def table(rows, start=1):
     tb = doc.add_table(rows=1, cols=4); tb.style = "Table Grid"
     hdr = tb.rows[0].cells
-    for c, t in zip(hdr, ("№", "Русский (для понимания смысла)", "Türkçe (текст для проверки)", "Исправление носителя")):
+    heads = ("№", "Русский (для понимания смысла)", "Türkçe (текст для проверки)", "Исправление носителя") if MODE == "tr" else ("№", "Русский (текст для проверки)", "Türkçe (для сравнения)", "Мои правки / что хочу сказать иначе")
+    for c, t in zip(hdr, heads):
         c.text = ""; r = c.paragraphs[0].add_run(t); r.bold = True; r.font.size = Pt(10); shade(c, "E8DCC6")
     W = (Cm(1.1), Cm(8.0), Cm(9.0), Cm(7.6))
     n = start
     for lab, ru, tr in rows:
         cells = tb.add_row().cells
         cells[0].text = str(n)
-        cells[1].text = ru
-        cells[2].text = ""; run = cells[2].paragraphs[0].add_run(tr); run.bold = True
+        if MODE == "tr":
+            cells[1].text = ru
+            cells[2].text = ""; run = cells[2].paragraphs[0].add_run(tr); run.bold = True
+        else:
+            cells[1].text = ""; run = cells[1].paragraphs[0].add_run(ru); run.bold = True
+            cells[2].text = tr
         cells[3].text = ""
         n += 1
     tb.autofit = False
@@ -70,12 +76,12 @@ def table(rows, start=1):
         for c, w in zip(row.cells, W): c.width = w
     return n
 
-h = doc.add_heading("Turkish texts for review: Melaymade «Atölyem»", 0)
-doc.add_paragraph("Проверка турецких текстов сайта melaymade.com и приложения «Моя мастерская» (Atölyem).")
+h = doc.add_heading("Turkish texts for review: Melaymade «Atölyem»" if MODE == "tr" else "Русские тексты: Melaymade «Моя мастерская»", 0)
+doc.add_paragraph("Проверка турецких текстов сайта melaymade.com и приложения «Моя мастерская» (Atölyem)." if MODE == "tr" else "Все русские тексты сайта melaymade.com и приложения «Моя мастерская», с турецким переводом рядом, чтобы сравнить смысл. Что хочешь сказать иначе, пиши в последнем столбце.")
 p = doc.add_paragraph()
-p.add_run("Просьба к носителю (Türkçe): ").bold = True
-p.add_run("Bu metinler, el işi ustaları için hazırlanan bir uygulamanın tanıtım sitesine ve uygulamanın kendisine aittir. Lütfen her satırı doğallık, yazım ve anlam açısından kontrol eder misiniz? Üslup: «siz» (saygılı, sıcak). Marka adı: Melaymade (tek kelime). Uygulamanın adı: Atölyem. Yanlış ya da kulağa yapay gelen yerleri son sütuna daha doğal halini yazmanız yeterli. Çok teşekkürler!")
-doc.add_paragraph("Правила: стиль «siz»; {0}, {1} в приложении — подставляемые значения (числа, названия), их менять не нужно; русский столбец нужен только чтобы понять смысл. Если фраза звучит неестественно, напишите свой вариант в последнем столбце.").runs[0].italic = True
+if MODE == "tr": p.add_run("Просьба к носителю (Türkçe): ").bold = True
+if MODE == "tr": p.add_run("Bu metinler, el işi ustaları için hazırlanan bir uygulamanın tanıtım sitesine ve uygulamanın kendisine aittir. Lütfen her satırı doğallık, yazım ve anlam açısından kontrol eder misiniz? Üslup: «siz» (saygılı, sıcak). Marka adı: Melaymade (tek kelime). Uygulamanın adı: Atölyem. Yanlış ya da kulağa yapay gelen yerleri son sütuna daha doğal halini yazmanız yeterli. Çok teşekkürler!")
+if MODE == "tr": doc.add_paragraph("Правила: стиль «siz»; {0}, {1} в приложении — подставляемые значения (числа, названия), их менять не нужно; русский столбец нужен только чтобы понять смысл. Если фраза звучит неестественно, напишите свой вариант в последнем столбце.").runs[0].italic = True
 
 n = 1
 doc.add_heading("ЧАСТЬ 1. САЙТ melaymade.com", 1)
@@ -120,5 +126,5 @@ for g in ("Кнопки, подписи и короткие сообщения",
     if g not in groups: continue
     doc.add_heading(g, 2)
     n = table(sorted(groups[g], key=lambda x: x[1].lower()), n)
-doc.save("/home/user/EvaHairAssistant/Turkish_texts_for_review_Melaymade.docx")
+doc.save("/home/user/EvaHairAssistant/Turkish_texts_for_review_Melaymade.docx" if MODE == "tr" else "/home/user/EvaHairAssistant/Russian_texts_Melaymade.docx")
 print("сайт:", site_count, "строк; всего:", n - 1)
