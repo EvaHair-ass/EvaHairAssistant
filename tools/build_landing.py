@@ -945,6 +945,20 @@ for _c, _r in RUN.items():
     _faq[_ix] = _r["faq_price"]; _faq.insert(_ix + 1, _r["faq_trial"]); _t["faq"] = _faq
 
 
+# ------------------------------------------------- подписи галереи = названия категорий; «Шитьё» -> «Амигуруми»
+CAP = {
+ "ru": ["Украшения для волос", "Макраме", "Украшения для волос", "Изделия из натуральных камней", "Вышивка", "Инкрустация кристаллами", "Свечи и мыло", "Тика", "Вязание", "Изделия из глины", "Роспись по ткани", "Бисероплетение", "Амигуруми", "Шарнирные текстильные игрушки", "Украшения в стиле бохо", "Украшения для волос"],
+ "tr": ["Saç aksesuarları", "Makrome", "Saç aksesuarları", "Doğal taş takılar", "Nakış", "Kristal taş süsleme sanatı", "Mum ve sabun", "Tika (Saç ve Alın Takısı)", "Örgü", "Kil ve seramik ürünleri", "Kumaş boyama", "Boncuk tasarımı", "Amigurumi", "Eklemli peluş oyuncak", "Bohem takılar", "Saç aksesuarları"],
+ "en": ["Hair accessories", "Macramé", "Hair accessories", "Natural-stone jewelry", "Embroidery", "Crystal inlay art", "Candles and soap", "Tikka headpiece", "Knitting", "Clay and ceramics", "Fabric painting", "Beadwork", "Amigurumi", "Jointed plush toys", "Boho jewelry", "Hair accessories"],
+}
+GARLAND = {"ru": {1: "Изделия из натуральных камней", 3: "Амигуруми"}, "tr": {3: "Amigurumi"}, "en": {3: "Amigurumi"}}
+for _c in CAP:
+    TEXTS[_c]["sh"]["kinds"] = CAP[_c]
+    _it = list(TEXTS[_c]["cr"]["items"])
+    for _i, _v in GARLAND[_c].items(): _it[_i] = _v
+    TEXTS[_c]["cr"]["items"] = _it
+
+
 FAV = '<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png"><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">'
 
 
