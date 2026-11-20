@@ -1,0 +1,23 @@
+Склад материалов ⇒ Malzeme stoğu ⇒ Materials stock
+Бусины, камни, инструменты и нитки собраны здесь. Склад можно смотреть и пополнять отсюда. ⇒ Boncuk, taş, alet ve iplikleriniz burada. Stoğu buradan görüp yenileyebilirsiniz. ⇒ Your beads, stones, tools and threads are all here. You can view and replenish your stock from here.
+Добавь новую закупку ⇒ Yeni alım ekleyin ⇒ Add a new purchase
+Когда купишь материалы, запиши их сюда: склад обновится сам. ⇒ Malzeme aldığınızda buraya kaydedin; stok otomatik güncellenir. ⇒ When you buy materials, record them here: your stock updates by itself.
+Начни свои работы ⇒ İşlerinizi başlatın ⇒ Start your projects
+Открой новую работу: приложение посчитает себестоимость и цену продажи. ⇒ Yeni iş açın; malzeme maliyeti ve satış fiyatı sizin için hesaplanır. ⇒ Open a new project: the app calculates the cost and the selling price for you.
+Продажи и история ⇒ Satışlar ve geçmiş ⇒ Sales and history
+Готовые работы, продажи, выручку и прибыль смотри здесь. ⇒ Biten işleri, satışlarınızı, cironuzu ve kârınızı burada takip edin. ⇒ Follow finished projects, sales, revenue and profit here.
+Настройки и копия ⇒ Ayarlar ve yedek ⇒ Settings and backup
+Ставку за час, комиссию, процент прибыли, язык и копию данных настраивай здесь. ⇒ Saat ücreti, komisyon, kâr oranı, dil ve veri yedeğini buradan ayarlayın. ⇒ Set your hourly rate, fee, profit percentage, language and data backup here.
+Твоя Академия ⇒ Akademiniz ⇒ Your Academy
+Курсы, учениц и чаты веди отсюда. ⇒ Kurslarınızı, öğrencilerinizi ve sohbetlerinizi buradan yönetin. ⇒ Manage your courses, students and chats from here.
+ШАГ {0} / {1} ⇒ ADIM {0} / {1} ⇒ STEP {0} / {1}
+Добро пожаловать в «Мою мастерскую» ⇒ Atölyem'e hoş geldiniz ⇒ Welcome to My Workshop
+Склад материалов, расчёт цены и твоя личная Академия в одном приложении. Давай коротко покажу, что где. ⇒ Malzeme stoğu, maliyet ve satış fiyatı hesabı, kişisel Akademiniz: hepsi tek uygulamada. Size kısa bir tur yapalım. ⇒ Materials stock, price calculation and your personal Academy in one app. Let me quickly show you where everything is.
+Начать тур ⇒ Turu başlat ⇒ Start the tour
+Пока пропустить ⇒ Şimdilik geç ⇒ Skip for now
+Пропустить ⇒ Atla ⇒ Skip
+Далее ⇒ İleri ⇒ Next
+Начнём ⇒ Başlayalım ⇒ Let's begin
+Обучение ⇒ Eğitim ⇒ Tutorial
+Короткий тур по приложению: где склад, закупки, работы, архив, настройки и Академия. ⇒ Uygulamada kısa bir tur: stok, alımlar, işler, arşiv, ayarlar ve Akademi nerede. ⇒ A short tour of the app: where stock, purchases, projects, archive, settings and the Academy are.
+Показать обучение снова ⇒ Turu yeniden göster ⇒ Show the tutorial again
