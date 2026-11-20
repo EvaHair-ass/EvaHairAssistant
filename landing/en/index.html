@@ -257,6 +257,7 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .plan li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233E6150' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
 .plan .btn{align-self:stretch}
 @media (min-width:760px){.plans{grid-template-columns:1fr 1fr}}
+@media (max-width:759px){.works{grid-template-columns:repeat(4,1fr);gap:20px 7px;margin-top:30px}.work.lift{margin-top:16px}.work .arch{box-shadow:0 0 0 2px var(--bg),0 0 0 3px color-mix(in srgb,var(--ochre) 40%,transparent),0 8px 16px rgba(90,60,30,.22);border-radius:999px 999px 10px 10px}.work figcaption{margin-top:9px;font-size:11px;line-height:1.15}}
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
   .js .rv.in{opacity:1;transform:none}

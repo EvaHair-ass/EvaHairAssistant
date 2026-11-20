@@ -13,6 +13,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Мастерская">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta charset="utf-8">
 <title>Моя мастерская</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -488,6 +489,7 @@ const ruCmp = (a, b) => a.localeCompare(b, LANG);
    Исходные тексты русские. Для tr и en экран переводится на лету по словарю
    (i18n-tr.js / i18n-en.js). Данные пользователя не переводятся.
 ============================================================ */
+const BUILD_V = 'dd728d6b1f';
 const LANGS = ['ru', 'tr', 'en'];
 const detectLang = () => {
   try {
@@ -599,8 +601,8 @@ function startTranslator() {
   new MutationObserver(ms => { for (const m of ms) { if (m.type === 'childList') m.addedNodes.forEach(trTree); else if (m.type === 'characterData') trNode(m.target); else trAttrs(m.target); } })
     .observe(document.body, {childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: TRATTR});
 }
-const loadScriptOnce = src => new Promise(r => { try { const sc = document.createElement('script'); sc.src = src; sc.onload = sc.onerror = () => r(); document.head.appendChild(sc); } catch (e) { r(); } });
-async function loadLang() { if (LANG === 'ru') return; await loadScriptOnce('i18n-' + LANG + '.js'); initDict(window.I18N_DICT); }
+const loadScriptOnce = src => new Promise(r => { try { const sc = document.createElement('script'); sc.charset = 'utf-8'; sc.src = src; sc.onload = sc.onerror = () => r(); document.head.appendChild(sc); } catch (e) { r(); } });
+async function loadLang() { if (LANG === 'ru') return; await loadScriptOnce('i18n-' + LANG + '.js?v=' + BUILD_V); initDict(window.I18N_DICT); }
 const LH = {ru: ['ч', 'мин'], tr: ['sa', 'dk'], en: ['h', 'min']}[LANG];
 
 /* валюты: можно выбрать любую из списка (в прототипе список короткий, в продукте будет полный ISO 4217) */
@@ -677,7 +679,7 @@ function placeholder(name) {
   return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 }
 const ph = (id, fb) => (window.DEMO_PH && window.DEMO_PH[id]) || fb;
-const loadDemoPh = () => window.DEMO_PH ? Promise.resolve() : new Promise(r => { try { const sc = document.createElement('script'); sc.src = 'demo-photos.js'; sc.onload = sc.onerror = () => r(); document.head.appendChild(sc); } catch (e) { r(); } });
+const loadDemoPh = () => window.DEMO_PH ? Promise.resolve() : new Promise(r => { try { const sc = document.createElement('script'); sc.charset = 'utf-8'; sc.src = 'demo-photos.js?v=' + BUILD_V; sc.onload = sc.onerror = () => r(); document.head.appendChild(sc); } catch (e) { r(); } });
 const photoOf = m => (m && m.photo) || placeholder(m && m.name);
 const KIND_ART = {'Серьги': 'earrings', 'Браслет': 'bracelet', 'Колье': 'necklace', 'Заколка': 'clip', 'Ободок': 'band', 'Съёмная коса': 'hair', 'Сумочка': 'box', 'Другое': 'flower'};
 
