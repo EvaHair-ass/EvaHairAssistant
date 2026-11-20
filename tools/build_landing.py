@@ -766,6 +766,27 @@ h2::after{background:linear-gradient(90deg,#9C6A14,#F3DA8E,#9C6A14)}
 .work figcaption small{display:block;margin-top:4px;font-family:'Nunito',system-ui,sans-serif;font-style:normal;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
 .shnote{margin-top:38px;font-size:14px;color:var(--ink2)}
 @media (min-width:860px){.works{grid-template-columns:repeat(4,1fr);gap:44px 22px}.work.lift{margin-top:56px}}
+
+.showcase{padding-top:24px}
+.work figcaption{font-size:clamp(17px,2.2vw,22px)}
+.pricing{text-align:center}
+.pricing h2::after{margin-left:auto;margin-right:auto;-webkit-mask-position:center;mask-position:center}
+.pricing .lead2{margin-left:auto;margin-right:auto}
+.plans{display:grid;gap:22px;margin:44px auto 0;max-width:860px;align-items:stretch}
+.plan{position:relative;text-align:left;border-radius:28px;padding:34px 30px;background:var(--glass);border:1px solid color-mix(in srgb,var(--ochre) 42%,var(--line));display:flex;flex-direction:column;gap:14px}
+.plan.best{border-color:var(--ochre);box-shadow:var(--shadow),0 0 0 1px color-mix(in srgb,var(--ochre) 60%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--clay-soft) 55%,var(--surface)),var(--surface))}
+.pn{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:30px;color:var(--clay)}
+.pp{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pp b{font-size:clamp(38px,6vw,50px);line-height:1;font-weight:800;letter-spacing:-.02em}
+.pp span{color:var(--ink2);font-weight:700}
+.pp s{color:var(--ink2);font-size:18px;opacity:.75}
+.psub{margin-top:-6px;color:var(--accent);font-weight:800;font-size:14px}
+.pb{position:absolute;top:-14px;right:26px;background:var(--clay);color:var(--clay-ink);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px;box-shadow:0 6px 16px rgba(166,79,46,.35)}
+.plan ul{list-style:none;margin:6px 0 10px;padding:0;display:grid;gap:10px;flex:1}
+.plan li{display:flex;gap:10px;color:var(--ink2);font-size:16px}
+.plan li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233E6150' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+.plan .btn{align-self:stretch}
+@media (min-width:760px){.plans{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:no-preference){
   .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i,0)*90ms)}
   .js .rv.in{opacity:1;transform:none}
@@ -838,6 +859,91 @@ _EMPH = {"Siz büyüyü yaratın. Ne kadar ettiğini biz hesaplayalım.": "Siz h
 _apply_tr_fixes()
 
 
+# ------------------------------------------------- правки владелицы (раунд 20 ноября)
+NEW_WORKS = {5: ("inlay", "w_inlay"), 10: ("fabricpaint", "w_fabricpaint"), 13: ("toys", "w_toys"), 14: ("boho", "w_boho")}
+for _i, _v in NEW_WORKS.items(): WORKS[_i] = _v
+RUN = {
+ "ru": {
+  "pill": "Скоро · твоя личная Академия для уроков",
+  "kicker": "Melaymade · для тех, кто творит руками",
+  "h1": "Ты творишь, *расчёты оставь нам.*",
+  "sub": "«Моя мастерская» ведёт склад материалов с фото, помогает легко посчитать себестоимость и цену продажи. В своей Академии ты управляешь уроками, ученицами и учебными материалами в одном месте.",
+  "cr_title": "У каждого рукоделия свои особенности, «Моя мастерская» подстроится под любое",
+  "cr_lead": "От бисера до ткани, от ниток до глины… Что бы ты ни создавала, «Моя мастерская» легко посчитает стоимость материалов в штуках, метрах, граммах или миллилитрах.",
+  "cr_foot": "…и многое другое, что оживает благодаря твоему труду",
+  "sh_title": "Красота в деталях. Уверенность — в расчётах.",
+  "sh_lead": "Каждое изделие складывается из множества мелочей, каждая из которых имеет свою стоимость. «Моя мастерская» помогает увидеть полную себестоимость и уверенно определить цену, сохраняя ценность твоего труда.",
+  "kinds": ["Инкрустация кристаллами", "Роспись по ткани", "Шарнирные текстильные игрушки", "Украшения в стиле бохо"],
+  "card": ("book", "Личная академия", "Превращай своё мастерство в обучение: создавай курсы, добавляй уроки и материалы, делись знаниями с учениками. Раздел развивается."),
+  "nav": "Цены",
+  "pr": {"kick": "Тарифы", "title": "Простые и честные цены", "lead": "Сначала 14 дней бесплатно после регистрации, банковская карта не нужна. Потом выбираешь, как платить.",
+         "m_name": "Месяц", "m_price": "599 ₺", "m_per": "в месяц", "y_name": "Год", "y_badge": "Скидка 20%", "y_old": "7 188 ₺", "y_price": "5 750 ₺", "y_per": "в год", "y_sub": "около 479 ₺ в месяц",
+         "feats": ["Склад, закупки и расчёт цены", "Академия: курсы, уроки, ученицы", "Телефон, планшет и компьютер", "Работает без интернета"],
+         "cta": "Попробовать 14 дней бесплатно", "note": "Цены в турецких лирах. Они могут измениться до запуска оплаты."},
+  "faq_price": ("Сколько это стоит?", "После регистрации 14 дней бесплатно, банковская карта не нужна. Потом 599 ₺ в месяц или 5 750 ₺ в год (скидка 20%). Цены могут измениться до запуска оплаты."),
+  "faq_trial": ("Как работает пробный период?", "14 дней отсчитываются с момента регистрации, все возможности доступны. Когда срок закончится, твои данные останутся, а чтобы продолжить работу, нужно оформить подписку."),
+ },
+ "tr": {
+  "pill": "Yakında · Eğitimlerinizi yöneteceğiniz kendi Akademiniz",
+  "kicker": "Melaymade · el emeği üretenler için",
+  "h1": "Siz üretin, *hesabı bize bırakın.*",
+  "sub": "“Atölyem” ile malzemelerinizi fotoğraflı olarak takip edin, ürünlerinizin maliyetini ve satış fiyatını kolayca hesaplayın. Kendi Akademinizde derslerinizi, öğrencilerinizi ve eğitim materyallerinizi tek yerden yönetin.",
+  "cr_title": "Her el işi farklı, Atölyem hepsine uyum sağlar.",
+  "cr_lead": "Boncuktan kumaşa, iplikten kile… Ne üretiyorsanız üretin, Atölyem kullandığınız malzemelerin maliyetini adet, metre, gram veya mililitre üzerinden kolayca hesaplar.",
+  "cr_foot": "…ve el emeğinizle hayat bulan daha nice güzellik",
+  "sh_title": "Güzellik detaylarda, güven doğru hesapta.",
+  "sh_lead": "Her el emeği ürün, her birinin ayrı bir maliyeti olan küçük detayların bir araya gelmesiyle ortaya çıkar. “Atölyem” tüm maliyetlerinizi görmenize ve emeğinizin değerini koruyarak satış fiyatınızı güvenle belirlemenize yardımcı olur.",
+  "kinds": ["Kristal taş süsleme sanatı", "Kumaş boyama", "Eklemli peluş oyuncak", "Bohem takılar"],
+  "card": ("book", "Kendi Akademin", "Ustalığını eğitime dönüştür: kurslarını oluştur, derslerini ve eğitim materyallerini ekle, öğrencilerine bilgi ve deneyimlerini aktar. Bu bölüm geliştiriliyor."),
+  "nav": "Fiyatlar",
+  "pr": {"kick": "Fiyatlandırma", "title": "Basit ve dürüst fiyatlar", "lead": "Kayıttan sonra 14 gün ücretsiz deneyin; banka kartı gerekmez. Sonra size uygun planı seçin.",
+         "m_name": "Aylık", "m_price": "599 ₺", "m_per": "/ ay", "y_name": "Yıllık", "y_badge": "%20 indirim", "y_old": "7.188 ₺", "y_price": "5.750 ₺", "y_per": "/ yıl", "y_sub": "ayda yaklaşık 479 ₺",
+         "feats": ["Stok, alım ve fiyat hesabı", "Akademi: kurslar, dersler, öğrenciler", "Telefon, tablet ve bilgisayar", "İnternet olmadan da çalışır"],
+         "cta": "14 gün ücretsiz deneyin", "note": "Fiyatlar Türk lirası cinsindendir ve ödeme sistemi açılmadan önce değişebilir."},
+  "faq_price": ("Fiyatı ne kadar?", "Kayıttan sonra 14 gün ücretsiz deneme, banka kartı gerekmez. Ardından aylık 599 ₺ veya %20 indirimli yıllık 5.750 ₺. Fiyatlar ödeme sistemi açılmadan önce değişebilir."),
+  "faq_trial": ("Deneme süresi nasıl işler?", "14 gün kayıt anından itibaren başlar ve tüm özellikler açıktır. Süre bittiğinde verileriniz saklanır; çalışmaya devam etmek için abonelik başlatmanız gerekir."),
+  "ac": {"ac_badge": "Akademim · beta", "ac_big": "Ellerinin bildiklerini öğrenmek isteyenler var", "ac_h": "El işi okulun tek bir uygulamada",
+         "ac_lead": "Bir el işi ustasının okulu çoğu zaman beş ayrı yere dağılır: mesajlar, tablolar, fotoğraflar, notlar ve alışveriş listeleri.\n\n“Atölyem” hepsini bir araya getirir. Derslerin, malzemelerin, öğrencilerin ve kazancın; stok takibin ve fiyat hesaplarınla birlikte tek bir yerde.",
+         "ac_cta": "Kendi Akademini Kur"},
+ },
+ "en": {
+  "pill": "Coming soon · your own Academy for your lessons",
+  "kicker": "Melaymade · for makers of handmade work",
+  "h1": "You create, *leave the numbers to us.*",
+  "sub": "With “My Workshop” you track your materials with photos and easily calculate the cost and selling price of your pieces. In your own Academy you manage lessons, students and teaching materials in one place.",
+  "cr_title": "Every craft is different, My Workshop adapts to all of them.",
+  "cr_lead": "From beads to fabric, from thread to clay… Whatever you make, My Workshop easily works out the cost of your materials by the piece, metre, gram or millilitre.",
+  "cr_foot": "…and many more beautiful things brought to life by your handwork",
+  "sh_title": "Beauty in the details. Confidence in the numbers.",
+  "sh_lead": "Every piece is made of many small details, and each one has its own cost. “My Workshop” helps you see the full cost and set your price with confidence, while protecting the value of your work.",
+  "kinds": ["Crystal inlay art", "Fabric painting", "Jointed plush toys", "Boho jewelry"],
+  "card": ("book", "Your personal academy", "Turn your skill into teaching: create courses, add lessons and materials, share your knowledge with students. This section is still being developed."),
+  "nav": "Pricing",
+  "pr": {"kick": "Pricing", "title": "Simple, honest prices", "lead": "Try it free for 14 days after you sign up, no card needed. Then choose the plan that suits you.",
+         "m_name": "Monthly", "m_price": "₺599", "m_per": "/ month", "y_name": "Yearly", "y_badge": "Save 20%", "y_old": "₺7,188", "y_price": "₺5,750", "y_per": "/ year", "y_sub": "about ₺479 a month",
+         "feats": ["Stock, purchases and price calculation", "Academy: courses, lessons, students", "Phone, tablet and computer", "Works offline"],
+         "cta": "Try free for 14 days", "note": "Prices are in Turkish lira and may change before payments open."},
+  "faq_price": ("How much does it cost?", "14 days free after you sign up, no card needed. Then ₺599 per month or ₺5,750 per year (20% off). Prices may change before payments open."),
+  "faq_trial": ("How does the trial work?", "The 14 days start when you register and every feature is available. When the trial ends your data stays, and you need a subscription to keep working."),
+ },
+}
+_PRICE_Q = {"ru": ("Сколько это стоит?",), "tr": ("Fiyatı ne kadar?", "Ne kadar?"), "en": ("How much does it cost?",)}
+for _c, _r in RUN.items():
+    _t = TEXTS[_c]; _a = _t["ac"]
+    _a["pill"] = _r["pill"]; _t["kicker"] = _r["kicker"]; _t["h1"] = _r["h1"]; _t["sub"] = _r["sub"]
+    _t["cr"]["kick"] = ""; _t["cr"]["title"] = _r["cr_title"]; _t["cr"]["lead"] = _r["cr_lead"]; _t["cr"]["foot"] = _r["cr_foot"]
+    _t["sh"]["kick"] = ""; _t["sh"]["title"] = _r["sh_title"]; _t["sh"]["lead"] = _r["sh_lead"]; _t["sh"]["note"] = ""
+    _k = list(_t["sh"]["kinds"])
+    for _j, _i in enumerate(sorted(NEW_WORKS)): _k[_i] = _r["kinds"][_j]
+    _t["sh"]["kinds"] = _k
+    _a["features_extra"] = _r["card"]; _t["features"] = list(_t["features"][:-1]) + [_r["card"]]
+    for _kk, _vv in _r.get("ac", {}).items(): _a[_kk] = _vv
+    _t["pr"] = _r["pr"]
+    _nav = list(_t["nav"]); _t["nav"] = _nav[:4] + [_r["nav"]] + _nav[4:]
+    _faq = list(_t["faq"]); _ix = next(i for i, (q, _x) in enumerate(_faq) if q in _PRICE_Q[_c])
+    _faq[_ix] = _r["faq_price"]; _faq.insert(_ix + 1, _r["faq_trial"]); _t["faq"] = _faq
+
+
 FAV = '<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png"><link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">'
 
 
@@ -858,8 +964,10 @@ def render(code):
     feathers = feather_svg("4%", "-30px", 20, 17, -2) + feather_svg("46%", "-40px", 16, 22, -9) + feather_svg("92%", "-30px", 22, 19, -5) + feather_svg("68%", "-50px", 14, 25, -14)
     cr = t["cr"]
     sh = t["sh"]
+    pr = t["pr"]
+    pfeats = "".join(f"<li>{esc(x)}</li>" for x in pr["feats"])
     works = "".join(
-        f'<figure class="work rv" data-c="{cr_}" style="--i:{n % 4}"><div class="arch"><img src="/img/{fn}.jpg" width="800" height="1067" loading="lazy" alt="{esc(sh["kinds"][n])}: {esc(sh["names"][n])}"></div><figcaption>{esc(sh["names"][n])}<small>{esc(sh["kinds"][n])}</small></figcaption></figure>'
+        f'<figure class="work rv" style="--i:{n % 4}"><div class="arch"><img src="/img/{fn}.jpg" width="800" height="1067" loading="lazy" alt="{esc(sh["kinds"][n])}"></div><figcaption>{esc(sh["kinds"][n])}</figcaption></figure>'
         for n, (cr_, fn) in enumerate(WORKS))
     charms = "".join(
         f'<div class="charm rv" style="--i:{i};--len:{(i * 37) % 5 * 14 + 8}px;--dl:-{i * 1.3:.1f}s"><div class="orb"><img src="/img/craft_{k}.jpg" width="240" height="240" loading="lazy" alt=""></div><span>{esc(nm)}</span></div>'
@@ -873,7 +981,7 @@ def render(code):
         f'<figure class="rv" style="--i:{i}"><div class="phone"><img src="/img/{code}/{n}.jpg" width="780" height="1688" loading="lazy" alt="{esc(t["gal_alt"][i])}"></div><figcaption>{esc(t["gal"][i])}</figcaption></figure>'
         for i, n in enumerate(imgs))
     faq = "".join(f'<details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in t["faq"])
-    nav = "".join(f'<a href="#{h}">{esc(n)}</a>' for h, n in zip(("crafts", "how", "academy", "features", "faq"), t["nav"]))
+    nav = "".join(f'<a href="#{h}">{esc(n)}</a>' for h, n in zip(("crafts", "how", "academy", "features", "pricing", "faq"), t["nav"]))
     a = t["ac"]
     pains = "".join(f'<div class="card rv" style="--i:{i}"><q>{esc(q)}</q><p>{esc(x)}</p></div>' for i, (q, x) in enumerate(a["pains"]))
     acards = "".join(
@@ -922,17 +1030,14 @@ def render(code):
   <div class="herovis">{mandala_svg()}<div class="bob"><div class="phone"><img src="/img/{code}/stock.jpg" width="780" height="1688" alt="{esc(t["gal_alt"][0])}"></div></div></div>
 </div></section>
 <section id="crafts" class="crafts"><div class="wrap">
-  <span class="kick rv">{esc(cr["kick"])}</span>
   <h2 class="rv">{esc(cr["title"])}</h2>
   <p class="lead2 rv">{esc(cr["lead"])}</p>
   <div class="garland">{charms}</div>
   <p class="foot2 rv">{esc(cr["foot"])}</p>
 </div></section>
 <section class="showcase"><div class="wrap">
-  <div class="shtop"><span class="kick rv">{esc(sh["kick"])}</span><h2 class="rv">{esc(sh["title"])}</h2><p class="lead2 rv">{esc(sh["lead"])}</p></div>
-  <div class="wchips rv" role="group">{wchips}</div>
+  <div class="shtop"><h2 class="rv">{esc(sh["title"])}</h2><p class="lead2 rv">{esc(sh["lead"])}</p></div>
   <div class="works">{works}</div>
-  <p class="shnote rv">{esc(sh["note"])}</p>
 </div></section>
 <section id="how"><div class="wrap">
   <h2 class="rv">{esc(t["how_title"])}</h2>
@@ -944,7 +1049,7 @@ def render(code):
       <span class="badge">{icon("cap")}{esc(a["ac_badge"])}</span>
       <h2 class="big">{esc(a["ac_big"])}</h2>
       <p class="ac-sub">{esc(a["ac_h"])}</p>
-      <p class="lead">{esc(a["ac_lead"])}</p>
+      {"".join(f'<p class="lead">{esc(x)}</p>' for x in a["ac_lead"].split(chr(10) * 2))}
       <div class="cta"><a class="btn pri" href="{APPL}">{esc(a["ac_cta"])}</a></div>
     </div>
     <div class="vis"><div class="phone"><img src="/img/{code}/academy.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_badge"])}"></div><div class="phone"><img src="/img/{code}/video.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][0][1])}"></div><div class="phone"><img src="/img/{code}/lesson.jpg" width="780" height="1688" loading="lazy" alt="{esc(a["ac_cards"][1][1])}"></div></div>
@@ -967,6 +1072,14 @@ def render(code):
   <h2 class="rv">{esc(t["gal_title"])}</h2>
   <div class="gallery">{gal}</div>
   <p class="uinote">{esc(t["ui_note"])}</p>
+</div></section>
+<section id="pricing" class="pricing"><div class="wrap">
+  <span class="kick rv">{esc(pr["kick"])}</span><h2 class="rv">{esc(pr["title"])}</h2><p class="lead2 rv">{esc(pr["lead"])}</p>
+  <div class="plans">
+    <div class="plan rv" style="--i:0"><div class="pn">{esc(pr["m_name"])}</div><div class="pp"><b>{esc(pr["m_price"])}</b><span>{esc(pr["m_per"])}</span></div><ul>{pfeats}</ul><a class="btn" href="{APPL}">{esc(pr["cta"])}</a></div>
+    <div class="plan best rv" style="--i:1"><span class="pb">{esc(pr["y_badge"])}</span><div class="pn">{esc(pr["y_name"])}</div><div class="pp"><s>{esc(pr["y_old"])}</s><b>{esc(pr["y_price"])}</b><span>{esc(pr["y_per"])}</span></div><div class="psub">{esc(pr["y_sub"])}</div><ul>{pfeats}</ul><a class="btn pri" href="{APPL}">{esc(pr["cta"])}</a></div>
+  </div>
+  <p class="shnote rv">{esc(pr["note"])}</p>
 </div></section>
 <section id="faq"><div class="wrap">
   {moons_row()}
