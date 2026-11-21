@@ -1,0 +1,31 @@
+Добавь хотя бы один материал или готовое изделие. ⇒ En az bir malzeme veya hazır ürün ekleyin. ⇒ Add at least one material or finished piece.
+{0}: нужно {1} шт, а свободно {2}. ⇒ {0}: {1} adet gerekiyor, serbest olan {2}. ⇒ {0}: {1} pcs needed, but only {2} are free.
+Готовое изделие уже недоступно. ⇒ Hazır ürün artık kullanılamıyor. ⇒ The finished piece is no longer available.
+Готовые изделия ⇒ Hazır ürünler ⇒ Finished pieces
+Из готовых ⇒ Hazırlardan ⇒ From finished
+Можно собрать новое изделие из готовых: например, набор или тику из нескольких готовых косичек. ⇒ Yeni ürünü hazır ürünlerden de oluşturabilirsiniz: örneğin birkaç hazır örgüden bir set veya tika. ⇒ You can build a new piece from finished ones: for example a set or a tikka made of several finished braids.
+готовое изделие ⇒ hazır ürün ⇒ finished piece
+В новое изделие, шт ⇒ Yeni ürüne, adet ⇒ Into the new piece, pcs
+Себестоимость штуки ⇒ Adet maliyeti ⇒ Cost per piece
+Убрать изделие ⇒ Ürünü kaldır ⇒ Remove piece
+Добавить готовые изделия ⇒ Hazır ürün ekle ⇒ Add finished pieces
+Поиск среди готовых ⇒ Hazır ürünlerde ara ⇒ Search finished pieces
+в наличии {0} шт · свободно {1} ⇒ stokta {0} adet · serbest {1} ⇒ {0} pcs in stock · {1} free
+за шт ⇒ adet başına ⇒ per pc
+Сколько штук получится ⇒ Kaç adet çıkacak ⇒ How many pieces it makes
+Если делаешь партию (например, 10 косичек), укажи 10: себестоимость и цена посчитаются на одну штуку. ⇒ Parti yapıyorsanız (örneğin 10 örgü), 10 yazın: maliyet ve fiyat tek adet için hesaplanır. ⇒ If you make a batch (for example 10 braids), enter 10: the cost and price are calculated per piece.
+Штук получится ⇒ Çıkacak adet ⇒ Pieces it makes
+Штук получилось ⇒ Çıkan adet ⇒ Pieces made
+Себестоимость одной штуки ⇒ Bir adedin maliyeti ⇒ Cost of one piece
+в новое изделие {0} шт ⇒ yeni ürüne {0} adet ⇒ {0} pcs into the new piece
+использовано в сборке ⇒ montajda kullanıldı ⇒ used in an assembly
+в наличии {0} шт ⇒ stokta {0} adet ⇒ {0} pcs in stock
+{0} шт × {1} ⇒ {0} adet × {1} ⇒ {0} pcs × {1}
+Это изделие уже в работе ⇒ Bu ürün zaten işte ⇒ This piece is already in the project
+Изделие убрано ⇒ Ürün kaldırıldı ⇒ Piece removed
+Все штуки зарезервированы в работах ⇒ Tüm adetler işlerde ayrılmış ⇒ All pieces are reserved in projects
+Продаётся одна штука из партии, в наличии сейчас {0} шт. ⇒ Partiden bir adet satılıyor, şu an stokta {0} adet var. ⇒ One piece from the batch is being sold, {0} pcs are in stock now.
+Косичка single ⇒ Tek örgü ⇒ Single braid
+Косичка double ⇒ Çift örgü ⇒ Double braid
+Тика «Лесная» ⇒ Tika «Orman» ⇒ Tikka “Forest”
+Добавить фото ⇒ Fotoğraf ekle ⇒ Add photo

@@ -721,6 +721,11 @@ function reservedBy(st, mid, exclude) {
   return r;
 }
 const freeOf = (st, m) => m.qty - reservedBy(st, m.id);
+/* готовые изделия как компоненты новой работы (набор, тика из косичек и т.п.) */
+const finOf = (st, id) => st.finished.find(f => f.id === id);
+function reservedItems(st, fid, exclude) { let r = 0; st.drafts.forEach(d => { if (d.id === exclude) return; (d.items || []).forEach(it => { if (it.fid === fid) r += it.used; }); }); return r; }
+const itemMax = (st, d, it) => { const f = finOf(st, it.fid); return f && f.status === 'stock' ? Math.max(0, (f.qty == null ? 1 : f.qty) - reservedItems(st, f.id, d.id)) : 0; };
+const outQtyOf = d => Math.max(1, Math.round(+d.outQty || 1));
 
 function allocateDelivery(sums, delivery) {
   const total = sums.reduce((a, b) => a + b, 0);
@@ -761,16 +766,17 @@ function minutesOf(d, now = Date.now()) {
   return (d.elapsedMs + (d.runningSince ? now - d.runningSince : 0)) / 60000;
 }
 function draftTotals(st, d, now = Date.now()) {
-  let matIn = 0, toolUse = 0, scrapC = 0;
+  let matIn = 0, toolUse = 0, scrapC = 0, itemsC = 0;
   d.parts.forEach(p => { const c = partCost(mat(st, p.id), p); matIn += c.inProd; toolUse += c.tool; scrapC += c.scrap; });
+  (d.items || []).forEach(it => { const f = finOf(st, it.fid); if (f) itemsC += it.used * f.cost; });
   const minutes = minutesOf(d, now), labor = minutes / 60 * d.hourly, other = d.other || 0;
-  const cost = matIn + toolUse + scrapC + labor + other;
+  const cost = matIn + toolUse + scrapC + itemsC + labor + other, qty = outQtyOf(d), costPer = cost / qty;
   const pct = (d.fee + d.margin) / 100, blocked = pct >= 0.99;
-  const suggested = blocked ? NaN : (cost + d.shipping) / (1 - pct);
+  const suggested = blocked ? NaN : (costPer + d.shipping) / (1 - pct);
   const price = d.sale > 0 ? d.sale : suggested;
-  const profit = isFinite(price) ? price - price * d.fee / 100 - d.shipping - cost : NaN;
+  const profit = isFinite(price) ? price - price * d.fee / 100 - d.shipping - costPer : NaN;
   const profitPct = isFinite(price) && price > 0 ? Math.round(profit / price * 100) : 0;
-  return {matIn, toolUse, scrapC, minutes, labor, other, cost, blocked, suggested, price, profit, profitPct, manual: d.manualMinutes > 0};
+  return {matIn, toolUse, scrapC, itemsC, minutes, labor, other, cost, qty, costPer, blocked, suggested, price, profit, profitPct, manual: d.manualMinutes > 0};
 }
 function partLimits(st, d, p) {
   const m = mat(st, p.id); const others = reservedBy(st, p.id, d.id);
@@ -778,7 +784,11 @@ function partLimits(st, d, p) {
 }
 function validateDraft(st, d) {
   const e = [];
-  if (!d.parts.length) e.push('Добавь хотя бы один материал.');
+  if (!d.parts.length && !(d.items || []).length) e.push('Добавь хотя бы один материал или готовое изделие.');
+  (d.items || []).forEach(it => {
+    const f = finOf(st, it.fid); if (!f || f.status !== 'stock') { e.push('Готовое изделие уже недоступно.'); return; }
+    const max = itemMax(st, d, it); if (it.used > max + 1e-9) e.push(`${f.name}: нужно ${num(it.used)} шт, а свободно ${num(max)}.`);
+  });
   d.parts.forEach(p => {
     const m = mat(st, p.id); if (!m) { e.push('Материал удалён из каталога.'); return; }
     const {others, max} = partLimits(st, d, p);
@@ -790,17 +800,19 @@ function validateDraft(st, d) {
   if (d.fee + d.margin >= 99) e.push('Комиссия + желаемая прибыль ≥ 99%: цену посчитать нельзя.');
   return e;
 }
-function newDraft(st, {name, kind, bom, fromRun}) {
+function newDraft(st, {name, kind, bom, fromRun, fromItems, outQty}) {
   const s = st.settings;
-  const d = {id: uid('d'), productId: null, name, category: kind || 'Другое', collection: '', created: Date.now(), parts: [], hourly: s.hourly, other: s.other, fee: s.fee, margin: s.margin, shipping: s.shipping, sale: 0, elapsedMs: 0, runningSince: null, manualMinutes: 0, notes: ''};
+  const d = {id: uid('d'), productId: null, name, category: kind || 'Другое', collection: '', created: Date.now(), parts: [], items: [], outQty: outQty || 1, hourly: s.hourly, other: s.other, fee: s.fee, margin: s.margin, shipping: s.shipping, sale: 0, elapsedMs: 0, runningSince: null, manualMinutes: 0, notes: ''};
   (bom || []).forEach(b => { if (mat(st, b.id)) d.parts.push({id: b.id, used: b.qty, scrap: 0}); });
   (fromRun || []).forEach(l => { if (mat(st, l.id)) d.parts.push({id: l.id, used: l.used, scrap: 0}); });
+  (fromItems || []).forEach(l => { if (finOf(st, l.fid)) d.items.push({fid: l.fid, used: l.used}); });
   return d;
 }
 function finalizeDraft(st, d, {photo = null, note = '', date = todayISO()} = {}) {
   const errors = validateDraft(st, d); if (errors.length) return {errors};
   const t = draftTotals(st, d);
   const runId = uid('r');
+  const itemLines = (d.items || []).map(it => { const f = finOf(st, it.fid); return {fid: f.id, name: f.name, photo: f.photo, used: it.used, unitCost: f.cost, cost: it.used * f.cost}; });
   const lines = d.parts.map(p => {
     const m = mat(st, p.id), c = partCost(m, p);
     return {id: m.id, name: m.name, unit: m.unit, mode: m.mode, size: m.size, color: m.color, used: p.used, scrap: p.scrap, quantity: isTool(m) ? p.scrap : p.used + p.scrap,
@@ -810,11 +822,12 @@ function finalizeDraft(st, d, {photo = null, note = '', date = todayISO()} = {})
     const m = mat(st, p.id); const out = isTool(m) ? p.scrap : p.used + p.scrap;
     if (out > 0) { m.qty = r2(m.qty - out); st.movements.unshift({id: uid('mv'), date, materialId: m.id, delta: -out, unitCost: m.avg, reason: (isTool(m) ? 'Поломка инструмента: ' : 'Работа: ') + d.name, ref: runId}); }
   });
-  const run = {id: runId, productId: d.productId, name: d.name, category: d.category, date, photo, materialLines: lines,
+  (d.items || []).forEach(it => { const f = finOf(st, it.fid); f.qty = r2((f.qty == null ? 1 : f.qty) - it.used); if (f.qty <= 1e-9) { f.qty = 0; f.status = 'used'; } });
+  const run = {id: runId, productId: d.productId, name: d.name, category: d.category, date, photo, materialLines: lines, itemLines, itemsCost: t.itemsC, qty: t.qty,
     materialCost: t.matIn, toolCost: t.toolUse, scrapCost: t.scrapC, laborMinutes: t.minutes, hourly: d.hourly, laborCost: t.labor, otherCost: t.other,
     costTotal: t.cost, fee: d.fee, margin: d.margin, shipping: d.shipping, plannedPrice: isFinite(t.price) ? t.price : 0, suggestedPrice: isFinite(t.suggested) ? t.suggested : 0, note};
   st.runs.unshift(run);
-  st.finished.unshift({id: uid('f'), runId, name: d.name, category: d.category, photo, cost: t.cost, price: run.plannedPrice, status: 'stock', soldPrice: 0, soldDate: null, sale: null, created: date});
+  st.finished.unshift({id: uid('f'), runId, name: d.name, category: d.category, photo, cost: t.costPer, qty: t.qty, price: run.plannedPrice, status: 'stock', soldPrice: 0, soldDate: null, sale: null, created: date});
   st.drafts = st.drafts.filter(x => x.id !== d.id);
   return {run};
 }
@@ -889,6 +902,12 @@ function buildSeed() {
   const d1 = mk('Заколка «Рассвет»', 'Заколка', [{id: 'm_clip', used: 1, scrap: 0}, {id: 'm_ss16', used: 20, scrap: 1}, {id: 'm_glue', used: 3, scrap: 0}, {id: 'm_tw', used: 3, scrap: 0}], {productId: 'pr_clip', elapsedMs: 3600000, created: Date.now() - 86400000});
   const d2 = mk('Ободок «Аврора»', 'Ободок', [{id: 'm_band', used: 1, scrap: 0}, {id: 'm_xir29', used: 12, scrap: 1}, {id: 'm_ame', used: 4, scrap: 0}, {id: 'm_glue', used: 2, scrap: 0}, {id: 'm_tw', used: 2, scrap: 0}], {created: Date.now() - 3600000});
   st.drafts.push(d1, d2);
+  /* набор из готовых изделий: партии косичек и тика, собранная из них */
+  const mkBatch = (name, back, n, parts, min, photo) => { const d = mk(name, 'Съёмная коса', parts, {manualMinutes: min, other: 0, outQty: n}); st.drafts.push(d); finalizeDraft(st, d, {date: ago(back), photo: ph(photo, art('hair', '#d9b77e'))}); return st.finished[0]; };
+  const fSingle = mkBatch('Косичка single', 20, 12, [{id: 'm_braid', used: 2, scrap: 0}, {id: 'm_ring', used: 12, scrap: 0}], 45, 'q05');
+  const fDouble = mkBatch('Косичка double', 18, 6, [{id: 'm_braid', used: 2, scrap: 0}, {id: 'm_ring', used: 12, scrap: 0}], 40, 'q08');
+  const dTika = mk('Тика «Лесная»', 'Другое', [{id: 'm_ame', used: 6, scrap: 0}, {id: 'm_glue', used: 1, scrap: 0}], {manualMinutes: 90, other: 0});
+  dTika.items = [{fid: fSingle.id, used: 8}, {fid: fDouble.id, used: 2}]; st.drafts.push(dTika);
 
   /* Академия (демо) */
   const AC0 = st.academy;
@@ -932,8 +951,8 @@ function migrate(st) {
   st.categories = [...new Set(st.categories.concat(st.materials.map(m => m.category)))].sort(ruCmp);
   st.drafts.forEach(d => { d.parts = (d.parts || []).map(p => ({id: p.id, used: +p.used || 0, scrap: +p.scrap || 0}));
     ['hourly','other','fee','margin','shipping','sale','elapsedMs','manualMinutes'].forEach(k => { d[k] = +d[k] || (k === 'hourly' ? st.settings.hourly : 0); });
-    d.notes = d.notes || ''; d.runningSince = d.runningSince || null; d.category = d.category || 'Другое'; });
-  st.finished.forEach(f => { f.category = f.category || 'Другое'; f.sale = f.sale || null; });
+    d.notes = d.notes || ''; d.runningSince = d.runningSince || null; d.category = d.category || 'Другое'; d.items = (d.items || []).map(it => ({fid: it.fid, used: +it.used || 0})); d.outQty = d.outQty || 1; });
+  st.finished.forEach(f => { f.category = f.category || 'Другое'; f.sale = f.sale || null; if (f.qty == null) f.qty = f.status === 'stock' ? 1 : 1; });
   st.v = 3; return st;
 }
 
@@ -1123,11 +1142,11 @@ function workScreen() {
   return `<header class="top px"><div><span class="kick">творим</span><h1>Мастерская</h1><p class="sub">${ds.length} ${pl(ds.length, ['работа','работы','работ'])} в процессе · правки сохраняются сами</p></div></header>
     <div class="px stack">
       <button class="btn pri block" data-act="newWork">${ic('plus')} Новая работа</button>
-      ${ds.length ? ds.map((d, i) => { const t = draftTotals(S, d), thumbs = d.parts.slice(0, 5).map(p => `<img src="${photoOf(mat(S, p.id))}" alt="">`).join('');
+      ${ds.length ? ds.map((d, i) => { const t = draftTotals(S, d), thumbs = d.parts.slice(0, 5).map(p => `<img src="${photoOf(mat(S, p.id))}" alt="">`).join('') + (d.items || []).slice(0, 3).map(it => { const f = finOf(S, it.fid); return f ? `<img src="${f.photo || placeholder(f.name)}" alt="">` : ''; }).join('');
         const run = !!d.runningSince, errs = validateDraft(S, d).length;
         return `<button class="lcard" style="--i:${i};align-items:flex-start" data-act="openDraft" data-id="${d.id}"><div class="grow">
           <div class="row" style="gap:8px;flex-wrap:wrap"><span class="t">${esc(d.name)}</span>${run ? `<span class="pill good"><i class="live"></i>идёт таймер</span>` : ''}${errs ? `<span class="pill bad">проверь остатки</span>` : ''}</div>
-          <div class="s">${esc(d.category)} · ${d.parts.length} ${pl(d.parts.length, ['материал','материала','материалов'])} · ${fmtMin(t.minutes)}</div>
+          <div class="s">${esc(d.category)} · ${d.parts.length + (d.items || []).length} ${pl(d.parts.length + (d.items || []).length, ['материал','материала','материалов'])} · ${fmtMin(t.minutes)}</div>
           <div class="mini" style="margin-top:8px">${thumbs}</div></div>
           <div class="r"><div class="t num">${money(t.cost)}</div><div class="s">себестоимость</div></div></button>`; }).join('')
         : `<div class="empty"><b>Нет активных работ</b><span>Начни с нуля или возьми сохранённый дизайн.</span></div>`}
@@ -1163,15 +1182,34 @@ function partHTML(d, p, i) {
     ${info}
     <div class="row" style="justify-content:space-between"><span class="hint">Стоимость в работе</span><b class="num">${money(c.total)}</b></div></div>`;
 }
+function itStepper(i, v) {
+  return `<div class="step"><button data-act="itStp" data-i="${i}" data-d="-1" aria-label="Меньше">${ic('minus')}</button>
+    <input inputmode="decimal" data-item="${i}" value="${fmtInput(v)}" aria-label="В новое изделие, шт">
+    <button data-act="itStp" data-i="${i}" data-d="1" aria-label="Больше">${ic('plus')}</button></div>`;
+}
+function itemHTML(d, it, i) {
+  const f = finOf(S, it.fid);
+  if (!f) return `<div class="part bad"><div class="hd"><div class="grow"><div class="nm">Готовое изделие уже недоступно.</div></div><button class="ibtn sm" data-act="itDel" data-i="${i}" aria-label="Убрать изделие">${ic('trash', 'sm')}</button></div></div>`;
+  const max = itemMax(S, d, it), over = it.used > max + 1e-9, have = f.qty == null ? 1 : f.qty;
+  return `<div class="part ${over ? 'bad' : ''}">
+    <div class="hd"><img class="thumb" src="${f.photo || placeholder(f.name)}" alt=""><div class="grow"><div class="nm">${esc(f.name)}</div><div class="hint">готовое изделие</div></div>
+      <button class="ibtn sm" data-act="itDel" data-i="${i}" aria-label="Убрать изделие" title="Убрать и вернуть в свободный остаток">${ic('trash', 'sm')}</button></div>
+    <div class="two"><div class="fld"><span class="lbl">В новое изделие, шт</span>${itStepper(i, it.used)}</div>
+      <div class="fld"><span class="lbl">Себестоимость штуки</span><b class="num" style="line-height:44px">${money(f.cost)}</b></div></div>
+    <div class="mstat"><div><b>${num(have)} шт</b><span>в наличии</span></div><div><b>${num(reservedItems(S, f.id))} шт</b><span>в резерве всех работ</span></div><div class="fr"><b>${num(max)} шт</b><span>свободно</span></div></div>
+    <div class="row" style="justify-content:space-between"><span class="hint">Стоимость в работе</span><b class="num">${money(it.used * f.cost)}</b></div></div>`;
+}
 function errHTML(d) { const e = validateDraft(S, d); return e.length ? `<div class="alert bad">${ic('alert')}<div>${e.map(esc).join('<br>')}</div></div>` : ''; }
 function totalsHTML(d) {
   const t = draftTotals(S, d);
   return `<div class="kv"><span>Материалы в изделии</span><b>${money(t.matIn)}</b></div>
+    ${t.itemsC > 0 ? `<div class="kv"><span>Готовые изделия</span><b>${money(t.itemsC)}</b></div>` : ''}
     ${t.toolUse > 0 ? `<div class="kv"><span>Инструмент (применения)</span><b>${money(t.toolUse)}</b></div>` : ''}
     <div class="kv bad"><span>Брак и потери (отдельно)</span><b>${money(t.scrapC)}</b></div>
     <div class="kv"><span>Труд: ${fmtMin(t.minutes)} × ${money(d.hourly)}/ч</span><b>${money(t.labor)}</b></div>
     <div class="kv"><span>Прочие расходы</span><b>${money(t.other)}</b></div>
     <div class="kv total"><span>Себестоимость</span><b>${money(t.cost)}</b></div>
+    ${t.qty > 1 ? `<div class="kv"><span>Штук получится</span><b>${num(t.qty)}</b></div><div class="kv"><span>Себестоимость одной штуки</span><b>${money(t.costPer)}</b></div>` : ''}
     <div class="pricebox"><span class="lbl" style="color:var(--clay)">Рекомендуемая цена</span><div class="big">${t.blocked ? '—' : money(t.suggested)}</div>
       <span class="hint" style="color:var(--clay)">(себестоимость + доставка) ÷ (1 − комиссия − прибыль)</span></div>
     ${t.blocked ? `<div class="alert bad">${ic('alert')}<div>Комиссия + прибыль ≥ 99%. Уменьши проценты, иначе цену не посчитать.</div></div>` : ''}
@@ -1194,7 +1232,9 @@ function pageDraft(d) {
           <div class="fld"><label class="lbl" for="manMin">Вручную, мин</label><input id="manMin" class="in" inputmode="decimal" data-m="D.manualMinutes" data-num value="${nv(d.manualMinutes)}" placeholder="например, 60"></div></div>
         <p class="hint">Если время указано вручную, считаем его. Оно главнее таймера.</p></div>
       <div><div class="sect"><h2>Материалы</h2><button class="btn sm" data-act="addPart">${ic('plus', 'sm')} Из склада</button></div></div>
-      ${d.parts.length ? d.parts.map((p, i) => partHTML(d, p, i)).join('') : `<div class="empty"><b>Пока пусто</b><span>Добавь материалы из фото-склада.</span><button class="btn sm pri" data-act="addPart">Выбрать материалы</button></div>`}
+      ${d.parts.length ? d.parts.map((p, i) => partHTML(d, p, i)).join('') : (d.items || []).length ? '' : `<div class="empty"><b>Пока пусто</b><span>Добавь материалы из фото-склада.</span><button class="btn sm pri" data-act="addPart">Выбрать материалы</button></div>`}
+      <div><div class="sect"><h2>Готовые изделия</h2><button class="btn sm" data-act="addItem">${ic('plus', 'sm')} Из готовых</button></div></div>
+      ${(d.items || []).length ? d.items.map((it, i) => itemHTML(d, it, i)).join('') : `<p class="hint">Можно собрать новое изделие из готовых: например, набор или тику из нескольких готовых косичек.</p>`}
       <div><div class="sect"><h2>Цена</h2></div></div>
       <div class="card stack" style="gap:12px">
         <div class="two"><div class="fld"><label class="lbl" for="f_h">Ставка, ${sym()}/час</label><input id="f_h" class="in" inputmode="decimal" data-m="D.hourly" data-num value="${nv(d.hourly)}"></div>
@@ -1202,6 +1242,7 @@ function pageDraft(d) {
         <div class="three"><div class="fld"><label class="lbl" for="f_f">Комиссия, %</label><input id="f_f" class="in" inputmode="decimal" data-m="D.fee" data-num value="${nv(d.fee)}"></div>
           <div class="fld"><label class="lbl" for="f_m">Прибыль, %</label><input id="f_m" class="in" inputmode="decimal" data-m="D.margin" data-num value="${nv(d.margin)}"></div>
           <div class="fld"><label class="lbl" for="f_s">Доставка, ${sym()}</label><input id="f_s" class="in" inputmode="decimal" data-m="D.shipping" data-num value="${nv(d.shipping)}"></div></div>
+        <div class="fld"><label class="lbl" for="f_q">Сколько штук получится</label><input id="f_q" class="in" inputmode="numeric" data-m="D.outQty" data-num value="${nv(d.outQty)}" placeholder="1"><span class="hint">Если делаешь партию (например, 10 косичек), укажи 10: себестоимость и цена посчитаются на одну штуку.</span></div>
         <div class="fld"><label class="lbl" for="f_p">Своя цена продажи, ${sym()} (необязательно)</label><input id="f_p" class="in" inputmode="decimal" data-m="D.sale" data-num value="${nv(d.sale)}" placeholder="оставь пустой: возьмём рекомендуемую"></div>
         <div id="totals">${totalsHTML(d)}</div></div>
       <div class="fld"><label class="lbl" for="f_n">Заметки к работе</label><textarea id="f_n" class="in ta" data-m="D.notes" placeholder="Что важно запомнить">${esc(d.notes)}</textarea></div>
@@ -1222,15 +1263,20 @@ function pageFinish(d) {
     const out = isTool(m) ? p.scrap : p.used + p.scrap;
     return `<div class="rl"><img class="thumb" src="${photoOf(m)}" alt=""><div class="a"><b>${esc(m.name)}</b><span class="num">${isTool(m) ? `${num(p.used)} примен. · поломок ${num(p.scrap)}` : `в изделии ${num(p.used)} · брак ${num(p.scrap)}`}</span></div>
       <div class="c">${out > 0 ? '−' + num(out) + ' ' + esc(m.unit) : 'остаток не меняется'}<small style="color:var(--ink2)">останется ${num(m.qty - out)} ${esc(m.unit)}</small></div></div>`; }).join('');
+  const itemRows = (d.items || []).map(it => { const f = finOf(S, it.fid); if (!f) return '';
+    return `<div class="rl"><img class="thumb" src="${f.photo || placeholder(f.name)}" alt=""><div class="a"><b>${esc(f.name)}</b><span class="num">в новое изделие ${num(it.used)} шт</span></div>
+      <div class="c">−${num(it.used)} шт<small style="color:var(--ink2)">останется ${num((f.qty == null ? 1 : f.qty) - it.used)} шт</small></div></div>`; }).join('');
   return `<div class="page-top px"><button class="ibtn" data-act="back" aria-label="Назад">${ic('back')}</button><div class="pt-title"><span class="ttl">Завершение</span><span class="sub">${esc(d.name)}</span></div></div>
     <div class="page-body px"><div class="stack">
       ${errs.length ? `<div class="alert bad">${ic('alert')}<div>${errs.map(esc).join('<br>')}</div></div>` : `<div class="alert good">${ic('check')}<div>Остатки сверены, всё хватает.</div></div>`}
-      <div class="card"><div class="sect" style="padding-top:0"><h2>Спишется со склада</h2></div>${rows}</div>
+      <div class="card"><div class="sect" style="padding-top:0"><h2>Спишется со склада</h2></div>${rows}${itemRows}</div>
       <div class="card"><div class="kv"><span>Материалы + инструмент</span><b>${money(t.matIn + t.toolUse)}</b></div>
+        ${t.itemsC > 0 ? `<div class="kv"><span>Готовые изделия</span><b>${money(t.itemsC)}</b></div>` : ''}
         <div class="kv bad"><span>Затраты на брак</span><b>${money(t.scrapC)}</b></div>
         <div class="kv"><span>Труд, ${fmtMin(t.minutes)}</span><b>${money(t.labor)}</b></div>
         <div class="kv"><span>Прочее</span><b>${money(t.other)}</b></div>
         <div class="kv total"><span>Себестоимость</span><b>${money(t.cost)}</b></div>
+        ${t.qty > 1 ? `<div class="kv"><span>Штук получилось</span><b>${num(t.qty)}</b></div><div class="kv"><span>Себестоимость одной штуки</span><b>${money(t.costPer)}</b></div>` : ''}
         <p class="lock">${ic('lock', 'sm')} Цены расхода заморозятся и не изменятся задним числом.</p></div>
       <div><div class="sect"><h2>Фото результата</h2></div></div>
       <div class="photo-drop">${f.photo ? `<img src="${f.photo}" alt="Фото готового изделия">` : `<div class="stack" style="align-items:center;gap:6px;padding:20px">${ic('camera')}<span style="font-weight:700">Загрузи фото готового изделия</span><span class="hint">Потом сможешь подвинуть кадр и приблизить. Фото можно добавить и позже.</span></div>`}</div>
@@ -1245,7 +1291,7 @@ function pageFinish(d) {
    ЭКРАНЫ: АРХИВ, ГОТОВОЕ, ПРОДАЖИ
 ============================================================ */
 function archScreen() {
-  const seg = ui.archSeg, stock = S.finished.filter(f => f.status === 'stock').length;
+  const seg = ui.archSeg, stock = S.finished.filter(f => f.status === 'stock').reduce((a, f) => a + (f.qty == null ? 1 : f.qty), 0);
   let body;
   if (seg === 'runs') {
     body = S.runs.length ? S.runs.map((r, i) => `<button class="lcard" style="--i:${Math.min(i, 10)}" data-act="openRun" data-id="${r.id}"><img class="thumb lg" src="${r.photo || placeholder(r.name)}" alt="">
@@ -1258,7 +1304,8 @@ function archScreen() {
       <div class="grow"><div class="t">${esc(f.name)}</div><div class="s">${fmtDate(f.created)}</div>
         ${f.status === 'sold' ? `<div class="s" style="margin-top:4px">${ic('user', 'sm')} ${esc((f.sale && f.sale.buyer) || 'покупатель не указан')}${f.sale && f.sale.dest ? ' · ' + esc(f.sale.dest) : ''}</div>` : ''}
         <div class="row" style="margin-top:8px;gap:8px;flex-wrap:wrap">${f.status === 'sold' ? `<span class="pill good">продано ${money(f.soldPrice)}</span><span class="pill ${f.soldPrice - f.cost >= 0 ? '' : 'bad'}">${f.soldPrice - f.cost >= 0 ? '+' : ''}${money(f.soldPrice - f.cost)}</span><button class="btn sm" data-act="saleOpen" data-id="${f.id}">Данные продажи</button>`
-          : `<span class="pill acc">в наличии</span><button class="btn sm pri" data-act="saleOpen" data-id="${f.id}">${ic('tag', 'sm')} Продано</button>`}</div></div>
+          : f.status === 'used' ? `<span class="pill">использовано в сборке</span>`
+          : `<span class="pill acc">${(f.qty || 1) > 1 ? `в наличии ${num(f.qty)} шт` : 'в наличии'}</span><button class="btn sm pri" data-act="saleOpen" data-id="${f.id}">${ic('tag', 'sm')} Продано</button>`}</div></div>
       <div class="r"><div class="t num">${money(f.cost)}</div><div class="s">себестоимость</div></div></div>`).join('')
       : `<div class="empty"><b>Готовых изделий нет</b><span>Карточка создаётся при завершении работы.</span></div>`;
   } else body = statsHTML();
@@ -1308,17 +1355,20 @@ function pageRun(r) {
     return `<div class="rl"><img class="thumb" src="${l.photo || placeholder(l.name)}" alt=""><div class="a"><b>${esc(l.name)}</b>
       <span class="num">${tool ? `${num(l.used)} применений × ${num(l.useCost)} ${sym()}` : `исправных ${num(l.used)} ${esc(l.unit)} × ${moneyU(l.unitCost)}`}${l.scrap > 0 ? ` · брак ${num(l.scrap)}${tool ? ' шт' : ' ' + esc(l.unit)}` : ''}</span></div>
       <div class="c">${money(l.cost)}${l.costScrap > 0 ? `<small>из них брак ${money(l.costScrap)}</small>` : ''}</div></div>`; }).join('');
+  const itemRowsR = (r.itemLines || []).map(l => `<div class="rl"><img class="thumb" src="${l.photo || placeholder(l.name)}" alt=""><div class="a"><b>${esc(l.name)}</b><span class="num">${num(l.used)} шт × ${moneyU(l.unitCost)}</span></div><div class="c">${money(l.cost)}</div></div>`).join('');
   return `<div class="page-top px"><button class="ibtn" data-act="back" aria-label="Назад">${ic('back')}</button><div class="pt-title"><span class="ttl">${esc(r.name)}</span><span class="sub">${fmtDate(r.date)} · ${esc(r.category || '')}</span></div></div>
     <div class="page-body px"><div class="stack">
       <div class="bigph"><img src="${r.photo || placeholder(r.name)}" alt="Фото готового изделия"><button class="btn sm" data-act="runPhoto">${ic('camera', 'sm')} ${r.photo ? 'Заменить' : 'Добавить'} фото</button></div>
       <div class="stats"><div class="stat"><div class="v num">${money(r.costTotal)}</div><div class="k">себестоимость</div></div><div class="stat"><div class="v num">${num(goodN)} / ${num(scrapN)}</div><div class="k">исправных / брак</div></div><div class="stat"><div class="v num">${fmtMin(r.laborMinutes)}</div><div class="k">время</div></div></div>
-      <div class="card"><div class="sect" style="padding-top:0"><h2>Состав</h2></div>${rows}</div>
+      <div class="card"><div class="sect" style="padding-top:0"><h2>Состав</h2></div>${rows}${itemRowsR}</div>
       <div class="card"><div class="kv"><span>Материалы в изделии</span><b>${money(r.materialCost)}</b></div>
+        ${r.itemsCost > 0 ? `<div class="kv"><span>Готовые изделия</span><b>${money(r.itemsCost)}</b></div>` : ''}
         ${r.toolCost > 0 ? `<div class="kv"><span>Инструмент (применения)</span><b>${money(r.toolCost)}</b></div>` : ''}
         <div class="kv bad"><span>Затраты на брак (отдельно)</span><b>${money(r.scrapCost)}</b></div>
         <div class="kv"><span>Труд: ${fmtMin(r.laborMinutes)} × ${money(r.hourly)}/ч</span><b>${money(r.laborCost)}</b></div>
         <div class="kv"><span>Прочее</span><b>${money(r.otherCost)}</b></div>
         <div class="kv total"><span>Итого</span><b>${money(r.costTotal)}</b></div>
+        ${(r.qty || 1) > 1 ? `<div class="kv"><span>Штук получилось</span><b>${num(r.qty)}</b></div><div class="kv"><span>Себестоимость одной штуки</span><b>${money(r.costTotal / r.qty)}</b></div>` : ''}
         <div class="kv"><span>Рекомендуемая цена</span><b>${money(r.suggestedPrice)}</b></div>
         <div class="kv" style="border-bottom:0"><span>Цена изделия</span><b>${money(r.plannedPrice)}</b></div>
         <p class="lock">${ic('lock', 'sm')} Цены зафиксированы на дату завершения. Новые закупки их не меняют.</p></div>
@@ -1601,6 +1651,10 @@ const SHEETS = {
        <div class="chips" style="padding-top:0" id="pk_chips">${pickChips()}</div><div id="pk_grid">${pickGrid()}</div>`,
       pk.mode === 'draft' || pk.mode === 'lesson' ? `<button class="btn pri block" data-act="closeSheet">Готово</button>` : '', pk.mode !== 'draft' && pk.mode !== 'lesson');
   },
+  pickItem() {
+    return shell('Добавить готовые изделия', `<label class="search">${ic('search')}<input id="pki_q" data-m="ui.pki.q" type="search" autocomplete="off" placeholder="Поиск среди готовых" value="${esc(ui.pki.q)}"></label><div id="pki_grid">${pickItemGrid()}</div>`,
+      `<button class="btn pri block" data-act="closeSheet">Готово</button>`);
+  },
   cur() {
     const q = ui.curQ.toLowerCase(), cur = ui.curMode === 'base' ? S.settings.base : (ui.pf ? ui.pf.currency : base());
     const list = CURS.filter(c => !q || c[0].toLowerCase().includes(q) || c[2].toLowerCase().includes(q) || c[1].toLowerCase().includes(q));
@@ -1626,6 +1680,7 @@ const SHEETS = {
   sale() {
     const f = S.finished.find(x => x.id === ui.sale.id), sl = ui.sale, sold = f.status === 'sold';
     return shell(sold ? 'Данные продажи' : 'Отметить продажу', `<div class="row"><img class="thumb" src="${f.photo || placeholder(f.name)}" alt=""><div class="grow"><div style="font-weight:800">${esc(f.name)}</div><div class="hint">Себестоимость ${money(f.cost)}</div></div></div>
+      ${!sold && (f.qty || 1) > 1 ? `<p class="hint">Продаётся одна штука из партии, в наличии сейчас ${num(f.qty)} шт.</p>` : ''}
       <div class="two">${fld('Цена продажи, ' + sym(), 'sl_p', 'ui.sale.price', sl.price, {num: 1})}${fld('Дата продажи', 'sl_d', 'ui.sale.date', sl.date, {type: 'date'})}</div>
       ${fld('Имя покупателя', 'sl_b', 'ui.sale.buyer', sl.buyer, {ph: 'Например, Елена К.'})}
       <div class="two">${fld('Телефон', 'sl_ph', 'ui.sale.phone', sl.phone, {type: 'tel', ph: '+90 …'})}<div class="fld"><label class="lbl" for="sl_ch">Где продано</label><select id="sl_ch" class="in" data-m="ui.sale.channel">${opts(CHANNELS, sl.channel)}</select></div></div>
@@ -1720,6 +1775,13 @@ function curListHTML(list, cur) {
 }
 function pickChips() {
   return `<button class="chip ${ui.pk.cat === 'all' ? 'on' : ''}" data-act="pkCat" data-v="all">Все</button>` + S.categories.filter(c => S.materials.some(m => m.category === c)).map(c => `<button class="chip ${ui.pk.cat === c ? 'on' : ''}" data-act="pkCat" data-v="${esc(c)}">${esc(c)}</button>`).join('');
+}
+function pickItemGrid() {
+  const d = S.drafts.find(x => x.id === ui.pki.draftId), q = ui.pki.q.toLowerCase().split(/\s+/).filter(Boolean);
+  const list = S.finished.filter(f => f.status === 'stock' && q.every(t => f.name.toLowerCase().includes(t)));
+  if (!list.length) return `<div class="empty"><b>Готовых изделий нет</b><span>Карточка создаётся при завершении работы.</span></div>`;
+  return list.map(f => { const free = Math.max(0, (f.qty == null ? 1 : f.qty) - reservedItems(S, f.id)), has = d && d.items.some(it => it.fid === f.id);
+    return `<button class="lcard" data-act="pkiPick" data-id="${f.id}" ${has || free <= 0 ? 'disabled style="opacity:.55"' : ''}><img class="thumb" src="${f.photo || placeholder(f.name)}" alt=""><div class="grow"><div class="t">${esc(f.name)}</div><div class="s">в наличии ${num(f.qty == null ? 1 : f.qty)} шт · свободно ${num(free)}</div></div><div class="r"><div class="t num">${money(f.cost)}</div><div class="s">за шт</div></div></button>`; }).join('');
 }
 function pickGrid() {
   const pk = ui.pk, toks = pk.q.toLowerCase().split(/\s+/).filter(Boolean), d = pk.mode === 'draft' ? S.drafts.find(x => x.id === pk.draftId) : null;
@@ -2057,6 +2119,13 @@ A.openDraft = el => { ui.pages = [{type: 'draft', id: el.dataset.id}]; renderPag
 A.draftCancel = () => { const d = curDraft(); if (!d) return;
   ask('Отменить работу?', 'Черновик исчезнет, а зарезервированные материалы вернутся в свободный остаток. Со склада ничего не списывалось.', 'Отменить работу', true, () => { S.drafts = S.drafts.filter(x => x.id !== d.id); save(); ui.pages = []; render(); toast('Работа отменена, резерв снят'); }); };
 A.addPart = () => { const d = curDraft(); ui.pk = {mode: 'draft', q: '', cat: 'all', draftId: d.id}; pushSheet({type: 'pick'}); };
+A.addItem = () => { const d = curDraft(); ui.pki = {draftId: d.id, q: ''}; pushSheet({type: 'pickItem'}); };
+A.pkiPick = el => { const d = S.drafts.find(x => x.id === ui.pki.draftId), f = finOf(S, el.dataset.id); if (!d || !f) return;
+  if (d.items.some(it => it.fid === f.id)) { toast('Это изделие уже в работе'); return; }
+  d.items.push({fid: f.id, used: 1}); save(); $('#pki_grid').innerHTML = pickItemGrid(); renderPages(); toast(`Добавлено: ${f.name}`); };
+A.itDel = el => { const d = curDraft(); d.items.splice(+el.dataset.i, 1); save(); renderPages(); toast('Изделие убрано'); };
+function setItem(d, i, v) { const it = d.items[i], max = itemMax(S, d, it); it.used = Math.max(0, Math.round(v)); if (it.used > max) { it.used = max; toast(`Свободно только ${num(max)} шт`); } save(); renderPages(); renderTabbar(); }
+A.itStp = el => { const d = curDraft(), i = +el.dataset.i; setItem(d, i, d.items[i].used + (+el.dataset.d)); };
 A.partSwap = el => { const d = curDraft(); ui.pk = {mode: 'replace', q: '', cat: 'all', draftId: d.id, index: +el.dataset.i}; pushSheet({type: 'pick'}); };
 A.partDel = el => { const d = curDraft(), p = d.parts[+el.dataset.i], m = mat(S, p.id); d.parts.splice(+el.dataset.i, 1); save(); renderPages(); toast(`${m ? m.name : 'Материал'} убран, остаток снова свободен`); };
 function clampPart(d, i, field) {
@@ -2097,12 +2166,16 @@ A.statMode = el => { ui.stat.mode = el.dataset.v; renderScreen(); };
 A.statNav = el => { const d = +el.dataset.d, st = ui.stat; if (st.mode === 'year') st.y += d; else { st.m += d; if (st.m < 1) { st.m = 12; st.y--; } if (st.m > 12) { st.m = 1; st.y++; } } renderScreen(); };
 A.openRun = el => go({type: 'run', id: el.dataset.id});
 A.runPhoto = () => { const r = curRun(); pickPhoto(url => { r.photo = url; const f = S.finished.find(x => x.runId === r.id); if (f) f.photo = url; save(); renderPages(); toast('Фото сохранено. Стоимость не изменилась'); }); };
-A.runRepeat = () => { const r = curRun(); const d = newDraft(S, {name: r.name, kind: r.category, fromRun: r.materialLines}); ui.pages = []; openNewDraft(d); toast('Новая работа собрана из архива'); };
+A.runRepeat = () => { const r = curRun(); const d = newDraft(S, {name: r.name, kind: r.category, fromRun: r.materialLines, fromItems: r.itemLines, outQty: r.qty}); ui.pages = []; openNewDraft(d); toast('Новая работа собрана из архива'); };
 A.saleOpen = el => { const f = S.finished.find(x => x.id === el.dataset.id), s = f.sale || {};
   ui.sale = {id: f.id, price: f.status === 'sold' ? f.soldPrice : f.price, date: f.soldDate || todayISO(), buyer: s.buyer || '', phone: s.phone || '', dest: s.dest || '', address: s.address || '', channel: s.channel || CHANNELS[0], note: s.note || ''}; pushSheet({type: 'sale'}); };
 A.saleConfirm = () => {
-  const sl = ui.sale, f = S.finished.find(x => x.id === sl.id); if (!(sl.price > 0)) { toast('Укажи цену продажи'); return; }
-  const wasSold = f.status === 'sold';
+  const sl = ui.sale; let f = S.finished.find(x => x.id === sl.id); if (!(sl.price > 0)) { toast('Укажи цену продажи'); return; }
+  let wasSold = f.status === 'sold';
+  if (!wasSold && (f.qty == null ? 1 : f.qty) > 1) {
+    if ((f.qty - reservedItems(S, f.id)) < 1) { toast('Все штуки зарезервированы в работах'); return; }
+    const piece = Object.assign({}, f, {id: uid('f'), qty: 1}); f.qty = r2(f.qty - 1); S.finished.splice(S.finished.indexOf(f), 0, piece); f = piece;
+  }
   f.status = 'sold'; f.soldPrice = sl.price; f.soldDate = sl.date || todayISO(); f.sale = {buyer: sl.buyer.trim(), phone: sl.phone.trim(), dest: sl.dest.trim(), address: sl.address.trim(), channel: sl.channel, note: sl.note.trim()};
   save(); popSheet(); render(); if (!wasSold) celebrate(); toast(wasSold ? 'Данные продажи сохранены' : 'Продажа отмечена');
 };
@@ -2409,6 +2482,7 @@ function onModel(el) {
   o[key] = el.hasAttribute('data-num') ? nz(el.value) : el.value;
   if (path === 'ui.q') refreshStock();
   else if (path === 'ui.pk.q') { const g = $('#pk_grid'); if (g) g.innerHTML = pickGrid(); }
+  else if (path === 'ui.pki.q') { const g = $('#pki_grid'); if (g) g.innerHTML = pickItemGrid(); }
   else if (path === 'ui.curQ') { const l = $('#curList'); const q = ui.curQ.toLowerCase(); if (l) l.innerHTML = curListHTML(CURS.filter(c => !q || c[0].toLowerCase().includes(q) || c[2].toLowerCase().includes(q)), ui.curMode === 'base' ? S.settings.base : ui.pf.currency); }
   else if (parts[0] === 'D') { save(); refreshDraft(true); }
   else if (path.startsWith('ui.lf.')) {
@@ -2434,6 +2508,7 @@ document.addEventListener('change', e => {
   if (t.hasAttribute && t.hasAttribute('data-gate-agree')) { ui.gate.agree = t.checked; return; }
   if (t.dataset && t.dataset.wipe !== undefined) { ui.wipe[t.dataset.wipe] = t.checked; return; }
   if (t.dataset && t.dataset.part !== undefined) { const d = curDraft(); if (d) setPart(d, +t.dataset.part, t.dataset.f, nz(t.value)); return; }
+  if (t.dataset && t.dataset.item !== undefined) { const d = curDraft(); if (d) setItem(d, +t.dataset.item, nz(t.value)); return; }
   if (t.dataset && t.dataset.cat !== undefined) {
     const i = +t.dataset.cat, old = S.categories[i], nn = t.value.trim();
     if (!nn || (nn !== old && S.categories.some(c => c.toLowerCase() === nn.toLowerCase()))) { toast(nn ? 'Такая категория уже есть' : 'Название не может быть пустым'); t.value = old; return; }
@@ -2444,7 +2519,7 @@ document.addEventListener('change', e => {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { if (ui.sheets.length) A.closeSheet(); else if (ui.pages.length) A.back(); }
   if (e.key === 'Enter' && e.target.closest && e.target.closest('#gate')) { A.gateGo(); return; }
-  if (e.key === 'Enter' && e.target.dataset) { if (e.target.dataset.part !== undefined) e.target.blur(); if (e.target.id === 'chatIn') A.chatSend(); }
+  if (e.key === 'Enter' && e.target.dataset) { if (e.target.dataset.part !== undefined || e.target.dataset.item !== undefined) e.target.blur(); if (e.target.id === 'chatIn') A.chatSend(); }
 });
 addEventListener('online', () => { if (S) cloudSync(); renderCloudBits(); });
 addEventListener('offline', renderCloudBits);
